@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'Yahoo v1.0.2';
+const APP_VERSION = 'Yahoo v1.0.3';
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -3763,20 +3763,37 @@ async function applyYahooMergePlan() {
   }
 }
 
-function _yCheckShop(opts = {}) {
+// Yahoo v1.0.3: async 化。「データ未読み込みです」だけでは何をすればいいか分からなかったので、
+//   原因 (GitHub保存先が未保存 / 読み込み失敗) を出し分け、読み込めるならその場で読み込む。
+async function _yCheckShop(opts = {}) {
   const shop = getCurrentShop();
-  if (!shop) { toast('ショップが選択されていません', 'error'); return null; }
+  if (!shop) { toast('ショップが選択されていません。⚙️設定 →「＋ ショップを追加」で登録してください', 'error'); return null; }
   if (!shop.shopCode) { toast('YahooストアID（seller_id）が未設定です。⚙️設定 → ショップの「編集」で入力してください', 'error'); return null; }
   if (!/^[a-z0-9_-]+$/i.test(shop.shopCode)) { toast(`ストアID「${shop.shopCode}」に使えない文字が入っています（英数字・-・_ のみ）`, 'error'); return null; }
-  if (opts.needPat && !auth.pat) { toast(opts.patMessage || '取り込み（保存）には編集権限(PAT)が必要です。⚙️設定で登録してください', 'error'); return null; }
-  if (!dataCache[currentShopId]) { toast('データ未読み込みです', 'error'); return null; }
+  if (!auth.owner || !auth.repo) {
+    toast('GitHubの保存先が未設定です。⚙️設定で「オーナー」と「リポジトリ」を入力し、いちばん下の「保存」を押してください', 'error');
+    console.warn('[Yahoo] owner/repo 未設定のため中止');
+    return null;
+  }
+  if (opts.needPat && !auth.pat) { toast(opts.patMessage || '取り込み（保存）には編集権限(PAT)が必要です。⚙️設定でPATを入力し、いちばん下の「保存」を押してください', 'error'); return null; }
+  if (!dataCache[currentShopId]) {
+    await loadCurrentShopData();
+    render();
+  }
+  const data = dataCache[currentShopId];
+  if (!data) { toast('データを読み込めませんでした。🔄 GitHub同期 → 診断ログをコピーして相談してください', 'error'); return null; }
+  if (data._loadFailed || data._parseError) {
+    toast('GitHubからデータを読めませんでした。⚙️設定のPAT・オーナー・リポジトリ名が正しいか確認してください', 'error');
+    console.warn('[Yahoo] データ読み込み失敗フラグあり', { loadFailed: !!data._loadFailed, parseError: !!data._parseError, wasEmpty: !!data._wasEmpty });
+    return null;
+  }
   return shop;
 }
 
 // ===== ① Yahooから同期 (GitHub Actions を起動して待つ) =====
 // 楽天版の syncProducts と同じ名前にしておく (bindEvents の「商品同期」ボタンがこれを呼ぶ)
 async function syncProducts() {
-  const shop = _yCheckShop({ needPat: true, patMessage: 'Yahoo同期には編集権限(PAT)が必要です（GitHub Actionsの起動と保存に使います）' });
+  const shop = await _yCheckShop({ needPat: true, patMessage: 'Yahoo同期には編集権限(PAT)が必要です（GitHub Actionsの起動と保存に使います）' });
   if (!shop) return;
   const branch = auth.branch || 'main';
   const t0 = Date.now();
@@ -3878,7 +3895,7 @@ async function _yRunFailureReason(run) {
 
 // ===== ③ 取得済みの一覧 (data/{shopId}/yahoo-products.json) を取り込む =====
 async function importLatestYahooFetch(opts = {}) {
-  const shop = _yCheckShop({ needPat: true });
+  const shop = await _yCheckShop({ needPat: true });
   if (!shop) { hideLoading(); return; }
   showLoading('Yahooの取得結果を読み込み中…');
   try {
@@ -3941,7 +3958,7 @@ function parseYahooItemCsv(text, shop) {
 }
 
 async function handleYahooCsvFile(file) {
-  const shop = _yCheckShop({ needPat: true });
+  const shop = await _yCheckShop({ needPat: true });
   if (!shop) return;
   showLoading('CSVを読み込み中…');
   try {
