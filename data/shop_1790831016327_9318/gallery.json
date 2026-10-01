@@ -4148,30 +4148,6 @@
           "uploadedAt": "2026-10-01T08:20:03.913Z",
           "note": "",
           "tags": []
-        },
-        {
-          "id": "img_1790842805667_vsq73z",
-          "filename": "1790842803918_xv2x9d_14_yukaiya_si-22-05_14_d_20260904160903.jpg",
-          "originalName": "14_yukaiya_si-22-05_14_d_20260904160903.jpg",
-          "path": "data/shop_1790831016327_9318/images/prod_1790839116298_aobws6/1790842803918_xv2x9d_14_yukaiya_si-22-05_14_d_20260904160903.jpg",
-          "sha": "e6c707e38ccd4dc0294ad35430ec4d28f89f90cf",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1790839116298_aobws6/1790842803918_xv2x9d_14_yukaiya_si-22-05_14_d_20260904160903.jpg",
-          "size": 125401,
-          "uploadedAt": "2026-10-01T08:20:05.667Z",
-          "note": "",
-          "tags": []
-        },
-        {
-          "id": "img_1790842806999_dln9cl",
-          "filename": "1790842805671_eoxhyl_15_yukaiya_si-22-05_15_d_20260904160903.jpg",
-          "originalName": "15_yukaiya_si-22-05_15_d_20260904160903.jpg",
-          "path": "data/shop_1790831016327_9318/images/prod_1790839116298_aobws6/1790842805671_eoxhyl_15_yukaiya_si-22-05_15_d_20260904160903.jpg",
-          "sha": "2ab2eeff0144b2d1d3f75891461f34d7d067418a",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1790839116298_aobws6/1790842805671_eoxhyl_15_yukaiya_si-22-05_15_d_20260904160903.jpg",
-          "size": 99585,
-          "uploadedAt": "2026-10-01T08:20:06.999Z",
-          "note": "",
-          "tags": []
         }
       ],
       "status": "active",
