@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.12';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.13';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -728,6 +728,7 @@ async function toggleBatchMode() {
     if (!d || d._wasEmpty || d._parseError || d._loadFailed) { toast('データを正しく読み込めていないため、一括編集を始められません', 'error'); return; }
     _batch = { on: true, shopId: currentShopId, pending: [], fileOp: false };
     updateBatchBar();
+    render();   // サムネ右上のチェックを出す
     toast('一括編集を開始しました。変更は「💾 まとめて保存」を押すまで保存されません', 'success');
     return;
   }
@@ -736,7 +737,9 @@ async function toggleBatchMode() {
     if (!(await flushBatch())) return;
   }
   _batch = { on: false, shopId: null, pending: [], fileOp: false };
+  imgSelection.clear();
   updateBatchBar();
+  render();   // サムネ右上のチェックを消す
   toast('一括編集を終了しました', 'success');
 }
 
@@ -811,6 +814,8 @@ function injectProductStatusSelect() {
 // ===== ver 1.0.10: サムネ右上のチェックで画像を選ぶ → まとめて削除 / タグ変更 =====
 //   画像削除・商品削除・無視の設定 の各モード中はチェックを出さない (クリックの意味がぶつかるため)
 function imgSelChkHTML(img) {
+  // ver 1.0.13: チェックは一括編集モード中だけ出す (通常時は出さない)
+  if (!_batch.on) return '';
   if (viewMode === 'delete' || viewMode === 'productdelete' || viewMode === 'ignoreedit') return '';
   const on = imgSelection.has(img.id);
   return `<button type="button" class="img-sel-chk ${on ? 'on' : ''}" data-img-sel="${escapeHtml(img.id)}" title="${on ? '選択を外す' : '選択する'}">✓</button>`;
@@ -870,7 +875,7 @@ function _selectedImgPairs() {
 function updateImgSelBar() {
   const bar = document.getElementById('imgSelBar');
   if (!bar) return;
-  const modeOk = !(viewMode === 'delete' || viewMode === 'productdelete' || viewMode === 'ignoreedit');
+  const modeOk = _batch.on && !(viewMode === 'delete' || viewMode === 'productdelete' || viewMode === 'ignoreedit');
   const n = modeOk ? _selectedImgPairs().length : 0;
   document.body.classList.toggle('img-selecting', n > 0);
   if (n === 0) { bar.style.display = 'none'; return; }
