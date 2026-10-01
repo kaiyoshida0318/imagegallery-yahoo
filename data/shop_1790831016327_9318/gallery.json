@@ -7952,10 +7952,22 @@
   "boosts": [],
   "tags": [
     {
-      "id": "tag_fav_1790837909599_zrnn",
-      "name": "お気に入り",
-      "color": "pink",
-      "createdAt": "2026-10-01T06:58:29.599Z"
+      "id": "tag_1790844256396_0_japa",
+      "name": "疑問？",
+      "color": "gray",
+      "createdAt": "2026-10-01T08:44:16.396Z"
+    },
+    {
+      "id": "tag_1790844256396_1_smzo",
+      "name": "どーん",
+      "color": "red",
+      "createdAt": "2026-10-01T08:44:16.396Z"
+    },
+    {
+      "id": "tag_1790844256396_2_arc9",
+      "name": "重要補足",
+      "color": "indigo",
+      "createdAt": "2026-10-01T08:44:16.396Z"
     },
     {
       "id": "tag_reason_1790837909599_sibd",
@@ -7964,10 +7976,40 @@
       "createdAt": "2026-10-01T06:58:29.599Z"
     },
     {
+      "id": "tag_1790844256396_4_2d65",
+      "name": "POINT",
+      "color": "green",
+      "createdAt": "2026-10-01T08:44:16.396Z"
+    },
+    {
+      "id": "tag_1790844256396_5_40aa",
+      "name": "DETAIL",
+      "color": "orange",
+      "createdAt": "2026-10-01T08:44:16.396Z"
+    },
+    {
+      "id": "tag_1790844256396_6_8jlz",
+      "name": "セット販売",
+      "color": "amber",
+      "createdAt": "2026-10-01T08:44:16.396Z"
+    },
+    {
+      "id": "tag_1790844256396_7_ligw",
+      "name": "POINT部分",
+      "color": "blue",
+      "createdAt": "2026-10-01T08:44:16.396Z"
+    },
+    {
       "id": "tag_ytop_1790840364688_q2kf",
       "name": "トップ画像",
-      "color": "red",
+      "color": "teal",
       "createdAt": "2026-10-01T07:39:24.688Z"
+    },
+    {
+      "id": "tag_fav_1790837909599_zrnn",
+      "name": "お気に入り",
+      "color": "pink",
+      "createdAt": "2026-10-01T06:58:29.599Z"
     }
   ],
   "yahooThumbs": []
