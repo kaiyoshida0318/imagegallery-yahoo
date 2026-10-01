@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.7';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.8';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -4519,6 +4519,14 @@ function openBulkImagesModal() {
   if (!data) { toast('データ未読み込みです', 'error'); return; }
 
   pendingBulkImport = null;
+  // ver 1.0.8: 対応しているZIPの形を案内 (index.html は触らずここで書き換える)
+  const hint = document.querySelector('#bulkDropzone .bulk-dropzone-hint');
+  if (hint) {
+    const sc = escapeHtml(String(shop.shopCode).toLowerCase());
+    hint.innerHTML = `ストアクリエイターProの画像一括ダウンロードのZIPをそのまま使えます<br>
+      フォルダ構造: <code>…/<b>yahoo_${sc}_{商品コード}</b>/画像ファイル</code><br>
+      例: <code>shop-images-26-1001/yahoo_${sc}_abc-123/01_xxx.jpg</code>`;
+  }
   document.getElementById('bulkImportSummary').innerHTML = '';
   document.getElementById('bulkImportPreview').innerHTML = '';
   document.getElementById('bulkUploadProgress').style.display = 'none';
@@ -4549,7 +4557,10 @@ async function handleBulkZip(file) {
     // ファイルを管理番号別にグループ化
     // パス例: yahoo-images/{ストアID}_{商品コード}/1_xxx.jpg
     // → 商品コードにマッチ (パスは小文字化して照合するので、商品側も小文字キーで引く)
-    const folderRegex = new RegExp(`(?:^|/)${escapeRegExp(shopCode)}_([^/]+)/([^/]+\\.(jpg|jpeg|png|webp|gif))$`, 'i');
+    // ver 1.0.8: ストアクリエイターProの画像一括ダウンロード形式にも対応
+    //   shop-images-26-1001/yahoo_{ストアID}_{商品コード}/01_….jpg  (フォルダ名の先頭に「yahoo_」が付く)
+    //   従来の {ストアID}_{商品コード}/… も引き続き使える
+    const folderRegex = new RegExp(`(?:^|/)(?:yahoo_)?${escapeRegExp(shopCode)}_([^/]+)/([^/]+\\.(jpg|jpeg|png|webp|gif))$`, 'i');
     const groups = new Map();  // manageNumber -> [{path, file}, ...]
 
     zip.forEach((relativePath, entry) => {
@@ -4595,7 +4606,16 @@ async function handleBulkZip(file) {
       }
     }
 
-    pendingBulkImport = { matched, unmatched, totalFiles, overwriteCount };
+    // ver 1.0.8: 1件も合わないとき、ZIP内のフォルダが別ストア用か調べて理由を出せるようにする
+    const otherStores = new Set();
+    if (groups.size === 0) {
+      zip.forEach((relativePath, entry) => {
+        if (entry.dir) return;
+        const mm = relativePath.toLowerCase().match(/(?:^|\/)yahoo_([a-z0-9-]+)_[^/]+\/[^/]+\.(jpg|jpeg|png|webp|gif)$/);
+        if (mm && mm[1] !== shopCode) otherStores.add(mm[1]);
+      });
+    }
+    pendingBulkImport = { matched, unmatched, totalFiles, overwriteCount, otherStores: [...otherStores], shopCode };
     hideLoading();
     showBulkImportPreview();
   } catch (e) {
@@ -4673,7 +4693,9 @@ function showBulkImportPreview() {
     html += '<div class="csv-hint">💡 これらはまだ取り込まれていない商品コードです（＋ 商品追加 から取り込んでください）</div>';
   }
   if (r.matched.length === 0 && r.unmatched.length === 0) {
-    html = '<div class="csv-empty">ZIPから画像が見つかりませんでした。フォルダ構造を確認してください。</div>';
+    html = (r.otherStores && r.otherStores.length)
+      ? `<div class="csv-empty">このZIPはストアID「${escapeHtml(r.otherStores.join('、'))}」用のフォルダでした。<br>今のショップのストアIDは「${escapeHtml(r.shopCode)}」です。ショップを切り替えるか、⚙️設定でストアIDを確認してください。</div>`
+      : '<div class="csv-empty">ZIPから画像が見つかりませんでした。フォルダ構造を確認してください。</div>';
   }
   preview.innerHTML = html;
 }
