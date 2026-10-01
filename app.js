@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'Yahoo v1.0.4';
+const APP_VERSION = 'ver 1.0.5';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -1822,7 +1822,7 @@ function buildDiagnosticReport() {
   L.push('# ImageGallery 診断ログ');
   L.push('');
   L.push(`- 日時: ${_fmtClock(Date.now())}`);
-  L.push(`- バージョン: ${APP_VERSION}`);
+  L.push(`- バージョン: Yahoo版 ${APP_VERSION}`);
   L.push(`- URL: ${location.href}`);
   L.push(`- Yahoo API: ${YAHOO_API_LABEL}（GitHub Actions ${YAHOO_SYNC_WORKFLOW} 経由で取得）`);
   L.push(`- ブラウザ: ${navigator.userAgent}`);
