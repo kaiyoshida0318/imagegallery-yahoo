@@ -6,7 +6,8 @@ name: Yahoo商品同期
 # 事前準備: Settings → Secrets and variables → Actions → New repository secret
 #   Name: YAHOO_CLIENT_ID   Secret: Yahoo!デベロッパーネットワークの Client ID
 #
-# このワークフローは data/{shop_id}/yahoo-products.json を書くだけで、gallery.json には触れません。
+# このワークフローは data/{shop_id}/yahoo-products.json と、トップ画像 (data/{shop_id}/yahoo-top/) を書くだけで、
+# gallery.json には触れません。
 # 商品の追加・更新はツール側の確認画面で「取り込む」を押したときに行われます（画像・タグを壊さないため）。
 
 on:
@@ -65,12 +66,12 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898299+github-actions[bot]@users.noreply.github.com'
           shopt -s nullglob
-          files=(data/*/yahoo-products.json)
+          files=(data/*/yahoo-products.json data/*/yahoo-top)
           if [ ${#files[@]} -eq 0 ]; then
             echo "保存する取得結果がありません"
             exit 0
           fi
-          git add --sparse -- "${files[@]}"
+          git add --sparse -A -- "${files[@]}"
           if git diff --cached --quiet; then
             echo "変更なし"
             exit 0
