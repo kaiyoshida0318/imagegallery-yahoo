@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.6';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.7';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -471,6 +471,8 @@ function injectImageTagStyles() {
     .ignore-bar .btn-ign-main { background: #fff; color: #1e3a8a; border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 700; cursor: pointer; font-family: inherit; }
     .ignore-bar .btn-ign-main:disabled { opacity: .45; cursor: not-allowed; }
     .ignore-bar .btn-ign-sub { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.5); border-radius: 8px; padding: 8px 12px; cursor: pointer; font-family: inherit; }
+    .item-page-link { display: block; margin-top: 3px; font-size: 11px; color: #2563eb; text-decoration: none; white-space: nowrap; }
+    .item-page-link:hover { text-decoration: underline; }
     .yimp-price { color: var(--text-light, #94a3b8); margin-left: 6px; font-size: 12px; }
     /* 商品取り込み確認画面 */
     .yimp-source {
@@ -6517,9 +6519,22 @@ function productRowHTML(p) {
     ? `<div class="product-row-more" data-open-product="${p.id}" title="残り${remaining}枚">+${remaining}</div>`
     : '';
 
-  const manageCell = manage
+  // ver 1.0.7: 商品コードの下に「商品ページ」リンク (Yahooの商品ページを新しいタブで開く)
+  //   itemUrl が無い古い商品は ストアID と 商品コード から組み立てる。部品には出さない
+  let pageUrl = '';
+  if (!p.isPart) {
+    if (/^https?:\/\//i.test(p.itemUrl || '')) pageUrl = p.itemUrl;
+    else {
+      const sh = getCurrentShop();
+      if (sh && sh.shopCode && manage) pageUrl = yahooItemUrl(sh.shopCode, manage);
+    }
+  }
+  const pageLink = pageUrl
+    ? `<a class="item-page-link" href="${escapeHtml(pageUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" title="${escapeHtml(pageUrl)}">商品ページ ↗</a>`
+    : '';
+  const manageCell = (manage
     ? `<span class="mono">${escapeHtml(manage)}</span>`
-    : `<span class="mono mono-placeholder">10000000</span>`;
+    : `<span class="mono mono-placeholder">10000000</span>`) + pageLink;
   const addedDate = fmtAddedDate(p);
   const numberCell = addedDate
     ? `<span class="mono" title="追加日">${addedDate}</span>`
