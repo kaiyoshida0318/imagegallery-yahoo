@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.10';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.11';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -2930,6 +2930,55 @@ async function ensureReasonTag(shopId) {
   }
 }
 
+// ===== ver 1.0.11: 楽天版と同じ分類タグを用意する =====
+//   名前・色・並び順は楽天版 (kaiyoshida0318/imagegallery) の実データに合わせた。
+//   ・一度だけ実行: 下の7つ (◯◯個の理由 以外) が1つも無いときだけ追加・並べ替えする。
+//     → 後で「タグ編集」で消したり並べ替えたりしても、勝手に戻さない。
+//   ・既にあるタグ (同じ名前) は id を変えずに使うので、画像の紐付けは維持される。
+//   ・トップ画像タグが「どーん」と同じ赤だったら青緑に変える (見分けにくいため)。
+const STANDARD_TAGS = [
+  { name: '疑問？', color: 'gray' },
+  { name: 'どーん', color: 'red' },
+  { name: '重要補足', color: 'indigo' },
+  { name: REASON_TAG_NAME, color: REASON_TAG_COLOR },
+  { name: 'POINT', color: 'green' },
+  { name: 'DETAIL', color: 'orange' },
+  { name: 'セット販売', color: 'amber' },
+  { name: 'POINT部分', color: 'blue' }
+];
+
+async function ensureStandardTags(shopId) {
+  const data = dataCache[shopId];
+  if (!data || data._wasEmpty || data._parseError || data._loadFailed) return;
+  if (!Array.isArray(data.products)) return;
+  if (!Array.isArray(data.tags)) data.tags = [];
+  const has = (name) => data.tags.some(t => t.name === name);
+  const marker = STANDARD_TAGS.filter(t => t.name !== REASON_TAG_NAME);
+  if (marker.some(t => has(t.name))) return;      // 一度でも用意済みなら何もしない
+
+  const before = data.tags.map(t => ({ ...t }));   // 保存に失敗したら色も含めて元に戻す
+  const now = Date.now();
+  const ordered = STANDARD_TAGS.map((def, i) => {
+    const ex = data.tags.find(t => t.name === def.name);
+    return ex || { id: `tag_${now}_${i}_${Math.random().toString(36).slice(2, 6)}`, name: def.name, color: def.color, createdAt: new Date().toISOString() };
+  });
+  const usedIds = new Set(ordered.map(t => t.id));
+  const rest = data.tags.filter(t => !usedIds.has(t.id));
+  // 残り: トップ画像 → その他 → お気に入り の順
+  const top = rest.filter(t => t.name === YAHOO_TOP_TAG_NAME);
+  const fav = rest.filter(t => t.name === FAVORITE_TAG_NAME);
+  const others = rest.filter(t => t.name !== YAHOO_TOP_TAG_NAME && t.name !== FAVORITE_TAG_NAME);
+  top.forEach(t => { if (t.color === 'red') t.color = YAHOO_TOP_TAG_COLOR; });
+  data.tags = [...ordered, ...top, ...others, ...fav];
+  try {
+    await saveShopData(shopId, 'auto: add standard tags (same as Rakuten version)');
+    if (shopId === currentShopId) render();
+  } catch (e) {
+    console.warn('分類タグの自動追加の保存失敗', e);
+    data.tags = before;
+  }
+}
+
 // v1.11.10: タグの「旧名→新名リネーム」を一度だけ行う移行処理。
 //   ・旧「選ばれる理由」を「◯◯個の理由」へ、旧「ポイント前」を「重要補足」へリネーム
 //     (id は変えないので画像の紐付けは維持)
@@ -3844,7 +3893,7 @@ const YAHOO_RUN_TIMEOUT_MS = 8 * 60 * 1000;
 const YAHOO_RUN_POLL_MS = 4000;
 // Yahoo v1.0.4: トップ画像 (Actions が data/{shopId}/yahoo-top/ に保存したもの) を商品画像として登録する
 const YAHOO_TOP_TAG_NAME = 'トップ画像';
-const YAHOO_TOP_TAG_COLOR = 'red';
+const YAHOO_TOP_TAG_COLOR = 'teal';   // ver 1.0.11: 「どーん」(赤) と見分けるため青緑に
 let _yahooLast = null;          // 診断ログ用: {at, summary}
 let _yahooPendingPlan = null;   // 確認画面で表示中の取り込み計画
 
@@ -5225,6 +5274,8 @@ async function loadCurrentShopData() {
     ensureFavoriteTag(currentShopId);
     // v1.9.3: 選ばれる理由タグを自動確保
     ensureReasonTag(currentShopId);
+    // ver 1.0.11: 楽天版と同じ分類タグ (疑問？/どーん/重要補足/…) を一度だけ用意する
+    ensureStandardTags(currentShopId);
   }
 }
 
