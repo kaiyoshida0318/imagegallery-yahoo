@@ -4483,7 +4483,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "7ca1f719d75c4ecafbe1c461b600c093226a4bcd"
+      "yahooTopSha": "7ca1f719d75c4ecafbe1c461b600c093226a4bcd",
+      "ignored": true
     },
     {
       "id": "prod_1790839116298_3x5s2r",
