@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.5';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.6';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -85,6 +85,9 @@ let _diagHooksInstalled = false;
 
 let deleteSelection = new Set();  // 削除予約された画像ID (img.id)
 let productDeleteSelection = new Set();  // v1.11.29: 削除予約された商品ID (p.id)
+let ignoreSelection = new Set();         // ver 1.0.6: 「無視の設定」モードで選択中の商品ID
+let _ignoreSelCat = null;                // 選択したときのタブ (タブを替えたら選択を消す)
+let _lastGridList = [];                  // 直近に一覧へ表示した商品 (「表示中を全部選択」用)
 let pendingStatusChanges = new Map();  // 保存待ちのステータス変更: productId -> 'active'|'unsure'
 
 // エクスポートモード関連 (v1.8.4)
@@ -157,7 +160,10 @@ async function init() {
   moveStorageButtonIntoSettings();  // v1.11.37: 「📊」→「容量確認」にして設定モーダルへ
   injectPartsTab();          // v1.11.33: 「部品」タブを 全体 の右に追加
   injectNoImageTab();        // v1.11.34: 「商品(未設定)」タブを 全体 と 部品 の間に追加
-  injectYahooThumbTab();     // v1.11.35: 「サムネ台」(旧Yahoo用サムネ)タブを 部品 の右に追加
+  // ver 1.0.6: 「サムネ台」タブは廃止 (意味が分かりにくいため)。データ(yahooThumbs)は gallery.json に残す
+  injectIgnoredTab();        // ver 1.0.6: 部品 の右に「|」で区切って「無視」タブ
+  injectIgnoreModeUI();      // ver 1.0.6: 「🙈 無視の設定」モード (一括で 無視 ⇄ 現役)
+  hideItemNumberField();     // ver 1.0.6: 商品番号は使わない (編集画面からも隠す)
   setupYahooHub();           // Yahoo v1.0.0: ＋商品追加モーダルに Yahoo同期 / 商品CSV / 取得済み一覧 を用意
   setupCsvModalExtras();     // v1.11.31: 商品名称一括更新モーダルに基礎情報DL+D&Dを統合
   relabelCategoryTabs();     // v1.11.15: 現役→選択分
@@ -444,6 +450,27 @@ function injectImageTagStyles() {
     }
     .app-header .logo { position: relative; }
     .toast { max-width: min(720px, calc(100vw - 32px)); line-height: 1.6; cursor: pointer; text-align: left; }
+    /* ver 1.0.6: 無視タブの前の区切り線と、無視の設定モード */
+    .cat-sep { color: var(--text-light, #94a3b8); padding: 0 6px; user-select: none; align-self: center; }
+    .cat-btn[data-cat="ignored"] { color: var(--text-light, #94a3b8); }
+    .cat-btn[data-cat="ignored"].active { color: #fff; }
+    .product-row.mode-ignoreedit:hover { background: #eff6ff; }
+    .product-row.mode-ignoreedit.pd-selected { background: #dbeafe; outline-color: #3b82f6; }
+    .product-table-header .col-pd-check { font-size: 12px; font-weight: 700; }
+    .product-table-header.mode-ignoreedit .col-pd-check,
+    .product-row.mode-ignoreedit .col-pd-check { color: #2563eb; }
+    #modeIgnoreEdit.active { background: #2563eb !important; border-color: #2563eb !important; color: #fff !important; }
+    .ignore-bar {
+      background: #1e3a8a !important; border-color: #1e3a8a !important; color: #fff;
+      gap: 20px; justify-content: space-between; width: min(820px, calc(100vw - 32px)); box-sizing: border-box;
+    }
+    .ignore-bar .delete-action-info { color: #fff; flex-wrap: wrap; row-gap: 2px; }
+    .ignore-bar .delete-action-info strong { color: #fff; }
+    .ignore-bar small { width: 100%; font-size: 11px; opacity: .8; padding-left: 28px; }
+    .ignore-bar .delete-action-buttons button { white-space: nowrap; }
+    .ignore-bar .btn-ign-main { background: #fff; color: #1e3a8a; border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .ignore-bar .btn-ign-main:disabled { opacity: .45; cursor: not-allowed; }
+    .ignore-bar .btn-ign-sub { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.5); border-radius: 8px; padding: 8px 12px; cursor: pointer; font-family: inherit; }
     .yimp-price { color: var(--text-light, #94a3b8); margin-left: 6px; font-size: 12px; }
     /* 商品取り込み確認画面 */
     .yimp-source {
@@ -468,6 +495,131 @@ function injectMallBadge() {
     logo.appendChild(b);
   }
   if (!/Yahoo/.test(document.title)) document.title = 'ImageGallery Yahoo';
+}
+
+// ===== ver 1.0.6: 「無視」 =====
+//   p.ignored = true の商品/部品は、無視タブ以外 (選択分/未選択分/全体/未設定/部品) に出さない。
+//   「🙈 無視の設定」モードで行をクリックして選び、まとめて 無視 ⇄ 現役 を切り替える。
+//   ignored は商品オブジェクトの項目なので gallery.json のキーは増えない (保存側の修正は不要)。
+function injectIgnoredTab() {
+  if (document.querySelector('.cat-btn[data-cat="ignored"]')) return;
+  const partsBtn = document.querySelector('.cat-btn[data-cat="parts"]');
+  if (!partsBtn || !partsBtn.parentNode) return;
+  const sep = document.createElement('span');
+  sep.className = 'cat-sep';
+  sep.textContent = '|';
+  const btn = document.createElement('button');
+  btn.className = 'cat-btn';
+  btn.dataset.cat = 'ignored';
+  btn.textContent = '無視';
+  btn.title = '「無視」にした商品。ほかのタブには表示されません';
+  btn.addEventListener('click', () => {
+    currentCategory = 'ignored';
+    localStorage.setItem(LS_CURRENT_CAT, 'ignored');
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b === btn));
+    render();
+  });
+  partsBtn.parentNode.insertBefore(sep, partsBtn.nextSibling);
+  partsBtn.parentNode.insertBefore(btn, sep.nextSibling);
+}
+
+function injectIgnoreModeUI() {
+  const ref = document.getElementById('modeProductDelete') || document.getElementById('modeDelete');
+  if (!document.getElementById('modeIgnoreEdit') && ref && ref.parentNode) {
+    const btn = document.createElement('button');
+    btn.id = 'modeIgnoreEdit';
+    btn.className = 'view-mode-btn view-mode-btn-standalone';
+    btn.dataset.mode = 'ignoreedit';
+    btn.textContent = '🙈 無視の設定';
+    btn.title = '商品を選んで、まとめて「無視」にしたり「現役」に戻したりします';
+    btn.addEventListener('click', () => {
+      viewMode = (viewMode === 'ignoreedit') ? 'images' : 'ignoreedit';
+      // このモードは保存しない (再読み込みしたら通常表示に戻る)
+      document.querySelectorAll('.view-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === viewMode));
+      ignoreSelection.clear();
+      productDeleteSelection.clear();
+      deleteSelection.clear();
+      updateDeleteActionBar();
+      updateProductDeleteBar();
+      render();
+    });
+    ref.parentNode.insertBefore(btn, ref.nextSibling);
+  }
+  if (!document.getElementById('ignoreBar')) {
+    const bar = document.createElement('div');
+    bar.className = 'delete-action-bar ignore-bar';
+    bar.id = 'ignoreBar';
+    bar.style.display = 'none';
+    bar.innerHTML = `
+      <div class="delete-action-info">
+        <span class="delete-action-icon">🙈</span>
+        <span>選択中: <strong id="ignoreCount">0</strong> 件</span>
+        <small id="ignoreHint"></small>
+      </div>
+      <div class="delete-action-buttons">
+        <button class="btn-ign-sub" id="btnIgnoreSelectAll">表示中を全部選択</button>
+        <button class="btn-ign-sub" id="btnIgnoreClear">選択を解除</button>
+        <button class="btn-ign-main" id="btnIgnoreApply">無視にする</button>
+      </div>`;
+    document.body.appendChild(bar);
+    bar.querySelector('#btnIgnoreSelectAll').addEventListener('click', () => {
+      _lastGridList.forEach(p => ignoreSelection.add(p.id));
+      render();
+    });
+    bar.querySelector('#btnIgnoreClear').addEventListener('click', () => { ignoreSelection.clear(); render(); });
+    bar.querySelector('#btnIgnoreApply').addEventListener('click', () => applyIgnore(currentCategory !== 'ignored'));
+  }
+}
+
+function updateIgnoreBar() {
+  const bar = document.getElementById('ignoreBar');
+  if (!bar) return;
+  const listCat = ['product', 'product_untagged', 'product_noimage', 'product_all', 'parts', 'ignored'].includes(currentCategory);
+  if (viewMode !== 'ignoreedit' || !listCat) { bar.style.display = 'none'; return; }
+  bar.style.display = 'flex';
+  const toIgnore = currentCategory !== 'ignored';
+  document.getElementById('ignoreCount').textContent = ignoreSelection.size;
+  document.getElementById('ignoreHint').textContent = toIgnore
+    ? '行をクリックで選択。無視にすると「無視」タブへ移ります'
+    : '行をクリックで選択。現役に戻すと元のタブに表示されます';
+  const apply = document.getElementById('btnIgnoreApply');
+  apply.textContent = toIgnore ? `🙈 ${ignoreSelection.size}件を無視にする` : `↩ ${ignoreSelection.size}件を現役に戻す`;
+  apply.disabled = ignoreSelection.size === 0;
+}
+
+async function applyIgnore(flag) {
+  if (ignoreSelection.size === 0) return;
+  if (!auth.pat) { toast('変更の保存には編集権限(PAT)が必要です', 'error'); return; }
+  const data = dataCache[currentShopId];
+  if (!data) return;
+  const ids = new Set(ignoreSelection);
+  const targets = (data.products || []).filter(p => ids.has(p.id));
+  if (targets.length === 0) return;
+  const backup = targets.map(p => [p, p.ignored]);
+  targets.forEach(p => { if (flag) p.ignored = true; else delete p.ignored; });
+  showLoading('保存中…');
+  try {
+    await saveShopData(currentShopId, `${flag ? 'ignore' : 'unignore'} ${targets.length} products`);
+  } catch (e) {
+    backup.forEach(([p, v]) => { if (v) p.ignored = v; else delete p.ignored; });   // 失敗したら元に戻す
+    hideLoading();
+    toast('保存失敗: ' + e.message, 'error');
+    render();
+    return;
+  }
+  hideLoading();
+  ignoreSelection.clear();
+  render();
+  toast(flag
+    ? `${targets.length}件を「無視」にしました（「無視」タブで確認・戻せます）`
+    : `${targets.length}件を現役に戻しました`, 'success');
+}
+
+// ver 1.0.6: 商品番号は使わないので、商品情報の編集画面から欄を隠す (値はそのまま保持)
+function hideItemNumberField() {
+  const el = document.getElementById('productEditNumber');
+  const row = el && el.closest('.form-row');
+  if (row) row.style.display = 'none';
 }
 
 // v1.11.15: 保存済みの列幅を grid-template-columns として動的適用
@@ -1609,6 +1761,7 @@ async function createPart() {
     itemNumber: name || '部品',
     itemName: name || '部品',
     images: [],
+    addedAt: new Date().toISOString(),
     syncedAt: new Date().toISOString()
   };
   let fail = 0;
@@ -2149,7 +2302,7 @@ function loadCurrentSelections() {
   currentShopId = localStorage.getItem(LS_CURRENT_SHOP) || null;
   // v1.11.12: 素材/盛り上げタブは廃止。保存済みの material/boost は product(現役) に読み替える
   const _cc = localStorage.getItem(LS_CURRENT_CAT);
-  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'product_noimage' || _cc === 'parts' || _cc === 'yahoo_thumb') ? _cc : 'product';
+  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'product_noimage' || _cc === 'parts' || _cc === 'ignored') ? _cc : 'product';  // ver 1.0.6: サムネ台を廃止、無視を追加
   // v1.11.11: 基礎情報モードは廃止。保存済みの 'basic' は 'images' に読み替える。
   const _vm = localStorage.getItem(LS_VIEW_MODE);
   viewMode = (_vm === 'delete' || _vm === 'productdelete') ? _vm : 'images';
@@ -3782,6 +3935,8 @@ async function applyYahooMergePlan() {
     const needTag = plan.topAdd + plan.topReplace > 0;
     const topTagId = needTag ? _yEnsureTopTag(data) : '';
     plan.updated.forEach(u => {
+      // ver 1.0.6: 追加日が無い古い商品は、更新で syncedAt が上書きされる前に最初の日時を追加日として残す
+      if (!u.product.addedAt && u.product.syncedAt) u.product.addedAt = u.product.syncedAt;
       Object.entries(u.fields).forEach(([k, [, v]]) => { if (k !== '_top') u.product[k] = v; });
       if (u.fields._top && u.item.top) _yApplyTop(u.product, u.item.top, topTagId);
       u.product.syncedAt = now;
@@ -3791,6 +3946,7 @@ async function applyYahooMergePlan() {
         id: 'prod_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
         itemCode: it.yahooId || '',          // Yahoo商品ID (ストアID_商品コード)。参考保持
         itemManageNumber: it.code,           // 主キー = Yahoo商品コード
+        addedAt: now,                        // ver 1.0.6: 一覧の「追加日」
         itemNumber: '',
         itemUrl: it.url || '',
         itemName: it.name || it.code,
@@ -4622,17 +4778,7 @@ function exportBasicInfoCsv() {
   let list = data.products.slice();
   if (sortKey) {
     const dir = sortDir === 'desc' ? -1 : 1;
-    list.sort((a, b) => {
-      const av = (sortKey === 'manage' ? a.itemManageNumber : a.itemNumber) || '';
-      const bv = (sortKey === 'manage' ? b.itemManageNumber : b.itemNumber) || '';
-      if (!av && !bv) return 0;
-      if (!av) return 1;
-      if (!bv) return -1;
-      const aNum = /^\d+$/.test(av);
-      const bNum = /^\d+$/.test(bv);
-      if (aNum && bNum) return (parseInt(av) - parseInt(bv)) * dir;
-      return av.localeCompare(bv, 'ja') * dir;
-    });
+    list.sort((a, b) => compareProducts(a, b, dir));
   }
 
   // タグID → タグ名のマップ
@@ -4959,6 +5105,7 @@ function injectProductDeleteUI() {
     btn.textContent = '🗑️ 商品削除';
     btn.addEventListener('click', () => {
       viewMode = (viewMode === 'productdelete') ? 'images' : 'productdelete';
+      ignoreSelection.clear();
       localStorage.setItem(LS_VIEW_MODE, viewMode);
       document.querySelectorAll('.view-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === viewMode));
       deleteSelection.clear();
@@ -5041,6 +5188,7 @@ function render() {
   updateTagFilterIndicator();
   updateDeleteActionBar();
   updateProductDeleteBar();
+  updateIgnoreBar();
   updatePendingStatusBar();
   updateCategoryTabCounts();
   updateExportModeButton();
@@ -5070,7 +5218,9 @@ function render() {
 
   // v1.11.29/33: カテゴリごとの商品リストを決めてから、表示方法を選ぶ
   //   商品タブは部品(isPart)を除外。部品タブは部品のみ。
-  const realProducts = (data.products || []).filter(p => !p.isPart);
+  // ver 1.0.6: 「無視」にした商品・部品は 無視 タブ以外には出さない
+  const realProducts = (data.products || []).filter(p => !p.isPart && !p.ignored);
+  if (_ignoreSelCat !== currentCategory) { ignoreSelection.clear(); _ignoreSelCat = currentCategory; }
   let list = null;
   if (currentCategory === 'product') {
     list = realProducts.filter(p => (p.images || []).some(im => im.tagId)); // 選択分
@@ -5083,12 +5233,14 @@ function render() {
   } else if (currentCategory === 'product_all') {
     list = realProducts;
   } else if (currentCategory === 'parts') {
-    list = (data.products || []).filter(p => p.isPart);                    // 部品
+    list = (data.products || []).filter(p => p.isPart && !p.ignored);      // 部品
+  } else if (currentCategory === 'ignored') {
+    list = (data.products || []).filter(p => p.ignored);                   // 無視
   }
 
   if (list !== null) {
     // 削除系モード(画像削除/商品削除)では常に商品ごと表示にする
-    const useImageList = galleryViewMode === 'imagelist' && viewMode !== 'delete' && viewMode !== 'productdelete';
+    const useImageList = galleryViewMode === 'imagelist' && viewMode !== 'delete' && viewMode !== 'productdelete' && viewMode !== 'ignoreedit';
     if (useImageList) renderImageListGrid(list);
     else renderProductGrid(list);
   } else if (currentCategory === 'material') {
@@ -5162,21 +5314,10 @@ function renderProductGrid(products) {
   }
 
   // === ソート ===
+  _lastGridList = list;   // ver 1.0.6: 「表示中を全部選択」用 (並べ替えは同じ配列に対して行われる)
   if (sortKey) {
     const dir = sortDir === 'desc' ? -1 : 1;
-    list.sort((a, b) => {
-      const av = (sortKey === 'manage' ? a.itemManageNumber : a.itemNumber) || '';
-      const bv = (sortKey === 'manage' ? b.itemManageNumber : b.itemNumber) || '';
-      // 空欄は常に末尾
-      if (!av && !bv) return 0;
-      if (!av) return 1;
-      if (!bv) return -1;
-      // 数字のみなら数値比較、それ以外は文字列比較
-      const aNum = /^\d+$/.test(av);
-      const bNum = /^\d+$/.test(bv);
-      if (aNum && bNum) return (parseInt(av) - parseInt(bv)) * dir;
-      return av.localeCompare(bv, 'ja') * dir;
-    });
+    list.sort((a, b) => compareProducts(a, b, dir));
   }
 
   if (list.length === 0) {
@@ -5204,7 +5345,7 @@ function renderProductGrid(products) {
     headerHTML = `
       <div class="product-table-header mode-images ${exportMode ? 'with-export' : ''}">
         ${exportHeaderHTML}
-        <div class="col-number sortable" data-sort="number">商品番号 ${sortIndicator('number')}</div>
+        <div class="col-number sortable" data-sort="number">追加日 ${sortIndicator('number')}</div>
         <div class="col-manage sortable" data-sort="manage">商品コード ${sortIndicator('manage')}</div>
         <div class="col-name">商品名</div>
         <div class="col-images">画像</div>
@@ -5216,16 +5357,16 @@ function renderProductGrid(products) {
     headerHTML = `
       <div class="product-table-header mode-delete ${exportMode ? 'with-export' : ''}">
         ${exportHeaderHTML}
-        <div class="col-number sortable" data-sort="number">商品番号 ${sortIndicator('number')}</div>
+        <div class="col-number sortable" data-sort="number">追加日 ${sortIndicator('number')}</div>
         <div class="col-images">画像 (クリックで削除予約)</div>
       </div>
     `;
-  } else if (viewMode === 'productdelete') {
-    // v1.11.29: 商品削除モード: 行クリックで商品ごと削除予約
+  } else if (viewMode === 'productdelete' || viewMode === 'ignoreedit') {
+    // v1.11.29: 商品削除モード: 行クリックで商品ごと削除予約 (ver 1.0.6: 無視の設定モードも同じ形)
     headerHTML = `
-      <div class="product-table-header mode-productdelete">
+      <div class="product-table-header mode-productdelete ${viewMode === 'ignoreedit' ? 'mode-ignoreedit' : ''}">
         <div class="col-pd-check">選択</div>
-        <div class="col-number sortable" data-sort="number">商品番号 ${sortIndicator('number')}</div>
+        <div class="col-number sortable" data-sort="number">追加日 ${sortIndicator('number')}</div>
         <div class="col-manage sortable" data-sort="manage">商品コード ${sortIndicator('manage')}</div>
         <div class="col-name">商品名</div>
         <div class="col-images">画像</div>
@@ -5237,7 +5378,7 @@ function renderProductGrid(products) {
       <div class="product-table-header mode-basic ${exportMode ? 'with-export' : ''}">
         ${exportHeaderHTML}
         <div class="col-manage sortable" data-sort="manage">商品コード ${sortIndicator('manage')}</div>
-        <div class="col-number sortable" data-sort="number">商品番号 ${sortIndicator('number')}</div>
+        <div class="col-number sortable" data-sort="number">追加日 ${sortIndicator('number')}</div>
         <div class="col-name">商品名</div>
         <div class="col-images">画像 (最大5枚)</div>
         <div class="col-favorite">★</div>
@@ -5359,13 +5500,15 @@ function renderProductGrid(products) {
   content.querySelectorAll('[data-pd-toggle]').forEach(el => {
     el.addEventListener('click', () => {
       const pid = el.dataset.pdToggle;
-      if (productDeleteSelection.has(pid)) productDeleteSelection.delete(pid);
-      else productDeleteSelection.add(pid);
-      const on = productDeleteSelection.has(pid);
+      const set = viewMode === 'ignoreedit' ? ignoreSelection : productDeleteSelection;
+      if (set.has(pid)) set.delete(pid);
+      else set.add(pid);
+      const on = set.has(pid);
       el.classList.toggle('pd-selected', on);
       const chk = el.querySelector('.col-pd-check');
       if (chk) chk.textContent = on ? '☑' : '☐';
       updateProductDeleteBar();
+      updateIgnoreBar();
     });
   });
   // 画像追加ボタン
@@ -5532,15 +5675,15 @@ function updateCategoryTabCounts() {
   };
 
   // v1.11.15/19/33: 選択分/未選択分/全体 は部品を除外。部品は別カウント。
-  const realProducts = (data.products || []).filter(p => !p.isPart);
+  const realProducts = (data.products || []).filter(p => !p.isPart && !p.ignored);
   const counts = {
     product: realProducts.filter(p => (p.images || []).some(im => im.tagId)).length,
     product_untagged: realProducts.filter(isUntaggedProduct).length,
     product_noimage: realProducts.filter(p => !p.images || p.images.length === 0).length,
     product_unsure: 0,
     product_all: realProducts.length,
-    parts: (data.products || []).filter(p => p.isPart).length,
-    yahoo_thumb: (data.yahooThumbs || []).length,
+    parts: (data.products || []).filter(p => p.isPart && !p.ignored).length,
+    ignored: (data.products || []).filter(p => p.ignored).length,
     material: (data.materials || []).length,
     boost: (data.boosts || []).length
   };
@@ -6266,6 +6409,38 @@ function toggleSort(key) {
   render();
 }
 
+// ver 1.0.6: 「商品番号」列は廃止し、同じ位置に「追加日」を出す (列幅・並べ替えのキーは互換のため 'number' のまま)
+//   addedAt が無い古い商品は syncedAt (取り込んだ日時) で代用する
+function productAddedTs(p) {
+  const v = p.addedAt || p.syncedAt || ((p.images || [])[0] || {}).uploadedAt || '';
+  const t = Date.parse(v);
+  return Number.isFinite(t) ? t : 0;
+}
+function fmtAddedDate(p) {
+  const t = productAddedTs(p);
+  if (!t) return '';
+  const d = new Date(t);
+  const z = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}/${z(d.getMonth() + 1)}/${z(d.getDate())}`;
+}
+// 一覧の並べ替え (追加日 / 商品コード)。追加日は日時、商品コードは数字なら数値で比べる。空欄は常に末尾
+function compareProducts(a, b, dir) {
+  if (sortKey === 'number') {
+    const at = productAddedTs(a), bt = productAddedTs(b);
+    if (!at && !bt) return 0;
+    if (!at) return 1;
+    if (!bt) return -1;
+    return (at - bt) * dir;
+  }
+  const av = a.itemManageNumber || '';
+  const bv = b.itemManageNumber || '';
+  if (!av && !bv) return 0;
+  if (!av) return 1;
+  if (!bv) return -1;
+  if (/^\d+$/.test(av) && /^\d+$/.test(bv)) return (parseInt(av) - parseInt(bv)) * dir;
+  return av.localeCompare(bv, 'ja', { numeric: true }) * dir;
+}
+
 function productRowHTML(p) {
   const imgCount = (p.images || []).length;
   const isEmpty = imgCount === 0;
@@ -6345,9 +6520,10 @@ function productRowHTML(p) {
   const manageCell = manage
     ? `<span class="mono">${escapeHtml(manage)}</span>`
     : `<span class="mono mono-placeholder">10000000</span>`;
-  const numberCell = number
-    ? `<span class="mono">${escapeHtml(number)}</span>`
-    : `<span class="mono mono-placeholder">未設定</span>`;
+  const addedDate = fmtAddedDate(p);
+  const numberCell = addedDate
+    ? `<span class="mono" title="追加日">${addedDate}</span>`
+    : `<span class="mono mono-placeholder">—</span>`;
 
   // タグ表示 (2x2格子 - ただし「お気に入り」は別UIにするため除外)
   const tagIds = p.tagIds || [];
@@ -6431,14 +6607,16 @@ function productRowHTML(p) {
     </div>`;
   }
 
-  if (viewMode === 'productdelete') {
+  if (viewMode === 'productdelete' || viewMode === 'ignoreedit') {
     // v1.11.29: 商品削除モード。行クリックで商品ごと選択。サムネは読み取り専用。
-    const selected = productDeleteSelection.has(p.id);
+    // ver 1.0.6: 「無視の設定」モードも同じ見た目 (選択の色だけ青)
+    const isIgn = viewMode === 'ignoreedit';
+    const selected = (isIgn ? ignoreSelection : productDeleteSelection).has(p.id);
     const shown = sortedImages.slice(0, 12);
     const moreN = sortedImages.length - shown.length;
     const pdThumbs = shown.map(img =>
       `<div class="product-row-thumb"><img data-src="${escapeHtml(img.url)}" alt="" class="lazy-thumb"></div>`).join('');
-    return `<div class="product-row mode-productdelete ${selected ? 'pd-selected' : ''} ${isEmpty ? 'empty' : ''}" data-pd-toggle="${p.id}">
+    return `<div class="product-row mode-productdelete ${isIgn ? 'mode-ignoreedit' : ''} ${selected ? 'pd-selected' : ''} ${isEmpty ? 'empty' : ''}" data-pd-toggle="${p.id}">
       <div class="col-pd-check">${selected ? '☑' : '☐'}</div>
       <div class="col-number">${numberCell}</div>
       <div class="col-manage">${manageCell}</div>
@@ -6596,7 +6774,7 @@ function openProductModal(productId) {
   if (!p) return;
 
   document.getElementById('productModalTitle').textContent = p.itemName || '(無題)';
-  document.getElementById('productModalMeta').textContent = `商品コード: ${p.itemManageNumber || '—'}  |  商品番号: ${p.itemNumber || '—'}  |  Yahoo商品ID: ${p.itemCode || '—'}`;
+  document.getElementById('productModalMeta').textContent = `商品コード: ${p.itemManageNumber || '—'}  |  追加日: ${fmtAddedDate(p) || '—'}  |  Yahoo商品ID: ${p.itemCode || '—'}`;
   renderProductImageGrid(p);
   document.getElementById('productModal').style.display = 'flex';
 }
