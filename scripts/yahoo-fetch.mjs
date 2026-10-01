@@ -4,6 +4,8 @@
 //
 // やること:  Yahoo商品検索API (V3 itemSearch) でストアの商品一覧を取り、
 //            data/{SHOP_ID}/yahoo-products.json に書き出す (コミットはワークフロー側)。
+//            あわせて各商品のトップ画像 (最大600×600px) を data/{SHOP_ID}/yahoo-top/ に保存する。
+//            画像が変わっていない商品は取り直さない (imageId で判定)。
 // やらないこと: gallery.json には一切触れない。
 //            gallery.json への反映(マージ)はツール(ブラウザ)側の「取り込む」で行う。
 //            Actions が gallery.json を書くと、ブラウザの保存と競合して画像やタグが消える恐れがあるため。
@@ -12,6 +14,7 @@
 //   YAHOO_CLIENT_ID  … Yahoo!デベロッパーネットワークの Client ID (GitHub Secrets)
 //   SHOP_ID          … ツールのショップID (shop_xxxx)。空なら「過去に取得したショップ全部」を取り直す (定期実行用)
 //   SELLER_ID        … YahooストアID (seller_id)。SHOP_ID を指定したときは必須
+//   YAHOO_TOP_IMAGES … '0' にするとトップ画像を取らない (既定: 取る)
 //   YAHOO_API_BASE   … テスト用。省略時は本番API
 //
 // APIの制約と対処:
@@ -26,6 +29,8 @@
 // =====================================================
 import { mkdir, readFile, readdir, writeFile, appendFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 
 const API = process.env.YAHOO_API_BASE || 'https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch';
@@ -35,6 +40,10 @@ const WAIT_MS = Number(process.env.YAHOO_WAIT_MS || 1100);   // 1クエリ/秒�
 const PRICE_MIN = 1;
 const PRICE_MAX = 99_999_999;
 const OUT_NAME = 'yahoo-products.json';
+const TOP_DIR = 'yahoo-top';
+const TOP_ENABLED = process.env.YAHOO_TOP_IMAGES !== '0';
+const TOP_CONCURRENCY = 6;
+const TOP_TIMEOUT_MS = 20000;
 
 const CLIENT_ID = (process.env.YAHOO_CLIENT_ID || '').trim();
 const ID_RE = /^[A-Za-z0-9_-]+$/;
@@ -114,7 +123,10 @@ function normalizeHit(hit, sellerId) {
   code = code.trim();
   if (!code) return null;
   const img = hit.image || {};
+  const ex = hit.exImage || {};
   return {
+    topUrl: ex.url || '',              // image_size=600 で返る大きいトップ画像
+    imageId: hit.imageId ? String(hit.imageId) : '',
     code,
     name: String(hit.name || '').trim(),
     price: Number.isFinite(Number(hit.price)) ? Number(hit.price) : null,
@@ -157,7 +169,19 @@ async function fetchStore(sellerId) {
   stat.totalAvailable = total;
   console.log(`  総件数: ${total}件`);
   if (total === 0) return finish();
-  addHits(first.hits);
+
+  // 600×600のトップ画像URLを返してもらう指定 (image_size=600) が使えるか、1件だけで確かめる
+  let imgParam = {};
+  if (TOP_ENABLED) {
+    try {
+      const t = await callApi({ seller_id: sellerId, results: 1, image_size: 600 });
+      if (t.hits && t.hits[0] && t.hits[0].exImage && t.hits[0].exImage.url) imgParam = { image_size: 600 };
+      else console.log('  image_size=600 の画像URLが返らないため、URLの組み立てで代用します');
+    } catch (e) {
+      if (!(e instanceof ApiError)) throw e;
+      console.log('  image_size=600 が拒否されたため、URLの組み立てで代用します');
+    }
+  }
 
   // 1ページの件数。50件が拒否されたら20件 (既定値) に落とす
   let per = PER_PAGE;
@@ -168,7 +192,7 @@ async function fetchStore(sellerId) {
     for (let start = 1; start <= last; start += per) {
       const results = Math.min(per, 1000 - start, last - start + 1);
       if (results <= 0) break;
-      const params = { seller_id: sellerId, ...extra, results, start };
+      const params = { seller_id: sellerId, ...imgParam, ...extra, results, start };
       let page;
       try {
         page = await callApi(params);
@@ -239,6 +263,74 @@ async function fetchStore(sellerId) {
   }
 }
 
+// ===== トップ画像のダウンロード =====
+// git の blob SHA (ツール側の画像削除で GitHub Contents API に渡す sha と同じもの)
+const gitBlobSha = (buf) => createHash('sha1').update(`blob ${buf.length}\0`).update(buf).digest('hex');
+
+// 前回コミット済みの画像ファイル一覧 (sparse checkout で実体は無くても、HEAD のツリーからは分かる)
+function committedFiles(dir) {
+  try {
+    const out = execFileSync('git', ['ls-tree', '-r', '--name-only', 'HEAD', '--', dir], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    return new Set(out.split('\n').filter(Boolean));
+  } catch (e) { return new Set(); }
+}
+
+const EXT_BY_TYPE = { 'image/jpeg': 'jpg', 'image/jpg': 'jpg', 'image/png': 'png', 'image/gif': 'gif', 'image/webp': 'webp' };
+
+async function download(url) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), TOP_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { signal: ctl.signal, headers: { 'User-Agent': 'imagegallery-yahoo-sync' } });
+    if (!res.ok) return null;
+    const type = String(res.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+    if (!EXT_BY_TYPE[type]) return null;
+    const buf = Buffer.from(await res.arrayBuffer());
+    if (buf.length < 200) return null;          // 「画像なし」のダミー等は捨てる
+    return { buf, ext: EXT_BY_TYPE[type] };
+  } catch (e) { return null; }
+  finally { clearTimeout(timer); }
+}
+
+// ファイル名に使えない文字を置き換える。置き換えが起きたら衝突防止に短いハッシュを足す
+function safeName(code) {
+  const s = code.replace(/[^A-Za-z0-9_-]/g, '_');
+  return s === code ? s : `${s}_${createHash('sha1').update(code).digest('hex').slice(0, 6)}`;
+}
+
+async function fetchTopImages(shopId, sellerId, items, prevTops) {
+  const dir = path.join('data', shopId, TOP_DIR);
+  const committed = committedFiles(dir);
+  const stat = { downloaded: 0, reused: 0, failed: 0 };
+  let idx = 0;
+  async function worker() {
+    while (idx < items.length) {
+      const it = items[idx++];
+      const fallbackUrl = `https://item-shopping.c.yimg.jp/i/n/${sellerId}_${it.code.toLowerCase()}`;
+      const srcUrl = it.topUrl || fallbackUrl;
+      const key = it.imageId || srcUrl;
+      const prev = prevTops.get(it.code.toLowerCase());
+      // 画像が変わっていない & 前回のファイルが残っている → 取り直さない
+      if (prev && prev.key === key && (committed.has(prev.path) || existsSync(prev.path))) {
+        it.top = prev; stat.reused++;
+        continue;
+      }
+      let got = await download(srcUrl);
+      if (!got && srcUrl !== fallbackUrl) got = await download(fallbackUrl);
+      if (!got) { stat.failed++; it.top = null; continue; }
+      const file = path.posix.join('data', shopId, TOP_DIR, `${safeName(it.code)}.${got.ext}`);
+      await mkdir(dir, { recursive: true });
+      await writeFile(file, got.buf);
+      it.top = { key, path: file, sha: gitBlobSha(got.buf), size: got.buf.length, imageId: it.imageId || '' };
+      stat.downloaded++;
+    }
+  }
+  await Promise.all(Array.from({ length: TOP_CONCURRENCY }, worker));
+  console.log(`  トップ画像: 新しく保存 ${stat.downloaded}枚 / 変更なし ${stat.reused}枚 / 取れず ${stat.failed}枚`);
+  if (stat.failed) ghWarn(`トップ画像を${stat.failed}商品ぶん取得できませんでした（画像未設定の商品など）`);
+  return stat;
+}
+
 async function syncOne(shopId, sellerId) {
   if (!ID_RE.test(shopId)) throw new FatalError(`ショップIDの形式が正しくありません: ${shopId}`);
   if (!ID_RE.test(sellerId)) throw new FatalError(`ストアIDの形式が正しくありません（英数字・-・_ のみ）: ${sellerId}`);
@@ -255,9 +347,18 @@ async function syncOne(shopId, sellerId) {
   const dir = path.join('data', shopId);
   const file = path.join(dir, OUT_NAME);
   let prevCount = null;
+  const prevTops = new Map();
   if (existsSync(file)) {
-    try { prevCount = (JSON.parse(await readFile(file, 'utf8')).items || []).length; } catch (e) { /* 壊れていれば上書き */ }
+    try {
+      const prev = JSON.parse(await readFile(file, 'utf8'));
+      prevCount = (prev.items || []).length;
+      (prev.items || []).forEach(x => { if (x && x.code && x.top && x.top.path) prevTops.set(String(x.code).toLowerCase(), x.top); });
+    } catch (e) { /* 壊れていれば上書き */ }
   }
+  let topStat = null;
+  if (TOP_ENABLED) topStat = await fetchTopImages(shopId, sellerId, r.items, prevTops);
+  // 出力には不要な中間項目を落とす
+  r.items.forEach(it => { delete it.topUrl; });
   if (prevCount && r.items.length < prevCount * 0.5) {
     ghWarn(`取得件数が前回(${prevCount}件)の半分未満(${r.items.length}件)です。Yahoo側の一時的な不調の可能性があります。取り込み前に件数を確認してください`);
   }
@@ -274,6 +375,7 @@ async function syncOne(shopId, sellerId) {
     skipped: r.skipped,
     truncated: r.truncated,
     requests: requestCount,
+    topImages: topStat,
     items: r.items
   };
   await mkdir(dir, { recursive: true });

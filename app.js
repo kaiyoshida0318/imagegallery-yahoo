@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'Yahoo v1.0.3';
+const APP_VERSION = 'Yahoo v1.0.4';
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -3519,6 +3519,9 @@ const YAHOO_SYNC_WORKFLOW = 'yahoo-sync.yml';
 const YAHOO_PRODUCTS_FILE = 'yahoo-products.json';
 const YAHOO_RUN_TIMEOUT_MS = 8 * 60 * 1000;
 const YAHOO_RUN_POLL_MS = 4000;
+// Yahoo v1.0.4: トップ画像 (Actions が data/{shopId}/yahoo-top/ に保存したもの) を商品画像として登録する
+const YAHOO_TOP_TAG_NAME = 'トップ画像';
+const YAHOO_TOP_TAG_COLOR = 'red';
 let _yahooLast = null;          // 診断ログ用: {at, summary}
 let _yahooPendingPlan = null;   // 確認画面で表示中の取り込み計画
 
@@ -3560,7 +3563,10 @@ function _yahooItem(shop, raw) {
   if (!url && seller) { url = yahooItemUrl(seller, code); derived.url = true; }
   if (!image && seller) { image = yahooThumbUrl(seller, code); derived.image = true; }
   if (!yahooId && seller) { yahooId = `${seller}_${code}`; derived.yahooId = true; }
-  return { code, name: String(raw.name || '').trim(), price: _yPrice(raw.price), url, image, yahooId, _derived: derived };
+  // トップ画像: Actions が保存したファイルの情報 {path, sha, size}。sha は git の blob SHA
+  const top = (raw.top && typeof raw.top.path === 'string' && /^[0-9a-f]{40}$/.test(raw.top.sha || '')
+    && raw.top.path.startsWith(`data/${currentShopId}/yahoo-top/`)) ? raw.top : null;
+  return { code, name: String(raw.name || '').trim(), price: _yPrice(raw.price), url, image, yahooId, top, _derived: derived };
 }
 
 // 現在の商品データと突き合わせて、何が増えて何が変わるかを計算する (この時点ではデータを変更しない)
@@ -3572,7 +3578,7 @@ function buildYahooMergePlan(items, source) {
     const k = _yKey(p.itemManageNumber);
     if (!byKey.has(k)) byKey.set(k, p);
   });
-  const plan = { source, items, added: [], updated: [], unchanged: 0, duplicates: 0, missing: 0 };
+  const plan = { source, items, added: [], updated: [], unchanged: 0, duplicates: 0, missing: 0, topAdd: 0, topReplace: 0 };
   const seen = new Set();
   items.forEach(it => {
     const k = _yKey(it.code);
@@ -3580,7 +3586,7 @@ function buildYahooMergePlan(items, source) {
     if (seen.has(k)) { plan.duplicates++; return; }
     seen.add(k);
     const p = byKey.get(k);
-    if (!p) { plan.added.push(it); return; }
+    if (!p) { plan.added.push(it); if (it.top) plan.topAdd++; return; }
     const fields = {};
     const d = it._derived || {};
     if (it.name && it.name !== (p.itemName || '')) fields.itemName = [p.itemName || '', it.name];
@@ -3594,6 +3600,13 @@ function buildYahooMergePlan(items, source) {
     setIf('itemUrl', p.itemUrl || '', it.url, d.url);
     setIf('thumbUrl', p.thumbUrl || '', it.image, d.image);
     setIf('itemCode', p.itemCode || '', it.yahooId, d.yahooId);
+    // トップ画像: 前回取り込んだ画像と同じなら何もしない。
+    //   (ユーザーがツールで消した場合も yahooTopSha は残るので、同じ画像を勝手に戻さない)
+    if (it.top && it.top.sha !== p.yahooTopSha) {
+      const had = (p.images || []).some(im => im.yahooTop);
+      fields._top = [had ? '差し替え' : '—', had ? '新しい画像に差し替え' : '追加'];
+      if (had) plan.topReplace++; else plan.topAdd++;
+    }
     if (Object.keys(fields).length) plan.updated.push({ product: p, item: it, fields });
     else plan.unchanged++;
   });
@@ -3601,7 +3614,49 @@ function buildYahooMergePlan(items, source) {
   return plan;
 }
 
-const _Y_FIELD_LABEL = { itemName: '商品名', itemPrice: '価格', itemUrl: 'URL', thumbUrl: 'サムネ', itemCode: 'Yahoo商品ID' };
+const _Y_FIELD_LABEL = { itemName: '商品名', itemPrice: '価格', itemUrl: 'URL', thumbUrl: 'サムネ', itemCode: 'Yahoo商品ID', _top: 'トップ画像' };
+
+// トップ画像の画像メタ (他の画像と同じ形 + yahooTop:true)
+//   URL に ?v=sha先頭 を付ける: 同じパスで画像が差し替わったとき、ブラウザ/Service Worker の古いキャッシュを使わせないため
+function _yTopImageMeta(top, tagId, keep) {
+  const branch = auth.branch || 'main';
+  const filename = top.path.split('/').pop();
+  const ext = (filename.split('.').pop() || 'jpg').toLowerCase();
+  const encPath = top.path.split('/').map(encodeURIComponent).join('/');
+  return {
+    id: (keep && keep.id) || ('img_ytop_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8)),
+    filename,
+    originalName: `000_yahoo_top.${ext}`,   // 並び順で先頭に来るように
+    path: top.path,
+    sha: top.sha,
+    url: `https://raw.githubusercontent.com/${auth.owner}/${auth.repo}/${encodeURIComponent(branch)}/${encPath}?v=${top.sha.slice(0, 8)}`,
+    size: top.size || 0,
+    uploadedAt: new Date().toISOString(),
+    note: (keep && keep.note) || '',
+    tags: (keep && keep.tags) || [],
+    tagId: keep ? (keep.tagId || '') : tagId,   // 差し替え時はユーザーが付け直したタグを維持
+    yahooTop: true
+  };
+}
+
+// 「トップ画像」タグを用意して id を返す (無ければ作る。保存は呼び出し側でまとめて行う)
+function _yEnsureTopTag(data) {
+  if (!Array.isArray(data.tags)) data.tags = [];
+  let t = data.tags.find(x => x.name === YAHOO_TOP_TAG_NAME);
+  if (!t) {
+    t = { id: 'tag_ytop_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6), name: YAHOO_TOP_TAG_NAME, color: YAHOO_TOP_TAG_COLOR, createdAt: new Date().toISOString() };
+    data.tags.push(t);
+  }
+  return t.id;
+}
+
+function _yApplyTop(product, top, tagId) {
+  if (!Array.isArray(product.images)) product.images = [];
+  const i = product.images.findIndex(im => im.yahooTop);
+  if (i >= 0) product.images[i] = _yTopImageMeta(top, tagId, product.images[i]);
+  else product.images.unshift(_yTopImageMeta(top, tagId, null));
+  product.yahooTopSha = top.sha;
+}
 
 function ensureYahooImportModal() {
   if (document.getElementById('yahooImportModal')) return;
@@ -3654,6 +3709,10 @@ function openYahooImportPreview(items, source) {
   if (source.totalAvailable != null && items.length < source.totalAvailable && !source.truncated) warns.push(`Yahoo上の総件数より ${source.totalAvailable - items.length}件少なく取得されました（非公開・検索対象外の商品は商品検索APIでは取れません。必要ならCSVで取り込んでください）。`);
   if (source.skipped) warns.push(`商品コードを読めず飛ばした行が ${source.skipped}件あります。`);
   if (plan.duplicates) warns.push(`同じ商品コードの重複が ${plan.duplicates}件あったため、最初の1件だけを使いました。`);
+  if (source.topFailed) warns.push(`トップ画像を取得できなかった商品が ${source.topFailed}件あります（画像未設定の商品など）。`);
+  if (plan.topAdd + plan.topReplace > 0) {
+    srcLines.push(`<div><strong>トップ画像:</strong> 追加 ${plan.topAdd}枚 ／ 差し替え ${plan.topReplace}枚（タグ「${escapeHtml(YAHOO_TOP_TAG_NAME)}」を付けて各商品の先頭に入れます）</div>`);
+  }
   document.getElementById('yimpSource').innerHTML = srcLines.join('') + warns.map(w => `<div class="yimp-warn">⚠️ ${escapeHtml(w)}</div>`).join('');
 
   document.getElementById('yimpSummary').innerHTML = `
@@ -3674,7 +3733,7 @@ function openYahooImportPreview(items, source) {
     html += '</div>';
   }
   if (plan.updated.length) {
-    html += `<h4 class="csv-h">情報が更新される商品 (${plan.updated.length}件) <small style="font-weight:400">※画像・タグはそのまま</small></h4><div class="csv-change-list">`;
+    html += `<h4 class="csv-h">情報が更新される商品 (${plan.updated.length}件) <small style="font-weight:400">※既存の画像・タグはそのまま</small></h4><div class="csv-change-list">`;
     plan.updated.slice(0, 30).forEach(u => {
       html += `<div class="csv-change"><div class="csv-change-manage">${escapeHtml(u.product.itemManageNumber)}</div><div class="csv-change-detail">`;
       Object.entries(u.fields).forEach(([k, [o, n]]) => {
@@ -3720,8 +3779,11 @@ async function applyYahooMergePlan() {
     const plan = buildYahooMergePlan(plan0.items, plan0.source);
     const data = dataCache[shopId];
     const now = new Date().toISOString();
+    const needTag = plan.topAdd + plan.topReplace > 0;
+    const topTagId = needTag ? _yEnsureTopTag(data) : '';
     plan.updated.forEach(u => {
-      Object.entries(u.fields).forEach(([k, [, v]]) => { u.product[k] = v; });
+      Object.entries(u.fields).forEach(([k, [, v]]) => { if (k !== '_top') u.product[k] = v; });
+      if (u.fields._top && u.item.top) _yApplyTop(u.product, u.item.top, topTagId);
       u.product.syncedAt = now;
     });
     plan.added.forEach(it => {
@@ -3738,6 +3800,7 @@ async function applyYahooMergePlan() {
         status: 'active',
         syncedAt: now
       });
+      if (it.top) _yApplyTop(data.products[data.products.length - 1], it.top, topTagId);
     });
     if (!plan.added.length && !plan.updated.length) {
       hideLoading();
@@ -3752,8 +3815,9 @@ async function applyYahooMergePlan() {
     hideLoading();
     document.getElementById('yahooImportModal').style.display = 'none';
     _yahooPendingPlan = null;
-    _yNote(`${plan.source.label}: 取り込み完了 新規${plan.added.length} / 更新${plan.updated.length} / 合計${data.products.length}`);
-    toast(`取り込み完了: 新規${plan.added.length}件、更新${plan.updated.length}件（合計${data.products.filter(p => !p.isPart).length}件）`, 'success');
+    const topMsg = needTag ? ` / トップ画像 ${plan.topAdd + plan.topReplace}枚` : '';
+    _yNote(`${plan.source.label}: 取り込み完了 新規${plan.added.length} / 更新${plan.updated.length}${topMsg} / 合計${data.products.length}`);
+    toast(`取り込み完了: 新規${plan.added.length}件、更新${plan.updated.length}件${topMsg}（合計${data.products.filter(p => !p.isPart).length}件）`, 'success');
     render();
   } catch (e) {
     hideLoading();
@@ -3923,7 +3987,8 @@ async function importLatestYahooFetch(opts = {}) {
       fetchedAt: json.fetchedAt,
       totalAvailable: json.totalAvailable,
       truncated: !!json.truncated,
-      skipped: (json.skipped || 0) + (json.items.length - items.length)
+      skipped: (json.skipped || 0) + (json.items.length - items.length),
+      topFailed: (json.topImages && json.topImages.failed) || 0
     });
   } catch (e) {
     hideLoading();
