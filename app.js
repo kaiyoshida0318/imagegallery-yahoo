@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'Yahoo v1.0.0';
+const APP_VERSION = 'Yahoo v1.0.2';
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -433,9 +433,11 @@ function injectImageTagStyles() {
 
     /* ===== Yahoo v1.0.0 ===== */
     /* 楽天版と並べて開いても取り違えないよう、ロゴの横に「Yahoo!ショッピング版」バッジ */
-    /* ロゴの右下に重ねる (ヘッダーの横幅を使わない＝ボタンが押し出されない) */
+    /* Yahoo v1.0.2: ロゴの右上 (「Gallery」の上) に重ね、右端を「Gallery」の文字の右端に揃える。
+       logo-header.png は右側に透明な余白が画像幅の約23.2% (720px中167px) あるので、その分だけ内側に寄せる。
+       ヘッダーの横幅を使わない＝ボタンが押し出されない */
     .mall-badge {
-      position: absolute; right: -10px; bottom: -9px; padding: 1px 7px;
+      position: absolute; right: 23.2%; top: -9px; padding: 1px 7px;
       border-radius: 999px; background: #ff0033; color: #fff; font-size: 10px; font-weight: 700;
       line-height: 1.5; letter-spacing: .02em; white-space: nowrap; cursor: default; pointer-events: none;
       box-shadow: 0 1px 3px rgba(0,0,0,.15);
