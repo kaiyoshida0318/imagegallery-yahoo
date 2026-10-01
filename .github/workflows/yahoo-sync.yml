@@ -1,0 +1,87 @@
+name: Yahoo商品同期
+
+# ImageGallery Yahoo版の「＋ 商品追加 → Yahooから同期」から起動されます。
+# GitHubの Actions 画面の「Run workflow」から手動でも実行できます。
+#
+# 事前準備: Settings → Secrets and variables → Actions → New repository secret
+#   Name: YAHOO_CLIENT_ID   Secret: Yahoo!デベロッパーネットワークの Client ID
+#
+# このワークフローは data/{shop_id}/yahoo-products.json を書くだけで、gallery.json には触れません。
+# 商品の追加・更新はツール側の確認画面で「取り込む」を押したときに行われます（画像・タグを壊さないため）。
+
+on:
+  workflow_dispatch:
+    inputs:
+      shop_id:
+        description: 'ショップID（ツールの診断ログの shopId。例: shop_1790000000000_ab12）'
+        required: true
+      seller_id:
+        description: 'YahooストアID（seller_id）'
+        required: true
+  # 定期実行したい場合は下の2行のコメントを外す（毎日 午前3時(JST)）。
+  # 一度でも同期したことのあるショップを全部取り直し、yahoo-products.json を更新します。
+  # 取り込み自体はツールの「取得済みの一覧を取り込む」で行ってください。
+  # schedule:
+  #   - cron: '0 18 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yahoo-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: リポジトリを取得
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          # 画像ファイルは不要なので取らない（速度のため）
+          sparse-checkout: |
+            scripts
+            data/*/yahoo-products.json
+          sparse-checkout-cone-mode: false
+
+      - name: Node.js を用意
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Yahooから商品一覧を取得
+        env:
+          YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
+          SHOP_ID: ${{ inputs.shop_id }}
+          SELLER_ID: ${{ inputs.seller_id }}
+        run: node scripts/yahoo-fetch.mjs
+
+      - name: 取得結果をコミット
+        env:
+          SHOP_ID: ${{ inputs.shop_id }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898299+github-actions[bot]@users.noreply.github.com'
+          shopt -s nullglob
+          files=(data/*/yahoo-products.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "保存する取得結果がありません"
+            exit 0
+          fi
+          git add --sparse -- "${files[@]}"
+          if git diff --cached --quiet; then
+            echo "変更なし"
+            exit 0
+          fi
+          git commit -m "yahoo sync: ${SHOP_ID:-scheduled}"
+          # ツール側の保存(gallery.json)と同時に走っても大丈夫なように、取り直してから押し込む
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "push失敗 → 最新を取り込んで再試行 ($i)"
+            sleep $((i * 3))
+            git pull --rebase
+          done
+          echo "::error::取得結果をリポジトリに保存（push）できませんでした"
+          exit 1
