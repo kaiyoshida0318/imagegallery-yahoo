@@ -16,7 +16,11 @@
 //
 // APIの制約と対処:
 //   ・1回の検索で取れるのは start + results ≤ 1,000 まで (= 最大999件)。
-//     → 価格帯 (price_from / price_to、両端を含む) で検索を分割し、どの区切りも999件以下にしてから全ページを取る。
+//     → 999件以下なら seller_id だけの最小条件で全ページを取る。
+//     → 999件を超えるときだけ価格帯 (price_from / price_to、両端を含む) で検索を分割する。
+//       価格帯が拒否されたら、並び順 (+price / -price) を変えた2回の取得に切り替える (最大約2,000件)。
+//   ・HTTP 400 の条件は公式に書かれていない。そのため「最小条件から始め、拒否された条件は使わない」作りにしている。
+//     (v1.0.1: 初版は price_from=0 / sort / results=50 を最初から付けていて、実環境で HTTP 400 になった)
 //   ・1クエリ/秒。超えると一時的に利用不可 (HTTP 429)。→ 1.1秒間隔で直列に呼ぶ。429 は待って再試行。
 //   ・hits[].code は「ストアID_商品コード」形式。ストアIDの接頭辞を外したものを商品コードとする。
 // =====================================================
@@ -28,7 +32,8 @@ const API = process.env.YAHOO_API_BASE || 'https://shopping.yahooapis.jp/Shoppin
 const PER_PAGE = 50;          // 1回の最大件数
 const REACHABLE = 999;        // start + results ≤ 1000 なので、1つの検索条件で取れるのは999件まで
 const WAIT_MS = Number(process.env.YAHOO_WAIT_MS || 1100);   // 1クエリ/秒の制限に対する間隔
-const PRICE_MAX = 100_000_000;
+const PRICE_MIN = 1;
+const PRICE_MAX = 99_999_999;
 const OUT_NAME = 'yahoo-products.json';
 
 const CLIENT_ID = (process.env.YAHOO_CLIENT_ID || '').trim();
@@ -41,6 +46,16 @@ const mask = (s) => String(s).split(CLIENT_ID || '\u0000').join('***').replace(/
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 class FatalError extends Error {}
+// 4xx (認証以外)。どの条件が拒否されたかで作戦を変えるため、致命的エラーとは分ける
+class ApiError extends Error {
+  constructor(status, body, params) {
+    super(`HTTP ${status}`);
+    this.status = status;
+    this.body = mask(String(body || '')).replace(/\s+/g, ' ').slice(0, 300);
+    this.params = params;
+  }
+}
+const fmtParams = (p) => Object.entries(p).map(([k, v]) => `${k}=${v}`).join('&');
 
 let lastCallAt = 0;
 let requestCount = 0;
@@ -74,7 +89,8 @@ async function callApi(params) {
       if (res.status === 401 || res.status === 403) {
         throw new FatalError(`Yahoo APIが認証を拒否しました (HTTP ${res.status})。Secrets の YAHOO_CLIENT_ID が正しいか確認してください${apiMsg ? '：' + mask(apiMsg) : ''}`);
       }
-      throw new FatalError(`Yahoo APIがエラーを返しました (HTTP ${res.status})${apiMsg ? '：' + mask(apiMsg) : '：' + mask(text.slice(0, 200))}`);
+      console.log(`  ✖ HTTP ${res.status} [${fmtParams(params)}] 応答: ${mask(text.replace(/\s+/g, ' ').slice(0, 300))}`);
+      throw new ApiError(res.status, apiMsg || text, params);
     }
     if (!json) throw new FatalError(`Yahoo APIの応答がJSONではありません：${mask(text.slice(0, 200))}`);
     return json;
@@ -111,7 +127,7 @@ function normalizeHit(hit, sellerId) {
 
 async function fetchStore(sellerId) {
   const items = new Map();   // 小文字の商品コード → 商品
-  const stat = { skipped: 0, foreign: 0, truncated: false, totalAvailable: null };
+  const stat = { skipped: 0, foreign: 0, truncated: false, totalAvailable: null, method: '' };
 
   const addHits = (hits) => {
     (hits || []).forEach(h => {
@@ -123,40 +139,104 @@ async function fetchStore(sellerId) {
     });
   };
 
-  const search = (lo, hi, start, results) => callApi({
-    seller_id: sellerId, price_from: lo, price_to: hi, sort: '+price', results, start
-  });
+  // ① 最小条件 (seller_id だけ) で疎通と総件数を確認
+  let first;
+  try {
+    first = await callApi({ seller_id: sellerId });
+  } catch (e) {
+    if (!(e instanceof ApiError)) throw e;
+    // Client ID の問題か、ストアIDの問題かを切り分ける (ストアを指定しないキーワード検索を1回だけ試す)
+    let appidOk = false;
+    try { await callApi({ query: 'タオル', results: 1 }); appidOk = true; } catch (e2) { if (!(e2 instanceof ApiError)) throw e2; }
+    if (appidOk) {
+      throw new FatalError(`ストアID「${sellerId}」での検索がYahoo APIに拒否されました (HTTP ${e.status})。Client IDは有効です。ストアIDが正しいか（ストアURLの store.shopping.yahoo.co.jp/○○/ の部分）確認してください。正しい場合は、キーワードなしのストア検索が受け付けられていない可能性があります。応答: ${e.body}`);
+    }
+    throw new FatalError(`Yahoo APIが HTTP ${e.status} を返しました（ストアを指定しない検索でも同じ）。Client ID（Secrets の YAHOO_CLIENT_ID）が正しいか、余分な空白が入っていないか確認してください。応答: ${e.body}`);
+  }
+  const total = Number(first.totalResultsAvailable || 0);
+  stat.totalAvailable = total;
+  console.log(`  総件数: ${total}件`);
+  if (total === 0) return finish();
+  addHits(first.hits);
 
-  // 価格帯 [lo, hi] の商品を全部取る。999件を超える帯は半分に割って再帰する。
-  async function fetchRange(lo, hi, depth) {
-    const first = await search(lo, hi, 1, PER_PAGE);
-    const total = Number(first.totalResultsAvailable || 0);
-    if (depth === 0) stat.totalAvailable = total;
-    if (total === 0) return;
-    if (total > REACHABLE && hi > lo) {
-      const mid = Math.floor((lo + hi) / 2);
-      console.log(`  ${lo}〜${hi}円: ${total}件 → 分割`);
-      await fetchRange(lo, mid, depth + 1);
-      await fetchRange(mid + 1, hi, depth + 1);
-      return;
-    }
-    if (total > REACHABLE) {
-      stat.truncated = true;
-      ghWarn(`${lo}円ちょうどの商品が${total}件あり、APIの上限で${REACHABLE}件までしか取れませんでした。CSVからの取り込みを併用してください`);
-    }
-    addHits(first.hits);
-    const last = Math.min(total, REACHABLE);
-    for (let start = 1 + PER_PAGE; start <= last; start += PER_PAGE) {
-      const results = Math.min(PER_PAGE, 1000 - start, last - start + 1);
+  // 1ページの件数。50件が拒否されたら20件 (既定値) に落とす
+  let per = PER_PAGE;
+
+  // extra の条件で、start=1 から最大999件までページをめくって取る
+  async function pageAll(extra, maxCount, label) {
+    const last = Math.min(maxCount, REACHABLE);
+    for (let start = 1; start <= last; start += per) {
+      const results = Math.min(per, 1000 - start, last - start + 1);
       if (results <= 0) break;
-      const page = await search(lo, hi, start, results);
+      const params = { seller_id: sellerId, ...extra, results, start };
+      let page;
+      try {
+        page = await callApi(params);
+      } catch (e) {
+        if (e instanceof ApiError && per > 20 && start === 1) {
+          console.log(`  results=${per} が拒否されたため 20件ずつに切り替えます`);
+          per = 20;
+          start = 1 - per;      // ループの加算で start=1 からやり直す
+          continue;
+        }
+        throw e;
+      }
       addHits(page.hits);
+      if ((page.hits || []).length === 0) break;
     }
-    console.log(`  ${lo}〜${hi}円: ${total}件 取得済み (累計${items.size}件)`);
+    console.log(`  ${label}: 累計${items.size}件`);
   }
 
-  await fetchRange(0, PRICE_MAX, 0);
-  return { items: [...items.values()].sort((a, b) => a.code.localeCompare(b.code, 'ja', { numeric: true })), ...stat };
+  if (total <= REACHABLE) {
+    // ② 999件以下: 最小条件のまま全ページ
+    stat.method = 'seller_id のみ';
+    await pageAll({}, total, '全件');
+    return finish();
+  }
+
+  // ③ 999件超: 価格帯で分割。区切りごとに999件以下になるまで半分に割る
+  async function fetchRange(lo, hi) {
+    const head = await callApi({ seller_id: sellerId, price_from: lo, price_to: hi, results: 1, start: 1 });
+    const n = Number(head.totalResultsAvailable || 0);
+    if (n === 0) return;
+    if (n > REACHABLE && hi > lo) {
+      const mid = Math.floor((lo + hi) / 2);
+      console.log(`  ${lo}〜${hi}円: ${n}件 → 分割`);
+      await fetchRange(lo, mid);
+      await fetchRange(mid + 1, hi);
+      return;
+    }
+    if (n > REACHABLE) {
+      stat.truncated = true;
+      ghWarn(`${lo}円ちょうどの商品が${n}件あり、APIの上限で${REACHABLE}件までしか取れませんでした。CSVからの取り込みを併用してください`);
+    }
+    await pageAll({ price_from: lo, price_to: hi }, n, `${lo}〜${hi}円 (${n}件)`);
+  }
+
+  try {
+    stat.method = '価格帯で分割';
+    await fetchRange(PRICE_MIN, PRICE_MAX);
+  } catch (e) {
+    if (!(e instanceof ApiError)) throw e;
+    // ④ 価格帯の指定が拒否された: 並び順を変えて2回取る (安い順 / 高い順で最大約2,000件)
+    ghWarn(`価格帯での分割がYahoo APIに拒否されたため (HTTP ${e.status})、並び順を変えた取得に切り替えます`);
+    stat.method = '並び順を変えて2回';
+    for (const sort of ['+price', '-price']) {
+      try { await pageAll({ sort }, total, `並び順 ${sort}`); }
+      catch (e2) {
+        if (!(e2 instanceof ApiError)) throw e2;
+        ghWarn(`並び順 ${sort} も拒否されました (HTTP ${e2.status})`);
+      }
+    }
+    if (items.size < REACHABLE) await pageAll({}, total, '最小条件');   // 並び順も使えないときの最後の手段
+  }
+  if (items.size < total) stat.truncated = true;
+  return finish();
+
+  function finish() {
+    console.log(`  取得方法: ${stat.method || '—'}`);
+    return { items: [...items.values()].sort((a, b) => a.code.localeCompare(b.code, 'ja', { numeric: true })), ...stat };
+  }
 }
 
 async function syncOne(shopId, sellerId) {
@@ -188,6 +268,7 @@ async function syncOne(shopId, sellerId) {
     sellerId,
     fetchedAt: new Date().toISOString(),
     api: 'ShoppingWebService V3 itemSearch',
+    method: r.method,
     totalAvailable: r.totalAvailable,
     count: r.items.length,
     skipped: r.skipped,
