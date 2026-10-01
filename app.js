@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.8';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.10';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -88,6 +88,7 @@ let productDeleteSelection = new Set();  // v1.11.29: 削除予約された商�
 let ignoreSelection = new Set();         // ver 1.0.6: 「無視の設定」モードで選択中の商品ID
 let _ignoreSelCat = null;                // 選択したときのタブ (タブを替えたら選択を消す)
 let _lastGridList = [];                  // 直近に一覧へ表示した商品 (「表示中を全部選択」用)
+let imgSelection = new Set();            // ver 1.0.10: サムネ右上のチェックで選んだ画像ID
 let pendingStatusChanges = new Map();  // 保存待ちのステータス変更: productId -> 'active'|'unsure'
 
 // エクスポートモード関連 (v1.8.4)
@@ -164,6 +165,8 @@ async function init() {
   injectIgnoredTab();        // ver 1.0.6: 部品 の右に「|」で区切って「無視」タブ
   injectIgnoreModeUI();      // ver 1.0.6: 「🙈 無視の設定」モード (一括で 無視 ⇄ 現役)
   hideItemNumberField();     // ver 1.0.6: 商品番号は使わない (編集画面からも隠す)
+  injectProductStatusSelect(); // ver 1.0.10: 情報モーダルに「ステータス: 現役 / 無視」のドロップダウン
+  injectImageSelectUI();     // ver 1.0.10: サムネ右上のチェックで画像を選び、まとめて削除・タグ変更
   setupYahooHub();           // Yahoo v1.0.0: ＋商品追加モーダルに Yahoo同期 / 商品CSV / 取得済み一覧 を用意
   setupCsvModalExtras();     // v1.11.31: 商品名称一括更新モーダルに基礎情報DL+D&Dを統合
   relabelCategoryTabs();     // v1.11.15: 現役→選択分
@@ -473,6 +476,29 @@ function injectImageTagStyles() {
     .ignore-bar .btn-ign-sub { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.5); border-radius: 8px; padding: 8px 12px; cursor: pointer; font-family: inherit; }
     .item-page-link { display: block; margin-top: 3px; font-size: 11px; color: #2563eb; text-decoration: none; white-space: nowrap; }
     .item-page-link:hover { text-decoration: underline; }
+    .bulk-replace-opt { display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #fef3c7; color: #78350f; font-size: 13px; line-height: 1.6; cursor: pointer; }
+    .bulk-replace-opt input { margin-top: 4px; width: 16px; height: 16px; flex-shrink: 0; }
+    .bulk-replace-opt small { color: #92400e; }
+    /* ver 1.0.10: サムネ右上の選択チェック */
+    .product-row-thumb, .image-list-tile .ilt-thumb { position: relative; }
+    .img-sel-chk {
+      position: absolute; top: 4px; right: 4px; width: 22px; height: 22px; border-radius: 50%;
+      border: 2px solid #fff; background: rgba(15,23,42,.35); color: transparent; font-size: 13px; font-weight: 700;
+      line-height: 18px; text-align: center; padding: 0; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.35);
+      opacity: .55; transition: opacity .12s, background .12s; z-index: 2;
+    }
+    .product-row-thumb:hover .img-sel-chk, .ilt-thumb:hover .img-sel-chk, body.img-selecting .img-sel-chk { opacity: 1; }
+    .img-sel-chk.on { background: #2563eb; color: #fff; opacity: 1; }
+    .img-selected { outline: 3px solid #2563eb; outline-offset: -3px; }
+    .img-sel-bar { background: #1e293b !important; border-color: #1e293b !important; color: #fff; gap: 14px; width: min(860px, calc(100vw - 32px)); box-sizing: border-box; justify-content: space-between; }
+    .img-sel-bar .delete-action-info { color: #fff; }
+    .img-sel-bar .delete-action-info strong { color: #93c5fd; }
+    .img-sel-bar .delete-action-buttons { align-items: center; }
+    .img-sel-bar select { padding: 7px 8px; border-radius: 8px; border: 0; font-family: inherit; font-size: 13px; }
+    .img-sel-bar button { white-space: nowrap; font-family: inherit; cursor: pointer; border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+    .img-sel-bar .btn-sel-sub { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.45); }
+    .img-sel-bar .btn-sel-tag { background: #fff; color: #1e293b; border: 0; font-weight: 700; }
+    .img-sel-bar .btn-sel-del { background: #dc2626; color: #fff; border: 0; font-weight: 700; }
     .yimp-price { color: var(--text-light, #94a3b8); margin-left: 6px; font-size: 12px; }
     /* 商品取り込み確認画面 */
     .yimp-source {
@@ -615,6 +641,147 @@ async function applyIgnore(flag) {
   toast(flag
     ? `${targets.length}件を「無視」にしました（「無視」タブで確認・戻せます）`
     : `${targets.length}件を現役に戻しました`, 'success');
+}
+
+// ===== ver 1.0.10: 情報モーダルの「ステータス: 現役 / 無視」 =====
+//   旧来の 現役/微妙 ラジオは隠す (「微妙」タブは使っていないため)。値 p.status はそのまま保持。
+function injectProductStatusSelect() {
+  if (document.getElementById('productEditIgnored')) return;
+  const radio = document.querySelector('input[name="productEditStatus"]');
+  const oldRow = radio && radio.closest('.form-row');
+  const modalBody = document.querySelector('#productEditModal .modal-body');
+  if (!modalBody) return;
+  const row = document.createElement('div');
+  row.className = 'form-row';
+  row.innerHTML = `
+    <label>ステータス</label>
+    <select id="productEditIgnored" class="status-select">
+      <option value="active">現役</option>
+      <option value="ignored">無視</option>
+    </select>
+    <small class="form-hint">「無視」にすると、ほかのタブには表示されず「無視」タブに移ります</small>`;
+  if (oldRow) { oldRow.style.display = 'none'; oldRow.parentNode.insertBefore(row, oldRow); }
+  else modalBody.insertBefore(row, modalBody.firstChild.nextSibling);
+}
+
+// ===== ver 1.0.10: サムネ右上のチェックで画像を選ぶ → まとめて削除 / タグ変更 =====
+//   画像削除・商品削除・無視の設定 の各モード中はチェックを出さない (クリックの意味がぶつかるため)
+function imgSelChkHTML(img) {
+  if (viewMode === 'delete' || viewMode === 'productdelete' || viewMode === 'ignoreedit') return '';
+  const on = imgSelection.has(img.id);
+  return `<button type="button" class="img-sel-chk ${on ? 'on' : ''}" data-img-sel="${escapeHtml(img.id)}" title="${on ? '選択を外す' : '選択する'}">✓</button>`;
+}
+
+function injectImageSelectUI() {
+  if (document.getElementById('imgSelBar')) return;
+  // チェックのクリックは「捕捉フェーズ」で受けて、サムネのクリック (拡大表示) まで届かせない
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest && e.target.closest('.img-sel-chk');
+    if (!b) return;
+    e.stopPropagation();
+    e.preventDefault();
+    const id = b.dataset.imgSel;
+    if (imgSelection.has(id)) imgSelection.delete(id); else imgSelection.add(id);
+    const on = imgSelection.has(id);
+    b.classList.toggle('on', on);
+    b.title = on ? '選択を外す' : '選択する';
+    const thumb = b.parentElement;
+    if (thumb) thumb.classList.toggle('img-selected', on);
+    updateImgSelBar();
+  }, true);
+
+  const bar = document.createElement('div');
+  bar.className = 'delete-action-bar img-sel-bar';
+  bar.id = 'imgSelBar';
+  bar.style.display = 'none';
+  bar.innerHTML = `
+    <div class="delete-action-info">
+      <span class="delete-action-icon">🖼️</span>
+      <span>画像を <strong id="imgSelCount">0</strong> 枚選択中</span>
+    </div>
+    <div class="delete-action-buttons">
+      <select id="imgSelTagSelect" title="選んだ画像に付けるタグ"></select>
+      <button class="btn-sel-tag" id="btnImgSelTag">タグを変更</button>
+      <button class="btn-sel-del" id="btnImgSelDelete">🗑️ 削除</button>
+      <button class="btn-sel-sub" id="btnImgSelClear">選択解除</button>
+    </div>`;
+  document.body.appendChild(bar);
+  bar.querySelector('#btnImgSelClear').addEventListener('click', () => { imgSelection.clear(); render(); });
+  bar.querySelector('#btnImgSelDelete').addEventListener('click', deleteSelectedImgs);
+  bar.querySelector('#btnImgSelTag').addEventListener('click', () => setTagOnSelectedImgs(bar.querySelector('#imgSelTagSelect').value));
+}
+
+// 選ばれた画像を {product, image} の組で返す (消えた画像は選択からも外す)
+function _selectedImgPairs() {
+  const data = dataCache[currentShopId];
+  const pairs = [];
+  const alive = new Set();
+  ((data && data.products) || []).forEach(p => (p.images || []).forEach(img => {
+    if (imgSelection.has(img.id)) { pairs.push({ product: p, image: img }); alive.add(img.id); }
+  }));
+  [...imgSelection].forEach(id => { if (!alive.has(id)) imgSelection.delete(id); });
+  return pairs;
+}
+
+function updateImgSelBar() {
+  const bar = document.getElementById('imgSelBar');
+  if (!bar) return;
+  const modeOk = !(viewMode === 'delete' || viewMode === 'productdelete' || viewMode === 'ignoreedit');
+  const n = modeOk ? _selectedImgPairs().length : 0;
+  document.body.classList.toggle('img-selecting', n > 0);
+  if (n === 0) { bar.style.display = 'none'; return; }
+  bar.style.display = 'flex';
+  document.getElementById('imgSelCount').textContent = n;
+  // タグの選択肢 (お気に入りは商品単位なので除く)
+  const sel = document.getElementById('imgSelTagSelect');
+  const favId = getFavoriteTagId();
+  const tags = getCurrentTags().filter(t => t.id !== favId);
+  const prev = sel.value;
+  sel.innerHTML = '<option value="">タグなし</option>' + tags.map(t => `<option value="${escapeHtml(t.id)}">${escapeHtml(t.name)}</option>`).join('');
+  if ([...sel.options].some(o => o.value === prev)) sel.value = prev;
+}
+
+async function deleteSelectedImgs() {
+  const pairs = _selectedImgPairs();
+  if (pairs.length === 0) return;
+  if (!auth.pat) { toast('削除には編集権限(PAT)が必要です', 'error'); return; }
+  if (!confirm(`選択した画像 ${pairs.length}枚を削除します。\n※GitHub上の画像ファイルも削除されます。元に戻せません。\n実行しますか?`)) return;
+  let ok = 0, fail = 0;
+  for (let i = 0; i < pairs.length; i++) {
+    const { product, image } = pairs[i];
+    showLoading(`画像を削除中… ${i + 1}/${pairs.length}`);
+    try {
+      await deleteImageFromGitHub(image);
+      product.images = (product.images || []).filter(x => x.id !== image.id);
+      imgSelection.delete(image.id);
+      ok++;
+    } catch (e) { console.error('selected image delete failed', image.filename, e); fail++; }
+  }
+  showLoading('保存中…');
+  try { await saveShopData(currentShopId, `delete ${ok} selected images`); }
+  catch (e) { hideLoading(); toast('保存失敗: ' + e.message, 'error'); render(); return; }
+  hideLoading();
+  render();
+  toast(`${ok}枚を削除しました${fail ? ` / 失敗${fail}件（選択したまま残しています）` : ''}`, fail ? 'error' : 'success');
+}
+
+async function setTagOnSelectedImgs(tagId) {
+  const pairs = _selectedImgPairs();
+  if (pairs.length === 0) return;
+  if (!auth.pat) { toast('変更の保存には編集権限(PAT)が必要です', 'error'); return; }
+  const backup = pairs.map(({ image }) => [image, image.tagId]);
+  pairs.forEach(({ image }) => { if (tagId) image.tagId = tagId; else delete image.tagId; });
+  showLoading('保存中…');
+  try { await saveShopData(currentShopId, `set tag on ${pairs.length} images`); }
+  catch (e) {
+    backup.forEach(([img, v]) => { if (v) img.tagId = v; else delete img.tagId; });
+    hideLoading(); toast('保存失敗: ' + e.message, 'error'); render(); return;
+  }
+  hideLoading();
+  const t = tagId ? (getCurrentTags().find(x => x.id === tagId) || {}).name : 'タグなし';
+  imgSelection.clear();
+  render();
+  toast(`${pairs.length}枚を「${t}」にしました`, 'success');
 }
 
 // ver 1.0.6: 商品番号は使わないので、商品情報の編集画面から欄を隠す (値はそのまま保持)
@@ -2215,8 +2382,9 @@ function renderImageListGrid(products) {
       .join('');
     const selectHTML = `<select class="img-tag-select" data-img-tag-pid="${p.id}" data-img-tag-id="${img.id}" data-has="${sel ? '1' : '0'}"${styleAttr}>${opts}</select>`;
     return `<div class="image-list-tile">
-      <div class="ilt-thumb" data-il-index="${idx}" title="${escapeHtml(getImageSortKey(img))}">
+      <div class="ilt-thumb ${imgSelection.has(img.id) ? 'img-selected' : ''}" data-il-index="${idx}" title="${escapeHtml(getImageSortKey(img))}">
         <img data-src="${escapeHtml(img.url)}" alt="" class="lazy-thumb">
+        ${imgSelChkHTML(img)}
       </div>
       ${selectHTML}
       <div class="ilt-meta" title="${escapeHtml(p.itemName || '')}">${escapeHtml(p.itemNumber || p.itemManageNumber || '')}</div>
@@ -4633,6 +4801,8 @@ function showBulkImportPreview() {
   const r = pendingBulkImport;
   if (!r) return;
 
+  r.existingTotal = r.matched.reduce((n, m) => n + (m.product.images || []).length, 0);
+  r.existingProducts = r.matched.filter(m => (m.product.images || []).length > 0).length;
   document.getElementById('bulkDropzone').style.display = 'none';
   const confirmBtn = document.getElementById('btnConfirmBulkImport');
   confirmBtn.style.display = '';
@@ -4649,17 +4819,26 @@ function showBulkImportPreview() {
         <div class="csv-stat-num">${r.totalFiles}</div>
         <div class="csv-stat-label">画像ファイル</div>
       </div>
-      <div class="csv-stat ${r.overwriteCount > 0 ? 'csv-stat-warn' : 'csv-stat-ok'}">
-        <div class="csv-stat-num">${r.overwriteCount || 0}</div>
-        <div class="csv-stat-label">上書き対象</div>
+      <div class="csv-stat ${(r.existingTotal || r.overwriteCount) > 0 ? 'csv-stat-warn' : 'csv-stat-ok'}">
+        <div class="csv-stat-num">${r.existingTotal > 0 ? r.existingTotal : (r.overwriteCount || 0)}</div>
+        <div class="csv-stat-label">${r.existingTotal > 0 ? '既存の画像' : '上書き対象'}</div>
       </div>
       <div class="csv-stat csv-stat-warn">
         <div class="csv-stat-num">${r.unmatched.length}</div>
         <div class="csv-stat-label">未マッチ商品</div>
       </div>
     </div>
-    ${r.overwriteCount > 0 ? `<div class="csv-hint" style="color:var(--warning-text)">⚠️ ${r.overwriteCount}枚が既存画像を上書きします</div>` : ''}
+    ${(r.overwriteCount > 0 && !r.existingTotal) ? `<div class="csv-hint" style="color:var(--warning-text)">⚠️ ${r.overwriteCount}枚が既存画像を上書きします</div>` : ''}
   `;
+  // ver 1.0.9: すでに画像が入っている商品は「既存の画像を全部消してから、ZIPの画像に入れ替える」(既定ON)
+  if (r.existingTotal > 0) {
+    summary.innerHTML += `
+      <label class="bulk-replace-opt">
+        <input type="checkbox" id="bulkReplaceMode" checked>
+        <span><strong>既存の画像を削除してから入れ替える</strong>（${r.existingProducts}商品・${r.existingTotal}枚を削除）<br>
+        <small>チェックを外すと、今の画像を残したままZIPの画像を追加します（同じファイル名の画像だけ上書き）</small></span>
+      </label>`;
+  }
 
   const preview = document.getElementById('bulkImportPreview');
   let html = '';
@@ -4704,8 +4883,14 @@ async function confirmBulkImport() {
   const r = pendingBulkImport;
   if (!r || r.matched.length === 0) return;
 
+  // ver 1.0.9: 入れ替えモード (既存画像を削除してからアップロード)
+  const replaceEl = document.getElementById('bulkReplaceMode');
+  const replaceMode = !!(replaceEl && replaceEl.checked && r.existingTotal > 0);
+  if (replaceMode) {
+    if (!confirm(`${r.existingProducts}商品の既存画像 ${r.existingTotal}枚を削除してから、ZIPの画像 ${r.totalFiles}枚に入れ替えます。\n※削除した画像と、その画像に付けたタグは元に戻せません。\n実行しますか?`)) return;
+  }
   // 上書き確認 (v1.11.0)
-  if (r.overwriteCount > 0) {
+  if (!replaceMode && r.overwriteCount > 0) {
     if (!confirm(`${r.overwriteCount}枚の既存画像を上書きします。よろしいですか?\n(元の画像は復元できません)`)) {
       return;
     }
@@ -4723,9 +4908,24 @@ async function confirmBulkImport() {
   let failedCount = 0;
   const totalCount = r.totalFiles;
 
+  let deletedCount = 0;
+  let deleteFailed = 0;
   for (const m of r.matched) {
     const p = m.product;
     if (!p.images) p.images = [];
+
+    // ver 1.0.9: 入れ替えモードなら、先に既存画像を GitHub から削除する
+    //   削除に失敗した画像はデータに残す (ファイルが残っているのに一覧から消えるのを防ぐ)
+    if (replaceMode && p.images.length > 0) {
+      const keep = [];
+      for (const img of p.images.slice()) {
+        progress.textContent = `[既存画像を削除中] ${p.itemManageNumber} - ${img.originalName || img.filename}`;
+        try { await deleteImageFromGitHub(img); deletedCount++; }
+        catch (e) { console.error(`Delete failed: ${img.filename}`, e); deleteFailed++; keep.push(img); }
+      }
+      p.images = keep;
+      m.files.forEach(f => { f.existingImg = null; });   // 消したので上書きではなく新規として入れる
+    }
 
     for (let i = 0; i < m.files.length; i++) {
       const f = m.files[i];
@@ -4769,8 +4969,10 @@ async function confirmBulkImport() {
 
   progress.style.display = 'none';
   closeModal('bulkImagesModal');
-  const summary = `完了: 新規${uploadedCount - overwrittenCount - failedCount}枚 / 上書き${overwrittenCount}枚${failedCount ? ` / 失敗${failedCount}件` : ''}`;
-  toast(summary, failedCount ? 'error' : 'success');
+  const summary = replaceMode
+    ? `完了: 既存${deletedCount}枚を削除 → ${uploadedCount - failedCount}枚に入れ替え${failedCount ? ` / アップロード失敗${failedCount}件` : ''}${deleteFailed ? ` / 削除失敗${deleteFailed}件` : ''}`
+    : `完了: 新規${uploadedCount - overwrittenCount - failedCount}枚 / 上書き${overwrittenCount}枚${failedCount ? ` / 失敗${failedCount}件` : ''}`;
+  toast(summary, (failedCount || deleteFailed) ? 'error' : 'success');
   pendingBulkImport = null;
   render();
 }
@@ -5213,6 +5415,7 @@ function render() {
   updateDeleteActionBar();
   updateProductDeleteBar();
   updateIgnoreBar();
+  updateImgSelBar();
   updatePendingStatusBar();
   updateCategoryTabCounts();
   updateExportModeButton();
@@ -6529,8 +6732,9 @@ function productRowHTML(p) {
       imgTagSelectHTML = `<select class="img-tag-select" data-img-tag-pid="${p.id}" data-img-tag-id="${img.id}" data-has="${sel ? '1' : '0'}"${styleAttr}>${opts}</select>`;
     }
     return `<div class="img-tag-cell">
-      <div class="product-row-thumb" data-lb-pid="${p.id}" data-lb-index="${realIdx}" title="${escapeHtml(getImageSortKey(img))}">
+      <div class="product-row-thumb ${imgSelection.has(img.id) ? 'img-selected' : ''}" data-lb-pid="${p.id}" data-lb-index="${realIdx}" title="${escapeHtml(getImageSortKey(img))}">
         <img data-src="${escapeHtml(img.url)}" alt="" class="lazy-thumb">
+        ${imgSelChkHTML(img)}
       </div>
       ${imgTagSelectHTML}
     </div>`;
@@ -6825,6 +7029,8 @@ function openProductEditForm(productId) {
   document.getElementById('productEditNumber').value = p.itemNumber || '';
   document.getElementById('productEditName').value = p.itemName || '';
   document.getElementById('productEditItemCode').textContent = p.itemCode || '—';
+  const ign = document.getElementById('productEditIgnored');   // ver 1.0.10
+  if (ign) ign.value = p.ignored ? 'ignored' : 'active';
   // ステータス(現役/微妙)を反映 (v1.9.0)
   const status = p.status || 'active';
   const statusInputs = document.querySelectorAll('input[name="productEditStatus"]');
@@ -6845,15 +7051,23 @@ async function saveProductEditForm() {
   // ステータス(現役/微妙)も保存 (v1.9.0)
   const checkedStatus = document.querySelector('input[name="productEditStatus"]:checked');
   if (checkedStatus) p.status = checkedStatus.value;
+  // ver 1.0.10: 現役 / 無視
+  const ign = document.getElementById('productEditIgnored');
+  const prevIgnored = !!p.ignored;
+  if (ign) { if (ign.value === 'ignored') p.ignored = true; else delete p.ignored; }
 
   showLoading('保存中...');
   try {
     await saveShopData(currentShopId, `edit product: ${p.itemName}`);
     hideLoading();
     closeModal('productEditModal');
-    toast('保存しました', 'success');
+    const nowIgnored = !!p.ignored;
+    toast(nowIgnored !== prevIgnored
+      ? (nowIgnored ? '保存しました（「無視」タブに移しました）' : '保存しました（現役に戻しました）')
+      : '保存しました', 'success');
     render();
   } catch (e) {
+    if (prevIgnored) p.ignored = true; else delete p.ignored;   // ver 1.0.10: 失敗したら無視の状態は元に戻す
     hideLoading();
     toast('保存失敗: ' + e.message, 'error');
   }
