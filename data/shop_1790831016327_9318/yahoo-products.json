@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-01T07:38:39.443Z",
+ "fetchedAt": "2026-10-06T06:53:03.517Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 243,
- "count": 243,
+ "totalAvailable": 245,
+ "count": 245,
  "skipped": 0,
  "truncated": false,
  "requests": 7,
  "topImages": {
-  "downloaded": 243,
-  "reused": 0,
+  "downloaded": 7,
+  "reused": 238,
   "failed": 0
  },
  "items": [
@@ -3686,6 +3686,40 @@
     "sha": "525d9912974a77af539554c1915266d78cce54bb",
     "size": 56951,
     "imageId": "yukaiya_wat-sma-10"
+   }
+  },
+  {
+   "imageId": "yukaiya_wb-26-01",
+   "code": "wb-26-01",
+   "name": "スマートウォッチ ベルト バンド 20mm 22mm マグネット バンド 交換ベルト シリコン 腕時計 時計 ベルト  防水 耐汗 洗える 軽量 レディース メンズ おしゃれ",
+   "price": 1280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wb-26-01.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wb-26-01",
+   "yahooId": "yukaiya_wb-26-01",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_wb-26-01",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wb-26-01.jpg",
+    "sha": "e4a7b367668a3d8490523aea22e04310831eadb5",
+    "size": 43418,
+    "imageId": "yukaiya_wb-26-01"
+   }
+  },
+  {
+   "imageId": "yukaiya_wb-26-01-set",
+   "code": "wb-26-01-set",
+   "name": "スマートウォッチ ベルト バンド 20mm 22mm マグネット バンド 交換ベルト シリコン 腕時計 時計 ベルト  防水 耐汗 洗える 軽量 レディース メンズ おしゃれ",
+   "price": 1290,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wb-26-01-set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wb-26-01-set",
+   "yahooId": "yukaiya_wb-26-01-set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_wb-26-01-set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wb-26-01-set.jpg",
+    "sha": "dfffd4acdf362cca808752a531d1f701262b5bb2",
+    "size": 47348,
+    "imageId": "yukaiya_wb-26-01-set"
    }
   },
   {
