@@ -7818,6 +7818,32 @@
           "uploadedAt": "2026-10-07T01:46:10.944Z",
           "note": "",
           "tags": []
+        },
+        {
+          "id": "img_1791337602035_3qacyk",
+          "filename": "1791337599220_12lig9_a-15.png",
+          "originalName": "a-15.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1791336537134_lrad6s/1791337599220_12lig9_a-15.png",
+          "sha": "3953fe1e74f698d80fc8e148467fdf188bd62a33",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1791336537134_lrad6s/1791337599220_12lig9_a-15.png",
+          "size": 559369,
+          "uploadedAt": "2026-10-07T01:46:42.035Z",
+          "note": "",
+          "tags": [],
+          "common": true
+        },
+        {
+          "id": "img_1791337604370_bimcw7",
+          "filename": "1791337602036_rkkv1f_x-02.png",
+          "originalName": "x-02.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1791336537134_lrad6s/1791337602036_rkkv1f_x-02.png",
+          "sha": "75f93d64f92a64d54fb6ed0b9dddff24c34f9811",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1791336537134_lrad6s/1791337602036_rkkv1f_x-02.png",
+          "size": 522122,
+          "uploadedAt": "2026-10-07T01:46:44.370Z",
+          "note": "",
+          "tags": [],
+          "common": true
         }
       ],
       "status": "active",
