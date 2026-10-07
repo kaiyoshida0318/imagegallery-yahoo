@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.14';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.15';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -89,6 +89,10 @@ let ignoreSelection = new Set();         // ver 1.0.6: 「無視の設定」モ�
 let _ignoreSelCat = null;                // 選択したときのタブ (タブを替えたら選択を消す)
 let _lastGridList = [];                  // 直近に一覧へ表示した商品 (「表示中を全部選択」用)
 let imgSelection = new Set();            // ver 1.0.10: サムネ右上のチェックで選んだ画像ID
+// ver 1.0.15: 「共通込」表示にしている商品ID (行ごとに 画像のみ ⇄ 共通込 を切り替え。このブラウザに記憶)
+const LS_COMMON_ROWS = 'imagegallery_yahoo_common_rows_v1';
+let commonRows = new Set();
+try { commonRows = new Set(JSON.parse(localStorage.getItem(LS_COMMON_ROWS) || '[]')); } catch (e) { commonRows = new Set(); }
 // ver 1.0.12: 一括編集モード。ON の間は gallery.json の保存を後回しにして、「まとめて保存」で1回だけ push する
 //   pending: 後回しにした変更のコミットメッセージ / fileOp: 画像ファイルを直接いじる操作があった
 let _batch = { on: false, shopId: null, pending: [], fileOp: false };
@@ -172,6 +176,7 @@ async function init() {
   injectImageSelectUI();     // ver 1.0.10: サムネ右上のチェックで画像を選び、まとめて削除・タグ変更
   injectBatchEditUI();       // ver 1.0.12: 一括編集モード (まとめて設定して、あとで push)
   setupCommonPartsModal();   // ver 1.0.14: 画像編集モーダルを「メイン｜共通部品」の左右に分ける
+  setupCommonRowToggle();    // ver 1.0.15: 行ごとの「画像のみ / 共通込」切り替え
   setupYahooHub();           // Yahoo v1.0.0: ＋商品追加モーダルに Yahoo同期 / 商品CSV / 取得済み一覧 を用意
   setupCsvModalExtras();     // v1.11.31: 商品名称一括更新モーダルに基礎情報DL+D&Dを統合
   relabelCategoryTabs();     // v1.11.15: 現役→選択分
@@ -548,6 +553,14 @@ function injectImageTagStyles() {
     .images-edit-delete-bar .ie-move-btns { display: flex; gap: 8px; margin-left: auto; margin-right: 8px; }
     .ie-move-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #c4b5fd; background: #fff; color: #6d28d9; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .ie-move-btn:hover { background: #f3e8ff; }
+    /* ver 1.0.15: 行ごとの「画像のみ / 共通込」 */
+    .cm-toggle { display: flex; flex-direction: column; border: 1px solid var(--border, #e5e7eb); border-radius: 6px; overflow: hidden; margin-bottom: 6px; }
+    .cm-toggle button { padding: 4px 2px; border: 0; background: var(--surface, #fff); color: var(--text-muted, #64748b); font-family: inherit; font-size: 10.5px; cursor: pointer; white-space: nowrap; }
+    .cm-toggle button + button { border-top: 1px solid var(--border, #e5e7eb); }
+    .cm-toggle button.on { background: #7c3aed; color: #fff; font-weight: 700; }
+    .cm-toggle button:first-child.on { background: #475569; }
+    .cm-toggle .cm-n { display: inline-block; margin-left: 2px; padding: 0 4px; border-radius: 999px; background: #ede9fe; color: #6d28d9; font-size: 9px; line-height: 13px; }
+    .cm-toggle button.on .cm-n { background: rgba(255,255,255,.25); color: #fff; }
     .yimp-price { color: var(--text-light, #94a3b8); margin-left: 6px; font-size: 12px; }
     /* 商品取り込み確認画面 */
     .yimp-source {
@@ -690,6 +703,25 @@ async function applyIgnore(flag) {
   toast(flag
     ? `${targets.length}件を「無視」にしました（「無視」タブで確認・戻せます）`
     : `${targets.length}件を現役に戻しました`, 'success');
+}
+
+// ver 1.0.15: 行ごとの「画像のみ / 共通込」(クリックはまとめて document で受ける)
+function setupCommonRowToggle() {
+  if (setupCommonRowToggle._done) return;
+  setupCommonRowToggle._done = true;
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest && e.target.closest('[data-cm-toggle]');
+    if (!b) return;
+    e.stopPropagation();
+    const pid = b.dataset.cmToggle;
+    const want = b.dataset.cm === '1';
+    if (want === commonRows.has(pid)) return;
+    if (want) commonRows.add(pid); else commonRows.delete(pid);
+    try { localStorage.setItem(LS_COMMON_ROWS, JSON.stringify([...commonRows])); } catch (err) { /* 記憶できなくても表示は切り替える */ }
+    const y = window.scrollY;
+    render();
+    window.scrollTo(0, y);
+  });
 }
 
 // ===== ver 1.0.14: 共通部品 =====
@@ -7129,8 +7161,10 @@ function productRowHTML(p) {
     </div>`;
   };
   // ver 1.0.14: 画像全体モードでは「メイン画像 (8) ｜ 共通部品 (2)」に分けて表示する
-  const splitCommon = viewMode === 'images';
-  const mainDisplay = splitCommon ? displayImages.filter(im => !im.common) : displayImages;
+  // ver 1.0.15: 行ごとの切り替え。既定は「画像のみ」(共通部品は出さない)、「共通込」で右に共通部品を出す
+  const showCommon = commonRows.has(p.id);
+  const splitCommon = viewMode === 'images' && showCommon;
+  const mainDisplay = (viewMode === 'images') ? displayImages.filter(im => !im.common) : displayImages;
   const commonDisplay = splitCommon ? displayImages.filter(im => im.common) : [];
   const imgsHTML = mainDisplay.map(thumbHTML).join('');
   const commonHTML = commonDisplay.map(thumbHTML).join('');
@@ -7235,7 +7269,12 @@ function productRowHTML(p) {
   if (viewMode === 'images') {
     // 画像全体モード: 商品番号・画像・お気に入り・タグ操作
     // (現役/微妙は情報編集モーダルで操作)
+    const nCommon = (p.images || []).filter(im => im.common).length;
     const actionsForImagesMode = `<div class="col-actions">
+      <div class="cm-toggle" title="共通部品を表示するか">
+        <button type="button" class="${showCommon ? '' : 'on'}" data-cm-toggle="${p.id}" data-cm="0">画像のみ</button>
+        <button type="button" class="${showCommon ? 'on' : ''}" data-cm-toggle="${p.id}" data-cm="1">共通込${nCommon ? `<span class="cm-n">${nCommon}</span>` : ''}</button>
+      </div>
       <div class="edit-btn-group">
         <button class="btn-edit-mini" data-edit-images="${p.id}" title="画像を編集">🖼️ 画像</button>
         <button class="btn-edit-mini" data-edit-info="${p.id}" title="商品情報を編集">📝 情報</button>
