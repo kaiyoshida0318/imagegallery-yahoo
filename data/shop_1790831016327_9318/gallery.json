@@ -7696,7 +7696,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-07T01:28:57.134Z",
-      "yahooTopSha": "dfffd4acdf362cca808752a531d1f701262b5bb2"
+      "yahooTopSha": "dfffd4acdf362cca808752a531d1f701262b5bb2",
+      "ignored": true
     }
   ],
   "materials": [],
