@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.13';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.14';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -171,6 +171,7 @@ async function init() {
   injectProductStatusSelect(); // ver 1.0.10: 情報モーダルに「ステータス: 現役 / 無視」のドロップダウン
   injectImageSelectUI();     // ver 1.0.10: サムネ右上のチェックで画像を選び、まとめて削除・タグ変更
   injectBatchEditUI();       // ver 1.0.12: 一括編集モード (まとめて設定して、あとで push)
+  setupCommonPartsModal();   // ver 1.0.14: 画像編集モーダルを「メイン｜共通部品」の左右に分ける
   setupYahooHub();           // Yahoo v1.0.0: ＋商品追加モーダルに Yahoo同期 / 商品CSV / 取得済み一覧 を用意
   setupCsvModalExtras();     // v1.11.31: 商品名称一括更新モーダルに基礎情報DL+D&Dを統合
   relabelCategoryTabs();     // v1.11.15: 現役→選択分
@@ -525,6 +526,28 @@ function injectImageTagStyles() {
     .batch-bar .btn-batch-save { background: #f59e0b; color: #fff; border: 0; font-weight: 700; }
     .batch-bar .btn-batch-save:disabled { opacity: .45; cursor: not-allowed; }
     .batch-bar .btn-batch-sub { background: #fff; color: #78350f; border: 1px solid #fcd34d; }
+    /* ver 1.0.14: 一覧の画像欄を「メイン 8 ｜ 共通部品 2」に分ける */
+    .img-split { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 1fr); gap: 10px; align-items: start; }
+    .img-split-main { min-width: 0; }
+    .img-split-common { min-width: 0; border-left: 2px dashed var(--border, #e5e7eb); padding-left: 8px; }
+    .img-split-common.has { border-left-color: #a78bfa; }
+    .img-split-label { font-size: 11px; font-weight: 700; color: var(--text-light, #94a3b8); margin-bottom: 4px; white-space: nowrap; }
+    .img-split-common.has .img-split-label { color: #7c3aed; }
+    .img-split-label b { display: inline-block; min-width: 16px; padding: 0 5px; border-radius: 999px; background: #ede9fe; color: #6d28d9; text-align: center; }
+    .img-split-none { font-size: 11px; color: var(--text-light, #cbd5e1); padding: 8px 0; }
+    /* 画像編集モーダル: 左 = メイン / 右 = 共通部品 */
+    .ie-split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: 16px; align-items: start; }
+    .ie-col-head { font-size: 13px; font-weight: 700; margin: 0 0 8px; display: flex; align-items: center; gap: 6px; }
+    .ie-col-head .ie-cnt { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--bg, #f1f5f9); color: var(--text-muted, #64748b); }
+    .ie-col-common .ie-col-head { color: #6d28d9; }
+    .ie-col-common .ie-col-head .ie-cnt { background: #ede9fe; color: #6d28d9; }
+    .ie-col-common .images-edit-dropzone { border-color: #c4b5fd; background: #faf5ff; }
+    .ie-col-common .images-edit-dropzone:hover, .ie-col-common .images-edit-dropzone.dragover { border-color: #7c3aed; background: #f3e8ff; }
+    .ie-col-common .images-edit-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+    .ie-col-empty { grid-column: 1 / -1; font-size: 12px; color: var(--text-light, #94a3b8); padding: 16px 4px; text-align: center; }
+    .images-edit-delete-bar .ie-move-btns { display: flex; gap: 8px; margin-left: auto; margin-right: 8px; }
+    .ie-move-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #c4b5fd; background: #fff; color: #6d28d9; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .ie-move-btn:hover { background: #f3e8ff; }
     .yimp-price { color: var(--text-light, #94a3b8); margin-left: 6px; font-size: 12px; }
     /* 商品取り込み確認画面 */
     .yimp-source {
@@ -667,6 +690,105 @@ async function applyIgnore(flag) {
   toast(flag
     ? `${targets.length}件を「無視」にしました（「無視」タブで確認・戻せます）`
     : `${targets.length}件を現役に戻しました`, 'success');
+}
+
+// ===== ver 1.0.14: 共通部品 =====
+//   商品の画像に common: true を付けたものを「共通部品」として扱う (images[] の中の項目なので gallery.json のキーは増えない)。
+//   画像編集モーダル: 左 = メイン画像のドロップ欄と一覧 / 右 = 共通部品のドロップ欄と一覧 (7:3)。
+//   一覧 (画像全体モード): 画像欄を メイン 8 : 共通部品 2 に分け、それぞれ横スクロール。
+//   選んだ画像は「共通部品へ / メインへ」で移せる (ファイルはそのまま、印を付け替えるだけ)。
+function setupCommonPartsModal() {
+  if (document.getElementById('imagesEditGridCommon')) return;
+  const modal = document.getElementById('imagesEditModal');
+  const body = modal && modal.querySelector('.modal-body');
+  const dz = document.getElementById('imagesEditDropzone');
+  const grid = document.getElementById('imagesEditGrid');
+  const delBar = document.getElementById('imagesEditDeleteBar');
+  if (!body || !dz || !grid) return;
+
+  const split = document.createElement('div');
+  split.className = 'ie-split';
+  split.innerHTML = `
+    <div class="ie-col ie-col-main"><div class="ie-col-head">🖼️ メイン画像 <span class="ie-cnt" id="ieCountMain">0</span></div></div>
+    <div class="ie-col ie-col-common"><div class="ie-col-head">🧩 共通部品 <span class="ie-cnt" id="ieCountCommon">0</span></div></div>`;
+  body.insertBefore(split, dz);
+  const colMain = split.querySelector('.ie-col-main');
+  const colCommon = split.querySelector('.ie-col-common');
+  // 既存のドロップ欄と一覧は「移動」なのでイベントはそのまま
+  colMain.appendChild(dz);
+  colMain.appendChild(grid);
+  // 選択バーは左右の上に置く
+  if (delBar) body.insertBefore(delBar, split);
+  const dzText = dz.querySelector('.images-edit-dropzone-text');
+  if (dzText) dzText.textContent = 'メイン画像をドロップ';
+
+  const dzC = document.createElement('div');
+  dzC.className = 'images-edit-dropzone';
+  dzC.id = 'imagesEditDropzoneCommon';
+  dzC.innerHTML = `
+    <div class="images-edit-dropzone-icon">🧩</div>
+    <div class="images-edit-dropzone-text">共通部品をドロップ</div>
+    <div class="images-edit-dropzone-or">または</div>
+    <button class="btn-secondary" type="button" id="btnImagesEditBrowseCommon">ファイルを選択</button>
+    <input type="file" id="imagesEditFileInputCommon" accept="image/*" multiple style="display:none">
+    <div class="images-edit-dropzone-hint">送料・注意書きなど、商品をまたいで使う画像</div>`;
+  const gridC = document.createElement('div');
+  gridC.className = 'images-edit-grid';
+  gridC.id = 'imagesEditGridCommon';
+  colCommon.appendChild(dzC);
+  colCommon.appendChild(gridC);
+
+  const inC = dzC.querySelector('#imagesEditFileInputCommon');
+  inC.addEventListener('change', (e) => {
+    if (e.target.files && e.target.files.length) {
+      uploadImagesToProductInModal(Array.from(e.target.files), { common: true });
+      e.target.value = '';
+    }
+  });
+  dzC.addEventListener('dragover', (e) => { e.preventDefault(); dzC.classList.add('dragover'); });
+  dzC.addEventListener('dragleave', () => dzC.classList.remove('dragover'));
+  dzC.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dzC.classList.remove('dragover');
+    const files = Array.from(e.dataTransfer.files || []).filter(f => f.type.startsWith('image/'));
+    if (files.length) uploadImagesToProductInModal(files, { common: true });
+    else toast('画像ファイルをドロップしてください', 'error');
+  });
+  dzC.addEventListener('click', (e) => { if (e.target.closest('button')) return; inC.click(); });
+  dzC.querySelector('#btnImagesEditBrowseCommon').addEventListener('click', (e) => { e.stopPropagation(); inC.click(); });
+
+  // 選択バーに「共通部品へ / メインへ」
+  if (delBar && !document.getElementById('btnIeToCommon')) {
+    const wrap = document.createElement('div');
+    wrap.className = 'ie-move-btns';
+    wrap.innerHTML = `<button type="button" class="ie-move-btn" id="btnIeToCommon">🧩 共通部品へ移す</button>
+      <button type="button" class="ie-move-btn" id="btnIeToMain">🖼️ メインへ戻す</button>`;
+    const delBtn = document.getElementById('btnImagesEditDelete');
+    delBar.insertBefore(wrap, delBtn || null);
+    wrap.querySelector('#btnIeToCommon').addEventListener('click', () => moveSelectedImagesInModal(true));
+    wrap.querySelector('#btnIeToMain').addEventListener('click', () => moveSelectedImagesInModal(false));
+  }
+}
+
+async function moveSelectedImagesInModal(toCommon) {
+  const data = dataCache[currentShopId];
+  const p = data?.products.find(x => x.id === _imagesEditingProductId);
+  if (!p || _imagesEditSelection.size === 0) return;
+  if (!auth.pat) { toast('変更の保存には編集権限(PAT)が必要です', 'error'); return; }
+  const targets = (p.images || []).filter(im => _imagesEditSelection.has(im.id) && !!im.common !== toCommon);
+  if (targets.length === 0) return;
+  targets.forEach(im => { if (toCommon) im.common = true; else delete im.common; });
+  try {
+    await saveShopData(currentShopId, `${toCommon ? 'mark' : 'unmark'} ${targets.length} common part images`);
+  } catch (e) {
+    targets.forEach(im => { if (toCommon) delete im.common; else im.common = true; });   // 失敗したら戻す
+    toast('保存失敗: ' + e.message, 'error');
+    return;
+  }
+  _imagesEditSelection.clear();
+  renderImagesEditGrid();
+  render();
+  toast(`${targets.length}枚を${toCommon ? '共通部品' : 'メイン画像'}に移しました`, 'success');
 }
 
 // ===== ver 1.0.12: 一括編集モード =====
@@ -5028,8 +5150,10 @@ function showBulkImportPreview() {
   const r = pendingBulkImport;
   if (!r) return;
 
-  r.existingTotal = r.matched.reduce((n, m) => n + (m.product.images || []).length, 0);
-  r.existingProducts = r.matched.filter(m => (m.product.images || []).length > 0).length;
+  // ver 1.0.14: 共通部品は入れ替えの対象外 (消さずに残す)
+  const _repl = (pp) => (pp.images || []).filter(im => !im.common);
+  r.existingTotal = r.matched.reduce((n, m) => n + _repl(m.product).length, 0);
+  r.existingProducts = r.matched.filter(m => _repl(m.product).length > 0).length;
   document.getElementById('bulkDropzone').style.display = 'none';
   const confirmBtn = document.getElementById('btnConfirmBulkImport');
   confirmBtn.style.display = '';
@@ -5062,7 +5186,7 @@ function showBulkImportPreview() {
     summary.innerHTML += `
       <label class="bulk-replace-opt">
         <input type="checkbox" id="bulkReplaceMode" checked>
-        <span><strong>既存の画像を削除してから入れ替える</strong>（${r.existingProducts}商品・${r.existingTotal}枚を削除）<br>
+        <span><strong>既存の画像を削除してから入れ替える</strong>（${r.existingProducts}商品・${r.existingTotal}枚を削除。共通部品は残します）<br>
         <small>チェックを外すと、今の画像を残したままZIPの画像を追加します（同じファイル名の画像だけ上書き）</small></span>
       </label>`;
   }
@@ -5143,9 +5267,9 @@ async function confirmBulkImport() {
 
     // ver 1.0.9: 入れ替えモードなら、先に既存画像を GitHub から削除する
     //   削除に失敗した画像はデータに残す (ファイルが残っているのに一覧から消えるのを防ぐ)
-    if (replaceMode && p.images.length > 0) {
-      const keep = [];
-      for (const img of p.images.slice()) {
+    if (replaceMode && p.images.some(im => !im.common)) {
+      const keep = p.images.filter(im => im.common);   // ver 1.0.14: 共通部品は残す
+      for (const img of p.images.filter(im => !im.common)) {
         progress.textContent = `[既存画像を削除中] ${p.itemManageNumber} - ${img.originalName || img.filename}`;
         try { await deleteImageFromGitHub(img); deletedCount++; }
         catch (e) { console.error(`Delete failed: ${img.filename}`, e); deleteFailed++; keep.push(img); }
@@ -6710,14 +6834,35 @@ function renderImagesEditGrid() {
   const p = data?.products.find(x => x.id === _imagesEditingProductId);
   if (!p) return;
   const grid = document.getElementById('imagesEditGrid');
+  const gridC = document.getElementById('imagesEditGridCommon');
   const empty = document.getElementById('imagesEditEmpty');
-  const sortedImages = sortImagesByName(p.images || []);
-  if (sortedImages.length === 0) {
+  const allSorted = sortImagesByName(p.images || []);
+  // ver 1.0.14: 左 = メイン画像 / 右 = 共通部品
+  const sortedImages = gridC ? allSorted.filter(im => !im.common) : allSorted;
+  const commonImages = gridC ? allSorted.filter(im => im.common) : [];
+  const cardHTML = (img) => {
+    const checked = _imagesEditSelection.has(img.id);
+    const filename = img.originalName || img.filename || '';
+    return `<div class="images-edit-card ${checked ? 'selected' : ''}" data-iid="${img.id}">
+        <input type="checkbox" class="images-edit-check" data-edit-img-check="${img.id}" ${checked ? 'checked' : ''}>
+        <div class="images-edit-thumb">
+          <img src="${escapeHtml(img.url)}" alt="" loading="lazy">
+        </div>
+        <div class="images-edit-name" title="${escapeHtml(filename)}">${escapeHtml(filename)}</div>
+      </div>`;
+  };
+  if (gridC) {
+    gridC.innerHTML = commonImages.length ? commonImages.map(cardHTML).join('') : '<div class="ie-col-empty">共通部品はまだありません</div>';
+    const cm = document.getElementById('ieCountCommon'); if (cm) cm.textContent = commonImages.length;
+    const mm = document.getElementById('ieCountMain'); if (mm) mm.textContent = sortedImages.length;
+  }
+  if (allSorted.length === 0) {
     grid.innerHTML = '';
+    if (gridC) gridC.innerHTML = '';
     empty.style.display = 'block';
   } else {
     empty.style.display = 'none';
-    grid.innerHTML = sortedImages.map(img => {
+    grid.innerHTML = sortedImages.length === 0 && gridC ? '<div class="ie-col-empty">メイン画像はまだありません</div>' : sortedImages.map(img => {
       const checked = _imagesEditSelection.has(img.id);
       const filename = img.originalName || img.filename || '';
       return `<div class="images-edit-card ${checked ? 'selected' : ''}" data-iid="${img.id}">
@@ -6728,7 +6873,8 @@ function renderImagesEditGrid() {
         <div class="images-edit-name" title="${escapeHtml(filename)}">${escapeHtml(filename)}</div>
       </div>`;
     }).join('');
-    grid.querySelectorAll('[data-edit-img-check]').forEach(cb => {
+    const scope = document.getElementById('imagesEditModal');
+    scope.querySelectorAll('[data-edit-img-check]').forEach(cb => {
       cb.addEventListener('change', () => {
         const id = cb.dataset.editImgCheck;
         if (cb.checked) _imagesEditSelection.add(id);
@@ -6739,7 +6885,7 @@ function renderImagesEditGrid() {
       });
     });
     // カードの本体クリック(チェックボックス外)でもトグル
-    grid.querySelectorAll('.images-edit-card').forEach(card => {
+    scope.querySelectorAll('.images-edit-card').forEach(card => {
       card.addEventListener('click', (e) => {
         if (e.target.tagName === 'INPUT') return;
         const cb = card.querySelector('input[type="checkbox"]');
@@ -6762,6 +6908,12 @@ function updateImagesEditSelectionBar() {
   } else {
     bar.style.display = 'flex';
     document.getElementById('imagesEditDeleteCount').textContent = count;
+    // ver 1.0.14: 選んだ画像に応じて「共通部品へ / メインへ」を出し分け
+    const p = dataCache[currentShopId]?.products.find(x => x.id === _imagesEditingProductId);
+    const sel = ((p && p.images) || []).filter(im => _imagesEditSelection.has(im.id));
+    const toC = document.getElementById('btnIeToCommon'), toM = document.getElementById('btnIeToMain');
+    if (toC) toC.style.display = sel.some(im => !im.common) ? '' : 'none';
+    if (toM) toM.style.display = sel.some(im => im.common) ? '' : 'none';
   }
 }
 
@@ -6814,8 +6966,9 @@ async function deleteSelectedImagesInModal() {
   toast(`${okCount}枚を削除しました${failCount ? ` / 失敗${failCount}件` : ''}`, failCount ? 'error' : 'success');
 }
 
-async function uploadImagesToProductInModal(files) {
+async function uploadImagesToProductInModal(files, opts = {}) {
   if (!files.length) return;
+  const asCommon = !!opts.common;   // ver 1.0.14: 右側 (共通部品) に入れた画像
   const data = dataCache[currentShopId];
   const p = data?.products.find(x => x.id === _imagesEditingProductId);
   if (!p) return;
@@ -6835,6 +6988,7 @@ async function uploadImagesToProductInModal(files) {
     if (progress) progress.textContent = `アップロード中 ${i + 1}/${imageFiles.length}: ${f.name}`;
     try {
       const imgMeta = await uploadImageToGitHub(currentShopId, p.id, f);
+      if (asCommon) imgMeta.common = true;
       if (!p.images) p.images = [];
       p.images.push(imgMeta);
       success++;
@@ -6845,14 +6999,14 @@ async function uploadImagesToProductInModal(files) {
   }
   if (progress) progress.textContent = `JSON保存中...`;
   try {
-    await saveShopData(currentShopId, `add ${success} images to product`);
+    await saveShopData(currentShopId, `add ${success} ${asCommon ? 'common part ' : ''}images to product`);
   } catch (e) {
     toast('JSON保存失敗: ' + e.message, 'error');
   }
   document.getElementById('imagesEditLoading').style.display = 'none';
   renderImagesEditGrid();
   render();
-  toast(`アップロード完了: 成功${success}件${failed ? ` / 失敗${failed}件` : ''}`, failed ? 'error' : 'success');
+  toast(`${asCommon ? '共通部品を' : ''}アップロード完了: 成功${success}件${failed ? ` / 失敗${failed}件` : ''}`, failed ? 'error' : 'success');
 }
 
 function toggleSort(key) {
@@ -6939,7 +7093,7 @@ function productRowHTML(p) {
     : visibleImages.slice(0, 5);
   const remaining = visibleImages.length - displayImages.length;
 
-  const imgsHTML = displayImages.map((img, idx) => {
+  const thumbHTML = (img, idx) => {
     // ライトボックスは商品の全画像で切り替えたいので、全体配列での位置を渡す
     const realIdx = sortedImages.indexOf(img);
     const isMarked = deleteSelection.has(img.id);
@@ -6973,7 +7127,13 @@ function productRowHTML(p) {
       </div>
       ${imgTagSelectHTML}
     </div>`;
-  }).join('');
+  };
+  // ver 1.0.14: 画像全体モードでは「メイン画像 (8) ｜ 共通部品 (2)」に分けて表示する
+  const splitCommon = viewMode === 'images';
+  const mainDisplay = splitCommon ? displayImages.filter(im => !im.common) : displayImages;
+  const commonDisplay = splitCommon ? displayImages.filter(im => im.common) : [];
+  const imgsHTML = mainDisplay.map(thumbHTML).join('');
+  const commonHTML = commonDisplay.map(thumbHTML).join('');
 
   // 残り表示(basicモードで5枚超え) — 「+N」は商品モーダルを開く
   const moreHTML = remaining > 0
@@ -7025,7 +7185,8 @@ function productRowHTML(p) {
     ? `<button class="favorite-btn ${isFavorite ? 'on' : 'off'}" data-fav-pid="${p.id}" title="お気に入り">${isFavorite ? '★' : '☆'}</button>`
     : '';
 
-  const addBtnHTML = isEmpty
+  const noMain = !(p.images || []).some(im => !im.common);   // ver 1.0.14: メイン画像が無ければ追加ボタン
+  const addBtnHTML = (isEmpty || (viewMode === 'images' && noMain))
     ? `<button class="thumb-add" data-add-img="${p.id}" title="画像を追加">
         <span class="thumb-add-icon">＋</span>
         <span class="thumb-add-empty">未登録</span>
@@ -7047,7 +7208,23 @@ function productRowHTML(p) {
     </label>
   </div>`;
 
-  const imagesCellHTML = `<div class="col-images">
+  const imagesCellHTML = splitCommon
+    ? `<div class="col-images">
+    <div class="img-split">
+      <div class="product-row-images img-split-main">
+        ${addBtnHTML}
+        ${imgsHTML}
+        ${moreHTML}
+      </div>
+      <div class="img-split-common ${commonDisplay.length ? 'has' : ''}">
+        <div class="img-split-label">共通部品${commonDisplay.length ? ` <b>${commonDisplay.length}</b>` : ''}</div>
+        ${commonDisplay.length
+          ? `<div class="product-row-images">${commonHTML}</div>`
+          : `<div class="img-split-none">なし</div>`}
+      </div>
+    </div>
+  </div>`
+    : `<div class="col-images">
     <div class="product-row-images">
       ${addBtnHTML}
       ${imgsHTML}
