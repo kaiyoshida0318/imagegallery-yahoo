@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-06T06:53:03.517Z",
+ "fetchedAt": "2026-10-07T01:27:59.081Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 245,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 7,
  "topImages": {
-  "downloaded": 7,
-  "reused": 238,
+  "downloaded": 0,
+  "reused": 245,
   "failed": 0
  },
  "items": [
@@ -3696,7 +3696,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/wb-26-01.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wb-26-01",
    "yahooId": "yukaiya_wb-26-01",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_wb-26-01",
     "path": "data/shop_1790831016327_9318/yahoo-top/wb-26-01.jpg",
@@ -3713,7 +3713,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/wb-26-01-set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wb-26-01-set",
    "yahooId": "yukaiya_wb-26-01-set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_wb-26-01-set",
     "path": "data/shop_1790831016327_9318/yahoo-top/wb-26-01-set.jpg",
