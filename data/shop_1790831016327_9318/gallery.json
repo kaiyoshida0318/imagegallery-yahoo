@@ -7891,6 +7891,12 @@
   "boosts": [],
   "tags": [
     {
+      "id": "tag_ytop_1791336537134_bcmc",
+      "name": "トップ画像",
+      "color": "teal",
+      "createdAt": "2026-10-07T01:28:57.134Z"
+    },
+    {
       "id": "tag_1790844256396_0_japa",
       "name": "疑問？",
       "color": "gray",
@@ -7943,12 +7949,6 @@
       "name": "お気に入り",
       "color": "pink",
       "createdAt": "2026-10-01T06:58:29.599Z"
-    },
-    {
-      "id": "tag_ytop_1791336537134_bcmc",
-      "name": "トップ画像",
-      "color": "teal",
-      "createdAt": "2026-10-07T01:28:57.134Z"
     }
   ],
   "yahooThumbs": []
