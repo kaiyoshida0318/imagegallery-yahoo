@@ -7637,6 +7637,66 @@
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "ff0687cabe80d44adb9d2cd538003bedb04b1e1d",
       "ignored": true
+    },
+    {
+      "id": "prod_1791336537134_lrad6s",
+      "itemCode": "yukaiya_wb-26-01",
+      "itemManageNumber": "wb-26-01",
+      "addedAt": "2026-10-07T01:28:57.134Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/wb-26-01.html",
+      "itemName": "スマートウォッチ ベルト バンド 20mm 22mm マグネット バンド 交換ベルト シリコン 腕時計 時計 ベルト  防水 耐汗 洗える 軽量 レディース メンズ おしゃれ",
+      "itemPrice": 1280,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wb-26-01",
+      "images": [
+        {
+          "id": "img_ytop_1791336537134_p5806c",
+          "filename": "wb-26-01.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/wb-26-01.jpg",
+          "sha": "e4a7b367668a3d8490523aea22e04310831eadb5",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/wb-26-01.jpg?v=e4a7b367",
+          "size": 43418,
+          "uploadedAt": "2026-10-07T01:28:57.135Z",
+          "note": "",
+          "tags": [],
+          "tagId": "tag_ytop_1791336537134_bcmc",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-07T01:28:57.134Z",
+      "yahooTopSha": "e4a7b367668a3d8490523aea22e04310831eadb5"
+    },
+    {
+      "id": "prod_1791336537135_gbgqqr",
+      "itemCode": "yukaiya_wb-26-01-set",
+      "itemManageNumber": "wb-26-01-set",
+      "addedAt": "2026-10-07T01:28:57.134Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/wb-26-01-set.html",
+      "itemName": "スマートウォッチ ベルト バンド 20mm 22mm マグネット バンド 交換ベルト シリコン 腕時計 時計 ベルト  防水 耐汗 洗える 軽量 レディース メンズ おしゃれ",
+      "itemPrice": 1290,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wb-26-01-set",
+      "images": [
+        {
+          "id": "img_ytop_1791336537135_oxs7et",
+          "filename": "wb-26-01-set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/wb-26-01-set.jpg",
+          "sha": "dfffd4acdf362cca808752a531d1f701262b5bb2",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/wb-26-01-set.jpg?v=dfffd4ac",
+          "size": 47348,
+          "uploadedAt": "2026-10-07T01:28:57.135Z",
+          "note": "",
+          "tags": [],
+          "tagId": "tag_ytop_1791336537134_bcmc",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-07T01:28:57.134Z",
+      "yahooTopSha": "dfffd4acdf362cca808752a531d1f701262b5bb2"
     }
   ],
   "materials": [],
@@ -7695,6 +7755,12 @@
       "name": "お気に入り",
       "color": "pink",
       "createdAt": "2026-10-01T06:58:29.599Z"
+    },
+    {
+      "id": "tag_ytop_1791336537134_bcmc",
+      "name": "トップ画像",
+      "color": "teal",
+      "createdAt": "2026-10-07T01:28:57.134Z"
     }
   ],
   "yahooThumbs": []
