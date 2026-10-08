@@ -8008,7 +8008,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-08T05:07:43.331Z",
-      "yahooTopSha": "78facd27684e89ee8a922ea9eaf318b6d7c5e81f"
+      "yahooTopSha": "78facd27684e89ee8a922ea9eaf318b6d7c5e81f",
+      "ignored": true
     },
     {
       "id": "prod_1791436063332_1qgw85",
