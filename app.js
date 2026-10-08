@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.15';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.16';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -177,7 +177,7 @@ async function init() {
   injectBatchEditUI();       // ver 1.0.12: 一括編集モード (まとめて設定して、あとで push)
   setupCommonPartsModal();   // ver 1.0.14: 画像編集モーダルを「メイン｜共通部品」の左右に分ける
   setupCommonRowToggle();    // ver 1.0.15: 行ごとの「画像のみ / 共通込」切り替え
-  setupYahooHub();           // Yahoo v1.0.0: ＋商品追加モーダルに Yahoo同期 / 商品CSV / 取得済み一覧 を用意
+  setupYahooHub();           // ver 1.0.16: 「＋ 商品同期」モーダルに Yahooから同期 / GitHub同期 を並べる
   setupCsvModalExtras();     // v1.11.31: 商品名称一括更新モーダルに基礎情報DL+D&Dを統合
   relabelCategoryTabs();     // v1.11.15: 現役→選択分
   injectUntaggedTab();       // v1.11.19: 「未選択分」タブを追加
@@ -553,6 +553,8 @@ function injectImageTagStyles() {
     .images-edit-delete-bar .ie-move-btns { display: flex; gap: 8px; margin-left: auto; margin-right: 8px; }
     .ie-move-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #c4b5fd; background: #fff; color: #6d28d9; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .ie-move-btn:hover { background: #f3e8ff; }
+    /* ver 1.0.16: 右上の「＋ 部品追加」「＋ 商品同期」は途中で折り返さない */
+    #btnAddEntry, #btnAddPart { white-space: nowrap; flex-shrink: 0; }
     /* ver 1.0.15: 行ごとの「画像のみ / 共通込」 */
     .cm-toggle { display: flex; flex-direction: column; border: 1px solid var(--border, #e5e7eb); border-radius: 6px; overflow: hidden; margin-bottom: 6px; }
     .cm-toggle button { padding: 4px 2px; border: 0; background: var(--surface, #fff); color: var(--text-muted, #64748b); font-family: inherit; font-size: 10.5px; cursor: pointer; white-space: nowrap; }
@@ -2305,8 +2307,8 @@ function moveRefreshButtonToEnd() {
   }
   const addEntry = document.getElementById('btnAddEntry');
   if (addEntry) {
-    addEntry.textContent = '＋ 商品追加';
-    addEntry.title = '商品同期・画像の一括追加';
+    addEntry.textContent = '＋ 商品同期';   // ver 1.0.16: 商品追加 → 商品同期
+    addEntry.title = 'Yahooから同期・GitHub同期・画像の一括アップロード';
   }
   const addPart = document.getElementById('btnAddPart');
 
@@ -4638,7 +4640,7 @@ async function _yWaitForRun(prevRunId, t0, branch) {
     const run = await r.json();
     if (run.status === 'completed') return run;
   }
-  throw new Error('8分待ってもGitHub Actionsが終わりませんでした。GitHubのActions画面で状況を確認し、終わっていれば「取得済みの一覧を取り込む」を押してください');
+  throw new Error('8分待ってもGitHub Actionsが終わりませんでした。GitHubのActions画面で状況を確認し、終わっていればもう一度「Yahooから同期」を押してください');
 }
 
 // 失敗理由をできるだけ具体的に拾う (失敗した手順名 + スクリプトが出した ::error:: の文言)
@@ -4684,7 +4686,7 @@ async function importLatestYahooFetch(opts = {}) {
       throw new Error(`取得結果のストアID「${json.sellerId}」と、このショップのストアID「${shop.shopCode}」が一致しません`);
     }
     if (opts.notBefore && Date.parse(json.fetchedAt || 0) < opts.notBefore) {
-      throw new Error('今回の取得結果がまだGitHubに反映されていません。少し待ってから「取得済みの一覧を取り込む」を押してください');
+      throw new Error('今回の取得結果がまだGitHubに反映されていません。少し待ってから、もう一度「Yahooから同期」を押してください');
     }
     const items = json.items.map(x => _yahooItem(shop, x)).filter(Boolean);
     hideLoading();
@@ -4747,35 +4749,32 @@ async function handleYahooCsvFile(file) {
   }
 }
 
-// 「＋ 商品追加」モーダルに3つの取り込み口を並べる
+// ver 1.0.16: 「＋ 商品同期」モーダル = 「Yahooから同期」と、その下に「GitHub同期」。
+//   商品CSV / 取得済み一覧 の取り込み口は廃止 (関数 handleYahooCsvFile / importLatestYahooFetch は同期の内部で使うので残す)。
+//   上部ツールバーの「🔄 GitHub同期」はこのモーダルへ移したので隠す。
 function setupYahooHub() {
   const syncCard = document.getElementById('btnHubSyncProducts');
-  if (!syncCard || document.getElementById('btnHubYahooCsv')) return;
+  if (!syncCard || document.getElementById('btnHubGithubSync')) return;
   const t = syncCard.querySelector('.add-hub-card-title');
   const d = syncCard.querySelector('.add-hub-card-desc');
-  if (t) t.textContent = 'Yahooから同期（自動取得）';
-  if (d) d.textContent = 'GitHub Actionsで商品検索APIを実行し、商品一覧を取り込みます（1〜2分）';
-  const mk = (id, icon, title, desc) => {
-    const b = document.createElement('button');
-    b.className = 'add-hub-card';
-    b.id = id;
-    b.innerHTML = `<div class="add-hub-card-icon">${icon}</div><div class="add-hub-card-title">${title}</div><div class="add-hub-card-desc">${desc}</div>`;
-    return b;
-  };
-  const csvCard = mk('btnHubYahooCsv', '📄', '商品CSVから取り込み', 'ストアクリエイターProの「商品データ」CSV（data.csv）を読み込みます。非公開の商品も入ります');
-  const lastCard = mk('btnHubYahooLast', '📥', '取得済みの一覧を取り込む', 'GitHubの画面でワークフローを実行した後や、同期が途中で止まったときに');
-  syncCard.parentNode.appendChild(csvCard);
-  syncCard.parentNode.appendChild(lastCard);
+  if (t) t.textContent = 'Yahooから同期';
+  if (d) d.textContent = 'Yahooの商品一覧とトップ画像を取り込みます（1〜2分）';
+  const gh = document.createElement('button');
+  gh.className = 'add-hub-card';
+  gh.id = 'btnHubGithubSync';
+  gh.innerHTML = `<div class="add-hub-card-icon">🗂️</div><div class="add-hub-card-title">GitHub同期</div><div class="add-hub-card-desc">ほかの人の変更を取得（ダウンロード）／今の内容を保存（アップロード）・診断ログ</div>`;
+  syncCard.parentNode.insertBefore(gh, syncCard.nextSibling);
+  gh.addEventListener('click', () => { closeModal('addHubModal'); openSyncModal(); });
 
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = '.csv,text/csv';
-  input.id = 'yahooCsvInput';
-  input.style.display = 'none';
-  document.body.appendChild(input);
-  csvCard.addEventListener('click', () => { closeModal('addHubModal'); input.value = ''; input.click(); });
-  input.addEventListener('change', () => { if (input.files && input.files[0]) handleYahooCsvFile(input.files[0]); });
-  lastCard.addEventListener('click', () => { closeModal('addHubModal'); importLatestYahooFetch(); });
+  const modal = document.getElementById('addHubModal');
+  const h2 = modal && modal.querySelector('.modal-header h2');
+  if (h2) h2.textContent = '商品同期';
+  const sec = syncCard.closest('.add-hub-section');
+  const h3 = sec && sec.querySelector('h3');
+  if (h3) h3.textContent = '🔄 同期';
+
+  const topBtn = document.getElementById('btnRefreshData');
+  if (topBtn) topBtn.style.display = 'none';
 }
 
 // 診断ログに入れる Yahoo 同期の状況 (認証情報は含めない)
@@ -5020,7 +5019,7 @@ function showCsvImportPreview(result) {
         html += `<div class="csv-more">…他 ${result.notFoundList.length - 20} 件</div>`;
       }
       html += '</div>';
-      html += '<div class="csv-hint">💡 これらの商品は、先に「＋ 商品追加」からYahooの商品を取り込んでから、再度CSVをインポートしてください</div>';
+      html += '<div class="csv-hint">💡 これらの商品は、先に「＋ 商品同期」→「Yahooから同期」で商品を取り込んでから、再度CSVをインポートしてください</div>';
 
       // デバッグ情報
       if (result.debug) {
@@ -5252,7 +5251,7 @@ function showBulkImportPreview() {
       html += `<div class="csv-more">…他 ${r.unmatched.length - 20} 件</div>`;
     }
     html += '</div>';
-    html += '<div class="csv-hint">💡 これらはまだ取り込まれていない商品コードです（＋ 商品追加 から取り込んでください）</div>';
+    html += '<div class="csv-hint">💡 これらはまだ取り込まれていない商品コードです（＋ 商品同期 →「Yahooから同期」で取り込んでください）</div>';
   }
   if (r.matched.length === 0 && r.unmatched.length === 0) {
     html = (r.otherStores && r.otherStores.length)
@@ -5942,7 +5941,7 @@ function renderProductGrid(products) {
     content.innerHTML = `<div class="empty-state">
       <div class="empty-icon">📦</div>
       <div class="empty-title">${products.length === 0 ? '商品データがありません' : '該当する商品がありません'}</div>
-      <div class="empty-desc">${products.length === 0 ? '右上の「＋ 商品追加」からYahooの商品を取り込んでください' : '検索条件を変えてみてください'}</div>
+      <div class="empty-desc">${products.length === 0 ? '右上の「＋ 商品同期」→「Yahooから同期」で商品を取り込んでください' : '検索条件を変えてみてください'}</div>
     </div>`;
     return;
   }
