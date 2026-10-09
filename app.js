@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.17';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.18';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -96,6 +96,9 @@ try { commonRows = new Set(JSON.parse(localStorage.getItem(LS_COMMON_ROWS) || '[
 // ver 1.0.12: 一括編集モード。ON の間は gallery.json の保存を後回しにして、「まとめて保存」で1回だけ push する
 //   pending: 後回しにした変更のコミットメッセージ / fileOp: 画像ファイルを直接いじる操作があった
 let _batch = { on: false, shopId: null, pending: [], fileOp: false };
+// ver 1.0.18: 画像下のタグ (ドロップダウン) の変更は、その場で保存せずに貯めて「push」でまとめて保存する
+//   imageId -> { pid, iid, from, to, shopId }   from = 最初の値 (戻したら一覧から消す)
+let _tagPending = new Map();
 let pendingStatusChanges = new Map();  // 保存待ちのステータス変更: productId -> 'active'|'unsure'
 
 // エクスポートモード関連 (v1.8.4)
@@ -178,6 +181,7 @@ async function init() {
   setupCommonPartsModal();   // ver 1.0.14: 画像編集モーダルを「メイン｜共通部品」の左右に分ける
   setupCommonRowToggle();    // ver 1.0.15: 行ごとの「画像のみ / 共通込」切り替え
   setupStateSelect();        // ver 1.0.17: 行の「現役 / 無視 / 複数分」ドロップダウン
+  setupTagPendingUI();       // ver 1.0.18: 画像タグの変更を貯めて、下のバーから確認・push
   setupYahooHub();           // ver 1.0.16: 「＋ 商品同期」モーダルに Yahooから同期 / GitHub同期 を並べる
   setupCsvModalExtras();     // v1.11.31: 商品名称一括更新モーダルに基礎情報DL+D&Dを統合
   relabelCategoryTabs();     // v1.11.15: 現役→選択分
@@ -554,8 +558,34 @@ function injectImageTagStyles() {
     .images-edit-delete-bar .ie-move-btns { display: flex; gap: 8px; margin-left: auto; margin-right: 8px; }
     .ie-move-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #c4b5fd; background: #fff; color: #6d28d9; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .ie-move-btn:hover { background: #f3e8ff; }
+    /* ver 1.0.18: 未pushのタグ変更 */
+    .img-tag-select.tag-pending { outline: 2px solid #2563eb; outline-offset: 1px; }
+    .tagp-bar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 1500; display: none; align-items: center; gap: 12px;
+      padding: 10px 20px; background: #eff6ff; border-top: 2px solid #2563eb; box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+      font-size: 13px; color: #1e3a8a;
+    }
+    body.tagp-on .tagp-bar { display: flex; }
+    body.tagp-on #content { padding-bottom: 72px; }
+    body.tagp-on .delete-action-bar { bottom: 76px !important; }
+    body.tagp-on .toast { bottom: 80px; }
+    .tagp-bar .tagp-msg { flex: 1; }
+    .tagp-bar .tagp-msg strong { font-size: 16px; color: #1d4ed8; }
+    .tagp-bar button { font-family: inherit; font-size: 13px; border-radius: 8px; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
+    .tagp-bar .btn-tagp-push { background: #2563eb; color: #fff; border: 0; font-weight: 700; }
+    .tagp-bar .btn-tagp-sub { background: #fff; color: #1e3a8a; border: 1px solid #93c5fd; }
+    #tagReviewModal .modal { max-width: 760px; width: 94%; }
+    .tagr-list { max-height: 60vh; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+    .tagr-prod { border: 1px solid var(--border, #e5e7eb); border-radius: 8px; padding: 8px 10px; }
+    .tagr-prod-head { font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text, #0f172a); }
+    .tagr-prod-head .mono { font-family: ui-monospace, monospace; color: #475569; margin-right: 6px; }
+    .tagr-items { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tagr-item { display: flex; align-items: center; gap: 6px; padding: 4px; border-radius: 6px; background: var(--bg, #f8fafc); font-size: 11px; }
+    .tagr-item img { width: 44px; height: 44px; object-fit: cover; border-radius: 4px; background: #fff; }
+    .tagr-chip { display: inline-block; padding: 2px 7px; border-radius: 999px; font-weight: 700; white-space: nowrap; }
+    .tagr-chip.none { background: #fff; color: #94a3b8; border: 1px dashed #cbd5e1; }
     /* ver 1.0.17: 行の 現役/無視/複数分 */
-    .state-select { width: 100%; margin-top: 6px; padding: 3px 2px; border-radius: 6px; border: 1px solid var(--border, #e5e7eb); font-family: inherit; font-size: 11px; cursor: pointer; background: #fff; color: #166534; font-weight: 700; }
+    .state-select { width: 100%; margin-top: 6px; padding: 3px 2px; text-align: center; text-align-last: center; border-radius: 6px; border: 1px solid var(--border, #e5e7eb); font-family: inherit; font-size: 11px; cursor: pointer; background: #fff; color: #166534; font-weight: 700; }
     .state-select.st-ignored { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
     .state-select.st-multi { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
     /* ver 1.0.16: 右上の「＋ 部品追加」「＋ 商品同期」は途中で折り返さない */
@@ -592,6 +622,138 @@ function injectMallBadge() {
     logo.appendChild(b);
   }
   if (!/Yahoo/.test(document.title)) document.title = 'ImageGallery Yahoo';
+}
+
+// ===== ver 1.0.18: 画像タグの変更を貯めて push =====
+function _tagPendingEntries(shopId) {
+  const sid = shopId || currentShopId;
+  const data = dataCache[sid];
+  const out = [];
+  _tagPending.forEach((e, iid) => {
+    if (e.shopId !== sid) return;
+    const p = data && data.products.find(x => x.id === e.pid);
+    const img = p && (p.images || []).find(im => im.id === iid);
+    if (!img) { _tagPending.delete(iid); return; }   // 画像が消えていたら一覧から外す
+    out.push({ ...e, product: p, image: img });
+  });
+  return out;
+}
+function _tagPendingCount(shopId) { return _tagPendingEntries(shopId).length; }
+function _clearTagPending(shopId) {
+  const sid = shopId || currentShopId;
+  [..._tagPending.keys()].forEach(k => { if (_tagPending.get(k).shopId === sid) _tagPending.delete(k); });
+}
+
+function setupTagPendingUI() {
+  if (document.getElementById('tagpBar')) return;
+  const bar = document.createElement('div');
+  bar.className = 'tagp-bar';
+  bar.id = 'tagpBar';
+  bar.innerHTML = `
+    <span>🏷️</span>
+    <span class="tagp-msg">未pushのタグ変更 <strong id="tagpCount">0</strong> 件 <span style="opacity:.75">（まだGitHubには保存されていません）</span></span>
+    <button class="btn-tagp-sub" id="btnTagpReview">🔍 変更内容を確認</button>
+    <button class="btn-tagp-sub" id="btnTagpDiscard">破棄</button>
+    <button class="btn-tagp-push" id="btnTagpPush">⬆️ push</button>`;
+  document.body.appendChild(bar);
+  bar.querySelector('#btnTagpReview').addEventListener('click', openTagReview);
+  bar.querySelector('#btnTagpDiscard').addEventListener('click', discardTagPending);
+  bar.querySelector('#btnTagpPush').addEventListener('click', () => pushTagPending());
+
+  const m = document.createElement('div');
+  m.className = 'modal-backdrop';
+  m.id = 'tagReviewModal';
+  m.style.display = 'none';
+  m.innerHTML = `
+    <div class="modal">
+      <div class="modal-header">
+        <h2>🔍 pushするタグ変更</h2>
+        <button class="btn-close" data-tagr-close aria-label="閉じる">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="tagrSummary" style="font-size:13px;margin-bottom:10px"></div>
+        <div class="tagr-list" id="tagrList"></div>
+        <div class="modal-actions">
+          <button class="btn-secondary" data-tagr-close>閉じる</button>
+          <button class="btn-primary" id="btnTagrPush">⬆️ この内容で push</button>
+        </div>
+      </div>
+    </div>`;
+  document.body.appendChild(m);
+  m.querySelectorAll('[data-tagr-close]').forEach(b => b.addEventListener('click', () => { m.style.display = 'none'; }));
+  m.querySelector('#btnTagrPush').addEventListener('click', async () => { if (await pushTagPending()) m.style.display = 'none'; });
+
+  window.addEventListener('beforeunload', (e) => {
+    if (_tagPendingCount()) { e.preventDefault(); e.returnValue = ''; }
+  });
+}
+
+function updateTagPendingBar() {
+  const n = _tagPendingCount();
+  document.body.classList.toggle('tagp-on', n > 0 && !_batch.on);
+  const c = document.getElementById('tagpCount');
+  if (c) c.textContent = n;
+  const pb = document.getElementById('btnTagpPush');
+  if (pb) pb.textContent = `⬆️ push（${n}件）`;
+}
+
+function _tagChipHTML(tagId) {
+  if (!tagId) return '<span class="tagr-chip none">タグなし</span>';
+  const t = getCurrentTags().find(x => x.id === tagId);
+  if (!t) return '<span class="tagr-chip none">（削除されたタグ）</span>';
+  const c = getTagColor(t.color);
+  return `<span class="tagr-chip" style="background:${c.bg};color:${c.fg}">${escapeHtml(t.name)}</span>`;
+}
+
+function openTagReview() {
+  const entries = _tagPendingEntries();
+  if (!entries.length) { toast('未pushのタグ変更はありません', 'success'); return; }
+  const byProd = new Map();
+  entries.forEach(e => { if (!byProd.has(e.pid)) byProd.set(e.pid, []); byProd.get(e.pid).push(e); });
+  document.getElementById('tagrSummary').innerHTML = `<strong>${entries.length}枚</strong>のタグを変更します（${byProd.size}商品）。`;
+  document.getElementById('tagrList').innerHTML = [...byProd.values()].map(list => {
+    const p = list[0].product;
+    return `<div class="tagr-prod">
+      <div class="tagr-prod-head"><span class="mono">${escapeHtml(p.itemManageNumber || '')}</span>${escapeHtml(p.itemName || '')}</div>
+      <div class="tagr-items">${list.map(e => `
+        <div class="tagr-item" title="${escapeHtml(getImageSortKey(e.image))}">
+          <img src="${escapeHtml(e.image.url)}" alt="" loading="lazy">
+          ${_tagChipHTML(e.from)} → ${_tagChipHTML(e.to)}
+        </div>`).join('')}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('tagReviewModal').style.display = 'flex';
+}
+
+// 貯めたタグ変更をまとめて保存。成功したら true
+async function pushTagPending() {
+  const n = _tagPendingCount();
+  if (!n) return true;
+  showLoading(`pushしています…（タグ変更 ${n}件）`);
+  try {
+    await _saveShopDataQueued(currentShopId, `image tags: ${n} changes`);
+  } catch (e) {
+    hideLoading();
+    toast('push失敗: ' + e.message + '（変更は画面に残っています）', 'error');
+    return false;
+  }
+  _clearTagPending(currentShopId);
+  hideLoading();
+  updateTagPendingBar();
+  render();
+  toast(`タグ変更 ${n}件を push しました`, 'success');
+  return true;
+}
+
+function discardTagPending() {
+  const entries = _tagPendingEntries();
+  if (!entries.length) return;
+  if (!confirm(`未pushのタグ変更 ${entries.length}件を破棄して、元のタグに戻します。よろしいですか?`)) return;
+  entries.forEach(e => { if (e.from) e.image.tagId = e.from; else delete e.image.tagId; });
+  _clearTagPending(currentShopId);
+  updateTagPendingBar();
+  render();
+  toast('タグ変更を破棄しました', 'success');
 }
 
 // ===== ver 1.0.17: 商品の状態 = 現役 / 無視 / 複数分 =====
@@ -957,6 +1119,7 @@ function updateBatchBar() {
     : '（タグや無視などを変更しても、ここで「まとめて保存」するまで保存されません）';
   const save = document.getElementById('btnBatchSave');
   if (save) save.disabled = _batch.pending.length === 0;
+  updateTagPendingBar();   // ver 1.0.18: 一括編集中はタグのpushバーを隠す
 }
 
 async function toggleBatchMode() {
@@ -965,6 +1128,9 @@ async function toggleBatchMode() {
     const d = dataCache[currentShopId];
     if (!d || d._wasEmpty || d._parseError || d._loadFailed) { toast('データを正しく読み込めていないため、一括編集を始められません', 'error'); return; }
     _batch = { on: true, shopId: currentShopId, pending: [], fileOp: false };
+    // ver 1.0.18: 未pushのタグ変更は一括編集の「未保存の変更」に引き継ぐ
+    const tn = _tagPendingCount(currentShopId);
+    if (tn) { for (let i = 0; i < tn; i++) _batch.pending.push('image tag'); _clearTagPending(currentShopId); updateTagPendingBar(); }
     updateBatchBar();
     render();   // サムネ右上のチェックを出す
     toast('一括編集を開始しました。変更は「💾 まとめて保存」を押すまで保存されません', 'success');
@@ -1704,6 +1870,12 @@ function _dataSig(d) {
 async function refreshCurrentShopData(opts = {}) {
   const manual = !!opts.manual;
   if (!currentShopId || !auth.owner || !auth.repo) return;
+  // ver 1.0.18: 未pushのタグ変更も、最新取得で黙って消さない
+  if (_tagPendingCount(currentShopId)) {
+    if (!manual) return;
+    if (!confirm(`未pushのタグ変更が ${_tagPendingCount(currentShopId)}件あります。\n最新を取得すると、この変更は消えます。続けますか?`)) return;
+    _clearTagPending(currentShopId); updateTagPendingBar();
+  }
   // ver 1.0.12: 一括編集の未保存の変更を、最新取得で黙って消さない
   if (_batch.on && _batch.pending.length) {
     if (!manual) return;
@@ -2774,7 +2946,7 @@ function renderImageListGrid(products) {
     const opts = ['<option value="" style="background:#fff;color:#334155">タグなし</option>']
       .concat(classTags.map(t => { const cc = getTagColor(t.color); return `<option value="${t.id}" ${t.id === sel ? 'selected' : ''} style="background:${cc.bg};color:${cc.fg}">${escapeHtml(t.name)}</option>`; }))
       .join('');
-    const selectHTML = `<select class="img-tag-select" data-img-tag-pid="${p.id}" data-img-tag-id="${img.id}" data-has="${sel ? '1' : '0'}"${styleAttr}>${opts}</select>`;
+    const selectHTML = `<select class="img-tag-select${_tagPending.has(img.id) ? ' tag-pending' : ''}" data-img-tag-pid="${p.id}" data-img-tag-id="${img.id}" data-has="${sel ? '1' : '0'}"${styleAttr}>${opts}</select>`;
     return `<div class="image-list-tile">
       <div class="ilt-thumb ${imgSelection.has(img.id) ? 'img-selected' : ''}" data-il-index="${idx}" title="${escapeHtml(getImageSortKey(img))}">
         <img data-src="${escapeHtml(img.url)}" alt="" class="lazy-thumb">
@@ -3795,8 +3967,12 @@ async function saveShopData(shopId, message) {
     const n = _batch.pending.length;
     if (n) message = `${message || 'update'} (+ batch edit ${n} changes)`;
   }
+  // ver 1.0.18: 他の保存は gallery.json 全体を書くので、貯めていたタグ変更も一緒に保存される
+  const tagN = _tagPendingCount(shopId);
+  if (tagN) message = `${message || 'update'} (+ ${tagN} tag changes)`;
   return _saveShopDataQueued(shopId, message).then((r) => {
     if (_batch.on && shopId === _batch.shopId) { _batch.pending = []; _batch.fileOp = false; updateBatchBar(); }
+    if (tagN) { _clearTagPending(shopId); updateTagPendingBar(); }
     return r;
   });
 }
@@ -4550,6 +4726,8 @@ async function applyYahooMergePlan() {
   if (!plan0) return;
   if (!auth.pat) { toast('取り込み（保存）には編集権限(PAT)が必要です', 'error'); return; }
   const shopId = currentShopId;
+  // ver 1.0.18: 未pushのタグ変更も先に push しておく
+  if (_tagPendingCount(shopId) && !(await pushTagPending())) return;
   // ver 1.0.12: 取り込みはGitHubの最新を読み直すので、一括編集の未保存分を先に保存しておく
   if (_batch.on && _batch.pending.length && !(await flushBatch())) return;
   showLoading('GitHubの最新データを確認中…');
@@ -5625,6 +5803,11 @@ function applyShopFromUrl() {
 }
 
 async function switchShop(shopId, opts = {}) {
+  // ver 1.0.18: 未pushのタグ変更があれば先に push する
+  if (_tagPendingCount(currentShopId) && shopId !== currentShopId) {
+    if (!confirm(`未pushのタグ変更が ${_tagPendingCount(currentShopId)}件あります。\npushしてからショップを切り替えますか?`)) { renderShopTabs(); return; }
+    if (!(await pushTagPending())) { renderShopTabs(); return; }
+  }
   // ver 1.0.12: 一括編集の未保存の変更があれば、先に保存する (しないなら切り替えない)
   if (_batch.on && _batch.pending.length && shopId !== currentShopId) {
     if (!confirm(`一括編集の未保存の変更が ${_batch.pending.length}件あります。\n保存してからショップを切り替えますか?`)) { renderShopTabs(); return; }
@@ -5889,6 +6072,7 @@ function render() {
   updateProductDeleteBar();
   updateIgnoreBar();
   updateImgSelBar();
+  updateTagPendingBar();
   updatePendingStatusBar();
   updateCategoryTabCounts();
   updateExportModeButton();
@@ -6474,6 +6658,19 @@ async function setImageTag(productId, imageId, tagId, selEl) {
     }
   };
   applyLook(next);
+
+  // ver 1.0.18: 一括編集モード以外では、その場で保存せず「未pushのタグ変更」として貯める
+  if (!_batch.on) {
+    if (!auth.pat) { applyLook(prev); toast('タグの変更には編集権限(PAT)が必要です', 'error'); return; }
+    const ent = _tagPending.get(imageId);
+    const orig = ent ? ent.from : prev;
+    if (orig === next) _tagPending.delete(imageId);
+    else _tagPending.set(imageId, { pid: productId, iid: imageId, from: orig, to: next, shopId: currentShopId });
+    if (selEl) selEl.classList.toggle('tag-pending', _tagPending.has(imageId));
+    updateTagPendingBar();
+    if (filterTagIds.size > 0) render();
+    return;
+  }
 
   // v1.11.26: 保存が終わるまで全画面ロックして誤操作を防ぐ (フリーズ表示)
   showLoading('タグを保存中… そのままお待ちください');
@@ -7235,7 +7432,7 @@ function productRowHTML(p) {
           return `<option value="${t.id}" ${t.id === sel ? 'selected' : ''} style="background:${cc.bg};color:${cc.fg}">${escapeHtml(t.name)}</option>`;
         }))
         .join('');
-      imgTagSelectHTML = `<select class="img-tag-select" data-img-tag-pid="${p.id}" data-img-tag-id="${img.id}" data-has="${sel ? '1' : '0'}"${styleAttr}>${opts}</select>`;
+      imgTagSelectHTML = `<select class="img-tag-select${_tagPending.has(img.id) ? ' tag-pending' : ''}" data-img-tag-pid="${p.id}" data-img-tag-id="${img.id}" data-has="${sel ? '1' : '0'}"${styleAttr}>${opts}</select>`;
     }
     return `<div class="img-tag-cell">
       <div class="product-row-thumb ${imgSelection.has(img.id) ? 'img-selected' : ''}" data-lb-pid="${p.id}" data-lb-index="${realIdx}" title="${escapeHtml(getImageSortKey(img))}">
