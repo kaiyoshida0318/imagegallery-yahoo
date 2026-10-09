@@ -8237,7 +8237,7 @@
       "status": "active",
       "syncedAt": "2026-10-08T05:07:43.331Z",
       "yahooTopSha": "a74742c4a5dcc52f2d21f65766a000ce8f542a74",
-      "ignored": true
+      "multi": true
     },
     {
       "id": "prod_1791510930332_88qdmk",
