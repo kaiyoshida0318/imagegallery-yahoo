@@ -8082,7 +8082,7 @@
       "status": "active",
       "syncedAt": "2026-10-08T05:07:43.331Z",
       "yahooTopSha": "0c9c39c71d4f2eafae45854878e0f68e3ca801ad",
-      "ignored": true
+      "multi": true
     },
     {
       "id": "prod_1791436063332_89azj8",
