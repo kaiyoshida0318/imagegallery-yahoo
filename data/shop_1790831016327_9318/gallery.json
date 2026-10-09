@@ -8051,7 +8051,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-08T05:07:43.331Z",
-      "yahooTopSha": "95e2fb28b09986067e03b8a67d15aa404fbdbde9"
+      "yahooTopSha": "95e2fb28b09986067e03b8a67d15aa404fbdbde9",
+      "multi": true
     },
     {
       "id": "prod_1791436063332_328mfg",
