@@ -8175,7 +8175,7 @@
       "status": "active",
       "syncedAt": "2026-10-08T05:07:43.331Z",
       "yahooTopSha": "1d9ddf4a0635d513193af7526b71825342e95555",
-      "ignored": true
+      "multi": true
     },
     {
       "id": "prod_1791436063332_a4gcsf",
