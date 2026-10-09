@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.16';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.17';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -177,6 +177,7 @@ async function init() {
   injectBatchEditUI();       // ver 1.0.12: 一括編集モード (まとめて設定して、あとで push)
   setupCommonPartsModal();   // ver 1.0.14: 画像編集モーダルを「メイン｜共通部品」の左右に分ける
   setupCommonRowToggle();    // ver 1.0.15: 行ごとの「画像のみ / 共通込」切り替え
+  setupStateSelect();        // ver 1.0.17: 行の「現役 / 無視 / 複数分」ドロップダウン
   setupYahooHub();           // ver 1.0.16: 「＋ 商品同期」モーダルに Yahooから同期 / GitHub同期 を並べる
   setupCsvModalExtras();     // v1.11.31: 商品名称一括更新モーダルに基礎情報DL+D&Dを統合
   relabelCategoryTabs();     // v1.11.15: 現役→選択分
@@ -465,8 +466,8 @@ function injectImageTagStyles() {
     .toast { max-width: min(720px, calc(100vw - 32px)); line-height: 1.6; cursor: pointer; text-align: left; }
     /* ver 1.0.6: 無視タブの前の区切り線と、無視の設定モード */
     .cat-sep { color: var(--text-light, #94a3b8); padding: 0 6px; user-select: none; align-self: center; }
-    .cat-btn[data-cat="ignored"] { color: var(--text-light, #94a3b8); }
-    .cat-btn[data-cat="ignored"].active { color: #fff; }
+    .cat-btn[data-cat="ignored"], .cat-btn[data-cat="multi"] { color: var(--text-light, #94a3b8); }
+    .cat-btn[data-cat="ignored"].active, .cat-btn[data-cat="multi"].active { color: #fff; }
     .product-row.mode-ignoreedit:hover { background: #eff6ff; }
     .product-row.mode-ignoreedit.pd-selected { background: #dbeafe; outline-color: #3b82f6; }
     .product-table-header .col-pd-check { font-size: 12px; font-weight: 700; }
@@ -553,6 +554,10 @@ function injectImageTagStyles() {
     .images-edit-delete-bar .ie-move-btns { display: flex; gap: 8px; margin-left: auto; margin-right: 8px; }
     .ie-move-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #c4b5fd; background: #fff; color: #6d28d9; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .ie-move-btn:hover { background: #f3e8ff; }
+    /* ver 1.0.17: 行の 現役/無視/複数分 */
+    .state-select { width: 100%; margin-top: 6px; padding: 3px 2px; border-radius: 6px; border: 1px solid var(--border, #e5e7eb); font-family: inherit; font-size: 11px; cursor: pointer; background: #fff; color: #166534; font-weight: 700; }
+    .state-select.st-ignored { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+    .state-select.st-multi { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
     /* ver 1.0.16: 右上の「＋ 部品追加」「＋ 商品同期」は途中で折り返さない */
     #btnAddEntry, #btnAddPart { white-space: nowrap; flex-shrink: 0; }
     /* ver 1.0.15: 行ごとの「画像のみ / 共通込」 */
@@ -589,6 +594,59 @@ function injectMallBadge() {
   if (!/Yahoo/.test(document.title)) document.title = 'ImageGallery Yahoo';
 }
 
+// ===== ver 1.0.17: 商品の状態 = 現役 / 無視 / 複数分 =====
+//   無視 = p.ignored: true (ver 1.0.6 から) / 複数分 = p.multi: true。どちらも商品オブジェクトの項目なので
+//   gallery.json のキーは増えない。無視・複数分はどちらも、それぞれのタブ以外には出さない。
+const PRODUCT_STATES = [
+  { id: 'active',  label: '現役' },
+  { id: 'ignored', label: '無視' },
+  { id: 'multi',   label: '複数分' }
+];
+const stateLabel = (st) => (PRODUCT_STATES.find(x => x.id === st) || PRODUCT_STATES[0]).label;
+function productState(p) { return p.ignored ? 'ignored' : (p.multi ? 'multi' : 'active'); }
+function setProductState(p, st) {
+  delete p.ignored; delete p.multi;
+  if (st === 'ignored') p.ignored = true;
+  else if (st === 'multi') p.multi = true;
+}
+function isHiddenProduct(p) { return !!(p.ignored || p.multi); }
+function stateMovedMsg(st) {
+  return st === 'active' ? '現役に戻しました' : `「${stateLabel(st)}」タブに移しました`;
+}
+
+// 一覧の「タグ・操作」欄の 現役/無視/複数分 ドロップダウン (変更はまとめて document で受ける)
+function setupStateSelect() {
+  if (setupStateSelect._done) return;
+  setupStateSelect._done = true;
+  document.addEventListener('change', async (e) => {
+    const sel = e.target.closest && e.target.closest('[data-state-pid]');
+    if (!sel) return;
+    const data = dataCache[currentShopId];
+    const p = data && data.products.find(x => x.id === sel.dataset.statePid);
+    if (!p) return;
+    const prev = productState(p);
+    const next = sel.value;
+    if (prev === next) return;
+    if (!auth.pat) { sel.value = prev; toast('変更の保存には編集権限(PAT)が必要です', 'error'); return; }
+    setProductState(p, next);
+    showLoading('保存中…');
+    try {
+      await saveShopData(currentShopId, `set state ${next}: ${p.itemManageNumber || p.id}`);
+    } catch (err) {
+      setProductState(p, prev);
+      sel.value = prev;
+      hideLoading();
+      toast('保存失敗: ' + err.message, 'error');
+      return;
+    }
+    hideLoading();
+    const y = window.scrollY;
+    render();
+    window.scrollTo(0, y);
+    toast(`${p.itemManageNumber || ''} を${stateMovedMsg(next)}`, 'success');
+  });
+}
+
 // ===== ver 1.0.6: 「無視」 =====
 //   p.ignored = true の商品/部品は、無視タブ以外 (選択分/未選択分/全体/未設定/部品) に出さない。
 //   「🙈 無視の設定」モードで行をクリックして選び、まとめて 無視 ⇄ 現役 を切り替える。
@@ -613,6 +671,19 @@ function injectIgnoredTab() {
   });
   partsBtn.parentNode.insertBefore(sep, partsBtn.nextSibling);
   partsBtn.parentNode.insertBefore(btn, sep.nextSibling);
+  // ver 1.0.17: 無視の右に「複数分」
+  const mbtn = document.createElement('button');
+  mbtn.className = 'cat-btn';
+  mbtn.dataset.cat = 'multi';
+  mbtn.textContent = '複数分';
+  mbtn.title = '「複数分」にした商品。ほかのタブには表示されません (無視と分けて管理するため)';
+  mbtn.addEventListener('click', () => {
+    currentCategory = 'multi';
+    localStorage.setItem(LS_CURRENT_CAT, 'multi');
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b === mbtn));
+    render();
+  });
+  btn.parentNode.insertBefore(mbtn, btn.nextSibling);
 }
 
 function injectIgnoreModeUI() {
@@ -622,8 +693,8 @@ function injectIgnoreModeUI() {
     btn.id = 'modeIgnoreEdit';
     btn.className = 'view-mode-btn view-mode-btn-standalone';
     btn.dataset.mode = 'ignoreedit';
-    btn.textContent = '🙈 無視の設定';
-    btn.title = '商品を選んで、まとめて「無視」にしたり「現役」に戻したりします';
+    btn.textContent = '🙈 無視・複数分の設定';
+    btn.title = '商品を選んで、まとめて「無視」「複数分」にしたり「現役」に戻したりします';
     btn.addEventListener('click', () => {
       viewMode = (viewMode === 'ignoreedit') ? 'images' : 'ignoreedit';
       // このモードは保存しない (再読み込みしたら通常表示に戻る)
@@ -651,6 +722,7 @@ function injectIgnoreModeUI() {
       <div class="delete-action-buttons">
         <button class="btn-ign-sub" id="btnIgnoreSelectAll">表示中を全部選択</button>
         <button class="btn-ign-sub" id="btnIgnoreClear">選択を解除</button>
+        <button class="btn-ign-main" id="btnIgnoreApply2">複数分にする</button>
         <button class="btn-ign-main" id="btnIgnoreApply">無視にする</button>
       </div>`;
     document.body.appendChild(bar);
@@ -659,27 +731,39 @@ function injectIgnoreModeUI() {
       render();
     });
     bar.querySelector('#btnIgnoreClear').addEventListener('click', () => { ignoreSelection.clear(); render(); });
-    bar.querySelector('#btnIgnoreApply').addEventListener('click', () => applyIgnore(currentCategory !== 'ignored'));
+    bar.querySelector('#btnIgnoreApply').addEventListener('click', (e) => applyState(e.currentTarget.dataset.state));
+    bar.querySelector('#btnIgnoreApply2').addEventListener('click', (e) => applyState(e.currentTarget.dataset.state));
   }
 }
 
 function updateIgnoreBar() {
   const bar = document.getElementById('ignoreBar');
   if (!bar) return;
-  const listCat = ['product', 'product_untagged', 'product_noimage', 'product_all', 'parts', 'ignored'].includes(currentCategory);
+  const listCat = ['product', 'product_untagged', 'product_noimage', 'product_all', 'parts', 'ignored', 'multi'].includes(currentCategory);
   if (viewMode !== 'ignoreedit' || !listCat) { bar.style.display = 'none'; return; }
   bar.style.display = 'flex';
-  const toIgnore = currentCategory !== 'ignored';
-  document.getElementById('ignoreCount').textContent = ignoreSelection.size;
-  document.getElementById('ignoreHint').textContent = toIgnore
-    ? '行をクリックで選択。無視にすると「無視」タブへ移ります'
+  // ver 1.0.17: 今のタブに応じて、移せる先を2つ出す
+  //   通常タブ → 無視 / 複数分、無視タブ → 現役 / 複数分、複数分タブ → 現役 / 無視
+  const here = currentCategory === 'ignored' ? 'ignored' : (currentCategory === 'multi' ? 'multi' : 'active');
+  const dests = here === 'active' ? ['ignored', 'multi'] : (here === 'ignored' ? ['active', 'multi'] : ['active', 'ignored']);
+  const n = ignoreSelection.size;
+  document.getElementById('ignoreCount').textContent = n;
+  document.getElementById('ignoreHint').textContent = here === 'active'
+    ? '行をクリックで選択。無視・複数分にすると、それぞれのタブへ移ります'
     : '行をクリックで選択。現役に戻すと元のタブに表示されます';
-  const apply = document.getElementById('btnIgnoreApply');
-  apply.textContent = toIgnore ? `🙈 ${ignoreSelection.size}件を無視にする` : `↩ ${ignoreSelection.size}件を現役に戻す`;
-  apply.disabled = ignoreSelection.size === 0;
+  const label = (st) => st === 'active' ? `↩ ${n}件を現役に戻す` : `${st === 'ignored' ? '🙈' : '📦'} ${n}件を${stateLabel(st)}にする`;
+  [['btnIgnoreApply', dests[0]], ['btnIgnoreApply2', dests[1]]].forEach(([id, st]) => {
+    const b = document.getElementById(id);
+    b.dataset.state = st;
+    b.textContent = label(st);
+    b.disabled = n === 0;
+  });
 }
 
-async function applyIgnore(flag) {
+async function applyIgnore(flag) { return applyState(flag ? 'ignored' : 'active'); }
+
+// ver 1.0.17: 選んだ商品をまとめて 現役 / 無視 / 複数分 にする
+async function applyState(state) {
   if (ignoreSelection.size === 0) return;
   if (!auth.pat) { toast('変更の保存には編集権限(PAT)が必要です', 'error'); return; }
   const data = dataCache[currentShopId];
@@ -687,13 +771,13 @@ async function applyIgnore(flag) {
   const ids = new Set(ignoreSelection);
   const targets = (data.products || []).filter(p => ids.has(p.id));
   if (targets.length === 0) return;
-  const backup = targets.map(p => [p, p.ignored]);
-  targets.forEach(p => { if (flag) p.ignored = true; else delete p.ignored; });
+  const backup = targets.map(p => [p, productState(p)]);
+  targets.forEach(p => setProductState(p, state));
   showLoading('保存中…');
   try {
-    await saveShopData(currentShopId, `${flag ? 'ignore' : 'unignore'} ${targets.length} products`);
+    await saveShopData(currentShopId, `set state ${state}: ${targets.length} products`);
   } catch (e) {
-    backup.forEach(([p, v]) => { if (v) p.ignored = v; else delete p.ignored; });   // 失敗したら元に戻す
+    backup.forEach(([p, v]) => setProductState(p, v));   // 失敗したら元に戻す
     hideLoading();
     toast('保存失敗: ' + e.message, 'error');
     render();
@@ -702,9 +786,7 @@ async function applyIgnore(flag) {
   hideLoading();
   ignoreSelection.clear();
   render();
-  toast(flag
-    ? `${targets.length}件を「無視」にしました（「無視」タブで確認・戻せます）`
-    : `${targets.length}件を現役に戻しました`, 'success');
+  toast(`${targets.length}件を${stateMovedMsg(state)}`, 'success');
 }
 
 // ver 1.0.15: 行ごとの「画像のみ / 共通込」(クリックはまとめて document で受ける)
@@ -961,8 +1043,9 @@ function injectProductStatusSelect() {
     <select id="productEditIgnored" class="status-select">
       <option value="active">現役</option>
       <option value="ignored">無視</option>
+      <option value="multi">複数分</option>
     </select>
-    <small class="form-hint">「無視」にすると、ほかのタブには表示されず「無視」タブに移ります</small>`;
+    <small class="form-hint">「無視」「複数分」にすると、ほかのタブには表示されず、それぞれのタブに移ります</small>`;
   if (oldRow) { oldRow.style.display = 'none'; oldRow.parentNode.insertBefore(row, oldRow); }
   else modalBody.insertBefore(row, modalBody.firstChild.nextSibling);
 }
@@ -2783,7 +2866,7 @@ function loadCurrentSelections() {
   currentShopId = localStorage.getItem(LS_CURRENT_SHOP) || null;
   // v1.11.12: 素材/盛り上げタブは廃止。保存済みの material/boost は product(現役) に読み替える
   const _cc = localStorage.getItem(LS_CURRENT_CAT);
-  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'product_noimage' || _cc === 'parts' || _cc === 'ignored') ? _cc : 'product';  // ver 1.0.6: サムネ台を廃止、無視を追加
+  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'product_noimage' || _cc === 'parts' || _cc === 'ignored' || _cc === 'multi') ? _cc : 'product';  // ver 1.0.6: サムネ台を廃止、無視を追加
   // v1.11.11: 基礎情報モードは廃止。保存済みの 'basic' は 'images' に読み替える。
   const _vm = localStorage.getItem(LS_VIEW_MODE);
   viewMode = (_vm === 'delete' || _vm === 'productdelete') ? _vm : 'images';
@@ -5836,7 +5919,7 @@ function render() {
   // v1.11.29/33: カテゴリごとの商品リストを決めてから、表示方法を選ぶ
   //   商品タブは部品(isPart)を除外。部品タブは部品のみ。
   // ver 1.0.6: 「無視」にした商品・部品は 無視 タブ以外には出さない
-  const realProducts = (data.products || []).filter(p => !p.isPart && !p.ignored);
+  const realProducts = (data.products || []).filter(p => !p.isPart && !isHiddenProduct(p));
   if (_ignoreSelCat !== currentCategory) { ignoreSelection.clear(); _ignoreSelCat = currentCategory; }
   let list = null;
   if (currentCategory === 'product') {
@@ -5850,9 +5933,11 @@ function render() {
   } else if (currentCategory === 'product_all') {
     list = realProducts;
   } else if (currentCategory === 'parts') {
-    list = (data.products || []).filter(p => p.isPart && !p.ignored);      // 部品
+    list = (data.products || []).filter(p => p.isPart && !isHiddenProduct(p));   // 部品
   } else if (currentCategory === 'ignored') {
-    list = (data.products || []).filter(p => p.ignored);                   // 無視
+    list = (data.products || []).filter(p => productState(p) === 'ignored');     // 無視
+  } else if (currentCategory === 'multi') {
+    list = (data.products || []).filter(p => productState(p) === 'multi');       // 複数分
   }
 
   if (list !== null) {
@@ -6292,15 +6377,16 @@ function updateCategoryTabCounts() {
   };
 
   // v1.11.15/19/33: 選択分/未選択分/全体 は部品を除外。部品は別カウント。
-  const realProducts = (data.products || []).filter(p => !p.isPart && !p.ignored);
+  const realProducts = (data.products || []).filter(p => !p.isPart && !isHiddenProduct(p));
   const counts = {
     product: realProducts.filter(p => (p.images || []).some(im => im.tagId)).length,
     product_untagged: realProducts.filter(isUntaggedProduct).length,
     product_noimage: realProducts.filter(p => !p.images || p.images.length === 0).length,
     product_unsure: 0,
     product_all: realProducts.length,
-    parts: (data.products || []).filter(p => p.isPart && !p.ignored).length,
-    ignored: (data.products || []).filter(p => p.ignored).length,
+    parts: (data.products || []).filter(p => p.isPart && !isHiddenProduct(p)).length,
+    ignored: (data.products || []).filter(p => productState(p) === 'ignored').length,
+    multi: (data.products || []).filter(p => productState(p) === 'multi').length,
     material: (data.materials || []).length,
     boost: (data.boosts || []).length
   };
@@ -7278,6 +7364,9 @@ function productRowHTML(p) {
         <button class="btn-edit-mini" data-edit-images="${p.id}" title="画像を編集">🖼️ 画像</button>
         <button class="btn-edit-mini" data-edit-info="${p.id}" title="商品情報を編集">📝 情報</button>
       </div>
+      ${p.isPart ? '' : `<select class="state-select st-${productState(p)}" data-state-pid="${p.id}" title="現役 / 無視 / 複数分">
+        ${PRODUCT_STATES.map(st => `<option value="${st.id}" ${st.id === productState(p) ? 'selected' : ''}>${st.label}</option>`).join('')}
+      </select>`}
     </div>`;
     return `<div class="product-row mode-images ${exportMode ? 'with-export' : ''} ${isEmpty ? 'empty' : ''}">
       ${exportCellHTML}
@@ -7480,7 +7569,7 @@ function openProductEditForm(productId) {
   document.getElementById('productEditName').value = p.itemName || '';
   document.getElementById('productEditItemCode').textContent = p.itemCode || '—';
   const ign = document.getElementById('productEditIgnored');   // ver 1.0.10
-  if (ign) ign.value = p.ignored ? 'ignored' : 'active';
+  if (ign) ign.value = productState(p);
   // ステータス(現役/微妙)を反映 (v1.9.0)
   const status = p.status || 'active';
   const statusInputs = document.querySelectorAll('input[name="productEditStatus"]');
@@ -7503,21 +7592,19 @@ async function saveProductEditForm() {
   if (checkedStatus) p.status = checkedStatus.value;
   // ver 1.0.10: 現役 / 無視
   const ign = document.getElementById('productEditIgnored');
-  const prevIgnored = !!p.ignored;
-  if (ign) { if (ign.value === 'ignored') p.ignored = true; else delete p.ignored; }
+  const prevState = productState(p);   // ver 1.0.17: 現役 / 無視 / 複数分
+  if (ign) setProductState(p, ign.value);
 
   showLoading('保存中...');
   try {
     await saveShopData(currentShopId, `edit product: ${p.itemName}`);
     hideLoading();
     closeModal('productEditModal');
-    const nowIgnored = !!p.ignored;
-    toast(nowIgnored !== prevIgnored
-      ? (nowIgnored ? '保存しました（「無視」タブに移しました）' : '保存しました（現役に戻しました）')
-      : '保存しました', 'success');
+    const nowState = productState(p);
+    toast(nowState !== prevState ? `保存しました（${stateMovedMsg(nowState)}）` : '保存しました', 'success');
     render();
   } catch (e) {
-    if (prevIgnored) p.ignored = true; else delete p.ignored;   // ver 1.0.10: 失敗したら無視の状態は元に戻す
+    setProductState(p, prevState);   // ver 1.0.10/1.0.17: 失敗したら状態は元に戻す
     hideLoading();
     toast('保存失敗: ' + e.message, 'error');
   }
