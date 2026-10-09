@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-08T05:06:49.726Z",
+ "fetchedAt": "2026-10-09T01:54:34.721Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 247,
- "count": 247,
+ "totalAvailable": 250,
+ "count": 250,
  "skipped": 0,
  "truncated": false,
  "requests": 7,
  "topImages": {
-  "downloaded": 7,
-  "reused": 240,
+  "downloaded": 3,
+  "reused": 247,
   "failed": 0
  },
  "items": [
@@ -1136,6 +1136,57 @@
     "sha": "a74742c4a5dcc52f2d21f65766a000ce8f542a74",
     "size": 74117,
     "imageId": "yukaiya_eq-22-05-toilet-25set"
+   }
+  },
+  {
+   "imageId": "yukaiya_et-a-25-01-2set",
+   "code": "et-a-25-01-2set",
+   "name": "Apple Airpods Pro Pro2 Pro3 イヤーチップ イヤーピース エアーポッズプロ 第1世代 第2世代 第3世代 対応 交換 互換 シリコン 落下防止 柔らかい 滑り止め",
+   "price": 680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-a-25-01-2set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-a-25-01-2set",
+   "yahooId": "yukaiya_et-a-25-01-2set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_et-a-25-01-2set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/et-a-25-01-2set.jpg",
+    "sha": "ca438b0b9b85071927246deb13057068f9a2124d",
+    "size": 35498,
+    "imageId": "yukaiya_et-a-25-01-2set"
+   }
+  },
+  {
+   "imageId": "yukaiya_et-a-25-01-4set",
+   "code": "et-a-25-01-4set",
+   "name": "Apple Airpods Pro Pro2 Pro3 イヤーチップ イヤーピース エアーポッズプロ 第1世代 第2世代 第3世代 対応 交換 互換 シリコン 落下防止 柔らかい 滑り止め",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-a-25-01-4set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-a-25-01-4set",
+   "yahooId": "yukaiya_et-a-25-01-4set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_et-a-25-01-4set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/et-a-25-01-4set.jpg",
+    "sha": "3282d1337ba1e5ab57a486ff4a6bbe5a225d65b3",
+    "size": 35418,
+    "imageId": "yukaiya_et-a-25-01-4set"
+   }
+  },
+  {
+   "imageId": "yukaiya_et-a-25-01-6set",
+   "code": "et-a-25-01-6set",
+   "name": "Apple Airpods Pro Pro2 Pro3 イヤーチップ イヤーピース エアーポッズプロ 第1世代 第2世代 第3世代 対応 交換 互換 シリコン 落下防止 柔らかい 滑り止め",
+   "price": 1280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-a-25-01-6set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-a-25-01-6set",
+   "yahooId": "yukaiya_et-a-25-01-6set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_et-a-25-01-6set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/et-a-25-01-6set.jpg",
+    "sha": "2a2a9fe5652ef2eb709cfa00a842000d71d30fd4",
+    "size": 35548,
+    "imageId": "yukaiya_et-a-25-01-6set"
    }
   },
   {
