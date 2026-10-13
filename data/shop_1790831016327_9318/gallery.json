@@ -8569,7 +8569,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-13T08:05:49.736Z",
-      "yahooTopSha": "1d9ddf4a0635d513193af7526b71825342e95555"
+      "yahooTopSha": "1d9ddf4a0635d513193af7526b71825342e95555",
+      "multi": true
     },
     {
       "id": "prod_1791878749737_bsgn5z",
