@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-13T08:04:54.940Z",
+ "fetchedAt": "2026-10-13T08:10:13.696Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 250,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 7,
  "topImages": {
-  "downloaded": 7,
-  "reused": 243,
+  "downloaded": 0,
+  "reused": 250,
   "failed": 0
  },
  "items": [
