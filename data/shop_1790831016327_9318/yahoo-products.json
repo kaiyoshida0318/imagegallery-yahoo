@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-09T01:54:34.721Z",
+ "fetchedAt": "2026-10-13T08:04:54.940Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 250,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 7,
  "topImages": {
-  "downloaded": 3,
-  "reused": 247,
+  "downloaded": 7,
+  "reused": 243,
   "failed": 0
  },
  "items": [
@@ -653,7 +653,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/cab-16-02-01.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_cab-16-02-01",
    "yahooId": "yukaiya_cab-16-02-01",
-   "inStock": true,
+   "inStock": false,
    "top": {
     "key": "yukaiya_cab-16-02-01",
     "path": "data/shop_1790831016327_9318/yahoo-top/cab-16-02-01.jpg",
@@ -1020,122 +1020,122 @@
    }
   },
   {
-   "imageId": "yukaiya_eq-22-05-toilet-01set",
-   "code": "eq-22-05-toilet-01set",
+   "imageId": "yukaiya_eq-24-02-toilet-01set",
+   "code": "eq-24-02-toilet-01set",
    "name": "携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 防災用品 災害用トイレ 700mL 700cc 凝固 男女兼用 子供 女性用 キャンプ 防災グッズ",
    "price": 780,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet-01set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet-01set",
-   "yahooId": "yukaiya_eq-22-05-toilet-01set",
-   "inStock": false,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-01set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-01set",
+   "yahooId": "yukaiya_eq-24-02-toilet-01set",
+   "inStock": true,
    "top": {
-    "key": "yukaiya_eq-22-05-toilet-01set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet-01set.jpg",
+    "key": "yukaiya_eq-24-02-toilet-01set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-01set.jpg",
     "sha": "95e2fb28b09986067e03b8a67d15aa404fbdbde9",
     "size": 73854,
-    "imageId": "yukaiya_eq-22-05-toilet-01set"
+    "imageId": "yukaiya_eq-24-02-toilet-01set"
    }
   },
   {
-   "imageId": "yukaiya_eq-22-05-toilet-02set",
-   "code": "eq-22-05-toilet-02set",
+   "imageId": "yukaiya_eq-24-02-toilet-02set",
+   "code": "eq-24-02-toilet-02set",
    "name": "携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 防災用品 災害用トイレ 700mL 700cc 凝固 男女兼用 子供 女性用 キャンプ 防災グッズ",
    "price": 1000,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet-02set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet-02set",
-   "yahooId": "yukaiya_eq-22-05-toilet-02set",
-   "inStock": false,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-02set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-02set",
+   "yahooId": "yukaiya_eq-24-02-toilet-02set",
+   "inStock": true,
    "top": {
-    "key": "yukaiya_eq-22-05-toilet-02set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet-02set.jpg",
+    "key": "yukaiya_eq-24-02-toilet-02set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-02set.jpg",
     "sha": "0c9c39c71d4f2eafae45854878e0f68e3ca801ad",
     "size": 73504,
-    "imageId": "yukaiya_eq-22-05-toilet-02set"
+    "imageId": "yukaiya_eq-24-02-toilet-02set"
    }
   },
   {
-   "imageId": "yukaiya_eq-22-05-toilet-04set",
-   "code": "eq-22-05-toilet-04set",
+   "imageId": "yukaiya_eq-24-02-toilet-04set",
+   "code": "eq-24-02-toilet-04set",
    "name": "携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 防災用品 災害用トイレ 700mL 700cc 凝固 男女兼用 子供 女性用 キャンプ 防災グッズ",
    "price": 1880,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet-04set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet-04set",
-   "yahooId": "yukaiya_eq-22-05-toilet-04set",
-   "inStock": false,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-04set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-04set",
+   "yahooId": "yukaiya_eq-24-02-toilet-04set",
+   "inStock": true,
    "top": {
-    "key": "yukaiya_eq-22-05-toilet-04set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet-04set.jpg",
+    "key": "yukaiya_eq-24-02-toilet-04set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-04set.jpg",
     "sha": "7a9c74f0e1c816bfddecc29480e1e6b8bcc93f36",
     "size": 73986,
-    "imageId": "yukaiya_eq-22-05-toilet-04set"
+    "imageId": "yukaiya_eq-24-02-toilet-04set"
    }
   },
   {
-   "imageId": "yukaiya_eq-22-05-toilet-05set",
-   "code": "eq-22-05-toilet-05set",
+   "imageId": "yukaiya_eq-24-02-toilet-05set",
+   "code": "eq-24-02-toilet-05set",
    "name": "携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 防災用品 災害用トイレ 700mL 700cc 凝固 男女兼用 子供 女性用 キャンプ 防災グッズ",
    "price": 2280,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet-05set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet-05set",
-   "yahooId": "yukaiya_eq-22-05-toilet-05set",
-   "inStock": false,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-05set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-05set",
+   "yahooId": "yukaiya_eq-24-02-toilet-05set",
+   "inStock": true,
    "top": {
-    "key": "yukaiya_eq-22-05-toilet-05set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet-05set.jpg",
+    "key": "yukaiya_eq-24-02-toilet-05set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-05set.jpg",
     "sha": "78facd27684e89ee8a922ea9eaf318b6d7c5e81f",
     "size": 74342,
-    "imageId": "yukaiya_eq-22-05-toilet-05set"
+    "imageId": "yukaiya_eq-24-02-toilet-05set"
    }
   },
   {
-   "imageId": "yukaiya_eq-22-05-toilet-10set",
-   "code": "eq-22-05-toilet-10set",
+   "imageId": "yukaiya_eq-24-02-toilet-10set",
+   "code": "eq-24-02-toilet-10set",
    "name": "携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 防災用品 災害用トイレ 700mL 700cc 凝固 男女兼用 子供 女性用 キャンプ 防災グッズ",
    "price": 4280,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet-10set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet-10set",
-   "yahooId": "yukaiya_eq-22-05-toilet-10set",
-   "inStock": false,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-10set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-10set",
+   "yahooId": "yukaiya_eq-24-02-toilet-10set",
+   "inStock": true,
    "top": {
-    "key": "yukaiya_eq-22-05-toilet-10set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet-10set.jpg",
+    "key": "yukaiya_eq-24-02-toilet-10set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-10set.jpg",
     "sha": "1d9ddf4a0635d513193af7526b71825342e95555",
     "size": 74524,
-    "imageId": "yukaiya_eq-22-05-toilet-10set"
+    "imageId": "yukaiya_eq-24-02-toilet-10set"
    }
   },
   {
-   "imageId": "yukaiya_eq-22-05-toilet-15set",
-   "code": "eq-22-05-toilet-15set",
+   "imageId": "yukaiya_eq-24-02-toilet-15set",
+   "code": "eq-24-02-toilet-15set",
    "name": "携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 防災用品 災害用トイレ 700mL 700cc 凝固 男女兼用 子供 女性用 キャンプ 防災グッズ",
    "price": 6200,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet-15set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet-15set",
-   "yahooId": "yukaiya_eq-22-05-toilet-15set",
-   "inStock": false,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-15set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-15set",
+   "yahooId": "yukaiya_eq-24-02-toilet-15set",
+   "inStock": true,
    "top": {
-    "key": "yukaiya_eq-22-05-toilet-15set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet-15set.jpg",
-    "sha": "b641f7d503d1ed3112d9309676edacb964feae61",
-    "size": 74385,
-    "imageId": "yukaiya_eq-22-05-toilet-15set"
+    "key": "yukaiya_eq-24-02-toilet-15set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-15set.jpg",
+    "sha": "9262463f6bb7fd0ac1ff1193c6cadd981a70c99d",
+    "size": 16404,
+    "imageId": "yukaiya_eq-24-02-toilet-15set"
    }
   },
   {
-   "imageId": "yukaiya_eq-22-05-toilet-25set",
-   "code": "eq-22-05-toilet-25set",
+   "imageId": "yukaiya_eq-24-02-toilet-25set",
+   "code": "eq-24-02-toilet-25set",
    "name": "携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 防災用品 災害用トイレ 700mL 700cc 凝固 男女兼用 子供 女性用 キャンプ 防災グッズ",
    "price": 9800,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet-25set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet-25set",
-   "yahooId": "yukaiya_eq-22-05-toilet-25set",
-   "inStock": false,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-25set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-25set",
+   "yahooId": "yukaiya_eq-24-02-toilet-25set",
+   "inStock": true,
    "top": {
-    "key": "yukaiya_eq-22-05-toilet-25set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet-25set.jpg",
+    "key": "yukaiya_eq-24-02-toilet-25set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-25set.jpg",
     "sha": "a74742c4a5dcc52f2d21f65766a000ce8f542a74",
     "size": 74117,
-    "imageId": "yukaiya_eq-22-05-toilet-25set"
+    "imageId": "yukaiya_eq-24-02-toilet-25set"
    }
   },
   {
