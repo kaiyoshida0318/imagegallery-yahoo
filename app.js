@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.18';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.19';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -472,6 +472,7 @@ function injectImageTagStyles() {
     .cat-sep { color: var(--text-light, #94a3b8); padding: 0 6px; user-select: none; align-self: center; }
     .cat-btn[data-cat="ignored"], .cat-btn[data-cat="multi"] { color: var(--text-light, #94a3b8); }
     .cat-btn[data-cat="ignored"].active, .cat-btn[data-cat="multi"].active { color: #fff; }
+    .cat-btn[data-cat="everything"] { font-weight: 700; }
     .product-row.mode-ignoreedit:hover { background: #eff6ff; }
     .product-row.mode-ignoreedit.pd-selected { background: #dbeafe; outline-color: #3b82f6; }
     .product-table-header .col-pd-check { font-size: 12px; font-weight: 700; }
@@ -846,6 +847,25 @@ function injectIgnoredTab() {
     render();
   });
   btn.parentNode.insertBefore(mbtn, btn.nextSibling);
+  // ver 1.0.19: 一番右に「| 全体」。部品・無視・複数分も含めたすべての商品を出す (どこにあるか分からない商品を検索する用)
+  const sep2 = document.createElement('span');
+  sep2.className = 'cat-sep';
+  sep2.textContent = '|';
+  const ebtn = document.createElement('button');
+  ebtn.className = 'cat-btn';
+  ebtn.dataset.cat = 'everything';
+  ebtn.textContent = '全体';
+  ebtn.title = '部品・無視・複数分も含めた、すべての商品から探します';
+  ebtn.addEventListener('click', () => {
+    currentCategory = 'everything';
+    localStorage.setItem(LS_CURRENT_CAT, 'everything');
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b === ebtn));
+    render();
+    const si = document.getElementById('searchInput');
+    if (si) si.focus();
+  });
+  mbtn.parentNode.appendChild(sep2);   // 非表示の旧タブ (素材/盛り上げ) よりも後ろ = 一番右
+  mbtn.parentNode.appendChild(ebtn);
 }
 
 function injectIgnoreModeUI() {
@@ -884,6 +904,7 @@ function injectIgnoreModeUI() {
       <div class="delete-action-buttons">
         <button class="btn-ign-sub" id="btnIgnoreSelectAll">表示中を全部選択</button>
         <button class="btn-ign-sub" id="btnIgnoreClear">選択を解除</button>
+        <button class="btn-ign-main" id="btnIgnoreApply3" style="display:none">現役に戻す</button>
         <button class="btn-ign-main" id="btnIgnoreApply2">複数分にする</button>
         <button class="btn-ign-main" id="btnIgnoreApply">無視にする</button>
       </div>`;
@@ -895,25 +916,36 @@ function injectIgnoreModeUI() {
     bar.querySelector('#btnIgnoreClear').addEventListener('click', () => { ignoreSelection.clear(); render(); });
     bar.querySelector('#btnIgnoreApply').addEventListener('click', (e) => applyState(e.currentTarget.dataset.state));
     bar.querySelector('#btnIgnoreApply2').addEventListener('click', (e) => applyState(e.currentTarget.dataset.state));
+    bar.querySelector('#btnIgnoreApply3').addEventListener('click', (e) => applyState(e.currentTarget.dataset.state));
   }
 }
 
 function updateIgnoreBar() {
   const bar = document.getElementById('ignoreBar');
   if (!bar) return;
-  const listCat = ['product', 'product_untagged', 'product_noimage', 'product_all', 'parts', 'ignored', 'multi'].includes(currentCategory);
+  const listCat = ['product', 'product_untagged', 'product_noimage', 'product_all', 'parts', 'ignored', 'multi', 'everything'].includes(currentCategory);
   if (viewMode !== 'ignoreedit' || !listCat) { bar.style.display = 'none'; return; }
   bar.style.display = 'flex';
   // ver 1.0.17: 今のタブに応じて、移せる先を2つ出す
   //   通常タブ → 無視 / 複数分、無視タブ → 現役 / 複数分、複数分タブ → 現役 / 無視
   const here = currentCategory === 'ignored' ? 'ignored' : (currentCategory === 'multi' ? 'multi' : 'active');
   const dests = here === 'active' ? ['ignored', 'multi'] : (here === 'ignored' ? ['active', 'multi'] : ['active', 'ignored']);
+  // ver 1.0.19: 「全体」タブは状態が混ざっているので、3つとも出す
+  const everything = currentCategory === 'everything';
+  const b3 = document.getElementById('btnIgnoreApply3');
   const n = ignoreSelection.size;
   document.getElementById('ignoreCount').textContent = n;
   document.getElementById('ignoreHint').textContent = here === 'active'
     ? '行をクリックで選択。無視・複数分にすると、それぞれのタブへ移ります'
     : '行をクリックで選択。現役に戻すと元のタブに表示されます';
   const label = (st) => st === 'active' ? `↩ ${n}件を現役に戻す` : `${st === 'ignored' ? '🙈' : '📦'} ${n}件を${stateLabel(st)}にする`;
+  if (b3) {
+    b3.style.display = everything ? '' : 'none';
+    b3.dataset.state = 'active';
+    b3.textContent = `↩ ${n}件を現役にする`;
+    b3.disabled = n === 0;
+  }
+  if (everything) { dests[0] = 'ignored'; dests[1] = 'multi'; }
   [['btnIgnoreApply', dests[0]], ['btnIgnoreApply2', dests[1]]].forEach(([id, st]) => {
     const b = document.getElementById(id);
     b.dataset.state = st;
@@ -3038,7 +3070,7 @@ function loadCurrentSelections() {
   currentShopId = localStorage.getItem(LS_CURRENT_SHOP) || null;
   // v1.11.12: 素材/盛り上げタブは廃止。保存済みの material/boost は product(現役) に読み替える
   const _cc = localStorage.getItem(LS_CURRENT_CAT);
-  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'product_noimage' || _cc === 'parts' || _cc === 'ignored' || _cc === 'multi') ? _cc : 'product';  // ver 1.0.6: サムネ台を廃止、無視を追加
+  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'product_noimage' || _cc === 'parts' || _cc === 'ignored' || _cc === 'multi' || _cc === 'everything') ? _cc : 'product';  // ver 1.0.6: サムネ台を廃止、無視を追加
   // v1.11.11: 基礎情報モードは廃止。保存済みの 'basic' は 'images' に読み替える。
   const _vm = localStorage.getItem(LS_VIEW_MODE);
   viewMode = (_vm === 'delete' || _vm === 'productdelete') ? _vm : 'images';
@@ -6122,6 +6154,8 @@ function render() {
     list = (data.products || []).filter(p => productState(p) === 'ignored');     // 無視
   } else if (currentCategory === 'multi') {
     list = (data.products || []).filter(p => productState(p) === 'multi');       // 複数分
+  } else if (currentCategory === 'everything') {
+    list = (data.products || []).slice();                                        // ver 1.0.19: すべて
   }
 
   if (list !== null) {
@@ -6571,6 +6605,7 @@ function updateCategoryTabCounts() {
     parts: (data.products || []).filter(p => p.isPart && !isHiddenProduct(p)).length,
     ignored: (data.products || []).filter(p => productState(p) === 'ignored').length,
     multi: (data.products || []).filter(p => productState(p) === 'multi').length,
+    everything: (data.products || []).length,
     material: (data.materials || []).length,
     boost: (data.boosts || []).length
   };
