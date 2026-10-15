@@ -2,16 +2,16 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-14T01:03:28.462Z",
+ "fetchedAt": "2026-10-15T07:04:26.926Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 250,
- "count": 250,
+ "totalAvailable": 257,
+ "count": 257,
  "skipped": 0,
  "truncated": false,
- "requests": 7,
+ "requests": 8,
  "topImages": {
-  "downloaded": 0,
+  "downloaded": 7,
   "reused": 250,
   "failed": 0
  },
@@ -2887,6 +2887,125 @@
     "sha": "df3d2b30fb7d33e181c197db247b64a1d4ea6880",
     "size": 37461,
     "imageId": "yukaiya_si-24-03"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-01-30set",
+   "code": "si-25-01-30set",
+   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "price": 790,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-30set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-30set",
+   "yahooId": "yukaiya_si-25-01-30set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-25-01-30set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-30set.jpg",
+    "sha": "adc1c46ee395a0962d848cdc95f887a39f9e927a",
+    "size": 68335,
+    "imageId": "yukaiya_si-25-01-30set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-01-60set",
+   "code": "si-25-01-60set",
+   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "price": 1090,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-60set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-60set",
+   "yahooId": "yukaiya_si-25-01-60set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-25-01-60set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-60set.jpg",
+    "sha": "c759a081edce0074838319bb9d98c3a4ff448074",
+    "size": 68249,
+    "imageId": "yukaiya_si-25-01-60set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-01-90set",
+   "code": "si-25-01-90set",
+   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "price": 1650,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-90set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-90set",
+   "yahooId": "yukaiya_si-25-01-90set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-25-01-90set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-90set.jpg",
+    "sha": "4f6d54cc9d9611701d1a0b22a73f26fdf476023b",
+    "size": 68308,
+    "imageId": "yukaiya_si-25-01-90set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-01-120set",
+   "code": "si-25-01-120set",
+   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "price": 2050,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-120set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-120set",
+   "yahooId": "yukaiya_si-25-01-120set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-25-01-120set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-120set.jpg",
+    "sha": "3311c50f0f23de6d953cb59b15c588a987f6bce7",
+    "size": 68190,
+    "imageId": "yukaiya_si-25-01-120set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-01-180set",
+   "code": "si-25-01-180set",
+   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "price": 2840,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-180set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-180set",
+   "yahooId": "yukaiya_si-25-01-180set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-25-01-180set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-180set.jpg",
+    "sha": "abe6894d984eb0c23b3e0f0261ca2eba26bdea02",
+    "size": 68433,
+    "imageId": "yukaiya_si-25-01-180set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-01-240set",
+   "code": "si-25-01-240set",
+   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "price": 3470,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-240set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-240set",
+   "yahooId": "yukaiya_si-25-01-240set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-25-01-240set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-240set.jpg",
+    "sha": "d80a8aa560bb7781d45c581407e593b7c2080abd",
+    "size": 68587,
+    "imageId": "yukaiya_si-25-01-240set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-01-300set",
+   "code": "si-25-01-300set",
+   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "price": 3950,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-300set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-300set",
+   "yahooId": "yukaiya_si-25-01-300set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-25-01-300set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-300set.jpg",
+    "sha": "bbe4120adb75809b6f40bcbd1f531611815f5bbb",
+    "size": 68045,
+    "imageId": "yukaiya_si-25-01-300set"
    }
   },
   {
