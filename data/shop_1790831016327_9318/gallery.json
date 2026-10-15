@@ -8827,7 +8827,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-15T07:05:25.511Z",
-      "yahooTopSha": "c759a081edce0074838319bb9d98c3a4ff448074"
+      "yahooTopSha": "c759a081edce0074838319bb9d98c3a4ff448074",
+      "multi": true
     },
     {
       "id": "prod_1792047925512_p6ieg7",
