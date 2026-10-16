@@ -9312,7 +9312,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-16T08:10:31.538Z",
-      "yahooTopSha": "6e471888905a3b77470e560dff1be9b3024819c9"
+      "yahooTopSha": "6e471888905a3b77470e560dff1be9b3024819c9",
+      "multi": true
     },
     {
       "id": "prod_1792138231539_amn8hr",
