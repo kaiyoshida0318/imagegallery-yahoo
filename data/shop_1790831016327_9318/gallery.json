@@ -9270,6 +9270,32 @@
           "uploadedAt": "2026-10-16T08:12:06.115Z",
           "note": "",
           "tags": []
+        },
+        {
+          "id": "img_1792138333908_xx1kp7",
+          "filename": "1792138332312_8r1rcc_c-01.jpg",
+          "originalName": "c-01.jpg",
+          "path": "data/shop_1790831016327_9318/images/prod_1792138231539_hlqiik/1792138332312_8r1rcc_c-01.jpg",
+          "sha": "a7c53135ff2e291c29a576b88850f8cae542407e",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1792138231539_hlqiik/1792138332312_8r1rcc_c-01.jpg",
+          "size": 106010,
+          "uploadedAt": "2026-10-16T08:12:13.909Z",
+          "note": "",
+          "tags": [],
+          "common": true
+        },
+        {
+          "id": "img_1792138335638_x7fmhr",
+          "filename": "1792138333909_kc5hy0_c-02.jpg",
+          "originalName": "c-02.jpg",
+          "path": "data/shop_1790831016327_9318/images/prod_1792138231539_hlqiik/1792138333909_kc5hy0_c-02.jpg",
+          "sha": "1e7fdea627bc23fe153f06ae404e8345c8d18de0",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1792138231539_hlqiik/1792138333909_kc5hy0_c-02.jpg",
+          "size": 81727,
+          "uploadedAt": "2026-10-16T08:12:15.638Z",
+          "note": "",
+          "tags": [],
+          "common": true
         }
       ],
       "status": "active",
