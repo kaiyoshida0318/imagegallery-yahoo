@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-15T07:04:26.926Z",
+ "fetchedAt": "2026-10-16T08:09:27.031Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 257,
- "count": 257,
+ "totalAvailable": 262,
+ "count": 262,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 7,
-  "reused": 250,
+  "downloaded": 6,
+  "reused": 256,
   "failed": 0
  },
  "items": [
@@ -2892,12 +2892,12 @@
   {
    "imageId": "yukaiya_si-25-01-30set",
    "code": "si-25-01-30set",
-   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
    "price": 790,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-30set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-30set",
    "yahooId": "yukaiya_si-25-01-30set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-25-01-30set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-30set.jpg",
@@ -2909,12 +2909,12 @@
   {
    "imageId": "yukaiya_si-25-01-60set",
    "code": "si-25-01-60set",
-   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
    "price": 1090,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-60set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-60set",
    "yahooId": "yukaiya_si-25-01-60set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-25-01-60set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-60set.jpg",
@@ -2926,12 +2926,12 @@
   {
    "imageId": "yukaiya_si-25-01-90set",
    "code": "si-25-01-90set",
-   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
    "price": 1650,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-90set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-90set",
    "yahooId": "yukaiya_si-25-01-90set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-25-01-90set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-90set.jpg",
@@ -2943,12 +2943,12 @@
   {
    "imageId": "yukaiya_si-25-01-120set",
    "code": "si-25-01-120set",
-   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
    "price": 2050,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-120set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-120set",
    "yahooId": "yukaiya_si-25-01-120set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-25-01-120set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-120set.jpg",
@@ -2960,12 +2960,12 @@
   {
    "imageId": "yukaiya_si-25-01-180set",
    "code": "si-25-01-180set",
-   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
    "price": 2840,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-180set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-180set",
    "yahooId": "yukaiya_si-25-01-180set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-25-01-180set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-180set.jpg",
@@ -2977,12 +2977,12 @@
   {
    "imageId": "yukaiya_si-25-01-240set",
    "code": "si-25-01-240set",
-   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
    "price": 3470,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-240set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-240set",
    "yahooId": "yukaiya_si-25-01-240set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-25-01-240set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-240set.jpg",
@@ -2994,18 +2994,69 @@
   {
    "imageId": "yukaiya_si-25-01-300set",
    "code": "si-25-01-300set",
-   "name": "口閉じテープ 鼻呼吸テープ いびき防止テープ マウステープ 口テープ 口呼吸 テープ 口呼吸防止 いびき防止 グッズ テープ いびき 安眠 いびき対策 いびき軽減",
+   "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
    "price": 3950,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-01-300set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-01-300set",
    "yahooId": "yukaiya_si-25-01-300set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-25-01-300set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-25-01-300set.jpg",
     "sha": "bbe4120adb75809b6f40bcbd1f531611815f5bbb",
     "size": 68045,
     "imageId": "yukaiya_si-25-01-300set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-05-04set",
+   "code": "si-25-05-04set",
+   "name": "Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー スイッチ",
+   "price": 680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-05-04set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-05-04set",
+   "yahooId": "yukaiya_si-25-05-04set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-05-04set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-05-04set.jpg",
+    "sha": "c8ce6116fde4263ab123df0db3eb3038568c24cf",
+    "size": 42479,
+    "imageId": "yukaiya_si-25-05-04set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-05-08set",
+   "code": "si-25-05-08set",
+   "name": "Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー スイッチ",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-05-08set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-05-08set",
+   "yahooId": "yukaiya_si-25-05-08set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-05-08set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-05-08set.jpg",
+    "sha": "f8865ef8934564c82258e236f157eecd3750283a",
+    "size": 42747,
+    "imageId": "yukaiya_si-25-05-08set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-05-16set",
+   "code": "si-25-05-16set",
+   "name": "Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー スイッチ",
+   "price": 1500,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-05-16set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-05-16set",
+   "yahooId": "yukaiya_si-25-05-16set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-05-16set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-05-16set.jpg",
+    "sha": "990f8cf77a505500d6cf2a80cf5a2e651173ecc5",
+    "size": 43116,
+    "imageId": "yukaiya_si-25-05-16set"
    }
   },
   {
@@ -3040,6 +3091,57 @@
     "sha": "4be3da6f6115c32f11dba4ae78edfb9f624d7c54",
     "size": 49927,
     "imageId": "yukaiya_si-26-08-6set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-09-02set",
+   "code": "si-26-09-02set",
+   "name": "PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー コントローラー カバー 10個セット 交換用 PS4 DualSense",
+   "price": 480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-09-02set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-09-02set",
+   "yahooId": "yukaiya_si-26-09-02set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-26-09-02set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-09-02set.jpg",
+    "sha": "7607cd8cbc3124f3ae3e2de00d83ddb78fd65b9c",
+    "size": 43198,
+    "imageId": "yukaiya_si-26-09-02set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-09-04set",
+   "code": "si-26-09-04set",
+   "name": "PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー コントローラー カバー 10個セット 交換用 PS4 DualSense",
+   "price": 680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-09-04set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-09-04set",
+   "yahooId": "yukaiya_si-26-09-04set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-26-09-04set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-09-04set.jpg",
+    "sha": "6e471888905a3b77470e560dff1be9b3024819c9",
+    "size": 42812,
+    "imageId": "yukaiya_si-26-09-04set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-09-10set",
+   "code": "si-26-09-10set",
+   "name": "PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー コントローラー カバー 10個セット 交換用 PS4 DualSense",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-09-10set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-09-10set",
+   "yahooId": "yukaiya_si-26-09-10set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-26-09-10set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-09-10set.jpg",
+    "sha": "6d55c00a2564eedf8119b9c1e75b67ac0b5da742",
+    "size": 43321,
+    "imageId": "yukaiya_si-26-09-10set"
    }
   },
   {
@@ -3516,23 +3618,6 @@
     "sha": "169b009393fa7e81224edaaac52bc791878d2553",
     "size": 33563,
     "imageId": "yukaiya_wat-fb-21-00"
-   }
-  },
-  {
-   "imageId": "yukaiya_wat-fb-21-01",
-   "code": "wat-fb-21-01",
-   "name": "Fitbit Versa3 Sense 充電 ケーブル",
-   "price": 1280,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-fb-21-01.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-fb-21-01",
-   "yahooId": "yukaiya_wat-fb-21-01",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_wat-fb-21-01",
-    "path": "data/shop_1790831016327_9318/yahoo-top/wat-fb-21-01.jpg",
-    "sha": "d2fb76a4948ddb2ed09c3fdde4cde6e74b19c95a",
-    "size": 16656,
-    "imageId": "yukaiya_wat-fb-21-01"
    }
   },
   {
