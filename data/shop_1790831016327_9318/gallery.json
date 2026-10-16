@@ -9343,7 +9343,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-16T08:10:31.538Z",
-      "yahooTopSha": "6d55c00a2564eedf8119b9c1e75b67ac0b5da742"
+      "yahooTopSha": "6d55c00a2564eedf8119b9c1e75b67ac0b5da742",
+      "multi": true
     }
   ],
   "materials": [],
