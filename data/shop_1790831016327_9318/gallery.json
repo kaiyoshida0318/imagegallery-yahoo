@@ -9220,7 +9220,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-16T08:10:31.538Z",
-      "yahooTopSha": "f8865ef8934564c82258e236f157eecd3750283a"
+      "yahooTopSha": "f8865ef8934564c82258e236f157eecd3750283a",
+      "multi": true
     },
     {
       "id": "prod_1792138231539_geroi7",
