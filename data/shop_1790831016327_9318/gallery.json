@@ -9251,7 +9251,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-16T08:10:31.538Z",
-      "yahooTopSha": "990f8cf77a505500d6cf2a80cf5a2e651173ecc5"
+      "yahooTopSha": "990f8cf77a505500d6cf2a80cf5a2e651173ecc5",
+      "multi": true
     },
     {
       "id": "prod_1792138231539_qo50wc",
