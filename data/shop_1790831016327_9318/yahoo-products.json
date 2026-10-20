@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-16T08:09:27.031Z",
+ "fetchedAt": "2026-10-20T06:55:31.153Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 262,
- "count": 262,
+ "totalAvailable": 261,
+ "count": 261,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 6,
-  "reused": 256,
+  "downloaded": 1,
+  "reused": 260,
   "failed": 0
  },
  "items": [
@@ -1000,23 +1000,6 @@
     "sha": "3c4d2d1f60b45bb0cc937dc486198633f9b5ef64",
     "size": 45603,
     "imageId": "yukaiya_eq-22-04-clear-mat"
-   }
-  },
-  {
-   "imageId": "yukaiya_eq-22-05-toilet",
-   "code": "eq-22-05-toilet",
-   "name": "携帯トイレ 防災 小便用 登山 凝固剤 車 女性用 男性 簡易トイレ 非常用トイレ 緊急 車内 渋滞 災害 登山 男女兼用 入院 介護 アウトドア 防災グッズ NP-2F",
-   "price": 1280,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-05-toilet.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-05-toilet",
-   "yahooId": "yukaiya_eq-22-05-toilet",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_eq-22-05-toilet",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-05-toilet.jpg",
-    "sha": "57ed096b7ae77a67c94ba5336256bec2e646c0e0",
-    "size": 61918,
-    "imageId": "yukaiya_eq-22-05-toilet"
    }
   },
   {
@@ -2363,23 +2346,6 @@
    }
   },
   {
-   "imageId": "yukaiya_si-22-01",
-   "code": "si-22-01",
-   "name": "風呂 チェーン お風呂の栓 風呂せん 両端に二重リングを備えた風呂 PKT2-4F",
-   "price": 680,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-01.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-01",
-   "yahooId": "yukaiya_si-22-01",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_si-22-01",
-    "path": "data/shop_1790831016327_9318/yahoo-top/si-22-01.jpg",
-    "sha": "d41b06014c2ca245f280fb030588e81ecc921397",
-    "size": 50160,
-    "imageId": "yukaiya_si-22-01"
-   }
-  },
-  {
    "imageId": "yukaiya_si-22-01-3set",
    "code": "si-22-01-3set",
    "name": "排水口 排水溝 ゴミ受け ステンレス 3個セット お風呂 キッチン ユニットバス ネット 髪の毛 取り キャッチ PKT0-2F",
@@ -3011,7 +2977,7 @@
   {
    "imageId": "yukaiya_si-25-05-04set",
    "code": "si-25-05-04set",
-   "name": "Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー スイッチ",
+   "name": "【複数購入で★最大45％OFF】Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー",
    "price": 680,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-05-04set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-05-04set",
@@ -3028,7 +2994,7 @@
   {
    "imageId": "yukaiya_si-25-05-08set",
    "code": "si-25-05-08set",
-   "name": "Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー スイッチ",
+   "name": "【複数購入で★最大45％OFF】Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-05-08set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-05-08set",
@@ -3045,7 +3011,7 @@
   {
    "imageId": "yukaiya_si-25-05-16set",
    "code": "si-25-05-16set",
-   "name": "Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー スイッチ",
+   "name": "【複数購入で★最大45％OFF】Nintendo Switch ジョイコン Joy-Con ジョイスティックカバー カバー アナログ スティック キャップ コントローラー ニンテンドー",
    "price": 1500,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-05-16set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-05-16set",
@@ -3096,7 +3062,7 @@
   {
    "imageId": "yukaiya_si-26-09-02set",
    "code": "si-26-09-02set",
-   "name": "PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー コントローラー カバー 10個セット 交換用 PS4 DualSense",
+   "name": "【複数購入で★最大58％OFF】PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー 2個セット 交換用 PS4 DualSense",
    "price": 480,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-09-02set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-09-02set",
@@ -3113,7 +3079,7 @@
   {
    "imageId": "yukaiya_si-26-09-04set",
    "code": "si-26-09-04set",
-   "name": "PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー コントローラー カバー 10個セット 交換用 PS4 DualSense",
+   "name": "【複数購入で★最大58％OFF】PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー 4個セット 交換用 PS4 DualSense",
    "price": 680,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-09-04set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-09-04set",
@@ -3130,7 +3096,7 @@
   {
    "imageId": "yukaiya_si-26-09-10set",
    "code": "si-26-09-10set",
-   "name": "PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー コントローラー カバー 10個セット 交換用 PS4 DualSense",
+   "name": "【複数購入で★最大58％OFF】PS5 PS4 コントローラー スティック キャップ カバー アナログスティックカバー 10個セット 交換用 PS4 DualSense",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-09-10set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-09-10set",
@@ -3788,6 +3754,23 @@
     "sha": "53d3224c87b1da575e2860e44bbcd432c374cfc2",
     "size": 65015,
     "imageId": "yukaiya_wat-sma-01b"
+   }
+  },
+  {
+   "imageId": "yukaiya_wat-sma-01b-0set",
+   "code": "wat-sma-01b-0set",
+   "name": "時計 ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック PKT1-4F",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-01b-0set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-01b-0set",
+   "yahooId": "yukaiya_wat-sma-01b-0set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_wat-sma-01b-0set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wat-sma-01b-0set.jpg",
+    "sha": "a931fa32908d41a1ee96c47b58796a45b2496799",
+    "size": 57654,
+    "imageId": "yukaiya_wat-sma-01b-0set"
    }
   },
   {
