@@ -11390,7 +11390,6 @@
           "uploadedAt": "2026-10-23T08:29:23.013Z",
           "note": "",
           "tags": [],
-          "tagId": "tag_ytop_1791336537134_bcmc",
           "yahooTop": true
         }
       ],
@@ -11420,13 +11419,13 @@
           "uploadedAt": "2026-10-23T08:29:23.013Z",
           "note": "",
           "tags": [],
-          "tagId": "tag_ytop_1791336537134_bcmc",
           "yahooTop": true
         }
       ],
       "status": "active",
       "syncedAt": "2026-10-23T08:29:23.012Z",
-      "yahooTopSha": "c34ffc6f99e0be6b2d5dd1678b3f9b40bcb1654b"
+      "yahooTopSha": "c34ffc6f99e0be6b2d5dd1678b3f9b40bcb1654b",
+      "multi": true
     },
     {
       "id": "prod_1792744163013_tr5vy9",
@@ -11450,7 +11449,6 @@
           "uploadedAt": "2026-10-23T08:29:23.013Z",
           "note": "",
           "tags": [],
-          "tagId": "tag_ytop_1791336537134_bcmc",
           "yahooTop": true
         }
       ],
