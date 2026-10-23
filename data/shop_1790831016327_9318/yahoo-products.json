@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-23T03:43:03.516Z",
+ "fetchedAt": "2026-10-23T04:36:20.437Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 265,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 0,
-  "reused": 265,
+  "downloaded": 1,
+  "reused": 264,
   "failed": 0
  },
  "items": [
@@ -1853,20 +1853,20 @@
    }
   },
   {
-   "imageId": "yukaiya_ih-21-04",
-   "code": "ih-21-04",
+   "imageId": "yukaiya_ih-21-04a",
+   "code": "ih-21-04a",
    "name": "かかと 角質除去 やすり 魚の目 カッター 足裏 角質削り 角質ケア 角質リムーバー フットケア かかとケア 乾燥 PKT3-2F",
    "price": 1180,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-04.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-04",
-   "yahooId": "yukaiya_ih-21-04",
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-04a.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-04a",
+   "yahooId": "yukaiya_ih-21-04a",
    "inStock": true,
    "top": {
-    "key": "yukaiya_ih-21-04",
-    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-04.jpg",
-    "sha": "4c23da5e51bc4c244d7d95f2eefe538e99417485",
-    "size": 36548,
-    "imageId": "yukaiya_ih-21-04"
+    "key": "yukaiya_ih-21-04a",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-04a.jpg",
+    "sha": "e402820a25f8a7fae28280f8c20377812aa59d6a",
+    "size": 47474,
+    "imageId": "yukaiya_ih-21-04a"
    }
   },
   {
