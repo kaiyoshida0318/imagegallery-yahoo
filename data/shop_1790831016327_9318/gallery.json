@@ -10930,7 +10930,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-23T02:53:14.036Z",
-      "yahooTopSha": "66269c6d2ba21cf36a4410f5f8b48d1ec392f636"
+      "yahooTopSha": "66269c6d2ba21cf36a4410f5f8b48d1ec392f636",
+      "multi": true
     },
     {
       "id": "prod_1792723994037_hz24jw",
