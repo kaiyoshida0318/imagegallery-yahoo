@@ -11454,7 +11454,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-23T08:29:23.012Z",
-      "yahooTopSha": "d2acd6b253501bb4696ecc20c3ef832969d92386"
+      "yahooTopSha": "d2acd6b253501bb4696ecc20c3ef832969d92386",
+      "ignored": true
     }
   ],
   "materials": [],
