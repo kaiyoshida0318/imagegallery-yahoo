@@ -9858,7 +9858,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-23T02:53:14.036Z",
-      "yahooTopSha": "46eb3a5687d2a1b3873fa1318f1aa0cb03542318"
+      "yahooTopSha": "46eb3a5687d2a1b3873fa1318f1aa0cb03542318",
+      "multi": true
     },
     {
       "id": "prod_1792723994037_hrgv2k",
