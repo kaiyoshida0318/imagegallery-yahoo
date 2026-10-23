@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-20T06:55:31.153Z",
+ "fetchedAt": "2026-10-23T02:52:19.174Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 261,
- "count": 261,
+ "totalAvailable": 265,
+ "count": 265,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 1,
-  "reused": 260,
+  "downloaded": 6,
+  "reused": 259,
   "failed": 0
  },
  "items": [
@@ -143,7 +143,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/bg-06-kakon-10set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-06-kakon-10set",
    "yahooId": "yukaiya_bg-06-kakon-10set",
-   "inStock": true,
+   "inStock": false,
    "top": {
     "key": "yukaiya_bg-06-kakon-10set",
     "path": "data/shop_1790831016327_9318/yahoo-top/bg-06-kakon-10set.jpg",
@@ -643,23 +643,6 @@
     "sha": "fadd574d0f1e39d3675965b93f24234e399d926a",
     "size": 47538,
     "imageId": "yukaiya_ca-02-01-hera"
-   }
-  },
-  {
-   "imageId": "yukaiya_cab-16-02-01",
-   "code": "cab-16-02-01",
-   "name": "イヤホン 延長コード ケーブル 1M 高品質 ヘッドホン 延長 コード ケーブル ステレオミニプラグ ステレオミニジャック PKT1-4F",
-   "price": 718,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/cab-16-02-01.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_cab-16-02-01",
-   "yahooId": "yukaiya_cab-16-02-01",
-   "inStock": false,
-   "top": {
-    "key": "yukaiya_cab-16-02-01",
-    "path": "data/shop_1790831016327_9318/yahoo-top/cab-16-02-01.jpg",
-    "sha": "5f300f443dc823401fa12ed03955201d9a335b1f",
-    "size": 45541,
-    "imageId": "yukaiya_cab-16-02-01"
    }
   },
   {
@@ -1428,23 +1411,6 @@
    }
   },
   {
-   "imageId": "yukaiya_fas-16-02-yellow",
-   "code": "fas-16-02-yellow",
-   "name": "蝶ネクタイ 黄色 イエロー ネクタイ メンズ キッズ 子供 結婚式 PKT2-4F",
-   "price": 580,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/fas-16-02-yellow.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_fas-16-02-yellow",
-   "yahooId": "yukaiya_fas-16-02-yellow",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_fas-16-02-yellow",
-    "path": "data/shop_1790831016327_9318/yahoo-top/fas-16-02-yellow.jpg",
-    "sha": "0ead80d98f12dadf29f6ca52306cc000ea4539d0",
-    "size": 35895,
-    "imageId": "yukaiya_fas-16-02-yellow"
-   }
-  },
-  {
    "imageId": "yukaiya_fas-17-03",
    "code": "fas-17-03",
    "name": "ペアネックレス 安い 高校生 中学生 大学生 激安 シンプル PKT2-4F",
@@ -1822,7 +1788,7 @@
    "imageId": "yukaiya_ih-21-01",
    "code": "ih-21-01",
    "name": "かかと 角質ケア かかと削り かかとやすり 角質除去 足裏 足角質取り ガラス かかとケア 足裏角質除去 足 角質削り 足の角質取り PKT2-2F",
-   "price": 1380,
+   "price": 1480,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-01.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-01",
    "yahooId": "yukaiya_ih-21-01",
@@ -1901,6 +1867,108 @@
     "sha": "4c23da5e51bc4c244d7d95f2eefe538e99417485",
     "size": 36548,
     "imageId": "yukaiya_ih-21-04"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-21-kakato-0103",
+   "code": "ih-21-kakato-0103",
+   "name": "かかとやすり かかとクリーム セット ガラス製 角質削り 尿素配合 保湿 角質除去 ひび割れ ガサガサ かかとケア フットケア コピー",
+   "price": 2480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-kakato-0103.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-kakato-0103",
+   "yahooId": "yukaiya_ih-21-kakato-0103",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-21-kakato-0103",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-kakato-0103.jpg",
+    "sha": "46eb3a5687d2a1b3873fa1318f1aa0cb03542318",
+    "size": 65470,
+    "imageId": "yukaiya_ih-21-kakato-0103"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-21-kakato-0104",
+   "code": "ih-21-kakato-0104",
+   "name": "かかとやすり かかと角質削り セット ガラス製 角質削り 角質取り 角質除去 足裏ケア 不織布 ひび割れ ガサガサ フットケア",
+   "price": 2480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-kakato-0104.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-kakato-0104",
+   "yahooId": "yukaiya_ih-21-kakato-0104",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-21-kakato-0104",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-kakato-0104.jpg",
+    "sha": "1ffd37d0117445dfb82f4e6e341da8681bfa7262",
+    "size": 74019,
+    "imageId": "yukaiya_ih-21-kakato-0104"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-21-kakato-0203",
+   "code": "ih-21-kakato-0203",
+   "name": "かかと靴下 かかとクリーム セット 保湿ソックス 尿素配合 乾燥対策 ひび割れケア ガサガサ つるつる 美脚 かかとケア",
+   "price": 2280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-kakato-0203.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-kakato-0203",
+   "yahooId": "yukaiya_ih-21-kakato-0203",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-21-kakato-0203",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-kakato-0203.jpg",
+    "sha": "37b77eda12942dfa4248cf644efcf085d08b3dc9",
+    "size": 67323,
+    "imageId": "yukaiya_ih-21-kakato-0203"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-21-kakato-0204",
+   "code": "ih-21-kakato-0204",
+   "name": "かかと靴下 かかと角質削り セット 保湿ソックス 角質取り 角質除去 ひび割れ対策 ガサガサ かかとケア 足裏 フットケア",
+   "price": 2280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-kakato-0204.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-kakato-0204",
+   "yahooId": "yukaiya_ih-21-kakato-0204",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-21-kakato-0204",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-kakato-0204.jpg",
+    "sha": "6a07def47d44f013ed926b11f4e95c0670a70548",
+    "size": 68221,
+    "imageId": "yukaiya_ih-21-kakato-0204"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-21-kakato-0304",
+   "code": "ih-21-kakato-0304",
+   "name": "かかとクリーム かかと角質削り セット 尿素配合 保湿 角質取り 角質除去 乾燥 ひび割れ ガサガサ かかとケア フットケア",
+   "price": 2280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-kakato-0304.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-kakato-0304",
+   "yahooId": "yukaiya_ih-21-kakato-0304",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-21-kakato-0304",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-kakato-0304.jpg",
+    "sha": "66269c6d2ba21cf36a4410f5f8b48d1ec392f636",
+    "size": 76898,
+    "imageId": "yukaiya_ih-21-kakato-0304"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-21-kakato-01020304",
+   "code": "ih-21-kakato-01020304",
+   "name": "かかとケア 4点セット かかとやすり ガラス製 保湿靴下 かかとクリーム 尿素配合 角質削り 角質除去 角質取り ひび割れ ガサガサ 足裏ケア",
+   "price": 4780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-21-kakato-01020304.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-21-kakato-01020304",
+   "yahooId": "yukaiya_ih-21-kakato-01020304",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-21-kakato-01020304",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-21-kakato-01020304.jpg",
+    "sha": "d99c3ac643f69309dc20606e717c95f3745a7d45",
+    "size": 84292,
+    "imageId": "yukaiya_ih-21-kakato-01020304"
    }
   },
   {
@@ -3708,7 +3776,7 @@
   {
    "imageId": "yukaiya_wat-sma-01",
    "code": "wat-sma-01",
-   "name": "スマートウォッチ ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック PKT1-4F",
+   "name": "【ランキング1位受賞】スマートウォッチ ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック 腕時計 交換 garmin amazfit fossil",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-01.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-01",
@@ -3725,7 +3793,7 @@
   {
    "imageId": "yukaiya_wat-sma-01-0set",
    "code": "wat-sma-01-0set",
-   "name": "スマートウォッチ ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm 工具付き PKT1-4F",
+   "name": "スマートウォッチ ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック 腕時計 交換 garmin amazfit fossil おしゃれ 女性 男性 工具付き",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-01-0set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-01-0set",
@@ -3742,7 +3810,7 @@
   {
    "imageId": "yukaiya_wat-sma-01b",
    "code": "wat-sma-01b",
-   "name": "時計 ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック PKT1-4F",
+   "name": "【ランキング1位受賞】時計 ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック 腕時計 交換 garmin amazfit fossil",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-01b.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-01b",
@@ -3759,7 +3827,7 @@
   {
    "imageId": "yukaiya_wat-sma-01b-0set",
    "code": "wat-sma-01b-0set",
-   "name": "時計 ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック PKT1-4F",
+   "name": "時計 ベルト バンド シリコン 14mm 16mm 18mm 20mm 22mm 24mm イージークリック 腕時計 交換 garmin amazfit fossil ラバー おしゃれ 女性 男性",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-01b-0set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-01b-0set",
