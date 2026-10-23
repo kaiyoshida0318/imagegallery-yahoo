@@ -10647,7 +10647,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-23T02:53:14.036Z",
-      "yahooTopSha": "6a07def47d44f013ed926b11f4e95c0670a70548"
+      "yahooTopSha": "6a07def47d44f013ed926b11f4e95c0670a70548",
+      "multi": true
     },
     {
       "id": "prod_1792723994037_op50um",
