@@ -10388,7 +10388,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-23T02:53:14.036Z",
-      "yahooTopSha": "37b77eda12942dfa4248cf644efcf085d08b3dc9"
+      "yahooTopSha": "37b77eda12942dfa4248cf644efcf085d08b3dc9",
+      "multi": true
     },
     {
       "id": "prod_1792723994037_stfrrr",
