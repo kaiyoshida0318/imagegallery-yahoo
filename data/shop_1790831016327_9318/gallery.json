@@ -1627,7 +1627,7 @@
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02.html",
       "itemName": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具 NP-2F",
-      "itemPrice": 1480,
+      "itemPrice": 1280,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02",
       "images": [
         {
@@ -1645,9 +1645,10 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
+      "syncedAt": "2026-10-26T03:11:03.363Z",
       "yahooTopSha": "4131bdf8a2916131f8f04dd20fc1a7c55ceca9e9",
-      "ignored": true
+      "ignored": true,
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_4x221l",
@@ -11574,7 +11575,7 @@
       "addedAt": "2026-10-23T08:29:23.012Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-03-lock-mat12.html",
-      "itemName": "耐震ベルト テレビ 転倒防止 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+      "itemName": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 穴あけ不要 クランプ固定 地震対策 テレビ固定 VESA取付 壁 固定 防災グッズ",
       "itemPrice": 2780,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-03-lock-mat12",
       "images": [
@@ -11593,9 +11594,69 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-23T08:29:23.012Z",
+      "syncedAt": "2026-10-26T03:11:03.363Z",
       "yahooTopSha": "d2acd6b253501bb4696ecc20c3ef832969d92386",
       "ignored": true
+    },
+    {
+      "id": "prod_1792984263363_r5pz21",
+      "itemCode": "yukaiya_eq-22-02-04set",
+      "itemManageNumber": "eq-22-02-04set",
+      "addedAt": "2026-10-26T03:11:03.363Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-04set.html",
+      "itemName": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+      "itemPrice": 1580,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-04set",
+      "images": [
+        {
+          "id": "img_ytop_1792984263363_tnrs4k",
+          "filename": "eq-22-02-04set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-02-04set.jpg",
+          "sha": "59cedccb647ec0dcb94aaad82eecd828a847ae47",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/eq-22-02-04set.jpg?v=59cedccb",
+          "size": 50447,
+          "uploadedAt": "2026-10-26T03:11:03.363Z",
+          "note": "",
+          "tags": [],
+          "tagId": "tag_ytop_1791336537134_bcmc",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-26T03:11:03.363Z",
+      "yahooTopSha": "59cedccb647ec0dcb94aaad82eecd828a847ae47"
+    },
+    {
+      "id": "prod_1792984263363_eunu54",
+      "itemCode": "yukaiya_eq-22-02-12set",
+      "itemManageNumber": "eq-22-02-12set",
+      "addedAt": "2026-10-26T03:11:03.363Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-12set.html",
+      "itemName": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+      "itemPrice": 2080,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-12set",
+      "images": [
+        {
+          "id": "img_ytop_1792984263363_07wtlr",
+          "filename": "eq-22-02-12set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-02-12set.jpg",
+          "sha": "d3de3be80e012943db10222c80bf8b9da1b4204d",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/eq-22-02-12set.jpg?v=d3de3be8",
+          "size": 50776,
+          "uploadedAt": "2026-10-26T03:11:03.363Z",
+          "note": "",
+          "tags": [],
+          "tagId": "tag_ytop_1791336537134_bcmc",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-26T03:11:03.363Z",
+      "yahooTopSha": "d3de3be80e012943db10222c80bf8b9da1b4204d"
     }
   ],
   "materials": [],
