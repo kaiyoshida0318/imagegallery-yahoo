@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-26T03:09:38.320Z",
+ "fetchedAt": "2026-10-26T09:02:18.971Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 270,
- "count": 270,
+ "totalAvailable": 271,
+ "count": 271,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 11,
-  "reused": 259,
+  "downloaded": 1,
+  "reused": 270,
   "failed": 0
  },
  "items": [
@@ -976,7 +976,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-04set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-04set",
    "yahooId": "yukaiya_eq-22-02-04set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_eq-22-02-04set",
     "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-02-04set.jpg",
@@ -993,7 +993,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-12set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-12set",
    "yahooId": "yukaiya_eq-22-02-12set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_eq-22-02-12set",
     "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-02-12set.jpg",
@@ -4219,7 +4219,7 @@
    "imageId": "yukaiya_yoga-23-01-00set",
    "code": "yoga-23-01-00set",
    "name": "ヨガソックス 5本指ソックス 靴下 滑り止め 3足セット レディース くるぶし スポーツ ピラティス ソックス ホット ヨガ ウェア トレーニング ジム PKT2-2F",
-   "price": 1080,
+   "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-23-01-00set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-23-01-00set",
    "yahooId": "yukaiya_yoga-23-01-00set",
@@ -4230,6 +4230,23 @@
     "sha": "8823bb1300b9cc7cfcf77806cd0345de3a5d044f",
     "size": 49253,
     "imageId": "yukaiya_yoga-23-01-00set"
+   }
+  },
+  {
+   "imageId": "yukaiya_yoga-23-01-03set",
+   "code": "yoga-23-01-03set",
+   "name": "ヨガソックス 5本指ソックス 靴下 滑り止め 3足セット レディース くるぶし スポーツ ピラティス ソックス ホット ヨガ ウェア トレーニング ジム",
+   "price": 1380,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-23-01-03set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-23-01-03set",
+   "yahooId": "yukaiya_yoga-23-01-03set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_yoga-23-01-03set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/yoga-23-01-03set.jpg",
+    "sha": "20d1203ae70d4e73678ae5bf2101e0d81b6bfc42",
+    "size": 41637,
+    "imageId": "yukaiya_yoga-23-01-03set"
    }
   },
   {
