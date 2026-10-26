@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-23T08:27:56.007Z",
+ "fetchedAt": "2026-10-26T03:09:38.320Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 268,
- "count": 259,
+ "totalAvailable": 270,
+ "count": 270,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 3,
-  "reused": 256,
+  "downloaded": 11,
+  "reused": 259,
   "failed": 0
  },
  "items": [
@@ -48,6 +48,23 @@
     "sha": "493736032bd841c8b5a593d2dc3fab4d3a75dc86",
     "size": 57931,
     "imageId": "yukaiya_baby-23-02"
+   }
+  },
+  {
+   "imageId": "yukaiya_bg-01-con-20set",
+   "code": "bg-01-con-20set",
+   "name": "コンセントカバー コンセントガード ベビーガード 赤ちゃん コンセントキャップ 20個 コンセント ほこり防止",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bg-01-con-20set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-01-con-20set",
+   "yahooId": "yukaiya_bg-01-con-20set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_bg-01-con-20set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bg-01-con-20set.jpg",
+    "sha": "3468df26452a2cd597d7960cbacb84eb5b4cfdd7",
+    "size": 46361,
+    "imageId": "yukaiya_bg-01-con-20set"
    }
   },
   {
@@ -184,6 +201,23 @@
     "sha": "fa3cd17ec97b2faee03075398f928a9410dc1560",
     "size": 41389,
     "imageId": "yukaiya_bg-09-usbc-mesu-20set"
+   }
+  },
+  {
+   "imageId": "yukaiya_bg-10-usbc-osu-20set",
+   "code": "bg-10-usbc-osu-20set",
+   "name": "USB-C コネクタカバー 保護カバー 20個セット タイプC オス 保護キャップ コネクタ用 USBほこりカバー 防塵 防水",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bg-10-usbc-osu-20set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-10-usbc-osu-20set",
+   "yahooId": "yukaiya_bg-10-usbc-osu-20set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_bg-10-usbc-osu-20set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bg-10-usbc-osu-20set.jpg",
+    "sha": "8f9751906e7ec9016fb373a03a87b31a573b60f8",
+    "size": 41955,
+    "imageId": "yukaiya_bg-10-usbc-osu-20set"
    }
   },
   {
@@ -921,7 +955,7 @@
    "imageId": "yukaiya_eq-22-02",
    "code": "eq-22-02",
    "name": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具 NP-2F",
-   "price": 1480,
+   "price": 1280,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02",
    "yahooId": "yukaiya_eq-22-02",
@@ -932,6 +966,40 @@
     "sha": "4131bdf8a2916131f8f04dd20fc1a7c55ceca9e9",
     "size": 45164,
     "imageId": "yukaiya_eq-22-02"
+   }
+  },
+  {
+   "imageId": "yukaiya_eq-22-02-04set",
+   "code": "eq-22-02-04set",
+   "name": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+   "price": 1580,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-04set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-04set",
+   "yahooId": "yukaiya_eq-22-02-04set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_eq-22-02-04set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-02-04set.jpg",
+    "sha": "59cedccb647ec0dcb94aaad82eecd828a847ae47",
+    "size": 50447,
+    "imageId": "yukaiya_eq-22-02-04set"
+   }
+  },
+  {
+   "imageId": "yukaiya_eq-22-02-12set",
+   "code": "eq-22-02-12set",
+   "name": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+   "price": 2080,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-12set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-12set",
+   "yahooId": "yukaiya_eq-22-02-12set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_eq-22-02-12set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-02-12set.jpg",
+    "sha": "d3de3be80e012943db10222c80bf8b9da1b4204d",
+    "size": 50776,
+    "imageId": "yukaiya_eq-22-02-12set"
    }
   },
   {
@@ -1107,7 +1175,7 @@
   {
    "imageId": "yukaiya_eq-24-03-lock-mat12",
    "code": "eq-24-03-lock-mat12",
-   "name": "耐震ベルト テレビ 転倒防止 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+   "name": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 穴あけ不要 クランプ固定 地震対策 テレビ固定 VESA取付 壁 固定 防災グッズ",
    "price": 2780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-03-lock-mat12.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-03-lock-mat12",
@@ -2516,6 +2584,23 @@
    }
   },
   {
+   "imageId": "yukaiya_si-22-03-3set",
+   "code": "si-22-03-3set",
+   "name": "排水口 排水溝 ゴミ受け ステンレス 3個セット お風呂 キッチン ユニットバス ネット 髪の毛 取り キャッチ PKT0-2F",
+   "price": 1580,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-03-3set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-03-3set",
+   "yahooId": "yukaiya_si-22-03-3set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-22-03-3set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-22-03-3set.jpg",
+    "sha": "d910fe3a15eda59d6471d18ef6b2a95356d2d62e",
+    "size": 49555,
+    "imageId": "yukaiya_si-22-03-3set"
+   }
+  },
+  {
    "imageId": "yukaiya_si-22-04-00set",
    "code": "si-22-04-00set",
    "name": "コーム くし メンズ クシ メンズ 人気スタイリングコーム 5本セット 静電気防止 PKT2-2F",
@@ -2615,6 +2700,23 @@
     "sha": "989779fb2b3ad5e5f17f32439983eb4e9a812243",
     "size": 48073,
     "imageId": "yukaiya_si-22-06"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-22-06-brush",
+   "code": "si-22-06-brush",
+   "name": "除電ブラシ クリーニングブラシ 静電気防止 クリーナー ほこりとり pc 掃除 デスク モニター 車 フィギュア PKT2-2F",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-06-brush.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-06-brush",
+   "yahooId": "yukaiya_si-22-06-brush",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-22-06-brush",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-22-06-brush.jpg",
+    "sha": "d0781a41ed057d1a657a0671a84bdbf19190f420",
+    "size": 55650,
+    "imageId": "yukaiya_si-22-06-brush"
    }
   },
   {
@@ -2751,6 +2853,23 @@
     "sha": "09db07d82976cffad939bfa1d534ae25f6e75080",
     "size": 23218,
     "imageId": "yukaiya_si-23-04-00set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-06",
+   "code": "si-23-06",
+   "name": "ソファ 足 滑り止めマット カーペット 家具 ベッド 椅子 マット ラグ 滑り止めシート 耐震マット転倒防止 耐震ジェル 防振 椅子足カバー 畳 凹み防止  PKT0-2F",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-06.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-06",
+   "yahooId": "yukaiya_si-23-06",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-06",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-06.jpg",
+    "sha": "444d85490ffdf26812df16706532b58ae95df9ad",
+    "size": 47540,
+    "imageId": "yukaiya_si-23-06"
    }
   },
   {
@@ -3468,6 +3587,23 @@
    }
   },
   {
+   "imageId": "yukaiya_wat-18-08",
+   "code": "wat-18-08",
+   "name": "スントコア ベルト 交換 SUUNTO CORE ベルト コア バンド 遊革 ベルト通し  互換品 PKT2-4F",
+   "price": 1250,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-18-08.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-18-08",
+   "yahooId": "yukaiya_wat-18-08",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_wat-18-08",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wat-18-08.jpg",
+    "sha": "a21662d9df888d3f4683b4e4212bbce6b4319075",
+    "size": 48881,
+    "imageId": "yukaiya_wat-18-08"
+   }
+  },
+  {
    "imageId": "yukaiya_wat-18-08-set",
    "code": "wat-18-08-set",
    "name": "SUUNTO スント CORE コア用 ベルト バンド 工具付属 遊革 ベルト通し  互換品 PKT2-4F",
@@ -3516,6 +3652,23 @@
     "sha": "47d12e48c5df581403643f1286fb4408e12d93b4",
     "size": 54155,
     "imageId": "yukaiya_wat-18-14-set"
+   }
+  },
+  {
+   "imageId": "yukaiya_wat-18-22",
+   "code": "wat-18-22",
+   "name": "G-SHOCK ベルト 腕時計ベルト 時計ベルト 時計バンド ラバーベルト ラバーバンド 16mm 18mm 20mm 22mm PKT1-4F",
+   "price": 980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-18-22.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-18-22",
+   "yahooId": "yukaiya_wat-18-22",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_wat-18-22",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wat-18-22.jpg",
+    "sha": "ee6d7b9287dfdbd02637cf76ad2dbb3f802c2274",
+    "size": 56723,
+    "imageId": "yukaiya_wat-18-22"
    }
   },
   {
@@ -3601,6 +3754,23 @@
     "sha": "144250c7d6f756069143435911b87fca30beedeb",
     "size": 58057,
     "imageId": "yukaiya_wat-fb-21-02"
+   }
+  },
+  {
+   "imageId": "yukaiya_wat-fb-21-03",
+   "code": "wat-fb-21-03",
+   "name": "Fitbit Versa4 Versa3 Sense バンド ベルト ステンレス 交換ベルト 交換バンド フィットビット センス",
+   "price": 1680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-fb-21-03.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-fb-21-03",
+   "yahooId": "yukaiya_wat-fb-21-03",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_wat-fb-21-03",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wat-fb-21-03.jpg",
+    "sha": "bd7ab2815f086fae4bb7a6a021e5076f00a41372",
+    "size": 60941,
+    "imageId": "yukaiya_wat-fb-21-03"
    }
   },
   {
@@ -3907,6 +4077,23 @@
     "sha": "2fa311a5c16f4a9aa3d229294bd35acfbcd9073b",
     "size": 57936,
     "imageId": "yukaiya_wat-sma-04-set2"
+   }
+  },
+  {
+   "imageId": "yukaiya_wat-sma-05",
+   "code": "wat-sma-05",
+   "name": "スマートウォッチ ベルト バンド 革 18mm 20mm 22mm 24mm イージークリック  PKT1-4F",
+   "price": 1480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-05.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-05",
+   "yahooId": "yukaiya_wat-sma-05",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_wat-sma-05",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wat-sma-05.jpg",
+    "sha": "61c27c0542731cf456685aa1fb452695021d2d06",
+    "size": 51544,
+    "imageId": "yukaiya_wat-sma-05"
    }
   },
   {
