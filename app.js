@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.19';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.21';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -99,6 +99,7 @@ let _batch = { on: false, shopId: null, pending: [], fileOp: false };
 // ver 1.0.18: 画像下のタグ (ドロップダウン) の変更は、その場で保存せずに貯めて「push」でまとめて保存する
 //   imageId -> { pid, iid, from, to, shopId }   from = 最初の値 (戻したら一覧から消す)
 let _tagPending = new Map();
+let _statePending = new Map();   // ver 1.0.21: productId -> { pid, from, to, shopId } (現役/無視/複数分)
 let pendingStatusChanges = new Map();  // 保存待ちのステータス変更: productId -> 'active'|'unsure'
 
 // エクスポートモード関連 (v1.8.4)
@@ -576,6 +577,14 @@ function injectImageTagStyles() {
     .tagp-bar .btn-tagp-push { background: #2563eb; color: #fff; border: 0; font-weight: 700; }
     .tagp-bar .btn-tagp-sub { background: #fff; color: #1e3a8a; border: 1px solid #93c5fd; }
     #tagReviewModal .modal { max-width: 760px; width: 94%; }
+    .state-select.st-pending { outline: 2px solid #2563eb; outline-offset: 1px; }
+    .tagr-sec { font-size: 12px; font-weight: 700; color: #1e3a8a; margin: 6px 0 2px; }
+    .tagr-state-row { display: flex; align-items: center; gap: 6px; font-size: 11px; }
+    .st-chip.st-active { background: #dcfce7; color: #166534; }
+    .st-chip.st-ignored { background: #e2e8f0; color: #475569; }
+    .st-chip.st-multi { background: #fef3c7; color: #92400e; }
+    .tagr-undo { margin-left: 6px; padding: 2px 8px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; color: #475569; font-family: inherit; font-size: 11px; cursor: pointer; }
+    .tagr-undo:hover { background: #f1f5f9; }
     .tagr-list { max-height: 60vh; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
     .tagr-prod { border: 1px solid var(--border, #e5e7eb); border-radius: 8px; padding: 8px 10px; }
     .tagr-prod-head { font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text, #0f172a); }
@@ -626,6 +635,11 @@ function injectMallBadge() {
 }
 
 // ===== ver 1.0.18: 画像タグの変更を貯めて push =====
+// ===== ver 1.0.21: 行の「現役 / 無視 / 複数分」の変更も同じように貯めて、まとめて push =====
+//   _tagPending   : imageId   -> { pid, iid, from, to, shopId }  (画像のタグ)
+//   _statePending : productId -> { pid, from, to, shopId }       (商品の 現役/無視/複数分)
+//   どちらも from = 最初の値。元に戻したら一覧から消える。
+//   _tagPendingCount / _clearTagPending は互換のため名前を残し、両方 (タグ + 状態) を数える / 消す。
 function _tagPendingEntries(shopId) {
   const sid = shopId || currentShopId;
   const data = dataCache[sid];
@@ -639,10 +653,31 @@ function _tagPendingEntries(shopId) {
   });
   return out;
 }
-function _tagPendingCount(shopId) { return _tagPendingEntries(shopId).length; }
+function _statePendingEntries(shopId) {
+  const sid = shopId || currentShopId;
+  const data = dataCache[sid];
+  const out = [];
+  _statePending.forEach((e, pid) => {
+    if (e.shopId !== sid) return;
+    const p = data && data.products.find(x => x.id === pid);
+    if (!p) { _statePending.delete(pid); return; }    // 商品が消えていたら一覧から外す
+    out.push({ ...e, product: p });
+  });
+  return out;
+}
+function _tagPendingCount(shopId) { return _tagPendingEntries(shopId).length + _statePendingEntries(shopId).length; }
 function _clearTagPending(shopId) {
   const sid = shopId || currentShopId;
   [..._tagPending.keys()].forEach(k => { if (_tagPending.get(k).shopId === sid) _tagPending.delete(k); });
+  [..._statePending.keys()].forEach(k => { if (_statePending.get(k).shopId === sid) _statePending.delete(k); });
+}
+
+// 行の 現役/無視/複数分 を「未push」として記録する (画面上はすぐ変わる)
+function recordStatePending(p, prev, next) {
+  const ent = _statePending.get(p.id);
+  const orig = ent ? ent.from : prev;
+  if (orig === next) _statePending.delete(p.id);
+  else _statePending.set(p.id, { pid: p.id, from: orig, to: next, shopId: currentShopId });
 }
 
 function setupTagPendingUI() {
@@ -651,8 +686,8 @@ function setupTagPendingUI() {
   bar.className = 'tagp-bar';
   bar.id = 'tagpBar';
   bar.innerHTML = `
-    <span>🏷️</span>
-    <span class="tagp-msg">未pushのタグ変更 <strong id="tagpCount">0</strong> 件 <span style="opacity:.75">（まだGitHubには保存されていません）</span></span>
+    <span>⬆️</span>
+    <span class="tagp-msg">未pushの変更 <strong id="tagpCount">0</strong> 件 <span id="tagpBreakdown" style="opacity:.85"></span> <span style="opacity:.75">（まだGitHubには保存されていません）</span></span>
     <button class="btn-tagp-sub" id="btnTagpReview">🔍 変更内容を確認</button>
     <button class="btn-tagp-sub" id="btnTagpDiscard">破棄</button>
     <button class="btn-tagp-push" id="btnTagpPush">⬆️ push</button>`;
@@ -668,7 +703,7 @@ function setupTagPendingUI() {
   m.innerHTML = `
     <div class="modal">
       <div class="modal-header">
-        <h2>🔍 pushするタグ変更</h2>
+        <h2>🔍 pushする変更</h2>
         <button class="btn-close" data-tagr-close aria-label="閉じる">×</button>
       </div>
       <div class="modal-body">
@@ -683,6 +718,12 @@ function setupTagPendingUI() {
   document.body.appendChild(m);
   m.querySelectorAll('[data-tagr-close]').forEach(b => b.addEventListener('click', () => { m.style.display = 'none'; }));
   m.querySelector('#btnTagrPush').addEventListener('click', async () => { if (await pushTagPending()) m.style.display = 'none'; });
+  // 確認画面の「戻す」(1件ずつ取り消し)
+  m.querySelector('#tagrList').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-tagr-undo]');
+    if (!b) return;
+    undoOnePending(b.dataset.tagrUndo, b.dataset.kind);
+  });
 
   window.addEventListener('beforeunload', (e) => {
     if (_tagPendingCount()) { e.preventDefault(); e.returnValue = ''; }
@@ -690,10 +731,14 @@ function setupTagPendingUI() {
 }
 
 function updateTagPendingBar() {
-  const n = _tagPendingCount();
+  const nt = _tagPendingEntries().length;
+  const ns = _statePendingEntries().length;
+  const n = nt + ns;
   document.body.classList.toggle('tagp-on', n > 0 && !_batch.on);
   const c = document.getElementById('tagpCount');
   if (c) c.textContent = n;
+  const bd = document.getElementById('tagpBreakdown');
+  if (bd) bd.textContent = n ? `（${[ns ? `現役/無視/複数分 ${ns}` : '', nt ? `画像タグ ${nt}` : ''].filter(Boolean).join('・')}）` : '';
   const pb = document.getElementById('btnTagpPush');
   if (pb) pb.textContent = `⬆️ push（${n}件）`;
 }
@@ -705,34 +750,79 @@ function _tagChipHTML(tagId) {
   const c = getTagColor(t.color);
   return `<span class="tagr-chip" style="background:${c.bg};color:${c.fg}">${escapeHtml(t.name)}</span>`;
 }
+function _stateChipHTML(st) {
+  return `<span class="tagr-chip st-chip st-${st}">${escapeHtml(stateLabel(st))}</span>`;
+}
 
 function openTagReview() {
-  const entries = _tagPendingEntries();
-  if (!entries.length) { toast('未pushのタグ変更はありません', 'success'); return; }
-  const byProd = new Map();
-  entries.forEach(e => { if (!byProd.has(e.pid)) byProd.set(e.pid, []); byProd.get(e.pid).push(e); });
-  document.getElementById('tagrSummary').innerHTML = `<strong>${entries.length}枚</strong>のタグを変更します（${byProd.size}商品）。`;
-  document.getElementById('tagrList').innerHTML = [...byProd.values()].map(list => {
-    const p = list[0].product;
-    return `<div class="tagr-prod">
-      <div class="tagr-prod-head"><span class="mono">${escapeHtml(p.itemManageNumber || '')}</span>${escapeHtml(p.itemName || '')}</div>
-      <div class="tagr-items">${list.map(e => `
-        <div class="tagr-item" title="${escapeHtml(getImageSortKey(e.image))}">
-          <img src="${escapeHtml(e.image.url)}" alt="" loading="lazy">
-          ${_tagChipHTML(e.from)} → ${_tagChipHTML(e.to)}
-        </div>`).join('')}</div>
-    </div>`;
-  }).join('');
+  const tags = _tagPendingEntries();
+  const states = _statePendingEntries();
+  if (!tags.length && !states.length) {
+    document.getElementById('tagReviewModal').style.display = 'none';
+    toast('未pushの変更はありません', 'success');
+    return;
+  }
+  const parts = [];
+  if (states.length) parts.push(`<strong>${states.length}商品</strong>の 現役/無視/複数分`);
+  if (tags.length) parts.push(`<strong>${tags.length}枚</strong>の画像タグ`);
+  document.getElementById('tagrSummary').innerHTML = `${parts.join(' と ')}を変更します。`;
+  let html = '';
+  if (states.length) {
+    html += `<div class="tagr-sec">現役 / 無視 / 複数分（${states.length}件）</div>`;
+    html += states.map(e => `
+      <div class="tagr-prod tagr-state">
+        <div class="tagr-prod-head"><span class="mono">${escapeHtml(e.product.itemManageNumber || '')}</span>${escapeHtml(e.product.itemName || '')}</div>
+        <div class="tagr-state-row">${_stateChipHTML(e.from)} → ${_stateChipHTML(e.to)}
+          <button type="button" class="tagr-undo" data-tagr-undo="${escapeHtml(e.pid)}" data-kind="state">戻す</button></div>
+      </div>`).join('');
+  }
+  if (tags.length) {
+    const byProd = new Map();
+    tags.forEach(e => { if (!byProd.has(e.pid)) byProd.set(e.pid, []); byProd.get(e.pid).push(e); });
+    html += `<div class="tagr-sec">画像タグ（${tags.length}枚）</div>`;
+    html += [...byProd.values()].map(list => {
+      const p = list[0].product;
+      return `<div class="tagr-prod">
+        <div class="tagr-prod-head"><span class="mono">${escapeHtml(p.itemManageNumber || '')}</span>${escapeHtml(p.itemName || '')}</div>
+        <div class="tagr-items">${list.map(e => `
+          <div class="tagr-item" title="${escapeHtml(getImageSortKey(e.image))}">
+            <img src="${escapeHtml(e.image.url)}" alt="" loading="lazy">
+            ${_tagChipHTML(e.from)} → ${_tagChipHTML(e.to)}
+            <button type="button" class="tagr-undo" data-tagr-undo="${escapeHtml(e.iid)}" data-kind="tag">戻す</button>
+          </div>`).join('')}</div>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('tagrList').innerHTML = html;
   document.getElementById('tagReviewModal').style.display = 'flex';
 }
 
-// 貯めたタグ変更をまとめて保存。成功したら true
+// 確認画面から1件だけ元に戻す
+function undoOnePending(id, kind) {
+  if (kind === 'state') {
+    const e = _statePendingEntries().find(x => x.pid === id);
+    if (e) { setProductState(e.product, e.from); _statePending.delete(id); }
+  } else {
+    const e = _tagPendingEntries().find(x => x.iid === id);
+    if (e) { if (e.from) e.image.tagId = e.from; else delete e.image.tagId; _tagPending.delete(id); }
+  }
+  updateTagPendingBar();
+  render();
+  openTagReview();   // 一覧を描き直す (0件なら閉じる)
+}
+
+// 貯めた変更 (タグ + 状態) をまとめて保存。成功したら true
 async function pushTagPending() {
-  const n = _tagPendingCount();
+  const nt = _tagPendingEntries().length;
+  const ns = _statePendingEntries().length;
+  const n = nt + ns;
   if (!n) return true;
-  showLoading(`pushしています…（タグ変更 ${n}件）`);
+  showLoading(`pushしています…（${n}件の変更）`);
   try {
-    await _saveShopDataQueued(currentShopId, `image tags: ${n} changes`);
+    const parts = [];
+    if (ns) parts.push(`${ns} states`);
+    if (nt) parts.push(`${nt} image tags`);
+    await _saveShopDataQueued(currentShopId, `changes: ${parts.join(', ')}`);
   } catch (e) {
     hideLoading();
     toast('push失敗: ' + e.message + '（変更は画面に残っています）', 'error');
@@ -742,19 +832,22 @@ async function pushTagPending() {
   hideLoading();
   updateTagPendingBar();
   render();
-  toast(`タグ変更 ${n}件を push しました`, 'success');
+  toast(`${n}件の変更を push しました`, 'success');
   return true;
 }
 
 function discardTagPending() {
-  const entries = _tagPendingEntries();
-  if (!entries.length) return;
-  if (!confirm(`未pushのタグ変更 ${entries.length}件を破棄して、元のタグに戻します。よろしいですか?`)) return;
-  entries.forEach(e => { if (e.from) e.image.tagId = e.from; else delete e.image.tagId; });
+  const tags = _tagPendingEntries();
+  const states = _statePendingEntries();
+  const n = tags.length + states.length;
+  if (!n) return;
+  if (!confirm(`未pushの変更 ${n}件を破棄して、元に戻します。よろしいですか?`)) return;
+  tags.forEach(e => { if (e.from) e.image.tagId = e.from; else delete e.image.tagId; });
+  states.forEach(e => setProductState(e.product, e.from));
   _clearTagPending(currentShopId);
   updateTagPendingBar();
   render();
-  toast('タグ変更を破棄しました', 'success');
+  toast('変更を破棄しました', 'success');
 }
 
 // ===== ver 1.0.17: 商品の状態 = 現役 / 無視 / 複数分 =====
@@ -792,6 +885,16 @@ function setupStateSelect() {
     if (prev === next) return;
     if (!auth.pat) { sel.value = prev; toast('変更の保存には編集権限(PAT)が必要です', 'error'); return; }
     setProductState(p, next);
+    // ver 1.0.21: 一括編集モード以外では、その場で保存せず「未pushの変更」として貯める
+    if (!_batch.on) {
+      recordStatePending(p, prev, next);
+      updateTagPendingBar();
+      const y0 = window.scrollY;
+      render();
+      window.scrollTo(0, y0);
+      toast(`${p.itemManageNumber || ''} を${stateMovedMsg(next)}（未push）`, 'success');
+      return;
+    }
     showLoading('保存中…');
     try {
       await saveShopData(currentShopId, `set state ${next}: ${p.itemManageNumber || p.id}`);
@@ -1162,7 +1265,7 @@ async function toggleBatchMode() {
     _batch = { on: true, shopId: currentShopId, pending: [], fileOp: false };
     // ver 1.0.18: 未pushのタグ変更は一括編集の「未保存の変更」に引き継ぐ
     const tn = _tagPendingCount(currentShopId);
-    if (tn) { for (let i = 0; i < tn; i++) _batch.pending.push('image tag'); _clearTagPending(currentShopId); updateTagPendingBar(); }
+    if (tn) { for (let i = 0; i < tn; i++) _batch.pending.push('pending change'); _clearTagPending(currentShopId); updateTagPendingBar(); }
     updateBatchBar();
     render();   // サムネ右上のチェックを出す
     toast('一括編集を開始しました。変更は「💾 まとめて保存」を押すまで保存されません', 'success');
@@ -1905,7 +2008,7 @@ async function refreshCurrentShopData(opts = {}) {
   // ver 1.0.18: 未pushのタグ変更も、最新取得で黙って消さない
   if (_tagPendingCount(currentShopId)) {
     if (!manual) return;
-    if (!confirm(`未pushのタグ変更が ${_tagPendingCount(currentShopId)}件あります。\n最新を取得すると、この変更は消えます。続けますか?`)) return;
+    if (!confirm(`未pushの変更が ${_tagPendingCount(currentShopId)}件あります。\n最新を取得すると、この変更は消えます。続けますか?`)) return;
     _clearTagPending(currentShopId); updateTagPendingBar();
   }
   // ver 1.0.12: 一括編集の未保存の変更を、最新取得で黙って消さない
@@ -4001,7 +4104,7 @@ async function saveShopData(shopId, message) {
   }
   // ver 1.0.18: 他の保存は gallery.json 全体を書くので、貯めていたタグ変更も一緒に保存される
   const tagN = _tagPendingCount(shopId);
-  if (tagN) message = `${message || 'update'} (+ ${tagN} tag changes)`;
+  if (tagN) message = `${message || 'update'} (+ ${tagN} pending changes)`;
   return _saveShopDataQueued(shopId, message).then((r) => {
     if (_batch.on && shopId === _batch.shopId) { _batch.pending = []; _batch.fileOp = false; updateBatchBar(); }
     if (tagN) { _clearTagPending(shopId); updateTagPendingBar(); }
@@ -4706,7 +4809,7 @@ function openYahooImportPreview(items, source) {
   if (plan.duplicates) warns.push(`同じ商品コードの重複が ${plan.duplicates}件あったため、最初の1件だけを使いました。`);
   if (source.topFailed) warns.push(`トップ画像を取得できなかった商品が ${source.topFailed}件あります（画像未設定の商品など）。`);
   if (plan.topAdd + plan.topReplace > 0) {
-    srcLines.push(`<div><strong>トップ画像:</strong> 追加 ${plan.topAdd}枚 ／ 差し替え ${plan.topReplace}枚（タグ「${escapeHtml(YAHOO_TOP_TAG_NAME)}」を付けて各商品の先頭に入れます）</div>`);
+    srcLines.push(`<div><strong>トップ画像:</strong> 追加 ${plan.topAdd}枚 ／ 差し替え ${plan.topReplace}枚（各商品の先頭に「タグなし」で入れます）</div>`);
   }
   document.getElementById('yimpSource').innerHTML = srcLines.join('') + warns.map(w => `<div class="yimp-warn">⚠️ ${escapeHtml(w)}</div>`).join('');
 
@@ -4779,7 +4882,9 @@ async function applyYahooMergePlan() {
     const data = dataCache[shopId];
     const now = new Date().toISOString();
     const needTag = plan.topAdd + plan.topReplace > 0;
-    const topTagId = needTag ? _yEnsureTopTag(data) : '';
+    // ver 1.0.20: 取り込んだトップ画像は「タグなし」で入れる (以前は「トップ画像」タグを自動で付けていた)。
+    //   差し替えのときは、ユーザーが付け直したタグをそのまま残す (_yTopImageMeta の keep)。
+    const topTagId = '';
     plan.updated.forEach(u => {
       // ver 1.0.6: 追加日が無い古い商品は、更新で syncedAt が上書きされる前に最初の日時を追加日として残す
       if (!u.product.addedAt && u.product.syncedAt) u.product.addedAt = u.product.syncedAt;
@@ -5837,7 +5942,7 @@ function applyShopFromUrl() {
 async function switchShop(shopId, opts = {}) {
   // ver 1.0.18: 未pushのタグ変更があれば先に push する
   if (_tagPendingCount(currentShopId) && shopId !== currentShopId) {
-    if (!confirm(`未pushのタグ変更が ${_tagPendingCount(currentShopId)}件あります。\npushしてからショップを切り替えますか?`)) { renderShopTabs(); return; }
+    if (!confirm(`未pushの変更が ${_tagPendingCount(currentShopId)}件あります。\npushしてからショップを切り替えますか?`)) { renderShopTabs(); return; }
     if (!(await pushTagPending())) { renderShopTabs(); return; }
   }
   // ver 1.0.12: 一括編集の未保存の変更があれば、先に保存する (しないなら切り替えない)
@@ -7596,7 +7701,7 @@ function productRowHTML(p) {
         <button class="btn-edit-mini" data-edit-images="${p.id}" title="画像を編集">🖼️ 画像</button>
         <button class="btn-edit-mini" data-edit-info="${p.id}" title="商品情報を編集">📝 情報</button>
       </div>
-      ${p.isPart ? '' : `<select class="state-select st-${productState(p)}" data-state-pid="${p.id}" title="現役 / 無視 / 複数分">
+      ${p.isPart ? '' : `<select class="state-select st-${productState(p)}${_statePending.has(p.id) ? ' st-pending' : ''}" data-state-pid="${p.id}" title="現役 / 無視 / 複数分">
         ${PRODUCT_STATES.map(st => `<option value="${st.id}" ${st.id === productState(p) ? 'selected' : ''}>${st.label}</option>`).join('')}
       </select>`}
     </div>`;
