@@ -11717,7 +11717,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-27T07:39:53.131Z",
-      "yahooTopSha": "7adaaaaec2fca860784bf28a5f28dd9aac501c30"
+      "yahooTopSha": "7adaaaaec2fca860784bf28a5f28dd9aac501c30",
+      "multi": true
     },
     {
       "id": "prod_1793086793131_kidckx",
