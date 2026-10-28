@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-27T07:38:56.236Z",
+ "fetchedAt": "2026-10-28T04:53:11.787Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 291,
- "count": 291,
+ "totalAvailable": 294,
+ "count": 294,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 20,
-  "reused": 271,
+  "downloaded": 3,
+  "reused": 291,
   "failed": 0
  },
  "items": [
@@ -954,7 +954,7 @@
   {
    "imageId": "yukaiya_eq-22-02",
    "code": "eq-22-02",
-   "name": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具 NP-2F",
+   "name": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 地震対策 テレビ固定 壁 固定 防災グッズ 家具転倒防止グッズ",
    "price": 1280,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02",
@@ -971,7 +971,7 @@
   {
    "imageId": "yukaiya_eq-22-02-04set",
    "code": "eq-22-02-04set",
-   "name": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+   "name": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 地震対策 テレビ固定 壁 固定 防災グッズ 耐震マット 家具転倒防止グッズ",
    "price": 1580,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-04set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-04set",
@@ -988,7 +988,7 @@
   {
    "imageId": "yukaiya_eq-22-02-12set",
    "code": "eq-22-02-12set",
-   "name": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+   "name": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 地震対策 テレビ固定 壁 固定 防災グッズ 耐震マット 家具転倒防止グッズ",
    "price": 2080,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-12set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-12set",
@@ -2246,8 +2246,8 @@
   {
    "imageId": "yukaiya_ih-23-11",
    "code": "ih-23-11",
-   "name": "洗濯ネット ニット 大型 6枚セット ランドリーネット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット NP-3F",
-   "price": 1280,
+   "name": "洗濯ネット ニット 大型 6枚セット ランドリーネット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "price": 1380,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-11.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-11",
    "yahooId": "yukaiya_ih-23-11",
@@ -2292,6 +2292,57 @@
     "sha": "1a7c721dc86b9152ab46a46da8ff331b388554d0",
     "size": 34275,
     "imageId": "yukaiya_ih-24-05"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-24-08-set2",
+   "code": "ih-24-08-set2",
+   "name": "洗濯ネット ランドリーネット 大型 ニット 定番+小型セット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "price": 1780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set2.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set2",
+   "yahooId": "yukaiya_ih-24-08-set2",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-24-08-set2",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-24-08-set2.jpg",
+    "sha": "35e5c5415d2dbd4799bcabcea8eb95632a3f297e",
+    "size": 39823,
+    "imageId": "yukaiya_ih-24-08-set2"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-24-08-set3",
+   "code": "ih-24-08-set3",
+   "name": "洗濯ネット ランドリーネット 大型 ニット バリエーションセット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "price": 1780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set3.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set3",
+   "yahooId": "yukaiya_ih-24-08-set3",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-24-08-set3",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-24-08-set3.jpg",
+    "sha": "02889fddd17caf80ab30a3f7f97a0d218859a347",
+    "size": 39385,
+    "imageId": "yukaiya_ih-24-08-set3"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-24-08-set4",
+   "code": "ih-24-08-set4",
+   "name": "洗濯ネット ランドリーネット 大型 ニット 1人暮らしセット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set4.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set4",
+   "yahooId": "yukaiya_ih-24-08-set4",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-24-08-set4",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-24-08-set4.jpg",
+    "sha": "f8b0d280952ae9abe8d5505db7a6b2c51d4a0a95",
+    "size": 39585,
+    "imageId": "yukaiya_ih-24-08-set4"
    }
   },
   {
