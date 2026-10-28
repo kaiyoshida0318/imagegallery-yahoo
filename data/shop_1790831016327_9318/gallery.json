@@ -3208,7 +3208,20 @@
       "itemName": "洗濯ネット ニット 大型 6枚セット ランドリーネット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
       "itemPrice": 1380,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-11",
-      "images": [],
+      "images": [
+        {
+          "id": "img_1793163799622_jguqmc",
+          "filename": "1793163797810_mbhmrj_a-01.jpg",
+          "originalName": "a-01.jpg",
+          "path": "data/shop_1790831016327_9318/images/prod_1790839116298_2if93d/1793163797810_mbhmrj_a-01.jpg",
+          "sha": "6863f48f116feff8a083f735db30ecb0f483fd74",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1790839116298_2if93d/1793163797810_mbhmrj_a-01.jpg",
+          "size": 48490,
+          "uploadedAt": "2026-10-28T05:03:19.623Z",
+          "note": "",
+          "tags": []
+        }
+      ],
       "status": "active",
       "syncedAt": "2026-10-28T05:01:31.371Z",
       "yahooTopSha": "07937e355a0f4e4367b644bd2f9abafad0778f0f",
