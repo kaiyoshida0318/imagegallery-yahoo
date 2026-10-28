@@ -1626,7 +1626,7 @@
       "itemManageNumber": "eq-22-02",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02.html",
-      "itemName": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具 NP-2F",
+      "itemName": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 地震対策 テレビ固定 壁 固定 防災グッズ 家具転倒防止グッズ",
       "itemPrice": 1280,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02",
       "images": [
@@ -1645,7 +1645,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-26T03:11:03.363Z",
+      "syncedAt": "2026-10-28T05:01:31.371Z",
       "yahooTopSha": "4131bdf8a2916131f8f04dd20fc1a7c55ceca9e9",
       "ignored": true,
       "addedAt": "2026-10-01T07:39:24.688Z"
@@ -3205,8 +3205,8 @@
       "itemManageNumber": "ih-23-11",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-11.html",
-      "itemName": "洗濯ネット ニット 大型 6枚セット ランドリーネット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット NP-3F",
-      "itemPrice": 1280,
+      "itemName": "洗濯ネット ニット 大型 6枚セット ランドリーネット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+      "itemPrice": 1380,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-11",
       "images": [
         {
@@ -3224,9 +3224,10 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
+      "syncedAt": "2026-10-28T05:01:31.371Z",
       "yahooTopSha": "07937e355a0f4e4367b644bd2f9abafad0778f0f",
-      "ignored": true
+      "ignored": true,
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_1xf8kt",
@@ -11606,7 +11607,7 @@
       "addedAt": "2026-10-26T03:11:03.363Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-04set.html",
-      "itemName": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+      "itemName": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 地震対策 テレビ固定 壁 固定 防災グッズ 耐震マット 家具転倒防止グッズ",
       "itemPrice": 1580,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-04set",
       "images": [
@@ -11758,7 +11759,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-26T03:11:03.363Z",
+      "syncedAt": "2026-10-28T05:01:31.371Z",
       "yahooTopSha": "59cedccb647ec0dcb94aaad82eecd828a847ae47"
     },
     {
@@ -11768,7 +11769,7 @@
       "addedAt": "2026-10-26T03:11:03.363Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-02-12set.html",
-      "itemName": "耐震ベルト テレビ 転倒防止 2本入 地震対策 テレビ転倒防止ベルト 長さ調整可能 固定器具 パソコン 棚 家具",
+      "itemName": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 地震対策 テレビ固定 壁 固定 防災グッズ 耐震マット 家具転倒防止グッズ",
       "itemPrice": 2080,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-02-12set",
       "images": [
@@ -11788,7 +11789,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-26T03:11:03.363Z",
+      "syncedAt": "2026-10-28T05:01:31.371Z",
       "yahooTopSha": "d3de3be80e012943db10222c80bf8b9da1b4204d",
       "multi": true
     },
@@ -12786,6 +12787,96 @@
       "status": "active",
       "syncedAt": "2026-10-27T07:39:53.131Z",
       "yahooTopSha": "20d1203ae70d4e73678ae5bf2101e0d81b6bfc42"
+    },
+    {
+      "id": "prod_1793163691371_8k8w01",
+      "itemCode": "yukaiya_ih-24-08-set2",
+      "itemManageNumber": "ih-24-08-set2",
+      "addedAt": "2026-10-28T05:01:31.371Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set2.html",
+      "itemName": "洗濯ネット ランドリーネット 大型 ニット 定番+小型セット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+      "itemPrice": 1780,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set2",
+      "images": [
+        {
+          "id": "img_ytop_1793163691371_vwrv5i",
+          "filename": "ih-24-08-set2.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/ih-24-08-set2.jpg",
+          "sha": "35e5c5415d2dbd4799bcabcea8eb95632a3f297e",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ih-24-08-set2.jpg?v=35e5c541",
+          "size": 39823,
+          "uploadedAt": "2026-10-28T05:01:31.371Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-28T05:01:31.371Z",
+      "yahooTopSha": "35e5c5415d2dbd4799bcabcea8eb95632a3f297e"
+    },
+    {
+      "id": "prod_1793163691371_ialqys",
+      "itemCode": "yukaiya_ih-24-08-set3",
+      "itemManageNumber": "ih-24-08-set3",
+      "addedAt": "2026-10-28T05:01:31.371Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set3.html",
+      "itemName": "洗濯ネット ランドリーネット 大型 ニット バリエーションセット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+      "itemPrice": 1780,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set3",
+      "images": [
+        {
+          "id": "img_ytop_1793163691371_uki9sb",
+          "filename": "ih-24-08-set3.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/ih-24-08-set3.jpg",
+          "sha": "02889fddd17caf80ab30a3f7f97a0d218859a347",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ih-24-08-set3.jpg?v=02889fdd",
+          "size": 39385,
+          "uploadedAt": "2026-10-28T05:01:31.371Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-28T05:01:31.371Z",
+      "yahooTopSha": "02889fddd17caf80ab30a3f7f97a0d218859a347"
+    },
+    {
+      "id": "prod_1793163691371_e2dfax",
+      "itemCode": "yukaiya_ih-24-08-set4",
+      "itemManageNumber": "ih-24-08-set4",
+      "addedAt": "2026-10-28T05:01:31.371Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set4.html",
+      "itemName": "洗濯ネット ランドリーネット 大型 ニット 1人暮らしセット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+      "itemPrice": 1000,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set4",
+      "images": [
+        {
+          "id": "img_ytop_1793163691371_vydh4b",
+          "filename": "ih-24-08-set4.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/ih-24-08-set4.jpg",
+          "sha": "f8b0d280952ae9abe8d5505db7a6b2c51d4a0a95",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ih-24-08-set4.jpg?v=f8b0d280",
+          "size": 39585,
+          "uploadedAt": "2026-10-28T05:01:31.371Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-28T05:01:31.371Z",
+      "yahooTopSha": "f8b0d280952ae9abe8d5505db7a6b2c51d4a0a95"
     }
   ],
   "materials": [],
