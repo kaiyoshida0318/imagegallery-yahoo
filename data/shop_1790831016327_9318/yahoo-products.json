@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-28T05:00:29.625Z",
+ "fetchedAt": "2026-10-28T08:00:33.322Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 294,
- "count": 294,
+ "totalAvailable": 296,
+ "count": 296,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 0,
-  "reused": 294,
+  "downloaded": 3,
+  "reused": 293,
   "failed": 0
  },
  "items": [
@@ -1243,7 +1243,7 @@
   {
    "imageId": "yukaiya_et-sony-26-01-2set",
    "code": "et-sony-26-01-2set",
-   "name": "Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ シリコーン 交換用イヤピース",
+   "name": "【複数購入で★最大50％OFF】Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ",
    "price": 780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-sony-26-01-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-sony-26-01-2set",
@@ -1260,7 +1260,7 @@
   {
    "imageId": "yukaiya_et-sony-26-01-4set",
    "code": "et-sony-26-01-4set",
-   "name": "Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ シリコーン 交換用イヤピース",
+   "name": "【複数購入で★最大50％OFF】Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ",
    "price": 1080,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-sony-26-01-4set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-sony-26-01-4set",
@@ -1277,7 +1277,7 @@
   {
    "imageId": "yukaiya_et-sony-26-01-8set",
    "code": "et-sony-26-01-8set",
-   "name": "Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ シリコーン 交換用イヤピース",
+   "name": "【複数購入で★最大50％OFF】Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ",
    "price": 1480,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-sony-26-01-8set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-sony-26-01-8set",
@@ -2246,7 +2246,7 @@
   {
    "imageId": "yukaiya_ih-23-11",
    "code": "ih-23-11",
-   "name": "洗濯ネット ニット 大型 6枚セット ランドリーネット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "name": "洗濯ネット ランドリーネット 大型 ニット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット 洗濯袋 ブラジャー 下着 四角 小型 中型 大型",
    "price": 1380,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-11.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-11",
@@ -2255,8 +2255,8 @@
    "top": {
     "key": "yukaiya_ih-23-11",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-23-11.jpg",
-    "sha": "07937e355a0f4e4367b644bd2f9abafad0778f0f",
-    "size": 27491,
+    "sha": "3c01d59721dd9fba5fbba4ab68831f055e09bd8a",
+    "size": 39151,
     "imageId": "yukaiya_ih-23-11"
    }
   },
@@ -2297,7 +2297,7 @@
   {
    "imageId": "yukaiya_ih-24-08-set2",
    "code": "ih-24-08-set2",
-   "name": "洗濯ネット ランドリーネット 大型 ニット 定番+小型セット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "name": "洗濯ネット ランドリーネット 大型 ニット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット 洗濯袋 ブラジャー 下着 四角 小型 中型 大型",
    "price": 1780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set2.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set2",
@@ -2314,7 +2314,7 @@
   {
    "imageId": "yukaiya_ih-24-08-set3",
    "code": "ih-24-08-set3",
-   "name": "洗濯ネット ランドリーネット 大型 ニット バリエーションセット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "name": "洗濯ネット ランドリーネット 大型 ニット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット 洗濯袋 ブラジャー 下着 四角 小型 中型 大型",
    "price": 1780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set3.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set3",
@@ -2331,7 +2331,7 @@
   {
    "imageId": "yukaiya_ih-24-08-set4",
    "code": "ih-24-08-set4",
-   "name": "洗濯ネット ランドリーネット 大型 ニット 1人暮らしセット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
+   "name": "洗濯ネット ランドリーネット 大型 ニット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット 洗濯袋 ブラジャー 下着 四角 小型 中型 大型",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-24-08-set4.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-24-08-set4",
@@ -3283,7 +3283,7 @@
   {
    "imageId": "yukaiya_si-26-02-1s-10set-case",
    "code": "si-26-02-1s-10set-case",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 880,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-1s-10set-case.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-1s-10set-case",
@@ -3300,7 +3300,7 @@
   {
    "imageId": "yukaiya_si-26-02-1s-10set-no",
    "code": "si-26-02-1s-10set-no",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-1s-10set-no.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-1s-10set-no",
@@ -3317,7 +3317,7 @@
   {
    "imageId": "yukaiya_si-26-02-1s-20set-case",
    "code": "si-26-02-1s-20set-case",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 1380,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-1s-20set-case.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-1s-20set-case",
@@ -3334,7 +3334,7 @@
   {
    "imageId": "yukaiya_si-26-02-1s-20set-no",
    "code": "si-26-02-1s-20set-no",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 1280,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-1s-20set-no.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-1s-20set-no",
@@ -3351,7 +3351,7 @@
   {
    "imageId": "yukaiya_si-26-02-1s-30set-case",
    "code": "si-26-02-1s-30set-case",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 1870,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-1s-30set-case.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-1s-30set-case",
@@ -3368,7 +3368,7 @@
   {
    "imageId": "yukaiya_si-26-02-1s-30set-no",
    "code": "si-26-02-1s-30set-no",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 1770,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-1s-30set-no.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-1s-30set-no",
@@ -3385,7 +3385,7 @@
   {
    "imageId": "yukaiya_si-26-02-2l-10set-case",
    "code": "si-26-02-2l-10set-case",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 980,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-10set-case.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-10set-case",
@@ -3402,7 +3402,7 @@
   {
    "imageId": "yukaiya_si-26-02-2l-10set-no",
    "code": "si-26-02-2l-10set-no",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 880,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-10set-no.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-10set-no",
@@ -3419,7 +3419,7 @@
   {
    "imageId": "yukaiya_si-26-02-2l-20set-case",
    "code": "si-26-02-2l-20set-case",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 1560,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-20set-case.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-20set-case",
@@ -3436,7 +3436,7 @@
   {
    "imageId": "yukaiya_si-26-02-2l-20set-no",
    "code": "si-26-02-2l-20set-no",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 1460,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-20set-no.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-20set-no",
@@ -3453,7 +3453,7 @@
   {
    "imageId": "yukaiya_si-26-02-2l-30set-case",
    "code": "si-26-02-2l-30set-case",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 2000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-30set-case.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-30set-case",
@@ -3470,7 +3470,7 @@
   {
    "imageId": "yukaiya_si-26-02-2l-30set-no",
    "code": "si-26-02-2l-30set-no",
-   "name": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
    "price": 1900,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-30set-no.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-30set-no",
@@ -3567,6 +3567,40 @@
     "sha": "6d55c00a2564eedf8119b9c1e75b67ac0b5da742",
     "size": 43321,
     "imageId": "yukaiya_si-26-09-10set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ss-22-01",
+   "code": "ss-22-01",
+   "name": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-01.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-01",
+   "yahooId": "yukaiya_ss-22-01",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ss-22-01",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ss-22-01.jpg",
+    "sha": "060213005b260511e35031bcbcc0c4e2fc8fd0d5",
+    "size": 49901,
+    "imageId": "yukaiya_ss-22-01"
+   }
+  },
+  {
+   "imageId": "yukaiya_ss-22-01-set",
+   "code": "ss-22-01-set",
+   "name": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
+   "price": 1500,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-01-set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-01-set",
+   "yahooId": "yukaiya_ss-22-01-set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ss-22-01-set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ss-22-01-set.jpg",
+    "sha": "ca40c134f6a1008029ec661a250f0f46fb62f258",
+    "size": 56859,
+    "imageId": "yukaiya_ss-22-01-set"
    }
   },
   {
@@ -3776,7 +3810,7 @@
   {
    "imageId": "yukaiya_tb-25-01-1set",
    "code": "tb-25-01-1set",
-   "name": "ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ やわらかめ 歯垢除去ブラシ ブラシヘッド",
+   "name": "【複数購入で★最大50％OFF】ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ EB10 互換 やわらかめ",
    "price": 650,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/tb-25-01-1set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_tb-25-01-1set",
@@ -3793,7 +3827,7 @@
   {
    "imageId": "yukaiya_tb-25-01-2set",
    "code": "tb-25-01-2set",
-   "name": "ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ やわらかめ 歯垢除去ブラシ ブラシヘッド",
+   "name": "【複数購入で★最大50％OFF】ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ EB10 互換 やわらかめ",
    "price": 1040,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/tb-25-01-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_tb-25-01-2set",
@@ -3810,7 +3844,7 @@
   {
    "imageId": "yukaiya_tb-25-01-3set",
    "code": "tb-25-01-3set",
-   "name": "ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ やわらかめ 歯垢除去ブラシ ブラシヘッド",
+   "name": "【複数購入で★最大50％OFF】ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ EB10 互換 やわらかめ",
    "price": 1250,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/tb-25-01-3set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_tb-25-01-3set",
@@ -3827,7 +3861,7 @@
   {
    "imageId": "yukaiya_tb-25-01-4set",
    "code": "tb-25-01-4set",
-   "name": "ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ やわらかめ 歯垢除去ブラシ ブラシヘッド",
+   "name": "【複数購入で★最大50％OFF】ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ EB10 互換 やわらかめ",
    "price": 1560,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/tb-25-01-4set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_tb-25-01-4set",
@@ -3844,7 +3878,7 @@
   {
    "imageId": "yukaiya_tb-25-01-5set",
    "code": "tb-25-01-5set",
-   "name": "ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ やわらかめ 歯垢除去ブラシ ブラシヘッド",
+   "name": "【複数購入で★最大50％OFF】ブラウン オーラルb 替えブラシ 電動歯ブラシ 子供用 すみずみクリーンキッズ EB10 互換 やわらかめ",
    "price": 1950,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/tb-25-01-5set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_tb-25-01-5set",
@@ -4609,7 +4643,7 @@
   {
    "imageId": "yukaiya_yoga-23-01-00set",
    "code": "yoga-23-01-00set",
-   "name": "ヨガソックス 5本指ソックス 靴下 滑り止め 3足セット レディース くるぶし スポーツ ピラティス ソックス ホット ヨガ ウェア トレーニング ジム PKT2-2F",
+   "name": "ヨガソックス 5本指 ソックス 五本指 ピラティス 靴下 滑り止め レディース くるぶし スポーツ ヨガ トレーニング ジム ホット ヨガ ウェア トレーニングウェア",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-23-01-00set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-23-01-00set",
@@ -4626,7 +4660,7 @@
   {
    "imageId": "yukaiya_yoga-23-01-03set",
    "code": "yoga-23-01-03set",
-   "name": "ヨガソックス 5本指ソックス 靴下 滑り止め 3足セット レディース くるぶし スポーツ ピラティス ソックス ホット ヨガ ウェア トレーニング ジム",
+   "name": "ヨガソックス 5本指 ソックス 五本指 ピラティス 靴下 滑り止め レディース くるぶし スポーツ ヨガ トレーニング ジム ホット ヨガ ウェア トレーニングウェア",
    "price": 1380,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-23-01-03set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-23-01-03set",
