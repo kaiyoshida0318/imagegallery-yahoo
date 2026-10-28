@@ -3208,21 +3208,7 @@
       "itemName": "洗濯ネット ニット 大型 6枚セット ランドリーネット 下着 形崩れ防止 洗濯用品 家庭用品 トラベルポーチ 収納ネット",
       "itemPrice": 1380,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-11",
-      "images": [
-        {
-          "id": "img_ytop_1790840364689_4tkh0b",
-          "filename": "ih-23-11.jpg",
-          "originalName": "000_yahoo_top.jpg",
-          "path": "data/shop_1790831016327_9318/yahoo-top/ih-23-11.jpg",
-          "sha": "07937e355a0f4e4367b644bd2f9abafad0778f0f",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ih-23-11.jpg?v=07937e35",
-          "size": 27491,
-          "uploadedAt": "2026-10-01T07:39:24.689Z",
-          "note": "",
-          "tags": [],
-          "yahooTop": true
-        }
-      ],
+      "images": [],
       "status": "active",
       "syncedAt": "2026-10-28T05:01:31.371Z",
       "yahooTopSha": "07937e355a0f4e4367b644bd2f9abafad0778f0f",
@@ -12815,7 +12801,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-28T05:01:31.371Z",
-      "yahooTopSha": "35e5c5415d2dbd4799bcabcea8eb95632a3f297e"
+      "yahooTopSha": "35e5c5415d2dbd4799bcabcea8eb95632a3f297e",
+      "multi": true
     },
     {
       "id": "prod_1793163691371_ialqys",
@@ -12845,7 +12832,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-28T05:01:31.371Z",
-      "yahooTopSha": "02889fddd17caf80ab30a3f7f97a0d218859a347"
+      "yahooTopSha": "02889fddd17caf80ab30a3f7f97a0d218859a347",
+      "multi": true
     },
     {
       "id": "prod_1793163691371_e2dfax",
@@ -12875,7 +12863,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-28T05:01:31.371Z",
-      "yahooTopSha": "f8b0d280952ae9abe8d5505db7a6b2c51d4a0a95"
+      "yahooTopSha": "f8b0d280952ae9abe8d5505db7a6b2c51d4a0a95",
+      "multi": true
     }
   ],
   "materials": [],
