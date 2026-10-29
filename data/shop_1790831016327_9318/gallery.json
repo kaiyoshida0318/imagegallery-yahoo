@@ -13409,7 +13409,7 @@
           "uploadedAt": "2026-10-29T05:12:23.203Z",
           "note": "",
           "tags": [],
-          "tagId": "",
+          "tagId": "tag_ytop_1791336537134_bcmc",
           "yahooTop": true
         },
         {
@@ -13530,7 +13530,8 @@
           "size": 540332,
           "uploadedAt": "2026-10-29T05:14:12.061Z",
           "note": "",
-          "tags": []
+          "tags": [],
+          "tagId": "tag_1790844256396_0_japa"
         },
         {
           "id": "img_1793250854064_4fdnpl",
@@ -13542,7 +13543,8 @@
           "size": 566829,
           "uploadedAt": "2026-10-29T05:14:14.064Z",
           "note": "",
-          "tags": []
+          "tags": [],
+          "tagId": "tag_1790844256396_1_smzo"
         }
       ],
       "status": "active",
