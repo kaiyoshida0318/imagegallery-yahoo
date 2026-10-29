@@ -1709,7 +1709,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "57ed096b7ae77a67c94ba5336256bec2e646c0e0"
+      "yahooTopSha": "57ed096b7ae77a67c94ba5336256bec2e646c0e0",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_pxpld1",
@@ -2375,7 +2376,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "1de47be436ef87c55e82136eb0963e5cf6d7c9d2"
+      "yahooTopSha": "1de47be436ef87c55e82136eb0963e5cf6d7c9d2",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_mynqek",
@@ -2403,7 +2405,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "aeca0b3b89bc3a1af926e203ae8101a4d29c4a22"
+      "yahooTopSha": "aeca0b3b89bc3a1af926e203ae8101a4d29c4a22",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_v3x7ns",
@@ -2431,7 +2434,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "2ad7c8491d79970092a3f0b67355b75fc507b424"
+      "yahooTopSha": "2ad7c8491d79970092a3f0b67355b75fc507b424",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_zqmkg4",
@@ -2459,7 +2463,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "9cfa17ac171ef7a54585c294fab82f8b597fafd5"
+      "yahooTopSha": "9cfa17ac171ef7a54585c294fab82f8b597fafd5",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_yf45al",
@@ -2487,7 +2492,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "1364ad947e3f72b1cfd37c94c3b35ef88ec2a4b3"
+      "yahooTopSha": "1364ad947e3f72b1cfd37c94c3b35ef88ec2a4b3",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_psfjmx",
@@ -2515,7 +2521,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "9471c7fe45fa245c554f0b345bd103cc73a465f7"
+      "yahooTopSha": "9471c7fe45fa245c554f0b345bd103cc73a465f7",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_hhegiw",
@@ -2543,7 +2550,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "ce3c0604c01bd008015eaa4e69bd824b02bd5430"
+      "yahooTopSha": "ce3c0604c01bd008015eaa4e69bd824b02bd5430",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_733uc3",
@@ -2600,7 +2608,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "05ab6dc6e8ef39f64a09ba15c21418282276e8fa"
+      "yahooTopSha": "05ab6dc6e8ef39f64a09ba15c21418282276e8fa",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_uf2dhk",
@@ -2628,7 +2637,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "23c7ce50f29b04e259df3d720518338f4a10bc0f"
+      "yahooTopSha": "23c7ce50f29b04e259df3d720518338f4a10bc0f",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_5xzcvb",
@@ -2656,7 +2666,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "6ef1107ec6061cf40f8aff1014aac2b0714bf845"
+      "yahooTopSha": "6ef1107ec6061cf40f8aff1014aac2b0714bf845",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_beklfo",
@@ -2684,7 +2695,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "d5e799671cb7fa6bbfd01f7d593efeca59019d9d"
+      "yahooTopSha": "d5e799671cb7fa6bbfd01f7d593efeca59019d9d",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_lg4ier",
@@ -2712,7 +2724,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "045a29430867304d4cdc16bf1ba874ddf1e94169"
+      "yahooTopSha": "045a29430867304d4cdc16bf1ba874ddf1e94169",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_rfp0x5",
@@ -2740,7 +2753,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "dab523d8c2a2c6428cf55ba8b6c7bdf633d3783a"
+      "yahooTopSha": "dab523d8c2a2c6428cf55ba8b6c7bdf633d3783a",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_a3329j",
@@ -2856,7 +2870,8 @@
       "status": "active",
       "syncedAt": "2026-10-23T08:29:23.012Z",
       "yahooTopSha": "e040b947ef9828cd99a8f51fbd5c0af0c6964e6a",
-      "addedAt": "2026-10-01T07:39:24.688Z"
+      "addedAt": "2026-10-01T07:39:24.688Z",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_erioo0",
@@ -2885,7 +2900,8 @@
       "status": "active",
       "syncedAt": "2026-10-23T08:29:23.012Z",
       "yahooTopSha": "fbcf78cd2ee8d663b072c2ab1777ca5fbc9559ab",
-      "addedAt": "2026-10-01T07:39:24.688Z"
+      "addedAt": "2026-10-01T07:39:24.688Z",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_wmuxk7",
@@ -2914,7 +2930,8 @@
       "status": "active",
       "syncedAt": "2026-10-23T08:29:23.012Z",
       "yahooTopSha": "1480ae67d5627331a56edcccf1b7ac41973cd9f6",
-      "addedAt": "2026-10-01T07:39:24.688Z"
+      "addedAt": "2026-10-01T07:39:24.688Z",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_5jhdb4",
@@ -2943,7 +2960,8 @@
       "status": "active",
       "syncedAt": "2026-10-23T08:29:23.012Z",
       "yahooTopSha": "ce4abb4328903b81c946ab3cac8ed999799900da",
-      "addedAt": "2026-10-01T07:39:24.688Z"
+      "addedAt": "2026-10-01T07:39:24.688Z",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_fy1r2a",
@@ -2971,7 +2989,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "4c23da5e51bc4c244d7d95f2eefe538e99417485"
+      "yahooTopSha": "4c23da5e51bc4c244d7d95f2eefe538e99417485",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_x2tsxa",
@@ -2999,7 +3018,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "ec5da4341ef6c767b2c9279a5a174a70e46a4523"
+      "yahooTopSha": "ec5da4341ef6c767b2c9279a5a174a70e46a4523",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_f0lk9u",
@@ -3027,7 +3047,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "4a469731535fd59bf40e70f54bffa1a59389ad50"
+      "yahooTopSha": "4a469731535fd59bf40e70f54bffa1a59389ad50",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_siklwg",
@@ -3818,7 +3839,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "268d057b0ff97d513aab999c3dbd2b9e5ec7aa7d"
+      "yahooTopSha": "268d057b0ff97d513aab999c3dbd2b9e5ec7aa7d",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_ufg7ue",
@@ -3846,7 +3868,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "c34e85e7a132de860baeb88d6ab6aa760650e9eb"
+      "yahooTopSha": "c34e85e7a132de860baeb88d6ab6aa760650e9eb",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_5ki2w2",
@@ -3903,7 +3926,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "5c7b9e43284e5ac4fe1ccf0318425a1bccd2cc6a"
+      "yahooTopSha": "5c7b9e43284e5ac4fe1ccf0318425a1bccd2cc6a",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_fcmeol",
@@ -4574,7 +4598,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "3226a30b5245f909b379ba3f73146b0cb81c5c78"
+      "yahooTopSha": "3226a30b5245f909b379ba3f73146b0cb81c5c78",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_kgw6xe",
@@ -4602,7 +4627,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "2a5f7b243c195174c15139086ac2846130448982"
+      "yahooTopSha": "2a5f7b243c195174c15139086ac2846130448982",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_si09y4",
@@ -4630,7 +4656,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "a8bb000d8fd72d0702bdcc1c635b679cd5705edb"
+      "yahooTopSha": "a8bb000d8fd72d0702bdcc1c635b679cd5705edb",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_f2g2bm",
@@ -5006,7 +5033,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "df3d2b30fb7d33e181c197db247b64a1d4ea6880"
+      "yahooTopSha": "df3d2b30fb7d33e181c197db247b64a1d4ea6880",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_oddct4",
@@ -5429,7 +5457,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "e924ebde92e4825f467bd82004f53f12b53a84c5"
+      "yahooTopSha": "e924ebde92e4825f467bd82004f53f12b53a84c5",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_2m1tlh",
@@ -5457,7 +5486,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "21715a3926f14d6922f2c67e395ed91e15f18708"
+      "yahooTopSha": "21715a3926f14d6922f2c67e395ed91e15f18708",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_jcnp5l",
@@ -5485,7 +5515,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "449eb1ccae7443513f3e33a107a6b31f5e55db75"
+      "yahooTopSha": "449eb1ccae7443513f3e33a107a6b31f5e55db75",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_tfznh8",
@@ -6471,7 +6502,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "463af772a7e4b7b1de460b7f1a8e8d8f289f2e33"
+      "yahooTopSha": "463af772a7e4b7b1de460b7f1a8e8d8f289f2e33",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_7kriyk",
@@ -7025,7 +7057,8 @@
       "status": "active",
       "syncedAt": "2026-10-29T03:34:46.711Z",
       "yahooTopSha": "8823bb1300b9cc7cfcf77806cd0345de3a5d044f",
-      "addedAt": "2026-10-01T07:39:24.688Z"
+      "addedAt": "2026-10-01T07:39:24.688Z",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_0edbuz",
@@ -7053,7 +7086,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "95afe80c0c56835b9930e45b7e35839622c5be0b"
+      "yahooTopSha": "95afe80c0c56835b9930e45b7e35839622c5be0b",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_pl22jy",
@@ -7081,7 +7115,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "d173a12d120703ea1433da726caee8f3db016b49"
+      "yahooTopSha": "d173a12d120703ea1433da726caee8f3db016b49",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_zih9we",
