@@ -12057,7 +12057,7 @@
       "addedAt": "2026-10-27T07:39:53.131Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/et-sony-26-01-8set.html",
-      "itemName": "Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ シリコーン 交換用イヤピース",
+      "itemName": "【複数購入で★最大50％OFF】Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ",
       "itemPrice": 1480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-sony-26-01-8set",
       "images": [
@@ -12077,7 +12077,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-27T07:39:53.131Z",
+      "syncedAt": "2026-10-29T05:12:23.202Z",
       "yahooTopSha": "a42943a12ecddd8dc7081a443fb3e0fb976d7098",
       "multi": true
     },
@@ -12457,7 +12457,7 @@
       "addedAt": "2026-10-27T07:39:53.131Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-30set-case.html",
-      "itemName": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+      "itemName": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
       "itemPrice": 2000,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-30set-case",
       "images": [
@@ -12477,7 +12477,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-27T07:39:53.131Z",
+      "syncedAt": "2026-10-29T05:12:23.202Z",
       "yahooTopSha": "4aa13fccfd0a70c722ec5de1872b3fecdbaf36a2",
       "multi": true
     },
@@ -12488,7 +12488,7 @@
       "addedAt": "2026-10-27T07:39:53.131Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-30set-no.html",
-      "itemName": "ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ 銀色 シルバー 金 ゴールド おしゃれ",
+      "itemName": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
       "itemPrice": 1900,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-30set-no",
       "images": [
@@ -12508,7 +12508,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-27T07:39:53.131Z",
+      "syncedAt": "2026-10-29T05:12:23.202Z",
       "yahooTopSha": "4e69aa5fe5a05a6af2b731acf950e29a14f71efe",
       "multi": true
     },
@@ -13386,6 +13386,36 @@
       "status": "active",
       "syncedAt": "2026-10-29T03:34:46.711Z",
       "yahooTopSha": "060213005b260511e35031bcbcc0c4e2fc8fd0d5"
+    },
+    {
+      "id": "prod_1793250743203_a1xd3y",
+      "itemCode": "yukaiya_ss-22-01-set",
+      "itemManageNumber": "ss-22-01-set",
+      "addedAt": "2026-10-29T05:12:23.202Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-01-set.html",
+      "itemName": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
+      "itemPrice": 1500,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-01-set",
+      "images": [
+        {
+          "id": "img_ytop_1793250743203_jd6rkx",
+          "filename": "ss-22-01-set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/ss-22-01-set.jpg",
+          "sha": "ca40c134f6a1008029ec661a250f0f46fb62f258",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ss-22-01-set.jpg?v=ca40c134",
+          "size": 56859,
+          "uploadedAt": "2026-10-29T05:12:23.203Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-10-29T05:12:23.202Z",
+      "yahooTopSha": "ca40c134f6a1008029ec661a250f0f46fb62f258"
     }
   ],
   "materials": [],
