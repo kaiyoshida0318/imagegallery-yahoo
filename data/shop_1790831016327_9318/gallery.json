@@ -1622,7 +1622,7 @@
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "b0ea6f93539bc8c5d2290dcc4ac436571073bbf1",
-      "neglected": true
+      "multi": true
     },
     {
       "id": "prod_1790839116298_368vt0",
@@ -3048,7 +3048,7 @@
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "4a469731535fd59bf40e70f54bffa1a59389ad50",
-      "neglected": true
+      "multi": true
     },
     {
       "id": "prod_1790839116298_siklwg",
@@ -3869,7 +3869,7 @@
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "c34e85e7a132de860baeb88d6ab6aa760650e9eb",
-      "neglected": true
+      "multi": true
     },
     {
       "id": "prod_1790839116298_5ki2w2",
@@ -3927,7 +3927,7 @@
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "5c7b9e43284e5ac4fe1ccf0318425a1bccd2cc6a",
-      "neglected": true
+      "multi": true
     },
     {
       "id": "prod_1790839116298_fcmeol",
@@ -5458,7 +5458,7 @@
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "e924ebde92e4825f467bd82004f53f12b53a84c5",
-      "neglected": true
+      "multi": true
     },
     {
       "id": "prod_1790839116298_2m1tlh",
@@ -5487,7 +5487,7 @@
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "21715a3926f14d6922f2c67e395ed91e15f18708",
-      "neglected": true
+      "multi": true
     },
     {
       "id": "prod_1790839116298_jcnp5l",
@@ -5516,7 +5516,7 @@
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "449eb1ccae7443513f3e33a107a6b31f5e55db75",
-      "neglected": true
+      "multi": true
     },
     {
       "id": "prod_1790839116298_tfznh8",
