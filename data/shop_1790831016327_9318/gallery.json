@@ -13600,7 +13600,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-29T05:12:23.202Z",
-      "yahooTopSha": "ca40c134f6a1008029ec661a250f0f46fb62f258"
+      "yahooTopSha": "ca40c134f6a1008029ec661a250f0f46fb62f258",
+      "multi": true
     }
   ],
   "materials": [],
