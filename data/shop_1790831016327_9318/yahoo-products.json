@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-28T08:00:33.322Z",
+ "fetchedAt": "2026-10-29T03:33:47.948Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 296,
- "count": 296,
+ "totalAvailable": 300,
+ "count": 292,
  "skipped": 0,
  "truncated": false,
  "requests": 8,
  "topImages": {
-  "downloaded": 3,
-  "reused": 293,
+  "downloaded": 4,
+  "reused": 288,
   "failed": 0
  },
  "items": [
@@ -884,23 +884,6 @@
    }
   },
   {
-   "imageId": "yukaiya_cg-22-05",
-   "code": "cg-22-05",
-   "name": "排水口 排水溝 ゴミ受け ステンレスキッチン ユニットバス ネットキャッチ ゴミ受け TAK-2F",
-   "price": 1680,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/cg-22-05.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_cg-22-05",
-   "yahooId": "yukaiya_cg-22-05",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_cg-22-05",
-    "path": "data/shop_1790831016327_9318/yahoo-top/cg-22-05.jpg",
-    "sha": "775602c947a0c614594edf8dc7e1de96180a8d2e",
-    "size": 48602,
-    "imageId": "yukaiya_cg-22-05"
-   }
-  },
-  {
    "imageId": "yukaiya_cg-22-06",
    "code": "cg-22-06",
    "name": "シンク 排水口 ふた シンクの排水口の蓋 150mm 排水口カバー 止水ふた 水止めキャップ シンクストッパー ゴミ受け PKT2-2F",
@@ -1272,23 +1255,6 @@
     "sha": "7adaaaaec2fca860784bf28a5f28dd9aac501c30",
     "size": 44720,
     "imageId": "yukaiya_et-sony-26-01-4set"
-   }
-  },
-  {
-   "imageId": "yukaiya_et-sony-26-01-8set",
-   "code": "et-sony-26-01-8set",
-   "name": "【複数購入で★最大50％OFF】Sony WF-1000XM5 イヤーピース WF-1000XM4 WF-1000XM3 WF-C500 WF-C700N WF-C710N イヤーチップ",
-   "price": 1480,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-sony-26-01-8set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-sony-26-01-8set",
-   "yahooId": "yukaiya_et-sony-26-01-8set",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_et-sony-26-01-8set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/et-sony-26-01-8set.jpg",
-    "sha": "a42943a12ecddd8dc7081a443fb3e0fb976d7098",
-    "size": 44808,
-    "imageId": "yukaiya_et-sony-26-01-8set"
    }
   },
   {
@@ -3451,37 +3417,71 @@
    }
   },
   {
-   "imageId": "yukaiya_si-26-02-2l-30set-case",
-   "code": "si-26-02-2l-30set-case",
-   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
-   "price": 2000,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-30set-case.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-30set-case",
-   "yahooId": "yukaiya_si-26-02-2l-30set-case",
+   "imageId": "yukaiya_si-26-03-group-12set",
+   "code": "si-26-03-group-12set",
+   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-12set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-12set",
+   "yahooId": "yukaiya_si-26-03-group-12set",
    "inStock": true,
    "top": {
-    "key": "yukaiya_si-26-02-2l-30set-case",
-    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-02-2l-30set-case.jpg",
-    "sha": "4aa13fccfd0a70c722ec5de1872b3fecdbaf36a2",
-    "size": 54857,
-    "imageId": "yukaiya_si-26-02-2l-30set-case"
+    "key": "yukaiya_si-26-03-group-12set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-03-group-12set.jpg",
+    "sha": "87fb3054cc65670e5d69265a00cd48d85c19e23b",
+    "size": 77434,
+    "imageId": "yukaiya_si-26-03-group-12set"
    }
   },
   {
-   "imageId": "yukaiya_si-26-02-2l-30set-no",
-   "code": "si-26-02-2l-30set-no",
-   "name": "【複数購入で★最大50％OFF】ピンバッジ ピンズ ピンバッチ キャッチ 留め具 固定 タイタック デラックス 薄型 クラッチ シルバー ゴールド",
-   "price": 1900,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-02-2l-30set-no.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-02-2l-30set-no",
-   "yahooId": "yukaiya_si-26-02-2l-30set-no",
+   "imageId": "yukaiya_si-26-03-group-24set",
+   "code": "si-26-03-group-24set",
+   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "price": 1280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-24set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-24set",
+   "yahooId": "yukaiya_si-26-03-group-24set",
    "inStock": true,
    "top": {
-    "key": "yukaiya_si-26-02-2l-30set-no",
-    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-02-2l-30set-no.jpg",
-    "sha": "4e69aa5fe5a05a6af2b731acf950e29a14f71efe",
-    "size": 52700,
-    "imageId": "yukaiya_si-26-02-2l-30set-no"
+    "key": "yukaiya_si-26-03-group-24set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-03-group-24set.jpg",
+    "sha": "9cbbb41a7fb7ebe4f1e784e5f5a3c87d788405ff",
+    "size": 77479,
+    "imageId": "yukaiya_si-26-03-group-24set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-03-group-48set",
+   "code": "si-26-03-group-48set",
+   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "price": 1980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-48set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-48set",
+   "yahooId": "yukaiya_si-26-03-group-48set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-26-03-group-48set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-03-group-48set.jpg",
+    "sha": "c5544748ce3eae41db5bd2ec2bd7f3ec5ed318af",
+    "size": 77510,
+    "imageId": "yukaiya_si-26-03-group-48set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-03-group-72set",
+   "code": "si-26-03-group-72set",
+   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "price": 2780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-72set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-72set",
+   "yahooId": "yukaiya_si-26-03-group-72set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-26-03-group-72set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-03-group-72set.jpg",
+    "sha": "f0e318e23f2d6631588ec7538bfa5c385d388c78",
+    "size": 77475,
+    "imageId": "yukaiya_si-26-03-group-72set"
    }
   },
   {
@@ -3584,23 +3584,6 @@
     "sha": "060213005b260511e35031bcbcc0c4e2fc8fd0d5",
     "size": 49901,
     "imageId": "yukaiya_ss-22-01"
-   }
-  },
-  {
-   "imageId": "yukaiya_ss-22-01-set",
-   "code": "ss-22-01-set",
-   "name": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
-   "price": 1500,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-01-set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-01-set",
-   "yahooId": "yukaiya_ss-22-01-set",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_ss-22-01-set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/ss-22-01-set.jpg",
-    "sha": "ca40c134f6a1008029ec661a250f0f46fb62f258",
-    "size": 56859,
-    "imageId": "yukaiya_ss-22-01-set"
    }
   },
   {
@@ -3958,23 +3941,6 @@
     "sha": "e7f502d41a3f746c93f3c5a5fcb3bdf624f2db5b",
     "size": 49561,
     "imageId": "yukaiya_wat-18-05"
-   }
-  },
-  {
-   "imageId": "yukaiya_wat-18-05-set2",
-   "code": "wat-18-05-set2",
-   "name": "Gショック ベルト交換 DW-5600 DW-5700 DW-6900 GW-M5610 工具付属 PKT2-4F",
-   "price": 990,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-18-05-set2.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-18-05-set2",
-   "yahooId": "yukaiya_wat-18-05-set2",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_wat-18-05-set2",
-    "path": "data/shop_1790831016327_9318/yahoo-top/wat-18-05-set2.jpg",
-    "sha": "1e460a668accb15bc4d42e8c2926bac753db31fa",
-    "size": 52796,
-    "imageId": "yukaiya_wat-18-05-set2"
    }
   },
   {
@@ -4471,23 +4437,6 @@
    }
   },
   {
-   "imageId": "yukaiya_wat-sma-04-set1a",
-   "code": "wat-sma-04-set1a",
-   "name": "時計 ベルト バンド ステンレス 18mm 20mm 22mm イージークリック PKT3-3F",
-   "price": 1480,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-04-set1a.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-04-set1a",
-   "yahooId": "yukaiya_wat-sma-04-set1a",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_wat-sma-04-set1a",
-    "path": "data/shop_1790831016327_9318/yahoo-top/wat-sma-04-set1a.jpg",
-    "sha": "533324beaea7ffc64e4c022bbffee7d760c30661",
-    "size": 51641,
-    "imageId": "yukaiya_wat-sma-04-set1a"
-   }
-  },
-  {
    "imageId": "yukaiya_wat-sma-04-set2",
    "code": "wat-sma-04-set2",
    "name": "スマートウォッチ ベルト バンド ステンレス 18mm 20mm 22mm イージークリック 工具付き PKT3-3F",
@@ -4757,23 +4706,6 @@
     "sha": "4dfe46886322fecb4a8202209a51f4a497b04ae9",
     "size": 56586,
     "imageId": "yukaiya_zak-18-07-20"
-   }
-  },
-  {
-   "imageId": "yukaiya_zak-18-11-05a",
-   "code": "zak-18-11-05a",
-   "name": "コンセントカバー 赤ちゃん ベビーガード コンセント用 コンセントガード 便利グッズ 5個セット PKT3-3F",
-   "price": 480,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/zak-18-11-05a.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_zak-18-11-05a",
-   "yahooId": "yukaiya_zak-18-11-05a",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_zak-18-11-05a",
-    "path": "data/shop_1790831016327_9318/yahoo-top/zak-18-11-05a.jpg",
-    "sha": "325f4c4e13f7c4c05bcc30d7250bed1b17a5f1cc",
-    "size": 45367,
-    "imageId": "yukaiya_zak-18-11-05a"
    }
   },
   {
