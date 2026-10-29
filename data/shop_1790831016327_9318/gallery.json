@@ -13420,6 +13420,18 @@
           "uploadedAt": "2026-10-29T03:36:58.313Z",
           "note": "",
           "tags": []
+        },
+        {
+          "id": "img_1793251757784_ukqt73",
+          "filename": "1793251755367_jopds9_1793250849497_xvjao5_b-02.png",
+          "originalName": "1793250849497_xvjao5_b-02.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1793244886711_asqscp/1793251755367_jopds9_1793250849497_xvjao5_b-02.png",
+          "sha": "b215f0dfc4867ff938ff1e50eae5298c0b99cbf6",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1793244886711_asqscp/1793251755367_jopds9_1793250849497_xvjao5_b-02.png",
+          "size": 540332,
+          "uploadedAt": "2026-10-29T05:29:17.785Z",
+          "note": "",
+          "tags": []
         }
       ],
       "status": "active",
