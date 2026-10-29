@@ -3,7 +3,7 @@
 // Yahoo!ショッピングの自社商品画像を商品ごとに保管するLP制作支援ツール
 // 複製元: 楽天版 kaiyoshida0318/imagegallery v1.11.41
 // =====================================================
-const APP_VERSION = 'ver 1.0.22';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
+const APP_VERSION = 'ver 1.0.24';   // 画面右上の表示。Yahoo版であることはロゴ横のバッジで分かるので「ver」表記にする
 // ⚠️ 楽天版と同じドメイン (kaiyoshida0318.github.io) で動くため、localStorage / sessionStorage は楽天版と共有になる。
 //    キーは必ず imagegallery_yahoo_ で始めること。楽天版と同じキーを使うと、
 //    楽天版の設定(リポジトリ名・ショップ一覧)を読んでしまい、保存すると楽天版の設定を上書きする。
@@ -89,6 +89,7 @@ let ignoreSelection = new Set();         // ver 1.0.6: 「無視の設定」モ�
 let _ignoreSelCat = null;                // 選択したときのタブ (タブを替えたら選択を消す)
 let _lastGridList = [];                  // 直近に一覧へ表示した商品 (「表示中を全部選択」用)
 let imgSelection = new Set();            // ver 1.0.10: サムネ右上のチェックで選んだ画像ID
+let prodSelection = new Set();           // ver 1.0.24: 一括編集中に、行のチェックで選んだ商品ID
 // ver 1.0.15: 「共通込」表示にしている商品ID (行ごとに 画像のみ ⇄ 共通込 を切り替え。このブラウザに記憶)
 const LS_COMMON_ROWS = 'imagegallery_yahoo_common_rows_v1';
 let commonRows = new Set();
@@ -171,7 +172,7 @@ async function init() {
   moveRefreshButtonToEnd();
   moveStorageButtonIntoSettings();  // v1.11.37: 「📊」→「容量確認」にして設定モーダルへ
   injectPartsTab();          // v1.11.33: 「部品」タブを 全体 の右に追加
-  injectNoImageTab();        // v1.11.34: 「商品(未設定)」タブを 全体 と 部品 の間に追加
+  // ver 1.0.23: 「商品(未設定)」タブは廃止 (画像の無い商品は「📷 画像未登録のみ」で絞り込める)
   // ver 1.0.6: 「サムネ台」タブは廃止 (意味が分かりにくいため)。データ(yahooThumbs)は gallery.json に残す
   injectIgnoredTab();        // ver 1.0.6: 部品 の右に「|」で区切って「無視」タブ
   injectIgnoreModeUI();      // ver 1.0.6: 「🙈 無視の設定」モード (一括で 無視 ⇄ 現役)
@@ -179,6 +180,7 @@ async function init() {
   injectProductStatusSelect(); // ver 1.0.10: 情報モーダルに「ステータス: 現役 / 無視」のドロップダウン
   injectImageSelectUI();     // ver 1.0.10: サムネ右上のチェックで画像を選び、まとめて削除・タグ変更
   injectBatchEditUI();       // ver 1.0.12: 一括編集モード (まとめて設定して、あとで push)
+  setupProdSelectUI();       // ver 1.0.24: 一括編集中に商品を選んで、カテゴリ (現役/無視/放置/複数分) をまとめて変更
   setupCommonPartsModal();   // ver 1.0.14: 画像編集モーダルを「メイン｜共通部品」の左右に分ける
   setupCommonRowToggle();    // ver 1.0.15: 行ごとの「画像のみ / 共通込」切り替え
   setupStateSelect();        // ver 1.0.17: 行の「現役 / 無視 / 複数分」ドロップダウン
@@ -560,6 +562,19 @@ function injectImageTagStyles() {
     .images-edit-delete-bar .ie-move-btns { display: flex; gap: 8px; margin-left: auto; margin-right: 8px; }
     .ie-move-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #c4b5fd; background: #fff; color: #6d28d9; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .ie-move-btn:hover { background: #f3e8ff; }
+    /* ver 1.0.24: 一括編集中の商品選択 */
+    .prod-sel { display: inline-flex; align-items: center; margin-right: 6px; vertical-align: middle; cursor: pointer; }
+    .prod-sel input { width: 17px; height: 17px; cursor: pointer; accent-color: #f59e0b; }
+    .product-row.prod-selected { background: #fffbeb !important; box-shadow: inset 4px 0 0 #f59e0b; }
+    .prodsel-bar { background: #78350f !important; border-color: #78350f !important; color: #fff; gap: 14px; width: min(980px, calc(100vw - 32px)); box-sizing: border-box; justify-content: space-between; }
+    .prodsel-bar .delete-action-info { color: #fff; }
+    .prodsel-bar .delete-action-info strong { color: #fcd34d; }
+    .prodsel-bar .delete-action-buttons { align-items: center; }
+    .prodsel-bar select { padding: 7px 8px; border-radius: 8px; border: 0; font-family: inherit; font-size: 13px; }
+    .prodsel-bar button { white-space: nowrap; font-family: inherit; cursor: pointer; border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+    .prodsel-bar .btn-ps-sub { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.45); }
+    .prodsel-bar .btn-ps-main { background: #fcd34d; color: #78350f; border: 0; font-weight: 700; }
+    body.prodsel-on .img-sel-bar { bottom: 140px !important; }
     /* ver 1.0.18: 未pushのタグ変更 */
     .img-tag-select.tag-pending { outline: 2px solid #2563eb; outline-offset: 1px; }
     .tagp-bar {
@@ -602,6 +617,8 @@ function injectImageTagStyles() {
     .state-select.st-neglect { background: #ede9fe; color: #5b21b6; border-color: #c4b5fd; }
     /* ver 1.0.16: 右上の「＋ 部品追加」「＋ 商品同期」は途中で折り返さない */
     #btnAddEntry, #btnAddPart { white-space: nowrap; flex-shrink: 0; }
+    /* ver 1.0.24: 「部品」タブと「＋ 部品追加」は使わないので隠す (既存の部品データは「全体」タブで見られる) */
+    .cat-btn[data-cat="parts"], #btnAddPart { display: none !important; }
     /* ver 1.0.15: 行ごとの「画像のみ / 共通込」 */
     .cm-toggle { display: flex; flex-direction: column; border: 1px solid var(--border, #e5e7eb); border-radius: 6px; overflow: hidden; margin-bottom: 6px; }
     .cm-toggle button { padding: 4px 2px; border: 0; background: var(--surface, #fff); color: var(--text-muted, #64748b); font-family: inherit; font-size: 10.5px; cursor: pointer; white-space: nowrap; }
@@ -870,6 +887,13 @@ function setProductState(p, st) {
   else if (st === 'neglect') p.neglected = true;   // ver 1.0.22: 放置
 }
 function isHiddenProduct(p) { return !!(p.ignored || p.multi || p.neglected); }
+// ver 1.0.24: どのタブに出すかを決める状態。行のドロップダウンで変えてまだ push していない商品は、
+//   push するまで「変更前の状態」のタブに残す (その場で消えないように)。
+function tabState(p) {
+  const e = _statePending.get(p.id);
+  return (e && e.shopId === currentShopId) ? e.from : productState(p);
+}
+function isHiddenInTabs(p) { return tabState(p) !== 'active'; }
 function stateMovedMsg(st) {
   return st === 'active' ? '現役に戻しました' : `「${stateLabel(st)}」タブに移しました`;
 }
@@ -896,7 +920,7 @@ function setupStateSelect() {
       const y0 = window.scrollY;
       render();
       window.scrollTo(0, y0);
-      toast(`${p.itemManageNumber || ''} を${stateMovedMsg(next)}（未push）`, 'success');
+      toast(`${p.itemManageNumber || ''} を「${stateLabel(next)}」に変更しました（pushするとタブを移動します）`, 'success');
       return;
     }
     showLoading('保存中…');
@@ -1068,12 +1092,18 @@ async function applyIgnore(flag) { return applyState(flag ? 'ignored' : 'active'
 // ver 1.0.17: 選んだ商品をまとめて 現役 / 無視 / 複数分 にする
 async function applyState(state) {
   if (ignoreSelection.size === 0) return;
-  if (!auth.pat) { toast('変更の保存には編集権限(PAT)が必要です', 'error'); return; }
+  if (await applyStateToIds(new Set(ignoreSelection), state)) ignoreSelection.clear();
+  render();
+}
+
+// ver 1.0.24: 指定した商品をまとめて 現役 / 無視 / 放置 / 複数分 にする (成功したら true)
+//   一括編集中は saveShopData が保存を後回しにするので、「まとめて保存」で反映される
+async function applyStateToIds(ids, state) {
+  if (!auth.pat) { toast('変更の保存には編集権限(PAT)が必要です', 'error'); return false; }
   const data = dataCache[currentShopId];
-  if (!data) return;
-  const ids = new Set(ignoreSelection);
+  if (!data) return false;
   const targets = (data.products || []).filter(p => ids.has(p.id));
-  if (targets.length === 0) return;
+  if (targets.length === 0) return false;
   const backup = targets.map(p => [p, productState(p)]);
   targets.forEach(p => setProductState(p, state));
   showLoading('保存中…');
@@ -1084,12 +1114,11 @@ async function applyState(state) {
     hideLoading();
     toast('保存失敗: ' + e.message, 'error');
     render();
-    return;
+    return false;
   }
   hideLoading();
-  ignoreSelection.clear();
-  render();
-  toast(`${targets.length}件を${stateMovedMsg(state)}`, 'success');
+  toast(`${targets.length}件を${stateMovedMsg(state)}${_batch.on ? '（未保存）' : ''}`, 'success');
+  return true;
 }
 
 // ver 1.0.15: 行ごとの「画像のみ / 共通込」(クリックはまとめて document で受ける)
@@ -1210,6 +1239,59 @@ async function moveSelectedImagesInModal(toCommon) {
   toast(`${targets.length}枚を${toCommon ? '共通部品' : 'メイン画像'}に移しました`, 'success');
 }
 
+// ===== ver 1.0.24: 一括編集中の商品選択 → カテゴリをまとめて変更 =====
+function setupProdSelectUI() {
+  if (document.getElementById('prodSelBar')) return;
+  document.addEventListener('change', (e) => {
+    const cb = e.target.closest && e.target.closest('[data-prod-sel]');
+    if (!cb) return;
+    const id = cb.dataset.prodSel;
+    if (cb.checked) prodSelection.add(id); else prodSelection.delete(id);
+    const row = cb.closest('.product-row');
+    if (row) row.classList.toggle('prod-selected', cb.checked);
+    updateProdSelBar();
+  });
+  const bar = document.createElement('div');
+  bar.className = 'delete-action-bar prodsel-bar';
+  bar.id = 'prodSelBar';
+  bar.style.display = 'none';
+  bar.innerHTML = `
+    <div class="delete-action-info">
+      <span class="delete-action-icon">☑️</span>
+      <span>商品を <strong id="prodSelCount">0</strong> 件選択中</span>
+    </div>
+    <div class="delete-action-buttons">
+      <button class="btn-ps-sub" id="btnPsAll">表示中を全部選択</button>
+      <button class="btn-ps-sub" id="btnPsClear">選択解除</button>
+      <select id="prodSelState" title="変更先のカテゴリ">
+        ${PRODUCT_STATES.map(st => `<option value="${st.id}">${st.label}</option>`).join('')}
+      </select>
+      <button class="btn-ps-main" id="btnPsApply">カテゴリを変更</button>
+    </div>`;
+  document.body.appendChild(bar);
+  bar.querySelector('#btnPsAll').addEventListener('click', () => { _lastGridList.forEach(p => { if (!p.isPart) prodSelection.add(p.id); }); render(); });
+  bar.querySelector('#btnPsClear').addEventListener('click', () => { prodSelection.clear(); render(); });
+  bar.querySelector('#btnPsApply').addEventListener('click', async () => {
+    const st = bar.querySelector('#prodSelState').value;
+    if (await applyStateToIds(new Set(prodSelection), st)) prodSelection.clear();
+    render();
+  });
+}
+
+function updateProdSelBar() {
+  const bar = document.getElementById('prodSelBar');
+  if (!bar) return;
+  // 消えた商品は選択から外す
+  const data = dataCache[currentShopId];
+  const alive = new Set(((data && data.products) || []).map(p => p.id));
+  [...prodSelection].forEach(id => { if (!alive.has(id)) prodSelection.delete(id); });
+  const show = _batch.on && viewMode === 'images' && prodSelection.size > 0;
+  document.body.classList.toggle('prodsel-on', show);
+  bar.style.display = show ? 'flex' : 'none';
+  if (!show) return;
+  document.getElementById('prodSelCount').textContent = prodSelection.size;
+}
+
 // ===== ver 1.0.12: 一括編集モード =====
 //   ON: タグ・無視・情報の編集などは画面上だけで変え、「💾 まとめて保存」で1回だけ GitHub に保存 (push) する。
 //   画像ファイルのアップロード/削除はその場で GitHub に反映されるので、そのときは積んだ変更ごと保存する。
@@ -1283,6 +1365,7 @@ async function toggleBatchMode() {
   }
   _batch = { on: false, shopId: null, pending: [], fileOp: false };
   imgSelection.clear();
+  prodSelection.clear();
   updateBatchBar();
   render();   // サムネ右上のチェックを消す
   toast('一括編集を終了しました', 'success');
@@ -3180,7 +3263,7 @@ function loadCurrentSelections() {
   currentShopId = localStorage.getItem(LS_CURRENT_SHOP) || null;
   // v1.11.12: 素材/盛り上げタブは廃止。保存済みの material/boost は product(現役) に読み替える
   const _cc = localStorage.getItem(LS_CURRENT_CAT);
-  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'product_noimage' || _cc === 'parts' || _cc === 'ignored' || _cc === 'neglect' || _cc === 'multi' || _cc === 'everything') ? _cc : 'product';  // ver 1.0.6: サムネ台を廃止、無視を追加
+  currentCategory = (_cc === 'product_unsure' || _cc === 'product_all' || _cc === 'product_untagged' || _cc === 'ignored' || _cc === 'neglect' || _cc === 'multi' || _cc === 'everything') ? _cc : 'product';  // ver 1.0.6: サムネ台を廃止、無視を追加
   // v1.11.11: 基礎情報モードは廃止。保存済みの 'basic' は 'images' に読み替える。
   const _vm = localStorage.getItem(LS_VIEW_MODE);
   viewMode = (_vm === 'delete' || _vm === 'productdelete') ? _vm : 'images';
@@ -6216,6 +6299,7 @@ function render() {
   updateProductDeleteBar();
   updateIgnoreBar();
   updateImgSelBar();
+  updateProdSelBar();
   updateTagPendingBar();
   updatePendingStatusBar();
   updateCategoryTabCounts();
@@ -6247,7 +6331,7 @@ function render() {
   // v1.11.29/33: カテゴリごとの商品リストを決めてから、表示方法を選ぶ
   //   商品タブは部品(isPart)を除外。部品タブは部品のみ。
   // ver 1.0.6: 「無視」にした商品・部品は 無視 タブ以外には出さない
-  const realProducts = (data.products || []).filter(p => !p.isPart && !isHiddenProduct(p));
+  const realProducts = (data.products || []).filter(p => !p.isPart && !isHiddenInTabs(p));
   if (_ignoreSelCat !== currentCategory) { ignoreSelection.clear(); _ignoreSelCat = currentCategory; }
   let list = null;
   if (currentCategory === 'product') {
@@ -6261,13 +6345,13 @@ function render() {
   } else if (currentCategory === 'product_all') {
     list = realProducts;
   } else if (currentCategory === 'parts') {
-    list = (data.products || []).filter(p => p.isPart && !isHiddenProduct(p));   // 部品
+    list = (data.products || []).filter(p => p.isPart && !isHiddenInTabs(p));   // 部品
   } else if (currentCategory === 'ignored') {
-    list = (data.products || []).filter(p => productState(p) === 'ignored');     // 無視
+    list = (data.products || []).filter(p => tabState(p) === 'ignored');     // 無視
   } else if (currentCategory === 'neglect') {
-    list = (data.products || []).filter(p => productState(p) === 'neglect');     // ver 1.0.22: 放置
+    list = (data.products || []).filter(p => tabState(p) === 'neglect');     // ver 1.0.22: 放置
   } else if (currentCategory === 'multi') {
-    list = (data.products || []).filter(p => productState(p) === 'multi');       // 複数分
+    list = (data.products || []).filter(p => tabState(p) === 'multi');       // 複数分
   } else if (currentCategory === 'everything') {
     list = (data.products || []).slice();                                        // ver 1.0.19: すべて
   }
@@ -6709,17 +6793,17 @@ function updateCategoryTabCounts() {
   };
 
   // v1.11.15/19/33: 選択分/未選択分/全体 は部品を除外。部品は別カウント。
-  const realProducts = (data.products || []).filter(p => !p.isPart && !isHiddenProduct(p));
+  const realProducts = (data.products || []).filter(p => !p.isPart && !isHiddenInTabs(p));
   const counts = {
     product: realProducts.filter(p => (p.images || []).some(im => im.tagId)).length,
     product_untagged: realProducts.filter(isUntaggedProduct).length,
     product_noimage: realProducts.filter(p => !p.images || p.images.length === 0).length,
     product_unsure: 0,
     product_all: realProducts.length,
-    parts: (data.products || []).filter(p => p.isPart && !isHiddenProduct(p)).length,
-    ignored: (data.products || []).filter(p => productState(p) === 'ignored').length,
-    multi: (data.products || []).filter(p => productState(p) === 'multi').length,
-    neglect: (data.products || []).filter(p => productState(p) === 'neglect').length,
+    parts: (data.products || []).filter(p => p.isPart && !isHiddenInTabs(p)).length,
+    ignored: (data.products || []).filter(p => tabState(p) === 'ignored').length,
+    multi: (data.products || []).filter(p => tabState(p) === 'multi').length,
+    neglect: (data.products || []).filter(p => tabState(p) === 'neglect').length,
     everything: (data.products || []).length,
     material: (data.materials || []).length,
     boost: (data.boosts || []).length
@@ -7623,9 +7707,13 @@ function productRowHTML(p) {
     ? `<span class="mono">${escapeHtml(manage)}</span>`
     : `<span class="mono mono-placeholder">10000000</span>`) + pageLink;
   const addedDate = fmtAddedDate(p);
-  const numberCell = addedDate
+  // ver 1.0.24: 一括編集中は、追加日の左に商品を選ぶチェック
+  const prodChk = (_batch.on && viewMode === 'images')
+    ? `<label class="prod-sel" title="この商品を選ぶ"><input type="checkbox" data-prod-sel="${p.id}" ${prodSelection.has(p.id) ? 'checked' : ''}></label>`
+    : '';
+  const numberCell = prodChk + (addedDate
     ? `<span class="mono" title="追加日">${addedDate}</span>`
-    : `<span class="mono mono-placeholder">—</span>`;
+    : `<span class="mono mono-placeholder">—</span>`);
 
   // タグ表示 (2x2格子 - ただし「お気に入り」は別UIにするため除外)
   const tagIds = p.tagIds || [];
@@ -7715,7 +7803,7 @@ function productRowHTML(p) {
         ${PRODUCT_STATES.map(st => `<option value="${st.id}" ${st.id === productState(p) ? 'selected' : ''}>${st.label}</option>`).join('')}
       </select>`}
     </div>`;
-    return `<div class="product-row mode-images ${exportMode ? 'with-export' : ''} ${isEmpty ? 'empty' : ''}">
+    return `<div class="product-row mode-images ${exportMode ? 'with-export' : ''} ${isEmpty ? 'empty' : ''} ${prodSelection.has(p.id) ? 'prod-selected' : ''}">
       ${exportCellHTML}
       <div class="col-number">${numberCell}</div>
       <div class="col-manage">${manageCell}</div>
