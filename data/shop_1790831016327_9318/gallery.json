@@ -1128,7 +1128,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "f3a93badf13242a0a6672d8a5800801ed1eb5f25"
+      "yahooTopSha": "f3a93badf13242a0a6672d8a5800801ed1eb5f25",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_thi411",
@@ -1156,7 +1157,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "7542d2463f2b069dd34a3550a4866215b8d3c46d"
+      "yahooTopSha": "7542d2463f2b069dd34a3550a4866215b8d3c46d",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_wkgk9g",
@@ -1590,7 +1592,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "244b1f7401e0a1753a7c402d8430419b740daff1"
+      "yahooTopSha": "244b1f7401e0a1753a7c402d8430419b740daff1",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_owrirv",
@@ -1618,7 +1621,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "b0ea6f93539bc8c5d2290dcc4ac436571073bbf1"
+      "yahooTopSha": "b0ea6f93539bc8c5d2290dcc4ac436571073bbf1",
+      "neglected": true
     },
     {
       "id": "prod_1790839116298_368vt0",
