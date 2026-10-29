@@ -11351,7 +11351,7 @@
       "status": "active",
       "syncedAt": "2026-10-23T02:53:14.036Z",
       "yahooTopSha": "a931fa32908d41a1ee96c47b58796a45b2496799",
-      "ignored": true
+      "multi": true
     },
     {
       "id": "prod_1792730234397_mmncfe",
@@ -11722,7 +11722,7 @@
       "status": "active",
       "syncedAt": "2026-10-27T07:39:53.131Z",
       "yahooTopSha": "d2acd6b253501bb4696ecc20c3ef832969d92386",
-      "ignored": true
+      "multi": true
     },
     {
       "id": "prod_1792984263363_r5pz21",
