@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-10-29T05:11:30.803Z",
+ "fetchedAt": "2026-11-02T03:31:05.708Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 300,
- "count": 300,
+ "totalAvailable": 303,
+ "count": 303,
  "skipped": 0,
  "truncated": false,
- "requests": 8,
+ "requests": 9,
  "topImages": {
-  "downloaded": 8,
-  "reused": 292,
+  "downloaded": 3,
+  "reused": 300,
   "failed": 0
  },
  "items": [
@@ -1022,7 +1022,7 @@
   {
    "imageId": "yukaiya_eq-24-02-toilet-01set",
    "code": "eq-24-02-toilet-01set",
-   "name": "【防災士監修】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 災害用トイレ 700mL  男女兼用 子供 女性用",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
    "price": 780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-01set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-01set",
@@ -1039,7 +1039,7 @@
   {
    "imageId": "yukaiya_eq-24-02-toilet-02set",
    "code": "eq-24-02-toilet-02set",
-   "name": "【防災士監修】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 災害用トイレ 700mL  男女兼用 子供 女性用",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-02set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-02set",
@@ -1056,7 +1056,7 @@
   {
    "imageId": "yukaiya_eq-24-02-toilet-04set",
    "code": "eq-24-02-toilet-04set",
-   "name": "【防災士監修】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 災害用トイレ 700mL  男女兼用 子供 女性用",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
    "price": 1880,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-04set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-04set",
@@ -1073,7 +1073,7 @@
   {
    "imageId": "yukaiya_eq-24-02-toilet-05set",
    "code": "eq-24-02-toilet-05set",
-   "name": "【防災士監修】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 災害用トイレ 700mL  男女兼用 子供 女性用",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
    "price": 2280,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-05set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-05set",
@@ -1090,7 +1090,7 @@
   {
    "imageId": "yukaiya_eq-24-02-toilet-10set",
    "code": "eq-24-02-toilet-10set",
-   "name": "【防災士監修】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 災害用トイレ 700mL  男女兼用 子供 女性用",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
    "price": 4280,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-10set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-10set",
@@ -1107,7 +1107,7 @@
   {
    "imageId": "yukaiya_eq-24-02-toilet-15set",
    "code": "eq-24-02-toilet-15set",
-   "name": "【防災士監修】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 災害用トイレ 700mL  男女兼用 子供 女性用",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
    "price": 6200,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-15set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-15set",
@@ -1124,7 +1124,7 @@
   {
    "imageId": "yukaiya_eq-24-02-toilet-25set",
    "code": "eq-24-02-toilet-25set",
-   "name": "【防災士監修】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 災害用トイレ 700mL  男女兼用 子供 女性用",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
    "price": 9800,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-25set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-25set",
@@ -2224,6 +2224,57 @@
     "sha": "cd4a194187d6cfbf6a90cd332ba35614a779f1de",
     "size": 48438,
     "imageId": "yukaiya_ih-22-10-0set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-10-0set-no-band",
+   "code": "ih-22-10-0set-no-band",
+   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
+   "price": 2180,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-10-0set-no-band.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set-no-band",
+   "yahooId": "yukaiya_ih-22-10-0set-no-band",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-10-0set-no-band",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set-no-band.jpg",
+    "sha": "9a8263345fd6d8c0a3bdf2b119242e5a785549ed",
+    "size": 57875,
+    "imageId": "yukaiya_ih-22-10-0set-no-band"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-10-0set-template-band",
+   "code": "ih-22-10-0set-template-band",
+   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
+   "price": 2380,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-10-0set-template-band.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set-template-band",
+   "yahooId": "yukaiya_ih-22-10-0set-template-band",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-10-0set-template-band",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set-template-band.jpg",
+    "sha": "ed849edc0000e42f7eb169e9e278d461a5dc8a48",
+    "size": 57816,
+    "imageId": "yukaiya_ih-22-10-0set-template-band"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-10-0set-template-no",
+   "code": "ih-22-10-0set-template-no",
+   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
+   "price": 1580,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-10-0set-template-no.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set-template-no",
+   "yahooId": "yukaiya_ih-22-10-0set-template-no",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-10-0set-template-no",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set-template-no.jpg",
+    "sha": "73fd2956f9bf746f712b47cd8085f2afe1122d35",
+    "size": 57130,
+    "imageId": "yukaiya_ih-22-10-0set-template-no"
    }
   },
   {
@@ -3487,7 +3538,7 @@
   {
    "imageId": "yukaiya_si-26-03-group-12set",
    "code": "si-26-03-group-12set",
-   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "name": "【複数購入で★最大40％OFF】自転車 反射板 ホイール リフレクター 12本セット スポークカバー 反射材 ホイールリフレクター 蛍光 選べる6色 夜間",
    "price": 780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-12set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-12set",
@@ -3504,7 +3555,7 @@
   {
    "imageId": "yukaiya_si-26-03-group-24set",
    "code": "si-26-03-group-24set",
-   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "name": "【複数購入で★最大40％OFF】自転車 反射板 ホイール リフレクター 24本セット スポークカバー 反射材 ホイールリフレクター 蛍光 選べる6色 夜間",
    "price": 1280,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-24set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-24set",
@@ -3521,7 +3572,7 @@
   {
    "imageId": "yukaiya_si-26-03-group-48set",
    "code": "si-26-03-group-48set",
-   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "name": "【複数購入で★最大40％OFF】自転車 反射板 ホイール リフレクター 48本セット スポークカバー 反射材 ホイールリフレクター 蛍光 選べる6色 夜間",
    "price": 1980,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-48set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-48set",
@@ -3538,7 +3589,7 @@
   {
    "imageId": "yukaiya_si-26-03-group-72set",
    "code": "si-26-03-group-72set",
-   "name": "自転車 反射板 ホイール リフレクター 12本セット リフレクター 反射材 スポークカバー アクセサリー ホイールリフレクター 蛍光 カラフル",
+   "name": "【複数購入で★最大40％OFF】自転車 反射板 ホイール リフレクター 72本セット スポークカバー 反射材 ホイールリフレクター 蛍光 選べる6色 夜間",
    "price": 2780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-03-group-72set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-03-group-72set",
@@ -3640,7 +3691,7 @@
   {
    "imageId": "yukaiya_ss-22-01",
    "code": "ss-22-01",
-   "name": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
+   "name": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース クリア",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-01.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-01",
@@ -3657,7 +3708,7 @@
   {
    "imageId": "yukaiya_ss-22-01-set",
    "code": "ss-22-01-set",
-   "name": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
+   "name": "シューズストラップ 透明 シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース クリア",
    "price": 1500,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-01-set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-01-set",
