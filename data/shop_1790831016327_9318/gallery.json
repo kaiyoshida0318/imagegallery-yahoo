@@ -3175,21 +3175,7 @@
       "itemName": "眉毛 はさみ ハサミ まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
       "itemPrice": 1380,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set",
-      "images": [
-        {
-          "id": "img_ytop_1790840364689_umkmy4",
-          "filename": "ih-22-10-0set.jpg",
-          "originalName": "000_yahoo_top.jpg",
-          "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set.jpg",
-          "sha": "cd4a194187d6cfbf6a90cd332ba35614a779f1de",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set.jpg?v=cd4a1941",
-          "size": 48438,
-          "uploadedAt": "2026-10-01T07:39:24.689Z",
-          "note": "",
-          "tags": [],
-          "yahooTop": true
-        }
-      ],
+      "images": [],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "cd4a194187d6cfbf6a90cd332ba35614a779f1de"
