@@ -14044,7 +14044,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-04T07:20:40.223Z",
-      "yahooTopSha": "fd9231214c365acb51b6a5c6f230515d4518d9cd"
+      "yahooTopSha": "fd9231214c365acb51b6a5c6f230515d4518d9cd",
+      "multi": true
     },
     {
       "id": "prod_1793776840223_yb5zp9",
@@ -14074,7 +14075,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-04T07:20:40.223Z",
-      "yahooTopSha": "4eb8d10911a47aa40acb21c5ad74767fe5f82fa3"
+      "yahooTopSha": "4eb8d10911a47aa40acb21c5ad74767fe5f82fa3",
+      "multi": true
     }
   ],
   "materials": [],
