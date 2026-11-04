@@ -13870,22 +13870,7 @@
       "itemName": "AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン ケース 汚れ防止 傷防止",
       "itemPrice": 780,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-apple-25-02-1set",
-      "images": [
-        {
-          "id": "img_ytop_1793757439387_6dv90i",
-          "filename": "et-apple-25-02-1set.jpg",
-          "originalName": "000_yahoo_top.jpg",
-          "path": "data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-1set.jpg",
-          "sha": "6f8faad4d888790b4d560fd545609d594db4b1aa",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-1set.jpg?v=6f8faad4",
-          "size": 42048,
-          "uploadedAt": "2026-11-04T01:57:19.387Z",
-          "note": "",
-          "tags": [],
-          "tagId": "tag_ytop_1791336537134_bcmc",
-          "yahooTop": true
-        }
-      ],
+      "images": [],
       "status": "active",
       "syncedAt": "2026-11-04T01:57:19.387Z",
       "yahooTopSha": "6f8faad4d888790b4d560fd545609d594db4b1aa"
