@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-02T05:06:44.960Z",
+ "fetchedAt": "2026-11-04T01:54:32.242Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 303,
- "count": 303,
+ "totalAvailable": 302,
+ "count": 302,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 0,
-  "reused": 303,
+  "downloaded": 4,
+  "reused": 298,
   "failed": 0
  },
  "items": [
@@ -1139,6 +1139,23 @@
    }
   },
   {
+   "imageId": "yukaiya_eq-24-02-toilet-test",
+   "code": "eq-24-02-toilet-test",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL 男女兼用 子供",
+   "price": 85,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-test.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-test",
+   "yahooId": "yukaiya_eq-24-02-toilet-test",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_eq-24-02-toilet-test",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-test.jpg",
+    "sha": "73f04c1b68a6c045c780fcd649eed3b95ff6c271",
+    "size": 72206,
+    "imageId": "yukaiya_eq-24-02-toilet-test"
+   }
+  },
+  {
    "imageId": "yukaiya_eq-24-03-lock",
    "code": "eq-24-03-lock",
    "name": "【現役防災士監修】テレビ 転倒防止 ベルト 耐震ベルト 穴あけ不要 クランプ固定 地震対策 テレビ固定 VESA取付 壁 固定 防災グッズ",
@@ -1238,6 +1255,40 @@
     "sha": "2a2a9fe5652ef2eb709cfa00a842000d71d30fd4",
     "size": 35548,
     "imageId": "yukaiya_et-a-25-01-6set"
+   }
+  },
+  {
+   "imageId": "yukaiya_et-apple-25-02-1set",
+   "code": "et-apple-25-02-1set",
+   "name": "AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン ケース 汚れ防止 傷防止",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-apple-25-02-1set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-apple-25-02-1set",
+   "yahooId": "yukaiya_et-apple-25-02-1set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_et-apple-25-02-1set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-1set.jpg",
+    "sha": "6f8faad4d888790b4d560fd545609d594db4b1aa",
+    "size": 42048,
+    "imageId": "yukaiya_et-apple-25-02-1set"
+   }
+  },
+  {
+   "imageId": "yukaiya_et-apple-25-02-2set",
+   "code": "et-apple-25-02-2set",
+   "name": "AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン ケース 汚れ防止 傷防止",
+   "price": 1170,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-apple-25-02-2set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-apple-25-02-2set",
+   "yahooId": "yukaiya_et-apple-25-02-2set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_et-apple-25-02-2set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-2set.jpg",
+    "sha": "0d7ddb17f5cb962225a770e2a8329ef45152e9ee",
+    "size": 42318,
+    "imageId": "yukaiya_et-apple-25-02-2set"
    }
   },
   {
@@ -2221,8 +2272,8 @@
    "top": {
     "key": "yukaiya_ih-22-10-0set",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set.jpg",
-    "sha": "cd4a194187d6cfbf6a90cd332ba35614a779f1de",
-    "size": 48438,
+    "sha": "e010c18db9ea3781a064be4834bb571b35d4f378",
+    "size": 54236,
     "imageId": "yukaiya_ih-22-10-0set"
    }
   },
@@ -4012,23 +4063,6 @@
    }
   },
   {
-   "imageId": "yukaiya_wat-18-01",
-   "code": "wat-18-01",
-   "name": "腕時計 ベルト交換 工具 バネ棒 外し PKT1-4F",
-   "price": 200,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-18-01.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-18-01",
-   "yahooId": "yukaiya_wat-18-01",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_wat-18-01",
-    "path": "data/shop_1790831016327_9318/yahoo-top/wat-18-01.jpg",
-    "sha": "4e868f87e9cff595f6986e53c1d8cd1cff392d09",
-    "size": 40708,
-    "imageId": "yukaiya_wat-18-01"
-   }
-  },
-  {
    "imageId": "yukaiya_wat-18-04",
    "code": "wat-18-04",
    "name": "LUMINOX ルミノックス 23mm ラバー ベルト 交換 互換品 PKT2-4F",
@@ -4811,23 +4845,6 @@
    }
   },
   {
-   "imageId": "yukaiya_zak-18-07",
-   "code": "zak-18-07",
-   "name": "チャイルドロック 扉 ベビーガード 1個 ドアロック 引き出し ストッパー 赤ちゃん 子供 指挟み ケガ防止 安全 PKT1-4F",
-   "price": 200,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/zak-18-07.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_zak-18-07",
-   "yahooId": "yukaiya_zak-18-07",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_zak-18-07",
-    "path": "data/shop_1790831016327_9318/yahoo-top/zak-18-07.jpg",
-    "sha": "0ee1d58ee9467514b6ddca8ee52f4d8737ad4880",
-    "size": 54748,
-    "imageId": "yukaiya_zak-18-07"
-   }
-  },
-  {
    "imageId": "yukaiya_zak-18-07-05c",
    "code": "zak-18-07-05c",
    "name": "チャイルドロック 扉 ベビーガード 5個 ドアロック 引き出し ストッパー 赤ちゃん 子供 指挟み ケガ防止 安全 PKT2-3F",
@@ -5032,23 +5049,6 @@
    }
   },
   {
-   "imageId": "yukaiya_zak-20-17-05",
-   "code": "zak-20-17-05",
-   "name": "USBコネクタキャップ 保護カバー 5個セット フラッシュドライブ USB 保護キャップ 劣化 破損 シリコン 紛失 キャップ コネクタ",
-   "price": 200,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/zak-20-17-05.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_zak-20-17-05",
-   "yahooId": "yukaiya_zak-20-17-05",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_zak-20-17-05",
-    "path": "data/shop_1790831016327_9318/yahoo-top/zak-20-17-05.jpg",
-    "sha": "fcdbe1975ce6442e308ced7552c837d3ee664b09",
-    "size": 60582,
-    "imageId": "yukaiya_zak-20-17-05"
-   }
-  },
-  {
    "imageId": "yukaiya_zak-20-17-10",
    "code": "zak-20-17-10",
    "name": "USBコネクタキャップ 保護カバー 10個セット フラッシュドライブ USB 保護キャップ 劣化 破損 シリコン 紛失 キャップ コネクタ",
@@ -5097,23 +5097,6 @@
     "sha": "fd9255c5eff1a7aaa5d54c7ab8741ad65d429c9f",
     "size": 62280,
     "imageId": "yukaiya_zak-20-17-50"
-   }
-  },
-  {
-   "imageId": "yukaiya_zak-20-18-05",
-   "code": "zak-20-18-05",
-   "name": "USB 保護キャップ  5個セット タイプA メス 用 保護カバー USB端子 USBポート キャップ カバー コネクタカバー ホコリ防止 防塵 シリコン",
-   "price": 200,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/zak-20-18-05.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_zak-20-18-05",
-   "yahooId": "yukaiya_zak-20-18-05",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_zak-20-18-05",
-    "path": "data/shop_1790831016327_9318/yahoo-top/zak-20-18-05.jpg",
-    "sha": "9a3b5c1e5f41ac5ccacdacef44316c4a71335cc1",
-    "size": 70698,
-    "imageId": "yukaiya_zak-20-18-05"
    }
   },
   {
