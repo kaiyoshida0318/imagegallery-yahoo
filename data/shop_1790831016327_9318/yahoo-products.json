@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-04T01:54:32.242Z",
+ "fetchedAt": "2026-11-04T07:14:24.530Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 302,
- "count": 302,
+ "totalAvailable": 305,
+ "count": 301,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
   "downloaded": 4,
-  "reused": 298,
+  "reused": 297,
   "failed": 0
  },
  "items": [
@@ -490,23 +490,6 @@
     "sha": "a1bf6731ee24a93c54fdc774375a2cb17bc99c4c",
     "size": 49735,
     "imageId": "yukaiya_bloop-18-01-24-2set"
-   }
-  },
-  {
-   "imageId": "yukaiya_bloop-18-01-26",
-   "code": "bloop-18-01-26",
-   "name": "腕時計 ベルトループ シリコン 26mm*6mm*8mm ラバーベルト 26mm 対応 PKT1-4F",
-   "price": 500,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bloop-18-01-26.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bloop-18-01-26",
-   "yahooId": "yukaiya_bloop-18-01-26",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_bloop-18-01-26",
-    "path": "data/shop_1790831016327_9318/yahoo-top/bloop-18-01-26.jpg",
-    "sha": "f70167d5a9bf1d69451ebaf36f00ec06fd560b00",
-    "size": 50310,
-    "imageId": "yukaiya_bloop-18-01-26"
    }
   },
   {
@@ -1260,12 +1243,12 @@
   {
    "imageId": "yukaiya_et-apple-25-02-1set",
    "code": "et-apple-25-02-1set",
-   "name": "AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン ケース 汚れ防止 傷防止",
+   "name": "【2セット目★50％OFF】AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン",
    "price": 780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-apple-25-02-1set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-apple-25-02-1set",
    "yahooId": "yukaiya_et-apple-25-02-1set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_et-apple-25-02-1set",
     "path": "data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-1set.jpg",
@@ -1277,12 +1260,12 @@
   {
    "imageId": "yukaiya_et-apple-25-02-2set",
    "code": "et-apple-25-02-2set",
-   "name": "AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン ケース 汚れ防止 傷防止",
+   "name": "【2セット目★50％OFF】AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン",
    "price": 1170,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/et-apple-25-02-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-apple-25-02-2set",
    "yahooId": "yukaiya_et-apple-25-02-2set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_et-apple-25-02-2set",
     "path": "data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-2set.jpg",
@@ -1768,23 +1751,6 @@
    }
   },
   {
-   "imageId": "yukaiya_foot-23-01-4set",
-   "code": "foot-23-01-4set",
-   "name": "靴擦れ防止 靴ずれ 防止 かかと パッド テープ 靴 パンプス サイズ調整 パカパカ防止 クッション パッド 脱げ 防止 o脚矯正 インソール パッド 8個(4足)セット",
-   "price": 1000,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/foot-23-01-4set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_foot-23-01-4set",
-   "yahooId": "yukaiya_foot-23-01-4set",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_foot-23-01-4set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/foot-23-01-4set.jpg",
-    "sha": "1364ad947e3f72b1cfd37c94c3b35ef88ec2a4b3",
-    "size": 43136,
-    "imageId": "yukaiya_foot-23-01-4set"
-   }
-  },
-  {
    "imageId": "yukaiya_foot-23-02-4set",
    "code": "foot-23-02-4set",
    "name": "足裏保護パッド 靴擦れ防止 靴ずれ 防止 パッド テープ つま先 クッション インソール 靴 サイズ調整 パンプス ヒール ハイヒール 脱げ防止 パッド FM",
@@ -2263,7 +2229,7 @@
   {
    "imageId": "yukaiya_ih-22-10-0set",
    "code": "ih-22-10-0set",
-   "name": "眉毛 はさみ ハサミ まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
+   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
    "price": 1380,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-10-0set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set",
@@ -2280,7 +2246,7 @@
   {
    "imageId": "yukaiya_ih-22-10-0set-no-band",
    "code": "ih-22-10-0set-no-band",
-   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
+   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ カチューシャ",
    "price": 2180,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-10-0set-no-band.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set-no-band",
@@ -2297,7 +2263,7 @@
   {
    "imageId": "yukaiya_ih-22-10-0set-template-band",
    "code": "ih-22-10-0set-template-band",
-   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ",
+   "name": "眉毛 はさみ ハサミ 眉毛ケア まゆげ テンプレート 眉毛カット 眉コーム 眉毛セット メンズ 眉そり コーム カミソリ カチューシャ",
    "price": 2380,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-10-0set-template-band.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set-template-band",
@@ -2445,6 +2411,57 @@
     "sha": "f8b0d280952ae9abe8d5505db7a6b2c51d4a0a95",
     "size": 39585,
     "imageId": "yukaiya_ih-24-08-set4"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-03-group-1set",
+   "code": "ih-25-03-group-1set",
+   "name": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-1set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-1set",
+   "yahooId": "yukaiya_ih-25-03-group-1set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_ih-25-03-group-1set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-03-group-1set.jpg",
+    "sha": "346c74c30a710adb2ea9cee3c7de91f86fd9e1d8",
+    "size": 43446,
+    "imageId": "yukaiya_ih-25-03-group-1set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-03-group-2set",
+   "code": "ih-25-03-group-2set",
+   "name": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-2set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-2set",
+   "yahooId": "yukaiya_ih-25-03-group-2set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_ih-25-03-group-2set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-03-group-2set.jpg",
+    "sha": "fd9231214c365acb51b6a5c6f230515d4518d9cd",
+    "size": 43754,
+    "imageId": "yukaiya_ih-25-03-group-2set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-03-group-3set",
+   "code": "ih-25-03-group-3set",
+   "name": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+   "price": 1480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-3set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-3set",
+   "yahooId": "yukaiya_ih-25-03-group-3set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_ih-25-03-group-3set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-03-group-3set.jpg",
+    "sha": "4eb8d10911a47aa40acb21c5ad74767fe5f82fa3",
+    "size": 43801,
+    "imageId": "yukaiya_ih-25-03-group-3set"
    }
   },
   {
@@ -4743,23 +4760,6 @@
    }
   },
   {
-   "imageId": "yukaiya_wat-sma-10",
-   "code": "wat-sma-10",
-   "name": "スマートウォッチ ベルト バンド シリコン ラバー 20mm 22mm garmin amazfit fossil 送料無料 PKT2-4F",
-   "price": 1000,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-10.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-10",
-   "yahooId": "yukaiya_wat-sma-10",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_wat-sma-10",
-    "path": "data/shop_1790831016327_9318/yahoo-top/wat-sma-10.jpg",
-    "sha": "525d9912974a77af539554c1915266d78cce54bb",
-    "size": 56951,
-    "imageId": "yukaiya_wat-sma-10"
-   }
-  },
-  {
    "imageId": "yukaiya_wb-26-01",
    "code": "wb-26-01",
    "name": "スマートウォッチ ベルト バンド 20mm 22mm マグネット バンド 交換ベルト シリコン 腕時計 時計 ベルト  防水 耐汗 洗える 軽量 レディース メンズ おしゃれ",
@@ -4831,7 +4831,7 @@
    "imageId": "yukaiya_yoga-23-03-00set",
    "code": "yoga-23-03-00set",
    "name": "ヨガソックス 五本指ソックス レディース 3足 滑り止め ヨガ 靴下 ヨガウェア ホット 五本指靴下 レディース ピラティス トレーニング ストレッチ PKT2-2F",
-   "price": 1080,
+   "price": 1380,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-23-03-00set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-23-03-00set",
    "yahooId": "yukaiya_yoga-23-03-00set",
@@ -5029,23 +5029,6 @@
     "sha": "2586ff4cc58e9e4f4788af558630c338dce7cc84",
     "size": 67738,
     "imageId": "yukaiya_zak-20-16-20"
-   }
-  },
-  {
-   "imageId": "yukaiya_zak-20-16-50",
-   "code": "zak-20-16-50",
-   "name": "コンセント プラグ カバー 50個セット ACプラグ 差し込み キャップ 保護カバー 保護キャップ 保護 サビ ホコリ カバー ACプラグキャップ",
-   "price": 1380,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/zak-20-16-50.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_zak-20-16-50",
-   "yahooId": "yukaiya_zak-20-16-50",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_zak-20-16-50",
-    "path": "data/shop_1790831016327_9318/yahoo-top/zak-20-16-50.jpg",
-    "sha": "a503e01e8e719fa9d064c8efa0a6dc64e8bcefb4",
-    "size": 67713,
-    "imageId": "yukaiya_zak-20-16-50"
    }
   },
   {
