@@ -3177,6 +3177,20 @@
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-10-0set",
       "images": [
         {
+          "id": "img_ytop_1793757439387_b06axg",
+          "filename": "ih-22-10-0set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set.jpg",
+          "sha": "e010c18db9ea3781a064be4834bb571b35d4f378",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ih-22-10-0set.jpg?v=e010c18d",
+          "size": 54236,
+          "uploadedAt": "2026-11-04T01:57:19.387Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        },
+        {
           "id": "img_1793596133778_ur9inp",
           "filename": "1793596132054_5c41oc_b-01.jpg",
           "originalName": "b-01.jpg",
@@ -3310,8 +3324,9 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "cd4a194187d6cfbf6a90cd332ba35614a779f1de"
+      "syncedAt": "2026-11-04T01:57:19.387Z",
+      "yahooTopSha": "e010c18db9ea3781a064be4834bb571b35d4f378",
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_pvrl7t",
@@ -13813,6 +13828,96 @@
       "syncedAt": "2026-11-02T05:07:49.092Z",
       "yahooTopSha": "73fd2956f9bf746f712b47cd8085f2afe1122d35",
       "multi": true
+    },
+    {
+      "id": "prod_1793757439387_gxgo3v",
+      "itemCode": "yukaiya_eq-24-02-toilet-test",
+      "itemManageNumber": "eq-24-02-toilet-test",
+      "addedAt": "2026-11-04T01:57:19.387Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-test.html",
+      "itemName": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL 男女兼用 子供",
+      "itemPrice": 85,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-test",
+      "images": [
+        {
+          "id": "img_ytop_1793757439387_26ih5q",
+          "filename": "eq-24-02-toilet-test.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-test.jpg",
+          "sha": "73f04c1b68a6c045c780fcd649eed3b95ff6c271",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-test.jpg?v=73f04c1b",
+          "size": 72206,
+          "uploadedAt": "2026-11-04T01:57:19.387Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-04T01:57:19.387Z",
+      "yahooTopSha": "73f04c1b68a6c045c780fcd649eed3b95ff6c271"
+    },
+    {
+      "id": "prod_1793757439387_9tcyn5",
+      "itemCode": "yukaiya_et-apple-25-02-1set",
+      "itemManageNumber": "et-apple-25-02-1set",
+      "addedAt": "2026-11-04T01:57:19.387Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/et-apple-25-02-1set.html",
+      "itemName": "AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン ケース 汚れ防止 傷防止",
+      "itemPrice": 780,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-apple-25-02-1set",
+      "images": [
+        {
+          "id": "img_ytop_1793757439387_6dv90i",
+          "filename": "et-apple-25-02-1set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-1set.jpg",
+          "sha": "6f8faad4d888790b4d560fd545609d594db4b1aa",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-1set.jpg?v=6f8faad4",
+          "size": 42048,
+          "uploadedAt": "2026-11-04T01:57:19.387Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-04T01:57:19.387Z",
+      "yahooTopSha": "6f8faad4d888790b4d560fd545609d594db4b1aa"
+    },
+    {
+      "id": "prod_1793757439387_afoszw",
+      "itemCode": "yukaiya_et-apple-25-02-2set",
+      "itemManageNumber": "et-apple-25-02-2set",
+      "addedAt": "2026-11-04T01:57:19.387Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/et-apple-25-02-2set.html",
+      "itemName": "AirPods4 AirPods 第4世代 イヤーピース カバー シリコンキャップ 滑り止め エアーポッズ4 イヤーチップ イヤホンカバー シリコン ケース 汚れ防止 傷防止",
+      "itemPrice": 1170,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_et-apple-25-02-2set",
+      "images": [
+        {
+          "id": "img_ytop_1793757439387_4jd1w3",
+          "filename": "et-apple-25-02-2set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-2set.jpg",
+          "sha": "0d7ddb17f5cb962225a770e2a8329ef45152e9ee",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/et-apple-25-02-2set.jpg?v=0d7ddb17",
+          "size": 42318,
+          "uploadedAt": "2026-11-04T01:57:19.387Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-04T01:57:19.387Z",
+      "yahooTopSha": "0d7ddb17f5cb962225a770e2a8329ef45152e9ee"
     }
   ],
   "materials": [],
