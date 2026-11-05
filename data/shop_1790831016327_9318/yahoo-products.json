@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-05T01:19:30.793Z",
+ "fetchedAt": "2026-11-05T07:10:36.056Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 310,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 9,
-  "reused": 301,
+  "downloaded": 0,
+  "reused": 310,
   "failed": 0
  },
  "items": [
@@ -938,7 +938,7 @@
    "imageId": "yukaiya_eq-22-01-clear-2set",
    "code": "eq-22-01-clear-2set",
    "name": "耐震マット 耐震ジェル 防振マット 静音ジェル 透明 テレビ 冷蔵庫 耐震ゲル 地震 耐震グッズ 静音ジェル 地震対策 家具転倒防止 滑り止め PKT1-2F",
-   "price": 1680,
+   "price": 1980,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-01-clear-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-01-clear-2set",
    "yahooId": "yukaiya_eq-22-01-clear-2set",
