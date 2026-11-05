@@ -14158,6 +14158,156 @@
       "syncedAt": "2026-11-04T07:20:40.223Z",
       "yahooTopSha": "4eb8d10911a47aa40acb21c5ad74767fe5f82fa3",
       "multi": true
+    },
+    {
+      "id": "prod_1793841622830_klld0u",
+      "itemCode": "yukaiya_yoga-25-01-1set-n",
+      "itemManageNumber": "yoga-25-01-1set-n",
+      "addedAt": "2026-11-05T01:20:22.829Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-1set-n.html",
+      "itemName": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+      "itemPrice": 780,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-1set-n",
+      "images": [
+        {
+          "id": "img_ytop_1793841622830_z0m0fg",
+          "filename": "yoga-25-01-1set-n.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-1set-n.jpg",
+          "sha": "cef4d2ae44e089e560c1af69891705736d97d9de",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/yoga-25-01-1set-n.jpg?v=cef4d2ae",
+          "size": 39852,
+          "uploadedAt": "2026-11-05T01:20:22.830Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-05T01:20:22.829Z",
+      "yahooTopSha": "cef4d2ae44e089e560c1af69891705736d97d9de"
+    },
+    {
+      "id": "prod_1793841622830_g56770",
+      "itemCode": "yukaiya_yoga-25-01-1set-s",
+      "itemManageNumber": "yoga-25-01-1set-s",
+      "addedAt": "2026-11-05T01:20:22.829Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-1set-s.html",
+      "itemName": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+      "itemPrice": 980,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-1set-s",
+      "images": [
+        {
+          "id": "img_ytop_1793841622830_a6xkt7",
+          "filename": "yoga-25-01-1set-s.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-1set-s.jpg",
+          "sha": "c67cc45123210992dfc211024f12f4ae7d8af1f9",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/yoga-25-01-1set-s.jpg?v=c67cc451",
+          "size": 40197,
+          "uploadedAt": "2026-11-05T01:20:22.830Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-05T01:20:22.829Z",
+      "yahooTopSha": "c67cc45123210992dfc211024f12f4ae7d8af1f9"
+    },
+    {
+      "id": "prod_1793841622830_fv0akj",
+      "itemCode": "yukaiya_yoga-25-01-2set-nn",
+      "itemManageNumber": "yoga-25-01-2set-nn",
+      "addedAt": "2026-11-05T01:20:22.829Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-2set-nn.html",
+      "itemName": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+      "itemPrice": 1080,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-2set-nn",
+      "images": [
+        {
+          "id": "img_ytop_1793841622830_voebmt",
+          "filename": "yoga-25-01-2set-nn.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-nn.jpg",
+          "sha": "14bad0aca8c42aaaacca4796d7a80ccc836bfb4c",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-nn.jpg?v=14bad0ac",
+          "size": 40354,
+          "uploadedAt": "2026-11-05T01:20:22.830Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-05T01:20:22.829Z",
+      "yahooTopSha": "14bad0aca8c42aaaacca4796d7a80ccc836bfb4c"
+    },
+    {
+      "id": "prod_1793841622830_zwfpxe",
+      "itemCode": "yukaiya_yoga-25-01-2set-ns",
+      "itemManageNumber": "yoga-25-01-2set-ns",
+      "addedAt": "2026-11-05T01:20:22.829Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-2set-ns.html",
+      "itemName": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+      "itemPrice": 1480,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-2set-ns",
+      "images": [
+        {
+          "id": "img_ytop_1793841622830_phbzwb",
+          "filename": "yoga-25-01-2set-ns.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-ns.jpg",
+          "sha": "450a5fdcb53b07af9b91d6c6af3103d0135ab177",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-ns.jpg?v=450a5fdc",
+          "size": 42099,
+          "uploadedAt": "2026-11-05T01:20:22.830Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-05T01:20:22.829Z",
+      "yahooTopSha": "450a5fdcb53b07af9b91d6c6af3103d0135ab177"
+    },
+    {
+      "id": "prod_1793841622830_vtk410",
+      "itemCode": "yukaiya_yoga-25-01-2set-ss",
+      "itemManageNumber": "yoga-25-01-2set-ss",
+      "addedAt": "2026-11-05T01:20:22.829Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-2set-ss.html",
+      "itemName": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+      "itemPrice": 1680,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-2set-ss",
+      "images": [
+        {
+          "id": "img_ytop_1793841622830_ekkhsf",
+          "filename": "yoga-25-01-2set-ss.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-ss.jpg",
+          "sha": "15d65056e71b16abdbbaa2c29ed0e2c939b67e76",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-ss.jpg?v=15d65056",
+          "size": 41543,
+          "uploadedAt": "2026-11-05T01:20:22.830Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-05T01:20:22.829Z",
+      "yahooTopSha": "15d65056e71b16abdbbaa2c29ed0e2c939b67e76"
     }
   ],
   "materials": [],
