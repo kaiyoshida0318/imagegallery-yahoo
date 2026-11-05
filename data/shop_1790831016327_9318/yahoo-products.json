@@ -2,16 +2,16 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-04T07:19:42.579Z",
+ "fetchedAt": "2026-11-05T01:19:30.793Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 305,
- "count": 301,
+ "totalAvailable": 310,
+ "count": 310,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 0,
+  "downloaded": 9,
   "reused": 301,
   "failed": 0
  },
@@ -490,6 +490,23 @@
     "sha": "a1bf6731ee24a93c54fdc774375a2cb17bc99c4c",
     "size": 49735,
     "imageId": "yukaiya_bloop-18-01-24-2set"
+   }
+  },
+  {
+   "imageId": "yukaiya_bloop-18-01-26",
+   "code": "bloop-18-01-26",
+   "name": "腕時計 ベルトループ シリコン 26mm*6mm*8mm ラバーベルト 26mm 対応 PKT1-4F",
+   "price": 500,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bloop-18-01-26.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bloop-18-01-26",
+   "yahooId": "yukaiya_bloop-18-01-26",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_bloop-18-01-26",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bloop-18-01-26.jpg",
+    "sha": "f70167d5a9bf1d69451ebaf36f00ec06fd560b00",
+    "size": 50310,
+    "imageId": "yukaiya_bloop-18-01-26"
    }
   },
   {
@@ -1751,6 +1768,23 @@
    }
   },
   {
+   "imageId": "yukaiya_foot-23-01-4set",
+   "code": "foot-23-01-4set",
+   "name": "靴擦れ防止 靴ずれ 防止 かかと パッド テープ 靴 パンプス サイズ調整 パカパカ防止 クッション パッド 脱げ 防止 o脚矯正 インソール パッド 8個(4足)セット",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/foot-23-01-4set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_foot-23-01-4set",
+   "yahooId": "yukaiya_foot-23-01-4set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_foot-23-01-4set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/foot-23-01-4set.jpg",
+    "sha": "1364ad947e3f72b1cfd37c94c3b35ef88ec2a4b3",
+    "size": 43136,
+    "imageId": "yukaiya_foot-23-01-4set"
+   }
+  },
+  {
    "imageId": "yukaiya_foot-23-02-4set",
    "code": "foot-23-02-4set",
    "name": "足裏保護パッド 靴擦れ防止 靴ずれ 防止 パッド テープ つま先 クッション インソール 靴 サイズ調整 パンプス ヒール ハイヒール 脱げ防止 パッド FM",
@@ -2421,7 +2455,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-1set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-1set",
    "yahooId": "yukaiya_ih-25-03-group-1set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_ih-25-03-group-1set",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-03-group-1set.jpg",
@@ -2438,7 +2472,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-2set",
    "yahooId": "yukaiya_ih-25-03-group-2set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_ih-25-03-group-2set",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-03-group-2set.jpg",
@@ -2455,7 +2489,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-3set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-3set",
    "yahooId": "yukaiya_ih-25-03-group-3set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_ih-25-03-group-3set",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-03-group-3set.jpg",
@@ -4760,6 +4794,23 @@
    }
   },
   {
+   "imageId": "yukaiya_wat-sma-10",
+   "code": "wat-sma-10",
+   "name": "スマートウォッチ ベルト バンド シリコン ラバー 20mm 22mm garmin amazfit fossil 送料無料 PKT2-4F",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-sma-10.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-sma-10",
+   "yahooId": "yukaiya_wat-sma-10",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_wat-sma-10",
+    "path": "data/shop_1790831016327_9318/yahoo-top/wat-sma-10.jpg",
+    "sha": "525d9912974a77af539554c1915266d78cce54bb",
+    "size": 56951,
+    "imageId": "yukaiya_wat-sma-10"
+   }
+  },
+  {
    "imageId": "yukaiya_wb-26-01",
    "code": "wb-26-01",
    "name": "スマートウォッチ ベルト バンド 20mm 22mm マグネット バンド 交換ベルト シリコン 腕時計 時計 ベルト  防水 耐汗 洗える 軽量 レディース メンズ おしゃれ",
@@ -4842,6 +4893,91 @@
     "sha": "d173a12d120703ea1433da726caee8f3db016b49",
     "size": 50746,
     "imageId": "yukaiya_yoga-23-03-00set"
+   }
+  },
+  {
+   "imageId": "yukaiya_yoga-25-01-1set-n",
+   "code": "yoga-25-01-1set-n",
+   "name": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-1set-n.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-1set-n",
+   "yahooId": "yukaiya_yoga-25-01-1set-n",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_yoga-25-01-1set-n",
+    "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-1set-n.jpg",
+    "sha": "cef4d2ae44e089e560c1af69891705736d97d9de",
+    "size": 39852,
+    "imageId": "yukaiya_yoga-25-01-1set-n"
+   }
+  },
+  {
+   "imageId": "yukaiya_yoga-25-01-1set-s",
+   "code": "yoga-25-01-1set-s",
+   "name": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+   "price": 980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-1set-s.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-1set-s",
+   "yahooId": "yukaiya_yoga-25-01-1set-s",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_yoga-25-01-1set-s",
+    "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-1set-s.jpg",
+    "sha": "c67cc45123210992dfc211024f12f4ae7d8af1f9",
+    "size": 40197,
+    "imageId": "yukaiya_yoga-25-01-1set-s"
+   }
+  },
+  {
+   "imageId": "yukaiya_yoga-25-01-2set-nn",
+   "code": "yoga-25-01-2set-nn",
+   "name": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+   "price": 1080,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-2set-nn.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-2set-nn",
+   "yahooId": "yukaiya_yoga-25-01-2set-nn",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_yoga-25-01-2set-nn",
+    "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-nn.jpg",
+    "sha": "14bad0aca8c42aaaacca4796d7a80ccc836bfb4c",
+    "size": 40354,
+    "imageId": "yukaiya_yoga-25-01-2set-nn"
+   }
+  },
+  {
+   "imageId": "yukaiya_yoga-25-01-2set-ns",
+   "code": "yoga-25-01-2set-ns",
+   "name": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+   "price": 1480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-2set-ns.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-2set-ns",
+   "yahooId": "yukaiya_yoga-25-01-2set-ns",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_yoga-25-01-2set-ns",
+    "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-ns.jpg",
+    "sha": "450a5fdcb53b07af9b91d6c6af3103d0135ab177",
+    "size": 42099,
+    "imageId": "yukaiya_yoga-25-01-2set-ns"
+   }
+  },
+  {
+   "imageId": "yukaiya_yoga-25-01-2set-ss",
+   "code": "yoga-25-01-2set-ss",
+   "name": "ピラティス 靴下 ヨガソックス 5本指 滑り止め ピラティスソックス 五本指ソックス ヨガ おしゃれ 可愛い 靴下 ソックス レディース ホットヨガ くすみカラー",
+   "price": 1680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-25-01-2set-ss.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-25-01-2set-ss",
+   "yahooId": "yukaiya_yoga-25-01-2set-ss",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_yoga-25-01-2set-ss",
+    "path": "data/shop_1790831016327_9318/yahoo-top/yoga-25-01-2set-ss.jpg",
+    "sha": "15d65056e71b16abdbbaa2c29ed0e2c939b67e76",
+    "size": 41543,
+    "imageId": "yukaiya_yoga-25-01-2set-ss"
    }
   },
   {
@@ -5029,6 +5165,23 @@
     "sha": "2586ff4cc58e9e4f4788af558630c338dce7cc84",
     "size": 67738,
     "imageId": "yukaiya_zak-20-16-20"
+   }
+  },
+  {
+   "imageId": "yukaiya_zak-20-16-50",
+   "code": "zak-20-16-50",
+   "name": "コンセント プラグ カバー 50個セット ACプラグ 差し込み キャップ 保護カバー 保護キャップ 保護 サビ ホコリ カバー ACプラグキャップ",
+   "price": 1380,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/zak-20-16-50.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_zak-20-16-50",
+   "yahooId": "yukaiya_zak-20-16-50",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_zak-20-16-50",
+    "path": "data/shop_1790831016327_9318/yahoo-top/zak-20-16-50.jpg",
+    "sha": "a503e01e8e719fa9d064c8efa0a6dc64e8bcefb4",
+    "size": 67713,
+    "imageId": "yukaiya_zak-20-16-50"
    }
   },
   {
