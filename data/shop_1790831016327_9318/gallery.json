@@ -14217,7 +14217,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-05T01:20:22.829Z",
-      "yahooTopSha": "c67cc45123210992dfc211024f12f4ae7d8af1f9"
+      "yahooTopSha": "c67cc45123210992dfc211024f12f4ae7d8af1f9",
+      "multi": true
     },
     {
       "id": "prod_1793841622830_fv0akj",
@@ -14247,7 +14248,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-05T01:20:22.829Z",
-      "yahooTopSha": "14bad0aca8c42aaaacca4796d7a80ccc836bfb4c"
+      "yahooTopSha": "14bad0aca8c42aaaacca4796d7a80ccc836bfb4c",
+      "multi": true
     },
     {
       "id": "prod_1793841622830_zwfpxe",
@@ -14277,7 +14279,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-05T01:20:22.829Z",
-      "yahooTopSha": "450a5fdcb53b07af9b91d6c6af3103d0135ab177"
+      "yahooTopSha": "450a5fdcb53b07af9b91d6c6af3103d0135ab177",
+      "multi": true
     },
     {
       "id": "prod_1793841622830_vtk410",
@@ -14307,7 +14310,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-05T01:20:22.829Z",
-      "yahooTopSha": "15d65056e71b16abdbbaa2c29ed0e2c939b67e76"
+      "yahooTopSha": "15d65056e71b16abdbbaa2c29ed0e2c939b67e76",
+      "multi": true
     }
   ],
   "materials": [],
