@@ -1592,8 +1592,7 @@
       ],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "244b1f7401e0a1753a7c402d8430419b740daff1",
-      "neglected": true
+      "yahooTopSha": "244b1f7401e0a1753a7c402d8430419b740daff1"
     },
     {
       "id": "prod_1790839116298_owrirv",
@@ -1622,7 +1621,6 @@
       "status": "active",
       "syncedAt": "2026-11-05T07:12:28.213Z",
       "yahooTopSha": "b0ea6f93539bc8c5d2290dcc4ac436571073bbf1",
-      "multi": true,
       "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
