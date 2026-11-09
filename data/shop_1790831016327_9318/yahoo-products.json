@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-05T07:10:36.056Z",
+ "fetchedAt": "2026-11-09T08:40:14.220Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 310,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 0,
-  "reused": 310,
+  "downloaded": 2,
+  "reused": 308,
   "failed": 0
  },
  "items": [
@@ -946,8 +946,8 @@
    "top": {
     "key": "yukaiya_eq-22-01-clear-2set",
     "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-01-clear-2set.jpg",
-    "sha": "b0ea6f93539bc8c5d2290dcc4ac436571073bbf1",
-    "size": 46749,
+    "sha": "7048fa0d8fef6b3e7586f62550bc10e90d3e9a3d",
+    "size": 59865,
     "imageId": "yukaiya_eq-22-01-clear-2set"
    }
   },
@@ -1581,23 +1581,6 @@
    }
   },
   {
-   "imageId": "yukaiya_fas-16-02-red2",
-   "code": "fas-16-02-red2",
-   "name": "蝶ネクタイ 赤 レッド ネクタイ メンズ キッズ 子供 結婚式 PKT2-4F",
-   "price": 580,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/fas-16-02-red2.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_fas-16-02-red2",
-   "yahooId": "yukaiya_fas-16-02-red2",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_fas-16-02-red2",
-    "path": "data/shop_1790831016327_9318/yahoo-top/fas-16-02-red2.jpg",
-    "sha": "e731366dd090720bbd22efda63561cd2369c1ef6",
-    "size": 38555,
-    "imageId": "yukaiya_fas-16-02-red2"
-   }
-  },
-  {
    "imageId": "yukaiya_fas-17-03",
    "code": "fas-17-03",
    "name": "ペアネックレス 安い 高校生 中学生 大学生 激安 シンプル PKT2-4F",
@@ -1639,7 +1622,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/fel-22-01-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_fel-22-01-2set",
    "yahooId": "yukaiya_fel-22-01-2set",
-   "inStock": true,
+   "inStock": false,
    "top": {
     "key": "yukaiya_fel-22-01-2set",
     "path": "data/shop_1790831016327_9318/yahoo-top/fel-22-01-2set.jpg",
@@ -2332,7 +2315,7 @@
    "imageId": "yukaiya_ih-23-01-00set",
    "code": "ih-23-01-00set",
    "name": "鍋敷き シリコン 鍋つかみ 鍋しき なべしき 耐熱 ダイニング キッチン キッチン用品 雑貨 小物 おしゃれ かわいい 北欧 水洗い 耐熱性 NP-3F",
-   "price": 1000,
+   "price": 1080,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-01-00set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-01-00set",
    "yahooId": "yukaiya_ih-23-01-00set",
@@ -2343,6 +2326,23 @@
     "sha": "2a8a30bdbbb1cf29ae105f79a97740f741332573",
     "size": 61453,
     "imageId": "yukaiya_ih-23-01-00set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-23-01-04set",
+   "code": "ih-23-01-04set",
+   "name": "鍋敷き 鍋敷 鍋しき なべしき シリコン",
+   "price": 1480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-01-04set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-01-04set",
+   "yahooId": "yukaiya_ih-23-01-04set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-23-01-04set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-23-01-04set.jpg",
+    "sha": "5561f337499badcf74b25d14b4f37c4fee9e61ec",
+    "size": 77317,
+    "imageId": "yukaiya_ih-23-01-04set"
    }
   },
   {
@@ -2450,7 +2450,7 @@
   {
    "imageId": "yukaiya_ih-25-03-group-1set",
    "code": "ih-25-03-group-1set",
-   "name": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+   "name": "【複数購入でお買い得！】IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット 耐熱 滑り止め 汚れ防止 シリコン",
    "price": 780,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-1set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-1set",
@@ -2467,7 +2467,7 @@
   {
    "imageId": "yukaiya_ih-25-03-group-2set",
    "code": "ih-25-03-group-2set",
-   "name": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+   "name": "【複数購入でお買い得！】IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット 耐熱 滑り止め 汚れ防止 シリコン",
    "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-2set",
@@ -2484,7 +2484,7 @@
   {
    "imageId": "yukaiya_ih-25-03-group-3set",
    "code": "ih-25-03-group-3set",
-   "name": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+   "name": "【複数購入でお買い得！】IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット 耐熱 滑り止め 汚れ防止 シリコン",
    "price": 1480,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-3set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-3set",
