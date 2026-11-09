@@ -1752,6 +1752,20 @@
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-01-clear-2set",
       "images": [
         {
+          "id": "img_ytop_1794213682156_3nn61h",
+          "filename": "eq-22-01-clear-2set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-01-clear-2set.jpg",
+          "sha": "7048fa0d8fef6b3e7586f62550bc10e90d3e9a3d",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/eq-22-01-clear-2set.jpg?v=7048fa0d",
+          "size": 59865,
+          "uploadedAt": "2026-11-09T08:41:22.156Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        },
+        {
           "id": "img_1793862886034_zusf05",
           "filename": "1793862882413_zgnevp_b-01.png",
           "originalName": "b-01.png",
@@ -1900,8 +1914,8 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-05T07:12:28.213Z",
-      "yahooTopSha": "b0ea6f93539bc8c5d2290dcc4ac436571073bbf1",
+      "syncedAt": "2026-11-09T08:41:22.155Z",
+      "yahooTopSha": "7048fa0d8fef6b3e7586f62550bc10e90d3e9a3d",
       "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
@@ -3606,7 +3620,7 @@
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-01-00set.html",
       "itemName": "鍋敷き シリコン 鍋つかみ 鍋しき なべしき 耐熱 ダイニング キッチン キッチン用品 雑貨 小物 おしゃれ かわいい 北欧 水洗い 耐熱性 NP-3F",
-      "itemPrice": 1000,
+      "itemPrice": 1080,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-01-00set",
       "images": [
         {
@@ -3624,9 +3638,10 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
+      "syncedAt": "2026-11-09T08:41:22.155Z",
       "yahooTopSha": "2a8a30bdbbb1cf29ae105f79a97740f741332573",
-      "ignored": true
+      "ignored": true,
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_2if93d",
@@ -14279,7 +14294,7 @@
       "addedAt": "2026-11-04T07:20:40.223Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-1set.html",
-      "itemName": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+      "itemName": "【複数購入でお買い得！】IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット 耐熱 滑り止め 汚れ防止 シリコン",
       "itemPrice": 780,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-1set",
       "images": [
@@ -14374,7 +14389,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-04T07:20:40.223Z",
+      "syncedAt": "2026-11-09T08:41:22.155Z",
       "yahooTopSha": "346c74c30a710adb2ea9cee3c7de91f86fd9e1d8"
     },
     {
@@ -14384,7 +14399,7 @@
       "addedAt": "2026-11-04T07:20:40.223Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-2set.html",
-      "itemName": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+      "itemName": "【複数購入でお買い得！】IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット 耐熱 滑り止め 汚れ防止 シリコン",
       "itemPrice": 1000,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-2set",
       "images": [
@@ -14404,7 +14419,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-04T07:20:40.223Z",
+      "syncedAt": "2026-11-09T08:41:22.155Z",
       "yahooTopSha": "fd9231214c365acb51b6a5c6f230515d4518d9cd",
       "multi": true
     },
@@ -14415,7 +14430,7 @@
       "addedAt": "2026-11-04T07:20:40.223Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-03-group-3set.html",
-      "itemName": "IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット おしゃれ 耐熱 滑り止め 洗える キッチンマット シリコン コンロ 汚れ防止",
+      "itemName": "【複数購入でお買い得！】IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット 耐熱 滑り止め 汚れ防止 シリコン",
       "itemPrice": 1480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-03-group-3set",
       "images": [
@@ -14435,7 +14450,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-04T07:20:40.223Z",
+      "syncedAt": "2026-11-09T08:41:22.155Z",
       "yahooTopSha": "4eb8d10911a47aa40acb21c5ad74767fe5f82fa3",
       "multi": true
     },
@@ -14729,6 +14744,36 @@
       "syncedAt": "2026-11-05T01:20:22.829Z",
       "yahooTopSha": "15d65056e71b16abdbbaa2c29ed0e2c939b67e76",
       "multi": true
+    },
+    {
+      "id": "prod_1794213682156_xsjc5s",
+      "itemCode": "yukaiya_ih-23-01-04set",
+      "itemManageNumber": "ih-23-01-04set",
+      "addedAt": "2026-11-09T08:41:22.155Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-01-04set.html",
+      "itemName": "鍋敷き 鍋敷 鍋しき なべしき シリコン",
+      "itemPrice": 1480,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-01-04set",
+      "images": [
+        {
+          "id": "img_ytop_1794213682156_nogvde",
+          "filename": "ih-23-01-04set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/ih-23-01-04set.jpg",
+          "sha": "5561f337499badcf74b25d14b4f37c4fee9e61ec",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/ih-23-01-04set.jpg?v=5561f337",
+          "size": 77317,
+          "uploadedAt": "2026-11-09T08:41:22.156Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-09T08:41:22.155Z",
+      "yahooTopSha": "5561f337499badcf74b25d14b4f37c4fee9e61ec"
     }
   ],
   "materials": [],
