@@ -2,25 +2,25 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-09T08:40:14.220Z",
+ "fetchedAt": "2026-11-10T02:23:05.606Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 310,
- "count": 310,
+ "totalAvailable": 311,
+ "count": 308,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 2,
-  "reused": 308,
+  "downloaded": 1,
+  "reused": 307,
   "failed": 0
  },
  "items": [
   {
    "imageId": "yukaiya_baby-23-01-miton",
    "code": "baby-23-01-miton",
-   "name": "ベビーミトン ミトン ベビー ひっかき防止 手袋 5色セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
-   "price": 1280,
+   "name": "ベビーミトン ミトン ベビー ひっかき防止 手袋 3双セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
+   "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/baby-23-01-miton.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_baby-23-01-miton",
    "yahooId": "yukaiya_baby-23-01-miton",
@@ -31,6 +31,23 @@
     "sha": "3fc3efc9459e5bbe06ce7c0e3395f6a1aaeea27d",
     "size": 45630,
     "imageId": "yukaiya_baby-23-01-miton"
+   }
+  },
+  {
+   "imageId": "yukaiya_baby-23-01-miton-5set",
+   "code": "baby-23-01-miton-5set",
+   "name": "ベビーミトン ミトン ベビー ひっかき防止 手袋 5色セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
+   "price": 1480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/baby-23-01-miton-5set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_baby-23-01-miton-5set",
+   "yahooId": "yukaiya_baby-23-01-miton-5set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_baby-23-01-miton-5set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/baby-23-01-miton-5set.jpg",
+    "sha": "ba747fc9a5882785096a2fe1aab6032f2cbce2f9",
+    "size": 41765,
+    "imageId": "yukaiya_baby-23-01-miton-5set"
    }
   },
   {
@@ -920,7 +937,7 @@
   {
    "imageId": "yukaiya_eq-22-01",
    "code": "eq-22-01",
-   "name": "耐震マット 耐震ジェル 防振マット 静音ジェル 透明 テレビ 冷蔵庫 耐震ゲル 地震 耐震グッズ 静音ジェル 地震対策 家具転倒防止 滑り止め PKT1-2F",
+   "name": "【第一位受賞★防災士監修】耐震マット 耐震ジェル 転倒防止 地震対策 防災グッズ 家具転倒防止 滑り止め 透明 テレビ 冷蔵庫 震度7対応 12枚入り 耐荷重100kg",
    "price": 1080,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-01.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-01",
@@ -937,7 +954,7 @@
   {
    "imageId": "yukaiya_eq-22-01-clear-2set",
    "code": "eq-22-01-clear-2set",
-   "name": "耐震マット 耐震ジェル 防振マット 静音ジェル 透明 テレビ 冷蔵庫 耐震ゲル 地震 耐震グッズ 静音ジェル 地震対策 家具転倒防止 滑り止め PKT1-2F",
+   "name": "【防災士監修】耐震マット 耐震ジェル 転倒防止 地震対策 防災グッズ 耐震ゲル 家具転倒防止 滑り止め 透明 テレビ 冷蔵庫 家具 震度7対応 24枚入り 耐荷重100kg",
    "price": 1980,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-01-clear-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-01-clear-2set",
@@ -1034,40 +1051,6 @@
     "sha": "95e2fb28b09986067e03b8a67d15aa404fbdbde9",
     "size": 73854,
     "imageId": "yukaiya_eq-24-02-toilet-01set"
-   }
-  },
-  {
-   "imageId": "yukaiya_eq-24-02-toilet-02set",
-   "code": "eq-24-02-toilet-02set",
-   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
-   "price": 1000,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-02set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-02set",
-   "yahooId": "yukaiya_eq-24-02-toilet-02set",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_eq-24-02-toilet-02set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-02set.jpg",
-    "sha": "0c9c39c71d4f2eafae45854878e0f68e3ca801ad",
-    "size": 73504,
-    "imageId": "yukaiya_eq-24-02-toilet-02set"
-   }
-  },
-  {
-   "imageId": "yukaiya_eq-24-02-toilet-04set",
-   "code": "eq-24-02-toilet-04set",
-   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
-   "price": 1880,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-04set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-04set",
-   "yahooId": "yukaiya_eq-24-02-toilet-04set",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_eq-24-02-toilet-04set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-04set.jpg",
-    "sha": "7a9c74f0e1c816bfddecc29480e1e6b8bcc93f36",
-    "size": 73986,
-    "imageId": "yukaiya_eq-24-02-toilet-04set"
    }
   },
   {
@@ -2190,23 +2173,6 @@
     "sha": "6b45533f833205d7eb46844102f4738f8fbb0075",
     "size": 41641,
     "imageId": "yukaiya_ih-22-02"
-   }
-  },
-  {
-   "imageId": "yukaiya_ih-22-03-12set",
-   "code": "ih-22-03-12set",
-   "name": "壁 フック フックシール 20個入り 超強力 壁 透明タイプ 耐荷重8kg はがせる PKT3-2F",
-   "price": 1000,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-03-12set.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-03-12set",
-   "yahooId": "yukaiya_ih-22-03-12set",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_ih-22-03-12set",
-    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-03-12set.jpg",
-    "sha": "744ae95c3122b30e038280aa70f5c25f6e22867b",
-    "size": 43849,
-    "imageId": "yukaiya_ih-22-03-12set"
    }
   },
   {
