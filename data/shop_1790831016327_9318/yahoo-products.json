@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-10T02:23:05.606Z",
+ "fetchedAt": "2026-11-10T09:22:15.057Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 311,
- "count": 308,
+ "totalAvailable": 318,
+ "count": 318,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 1,
-  "reused": 307,
+  "downloaded": 10,
+  "reused": 308,
   "failed": 0
  },
  "items": [
@@ -85,6 +85,23 @@
    }
   },
   {
+   "imageId": "yukaiya_bg-02-con-hook-15set",
+   "code": "bg-02-con-hook-15set",
+   "name": "コンセントカバー コンセントガード 赤ちゃん フック付き ペット 2口 コンセントキャップ 20個 子供 犬 猫 コンセント プラグ 隠し いたずら防止 ほこり防止",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bg-02-con-hook-15set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-02-con-hook-15set",
+   "yahooId": "yukaiya_bg-02-con-hook-15set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_bg-02-con-hook-15set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bg-02-con-hook-15set.jpg",
+    "sha": "23a7bd4bec0ac3669cde5ea8a544411aaef8158c",
+    "size": 57124,
+    "imageId": "yukaiya_bg-02-con-hook-15set"
+   }
+  },
+  {
    "imageId": "yukaiya_bg-02-con-hook-20set",
    "code": "bg-02-con-hook-20set",
    "name": "コンセントカバー コンセントガード ベビーガード 赤ちゃん フック付き ペット コンセント キャップ 15個",
@@ -99,6 +116,23 @@
     "sha": "95fdd4999fc1f9cd2dcf591cd53955b87f9af6cb",
     "size": 45256,
     "imageId": "yukaiya_bg-02-con-hook-20set"
+   }
+  },
+  {
+   "imageId": "yukaiya_bg-02-con-hook-30set",
+   "code": "bg-02-con-hook-30set",
+   "name": "コンセントカバー コンセントガード 赤ちゃん フック付き ペット 2口 コンセントキャップ 20個 子供 犬 猫 コンセント プラグ 隠し いたずら防止 ほこり防止",
+   "price": 1280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bg-02-con-hook-30set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-02-con-hook-30set",
+   "yahooId": "yukaiya_bg-02-con-hook-30set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_bg-02-con-hook-30set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bg-02-con-hook-30set.jpg",
+    "sha": "52a4223786d2be71a470b35c402d0a3097cae270",
+    "size": 63090,
+    "imageId": "yukaiya_bg-02-con-hook-30set"
    }
   },
   {
@@ -1051,6 +1085,40 @@
     "sha": "95e2fb28b09986067e03b8a67d15aa404fbdbde9",
     "size": 73854,
     "imageId": "yukaiya_eq-24-02-toilet-01set"
+   }
+  },
+  {
+   "imageId": "yukaiya_eq-24-02-toilet-02set",
+   "code": "eq-24-02-toilet-02set",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-02set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-02set",
+   "yahooId": "yukaiya_eq-24-02-toilet-02set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_eq-24-02-toilet-02set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-02set.jpg",
+    "sha": "0c9c39c71d4f2eafae45854878e0f68e3ca801ad",
+    "size": 73504,
+    "imageId": "yukaiya_eq-24-02-toilet-02set"
+   }
+  },
+  {
+   "imageId": "yukaiya_eq-24-02-toilet-04set",
+   "code": "eq-24-02-toilet-04set",
+   "name": "【防災士監修★大便時にも使用可能】＼複数購入で最大半額／携帯トイレ 携帯用トイレ 簡易トイレ 非常用トイレ 防災トイレ 防災グッズ 700mL  男女兼用 子供",
+   "price": 1880,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-24-02-toilet-04set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-24-02-toilet-04set",
+   "yahooId": "yukaiya_eq-24-02-toilet-04set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_eq-24-02-toilet-04set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/eq-24-02-toilet-04set.jpg",
+    "sha": "7a9c74f0e1c816bfddecc29480e1e6b8bcc93f36",
+    "size": 73986,
+    "imageId": "yukaiya_eq-24-02-toilet-04set"
    }
   },
   {
@@ -2176,6 +2244,23 @@
    }
   },
   {
+   "imageId": "yukaiya_ih-22-03-12set",
+   "code": "ih-22-03-12set",
+   "name": "壁 フック フックシール 20個入り 超強力 壁 透明タイプ 耐荷重8kg はがせる PKT3-2F",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-03-12set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-03-12set",
+   "yahooId": "yukaiya_ih-22-03-12set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-03-12set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-03-12set.jpg",
+    "sha": "744ae95c3122b30e038280aa70f5c25f6e22867b",
+    "size": 43849,
+    "imageId": "yukaiya_ih-22-03-12set"
+   }
+  },
+  {
    "imageId": "yukaiya_ih-22-04",
    "code": "ih-22-04",
    "name": "両面テープ 魔法のテープ 魔法テープ 浮かせる収納 超強力 はがせる 大容量 3M 防災グッズ洗える PKT0-2F",
@@ -2298,7 +2383,7 @@
    "imageId": "yukaiya_ih-23-01-04set",
    "code": "ih-23-01-04set",
    "name": "鍋敷き 鍋敷 鍋しき なべしき シリコン",
-   "price": 1480,
+   "price": 1980,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-01-04set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-01-04set",
    "yahooId": "yukaiya_ih-23-01-04set",
@@ -3230,6 +3315,40 @@
    }
   },
   {
+   "imageId": "yukaiya_si-24-04-key",
+   "code": "si-24-04-key",
+   "name": "静電気 除去キーホルダー 静電気除去グッズ キーチェーン カーアクセサリー 除電 静電気防止 静電気防止グッズ静電気対策",
+   "price": 880,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-24-04-key.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-24-04-key",
+   "yahooId": "yukaiya_si-24-04-key",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-24-04-key",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-24-04-key.jpg",
+    "sha": "9cbea63d9518317c6cfc5e9e066cbc41906650b9",
+    "size": 63263,
+    "imageId": "yukaiya_si-24-04-key"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-24-04-set",
+   "code": "si-24-04-set",
+   "name": "静電気除去グッズ 静電気除去ブレスレット 静電気防止ブレスレット 静電気防止グッズ 強力 おしゃれ キーホルダー カジュアル リストバンド 磁気",
+   "price": 1780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-24-04-set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-24-04-set",
+   "yahooId": "yukaiya_si-24-04-set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-24-04-set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-24-04-set.jpg",
+    "sha": "23d203b2170237173867afbd6aa0d61cee083440",
+    "size": 63964,
+    "imageId": "yukaiya_si-24-04-set"
+   }
+  },
+  {
    "imageId": "yukaiya_si-25-01-30set",
    "code": "si-25-01-30set",
    "name": "【睡眠のプロ監修★複数で最大半額】口閉じテープ 鼻呼吸テープ 口テープ いびき防止テープ マウステープ 口呼吸 口閉じテープ 口呼吸防止 いびき防止 グッズ",
@@ -3669,6 +3788,57 @@
     "sha": "f0e318e23f2d6631588ec7538bfa5c385d388c78",
     "size": 77475,
     "imageId": "yukaiya_si-26-03-group-72set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-07-04set",
+   "code": "si-26-07-04set",
+   "name": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+   "price": 480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-04set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-04set",
+   "yahooId": "yukaiya_si-26-07-04set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-26-07-04set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-04set.jpg",
+    "sha": "7b42ff563f20a13573ec09c9ed8b1f79e28ff76d",
+    "size": 46109,
+    "imageId": "yukaiya_si-26-07-04set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-07-10set",
+   "code": "si-26-07-10set",
+   "name": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+   "price": 880,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-10set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-10set",
+   "yahooId": "yukaiya_si-26-07-10set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-26-07-10set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-10set.jpg",
+    "sha": "0f0d5715e78a432da665b09959e856f01a840b42",
+    "size": 47148,
+    "imageId": "yukaiya_si-26-07-10set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-07-20set",
+   "code": "si-26-07-20set",
+   "name": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+   "price": 1580,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-20set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-20set",
+   "yahooId": "yukaiya_si-26-07-20set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-26-07-20set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-20set.jpg",
+    "sha": "8935e1e517d122964f6d264dc135e8aa3c9e8f5b",
+    "size": 47940,
+    "imageId": "yukaiya_si-26-07-20set"
    }
   },
   {
