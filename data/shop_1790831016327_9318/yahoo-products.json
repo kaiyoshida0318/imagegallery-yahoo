@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-10T09:22:15.057Z",
+ "fetchedAt": "2026-11-11T01:18:18.058Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 318,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 10,
-  "reused": 308,
+  "downloaded": 0,
+  "reused": 318,
   "failed": 0
  },
  "items": [
@@ -3798,7 +3798,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-04set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-04set",
    "yahooId": "yukaiya_si-26-07-04set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-26-07-04set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-04set.jpg",
@@ -3815,7 +3815,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-10set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-10set",
    "yahooId": "yukaiya_si-26-07-10set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-26-07-10set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-10set.jpg",
@@ -3832,7 +3832,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-20set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-20set",
    "yahooId": "yukaiya_si-26-07-20set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-26-07-20set",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-20set.jpg",
