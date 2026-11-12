@@ -15505,6 +15505,114 @@
           "tags": [],
           "tagId": "",
           "yahooTop": true
+        },
+        {
+          "id": "img_1794471268166_49ousd",
+          "filename": "1794471266087_0lcamu_b-02.jpg",
+          "originalName": "b-02.jpg",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471266087_0lcamu_b-02.jpg",
+          "sha": "4f11a775cac71bdcf2cf6e65fd6635f9b1aaf935",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471266087_0lcamu_b-02.jpg",
+          "size": 92273,
+          "uploadedAt": "2026-11-12T08:14:28.166Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471270489_aigbca",
+          "filename": "1794471268166_v1m5h4_b-03.png",
+          "originalName": "b-03.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471268166_v1m5h4_b-03.png",
+          "sha": "50d705254774dd5449080fb6753cf24d1a277f62",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471268166_v1m5h4_b-03.png",
+          "size": 562131,
+          "uploadedAt": "2026-11-12T08:14:30.489Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471273507_ivt2si",
+          "filename": "1794471270489_k3eay8_b-04.png",
+          "originalName": "b-04.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471270489_k3eay8_b-04.png",
+          "sha": "ad515e816ced50859cfbc7936eb7089577261d26",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471270489_k3eay8_b-04.png",
+          "size": 628395,
+          "uploadedAt": "2026-11-12T08:14:33.507Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471275798_cg1w6k",
+          "filename": "1794471273507_9ksw77_c-01a.jpg",
+          "originalName": "c-01a.jpg",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471273507_9ksw77_c-01a.jpg",
+          "sha": "559e9b61062d1cb6c7ca689acd347a4c733ac239",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471273507_9ksw77_c-01a.jpg",
+          "size": 345827,
+          "uploadedAt": "2026-11-12T08:14:35.799Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471277989_e6qbnm",
+          "filename": "1794471275799_zsdbsw_c-02.jpg",
+          "originalName": "c-02.jpg",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471275799_zsdbsw_c-02.jpg",
+          "sha": "d44f05c787ac0da70389cd88128d1b71355bdc31",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471275799_zsdbsw_c-02.jpg",
+          "size": 282695,
+          "uploadedAt": "2026-11-12T08:14:37.989Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471280249_qpmosu",
+          "filename": "1794471277989_oh86zs_c-03.jpg",
+          "originalName": "c-03.jpg",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471277989_oh86zs_c-03.jpg",
+          "sha": "de29fc011b606dc40e45594068996dec9bf5d7e4",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471277989_oh86zs_c-03.jpg",
+          "size": 377269,
+          "uploadedAt": "2026-11-12T08:14:40.250Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471282824_868qmo",
+          "filename": "1794471280250_64enj8_c-04.png",
+          "originalName": "c-04.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471280250_64enj8_c-04.png",
+          "sha": "0027150a0fa73668f06bd9644f33f66a163887dc",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471280250_64enj8_c-04.png",
+          "size": 548971,
+          "uploadedAt": "2026-11-12T08:14:42.824Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471285081_wwii2o",
+          "filename": "1794471282824_rc0mqn_c-05.png",
+          "originalName": "c-05.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471282824_rc0mqn_c-05.png",
+          "sha": "0f4bb048a60506d73a766582696f16adfd2cca78",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471282824_rc0mqn_c-05.png",
+          "size": 419192,
+          "uploadedAt": "2026-11-12T08:14:45.081Z",
+          "note": "",
+          "tags": []
+        },
+        {
+          "id": "img_1794471287594_e4ylma",
+          "filename": "1794471285081_hm5jdy_c-06.png",
+          "originalName": "c-06.png",
+          "path": "data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471285081_hm5jdy_c-06.png",
+          "sha": "e8576ecdac0b80371318d317b9826ff6d5905607",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1794468036525_ifhi33/1794471285081_hm5jdy_c-06.png",
+          "size": 391099,
+          "uploadedAt": "2026-11-12T08:14:47.594Z",
+          "note": "",
+          "tags": []
         }
       ],
       "status": "active",
@@ -15539,7 +15647,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-12T07:20:36.524Z",
-      "yahooTopSha": "0f0d5715e78a432da665b09959e856f01a840b42"
+      "yahooTopSha": "0f0d5715e78a432da665b09959e856f01a840b42",
+      "multi": true
     },
     {
       "id": "prod_1794468036525_rr5ad3",
@@ -15569,7 +15678,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-12T07:20:36.524Z",
-      "yahooTopSha": "8935e1e517d122964f6d264dc135e8aa3c9e8f5b"
+      "yahooTopSha": "8935e1e517d122964f6d264dc135e8aa3c9e8f5b",
+      "multi": true
     }
   ],
   "materials": [],
