@@ -2,7 +2,7 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-12T07:19:41.714Z",
+ "fetchedAt": "2026-11-12T08:17:38.909Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
  "totalAvailable": 317,
@@ -11,8 +11,8 @@
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 0,
-  "reused": 317,
+  "downloaded": 1,
+  "reused": 316,
   "failed": 0
  },
  "items": [
@@ -28,8 +28,8 @@
    "top": {
     "key": "yukaiya_baby-23-01-miton",
     "path": "data/shop_1790831016327_9318/yahoo-top/baby-23-01-miton.jpg",
-    "sha": "3fc3efc9459e5bbe06ce7c0e3395f6a1aaeea27d",
-    "size": 45630,
+    "sha": "65ee07c6fb8f33d7e8e74b9fb6882c0d5c0e2df8",
+    "size": 40821,
     "imageId": "yukaiya_baby-23-01-miton"
    }
   },
