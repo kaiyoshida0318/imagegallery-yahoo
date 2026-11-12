@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-11T01:18:18.058Z",
+ "fetchedAt": "2026-11-12T07:19:41.714Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 318,
- "count": 318,
+ "totalAvailable": 317,
+ "count": 317,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
   "downloaded": 0,
-  "reused": 318,
+  "reused": 317,
   "failed": 0
  },
  "items": [
@@ -4570,23 +4570,6 @@
     "sha": "fe35bed49e066425e4f06fc68dffbb2ce4a5dd73",
     "size": 60156,
     "imageId": "yukaiya_wat-fb-21-07"
-   }
-  },
-  {
-   "imageId": "yukaiya_wat-fb-21-08",
-   "code": "wat-fb-21-08",
-   "name": "Fitbit Charge 5 ベルト バンド ステンレス フィットビット チャージ5",
-   "price": 1680,
-   "url": "https://store.shopping.yahoo.co.jp/yukaiya/wat-fb-21-08.html",
-   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_wat-fb-21-08",
-   "yahooId": "yukaiya_wat-fb-21-08",
-   "inStock": true,
-   "top": {
-    "key": "yukaiya_wat-fb-21-08",
-    "path": "data/shop_1790831016327_9318/yahoo-top/wat-fb-21-08.jpg",
-    "sha": "16f1602279fc54b80bca289b4cea61746762ae56",
-    "size": 61087,
-    "imageId": "yukaiya_wat-fb-21-08"
    }
   },
   {
