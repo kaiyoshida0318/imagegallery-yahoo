@@ -27,7 +27,6 @@
       "status": "active",
       "syncedAt": "2026-11-12T07:20:36.524Z",
       "yahooTopSha": "3fc3efc9459e5bbe06ce7c0e3395f6a1aaeea27d",
-      "ignored": true,
       "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
@@ -14975,7 +14974,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-12T07:20:36.524Z",
-      "yahooTopSha": "ba747fc9a5882785096a2fe1aab6032f2cbce2f9"
+      "yahooTopSha": "ba747fc9a5882785096a2fe1aab6032f2cbce2f9",
+      "multi": true
     },
     {
       "id": "prod_1794468036525_xw5huh",
