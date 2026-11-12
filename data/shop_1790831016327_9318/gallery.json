@@ -6,8 +6,8 @@
       "itemManageNumber": "baby-23-01-miton",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/baby-23-01-miton.html",
-      "itemName": "ベビーミトン ミトン ベビー ひっかき防止 手袋 5色セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
-      "itemPrice": 1280,
+      "itemName": "ベビーミトン ミトン ベビー ひっかき防止 手袋 3双セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
+      "itemPrice": 1000,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_baby-23-01-miton",
       "images": [
         {
@@ -25,9 +25,10 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
       "yahooTopSha": "3fc3efc9459e5bbe06ce7c0e3395f6a1aaeea27d",
-      "ignored": true
+      "ignored": true,
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_xt99e7",
@@ -1572,7 +1573,7 @@
       "itemManageNumber": "eq-22-01",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-01.html",
-      "itemName": "耐震マット 耐震ジェル 防振マット 静音ジェル 透明 テレビ 冷蔵庫 耐震ゲル 地震 耐震グッズ 静音ジェル 地震対策 家具転倒防止 滑り止め PKT1-2F",
+      "itemName": "【第一位受賞★防災士監修】耐震マット 耐震ジェル 転倒防止 地震対策 防災グッズ 家具転倒防止 滑り止め 透明 テレビ 冷蔵庫 震度7対応 12枚入り 耐荷重100kg",
       "itemPrice": 1080,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-01",
       "images": [
@@ -1738,8 +1739,9 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "244b1f7401e0a1753a7c402d8430419b740daff1"
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "244b1f7401e0a1753a7c402d8430419b740daff1",
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_owrirv",
@@ -1747,7 +1749,7 @@
       "itemManageNumber": "eq-22-01-clear-2set",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-01-clear-2set.html",
-      "itemName": "耐震マット 耐震ジェル 防振マット 静音ジェル 透明 テレビ 冷蔵庫 耐震ゲル 地震 耐震グッズ 静音ジェル 地震対策 家具転倒防止 滑り止め PKT1-2F",
+      "itemName": "【防災士監修】耐震マット 耐震ジェル 転倒防止 地震対策 防災グッズ 耐震ゲル 家具転倒防止 滑り止め 透明 テレビ 冷蔵庫 家具 震度7対応 24枚入り 耐荷重100kg",
       "itemPrice": 1980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-01-clear-2set",
       "images": [
@@ -1914,7 +1916,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-09T08:41:22.155Z",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
       "yahooTopSha": "7048fa0d8fef6b3e7586f62550bc10e90d3e9a3d",
       "addedAt": "2026-10-01T07:39:24.688Z"
     },
@@ -14753,7 +14755,7 @@
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-23-01-04set.html",
       "itemName": "鍋敷き 鍋敷 鍋しき なべしき シリコン",
-      "itemPrice": 1480,
+      "itemPrice": 1980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-23-01-04set",
       "images": [
         {
@@ -14859,8 +14861,248 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-09T08:41:22.155Z",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
       "yahooTopSha": "5561f337499badcf74b25d14b4f37c4fee9e61ec"
+    },
+    {
+      "id": "prod_1794468036524_r221ge",
+      "itemCode": "yukaiya_baby-23-01-miton-5set",
+      "itemManageNumber": "baby-23-01-miton-5set",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/baby-23-01-miton-5set.html",
+      "itemName": "ベビーミトン ミトン ベビー ひっかき防止 手袋 5色セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
+      "itemPrice": 1480,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_baby-23-01-miton-5set",
+      "images": [
+        {
+          "id": "img_ytop_1794468036524_xvg8ly",
+          "filename": "baby-23-01-miton-5set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/baby-23-01-miton-5set.jpg",
+          "sha": "ba747fc9a5882785096a2fe1aab6032f2cbce2f9",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/baby-23-01-miton-5set.jpg?v=ba747fc9",
+          "size": 41765,
+          "uploadedAt": "2026-11-12T07:20:36.524Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "ba747fc9a5882785096a2fe1aab6032f2cbce2f9"
+    },
+    {
+      "id": "prod_1794468036525_xw5huh",
+      "itemCode": "yukaiya_bg-02-con-hook-15set",
+      "itemManageNumber": "bg-02-con-hook-15set",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bg-02-con-hook-15set.html",
+      "itemName": "コンセントカバー コンセントガード 赤ちゃん フック付き ペット 2口 コンセントキャップ 20個 子供 犬 猫 コンセント プラグ 隠し いたずら防止 ほこり防止",
+      "itemPrice": 780,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-02-con-hook-15set",
+      "images": [
+        {
+          "id": "img_ytop_1794468036525_h4eqsk",
+          "filename": "bg-02-con-hook-15set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/bg-02-con-hook-15set.jpg",
+          "sha": "23a7bd4bec0ac3669cde5ea8a544411aaef8158c",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/bg-02-con-hook-15set.jpg?v=23a7bd4b",
+          "size": 57124,
+          "uploadedAt": "2026-11-12T07:20:36.525Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "23a7bd4bec0ac3669cde5ea8a544411aaef8158c"
+    },
+    {
+      "id": "prod_1794468036525_yleiqs",
+      "itemCode": "yukaiya_bg-02-con-hook-30set",
+      "itemManageNumber": "bg-02-con-hook-30set",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bg-02-con-hook-30set.html",
+      "itemName": "コンセントカバー コンセントガード 赤ちゃん フック付き ペット 2口 コンセントキャップ 20個 子供 犬 猫 コンセント プラグ 隠し いたずら防止 ほこり防止",
+      "itemPrice": 1280,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-02-con-hook-30set",
+      "images": [
+        {
+          "id": "img_ytop_1794468036525_l3iwer",
+          "filename": "bg-02-con-hook-30set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/bg-02-con-hook-30set.jpg",
+          "sha": "52a4223786d2be71a470b35c402d0a3097cae270",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/bg-02-con-hook-30set.jpg?v=52a42237",
+          "size": 63090,
+          "uploadedAt": "2026-11-12T07:20:36.525Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "52a4223786d2be71a470b35c402d0a3097cae270"
+    },
+    {
+      "id": "prod_1794468036525_0njg1u",
+      "itemCode": "yukaiya_si-24-04-key",
+      "itemManageNumber": "si-24-04-key",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-24-04-key.html",
+      "itemName": "静電気 除去キーホルダー 静電気除去グッズ キーチェーン カーアクセサリー 除電 静電気防止 静電気防止グッズ静電気対策",
+      "itemPrice": 880,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-24-04-key",
+      "images": [
+        {
+          "id": "img_ytop_1794468036525_dw6ui7",
+          "filename": "si-24-04-key.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/si-24-04-key.jpg",
+          "sha": "9cbea63d9518317c6cfc5e9e066cbc41906650b9",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-24-04-key.jpg?v=9cbea63d",
+          "size": 63263,
+          "uploadedAt": "2026-11-12T07:20:36.525Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "9cbea63d9518317c6cfc5e9e066cbc41906650b9"
+    },
+    {
+      "id": "prod_1794468036525_2txfcj",
+      "itemCode": "yukaiya_si-24-04-set",
+      "itemManageNumber": "si-24-04-set",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-24-04-set.html",
+      "itemName": "静電気除去グッズ 静電気除去ブレスレット 静電気防止ブレスレット 静電気防止グッズ 強力 おしゃれ キーホルダー カジュアル リストバンド 磁気",
+      "itemPrice": 1780,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-24-04-set",
+      "images": [
+        {
+          "id": "img_ytop_1794468036525_vi1xng",
+          "filename": "si-24-04-set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/si-24-04-set.jpg",
+          "sha": "23d203b2170237173867afbd6aa0d61cee083440",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-24-04-set.jpg?v=23d203b2",
+          "size": 63964,
+          "uploadedAt": "2026-11-12T07:20:36.525Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "23d203b2170237173867afbd6aa0d61cee083440"
+    },
+    {
+      "id": "prod_1794468036525_ifhi33",
+      "itemCode": "yukaiya_si-26-07-04set",
+      "itemManageNumber": "si-26-07-04set",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-04set.html",
+      "itemName": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+      "itemPrice": 480,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-04set",
+      "images": [
+        {
+          "id": "img_ytop_1794468036525_royvas",
+          "filename": "si-26-07-04set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-04set.jpg",
+          "sha": "7b42ff563f20a13573ec09c9ed8b1f79e28ff76d",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-26-07-04set.jpg?v=7b42ff56",
+          "size": 46109,
+          "uploadedAt": "2026-11-12T07:20:36.525Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "7b42ff563f20a13573ec09c9ed8b1f79e28ff76d"
+    },
+    {
+      "id": "prod_1794468036525_i3ztxd",
+      "itemCode": "yukaiya_si-26-07-10set",
+      "itemManageNumber": "si-26-07-10set",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-10set.html",
+      "itemName": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+      "itemPrice": 880,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-10set",
+      "images": [
+        {
+          "id": "img_ytop_1794468036525_pqo8tt",
+          "filename": "si-26-07-10set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-10set.jpg",
+          "sha": "0f0d5715e78a432da665b09959e856f01a840b42",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-26-07-10set.jpg?v=0f0d5715",
+          "size": 47148,
+          "uploadedAt": "2026-11-12T07:20:36.525Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "0f0d5715e78a432da665b09959e856f01a840b42"
+    },
+    {
+      "id": "prod_1794468036525_rr5ad3",
+      "itemCode": "yukaiya_si-26-07-20set",
+      "itemManageNumber": "si-26-07-20set",
+      "addedAt": "2026-11-12T07:20:36.524Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-20set.html",
+      "itemName": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+      "itemPrice": 1580,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-20set",
+      "images": [
+        {
+          "id": "img_ytop_1794468036525_gsx3a1",
+          "filename": "si-26-07-20set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/si-26-07-20set.jpg",
+          "sha": "8935e1e517d122964f6d264dc135e8aa3c9e8f5b",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-26-07-20set.jpg?v=8935e1e5",
+          "size": 47940,
+          "uploadedAt": "2026-11-12T07:20:36.525Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "yahooTopSha": "8935e1e517d122964f6d264dc135e8aa3c9e8f5b"
     }
   ],
   "materials": [],
