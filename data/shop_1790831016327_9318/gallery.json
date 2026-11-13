@@ -5291,19 +5291,6 @@
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-10",
       "images": [
         {
-          "id": "img_ytop_1790840364689_m57dkq",
-          "filename": "si-22-10.jpg",
-          "originalName": "000_yahoo_top.jpg",
-          "path": "data/shop_1790831016327_9318/yahoo-top/si-22-10.jpg",
-          "sha": "2a5f7b243c195174c15139086ac2846130448982",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-22-10.jpg?v=2a5f7b24",
-          "size": 52791,
-          "uploadedAt": "2026-10-01T07:39:24.689Z",
-          "note": "",
-          "tags": [],
-          "yahooTop": true
-        },
-        {
           "id": "img_1794558588854_pbh0px",
           "filename": "1794558586800_auq4ys_b-01.jpg",
           "originalName": "b-01.jpg",
