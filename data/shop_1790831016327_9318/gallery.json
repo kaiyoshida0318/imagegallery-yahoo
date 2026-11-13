@@ -2041,20 +2041,7 @@
       "itemName": "耐震マット 耐震ジェル 薄い 家具 冷蔵庫 耐震 マット ジェル テレビ 大型 防災士監修 震度7対応 耐震ゲル PKT1-2F",
       "itemPrice": 1980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-04-clear-mat",
-      "images": [
-        {
-          "id": "img_1794547191134_mkw6gh",
-          "filename": "1794547188853_m8ly2m_r-03.jpg",
-          "originalName": "r-03.jpg",
-          "path": "data/shop_1790831016327_9318/images/prod_1790839116298_4x221l/1794547188853_m8ly2m_r-03.jpg",
-          "sha": "7642aa10a3fa88cd4d52cb52afec996301f84cf7",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/images/prod_1790839116298_4x221l/1794547188853_m8ly2m_r-03.jpg",
-          "size": 316318,
-          "uploadedAt": "2026-11-13T05:19:51.135Z",
-          "note": "",
-          "tags": []
-        }
-      ],
+      "images": [],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "3c4d2d1f60b45bb0cc937dc486198633f9b5ef64"
