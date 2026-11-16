@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-12T08:17:38.909Z",
+ "fetchedAt": "2026-11-16T01:21:03.096Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 317,
- "count": 317,
+ "totalAvailable": 318,
+ "count": 318,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 1,
-  "reused": 316,
+  "downloaded": 3,
+  "reused": 315,
   "failed": 0
  },
  "items": [
@@ -1057,7 +1057,7 @@
    "imageId": "yukaiya_eq-22-04-clear-mat",
    "code": "eq-22-04-clear-mat",
    "name": "耐震マット 耐震ジェル 薄い 家具 冷蔵庫 耐震 マット ジェル テレビ 大型 防災士監修 震度7対応 耐震ゲル PKT1-2F",
-   "price": 1980,
+   "price": 2480,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-04-clear-mat.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-04-clear-mat",
    "yahooId": "yukaiya_eq-22-04-clear-mat",
@@ -1065,8 +1065,8 @@
    "top": {
     "key": "yukaiya_eq-22-04-clear-mat",
     "path": "data/shop_1790831016327_9318/yahoo-top/eq-22-04-clear-mat.jpg",
-    "sha": "3c4d2d1f60b45bb0cc937dc486198633f9b5ef64",
-    "size": 45603,
+    "sha": "c1eb0a2647ca6e7945c227cbc95a2404cc85f1bd",
+    "size": 50958,
     "imageId": "yukaiya_eq-22-04-clear-mat"
    }
   },
@@ -1656,7 +1656,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/fel-22-01.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_fel-22-01",
    "yahooId": "yukaiya_fel-22-01",
-   "inStock": true,
+   "inStock": false,
    "top": {
     "key": "yukaiya_fel-22-01",
     "path": "data/shop_1790831016327_9318/yahoo-top/fel-22-01.jpg",
@@ -2948,7 +2948,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-04a-set1.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-04a-set1",
    "yahooId": "yukaiya_si-22-04a-set1",
-   "inStock": true,
+   "inStock": false,
    "top": {
     "key": "yukaiya_si-22-04a-set1",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-22-04a-set1.jpg",
@@ -3071,9 +3071,26 @@
    "top": {
     "key": "yukaiya_si-22-10",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-22-10.jpg",
-    "sha": "2a5f7b243c195174c15139086ac2846130448982",
-    "size": 52791,
+    "sha": "ad32fa9d4293c33a7b21069b83090716bcfe3826",
+    "size": 51362,
     "imageId": "yukaiya_si-22-10"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-22-10-set",
+   "code": "si-22-10-set",
+   "name": "メガネ 鼻パッド 鼻あて パッド シリコン 眼鏡 跡がつかない ズレ防止 ずり落ち防止 滑り止め 鼻あて ノーズパッド 鼻パット メガネ 透明 痛み防止",
+   "price": 1580,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-10-set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-10-set",
+   "yahooId": "yukaiya_si-22-10-set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-22-10-set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-22-10-set.jpg",
+    "sha": "ad32fa9d4293c33a7b21069b83090716bcfe3826",
+    "size": 51362,
+    "imageId": "yukaiya_si-22-10-set"
    }
   },
   {
