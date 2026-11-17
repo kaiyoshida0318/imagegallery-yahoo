@@ -16058,7 +16058,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-17T04:48:20.160Z",
-      "yahooTopSha": "3d932b2d7468f7312fbd050a396dc3aeb94014ba"
+      "yahooTopSha": "3d932b2d7468f7312fbd050a396dc3aeb94014ba",
+      "multi": true
     },
     {
       "id": "prod_1794890900161_k3sb4p",
@@ -16088,7 +16089,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-17T04:48:20.160Z",
-      "yahooTopSha": "c8934049f2feca69eafbe93ea9767b276adb6058"
+      "yahooTopSha": "c8934049f2feca69eafbe93ea9767b276adb6058",
+      "multi": true
     },
     {
       "id": "prod_1794890900161_kgdyjk",
@@ -16118,7 +16120,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-17T04:48:20.160Z",
-      "yahooTopSha": "007204ace4e577d8bf675742fcb2c8c36a210cb9"
+      "yahooTopSha": "007204ace4e577d8bf675742fcb2c8c36a210cb9",
+      "multi": true
     },
     {
       "id": "prod_1794890900161_81bbvg",
@@ -16148,7 +16151,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-17T04:48:20.160Z",
-      "yahooTopSha": "f108647534e98bf75c3cadea70901016831c6ce2"
+      "yahooTopSha": "f108647534e98bf75c3cadea70901016831c6ce2",
+      "multi": true
     },
     {
       "id": "prod_1794890900161_qjxxmq",
@@ -16238,7 +16242,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-17T04:48:20.160Z",
-      "yahooTopSha": "62545977030b83d04c5466ba8d3f5f12bb3425a0"
+      "yahooTopSha": "62545977030b83d04c5466ba8d3f5f12bb3425a0",
+      "multi": true
     },
     {
       "id": "prod_1794890900161_dpayh6",
@@ -16268,7 +16273,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-17T04:48:20.160Z",
-      "yahooTopSha": "a57347c1399b874c9e441b3b5c5a348dc59809d4"
+      "yahooTopSha": "a57347c1399b874c9e441b3b5c5a348dc59809d4",
+      "multi": true
     },
     {
       "id": "prod_1794890900161_7kro82",
@@ -16298,7 +16304,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-17T04:48:20.160Z",
-      "yahooTopSha": "879e41eb5d57490962043e954f7e03ef40ea74c4"
+      "yahooTopSha": "879e41eb5d57490962043e954f7e03ef40ea74c4",
+      "multi": true
     },
     {
       "id": "prod_1794890900161_ai6qhi",
