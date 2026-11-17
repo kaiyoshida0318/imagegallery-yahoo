@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-16T01:21:03.096Z",
+ "fetchedAt": "2026-11-17T04:47:16.333Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 318,
- "count": 318,
+ "totalAvailable": 328,
+ "count": 328,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 3,
-  "reused": 315,
+  "downloaded": 10,
+  "reused": 318,
   "failed": 0
  },
  "items": [
@@ -2499,6 +2499,91 @@
    }
   },
   {
+   "imageId": "yukaiya_ih-25-02-020set",
+   "code": "ih-25-02-020set",
+   "name": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+   "price": 980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-020set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-020set",
+   "yahooId": "yukaiya_ih-25-02-020set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-25-02-020set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-02-020set.jpg",
+    "sha": "9d927c78ecac816015f556f48b84a4fc732c9bac",
+    "size": 51832,
+    "imageId": "yukaiya_ih-25-02-020set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-02-040set",
+   "code": "ih-25-02-040set",
+   "name": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+   "price": 1860,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-040set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-040set",
+   "yahooId": "yukaiya_ih-25-02-040set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-25-02-040set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-02-040set.jpg",
+    "sha": "3d932b2d7468f7312fbd050a396dc3aeb94014ba",
+    "size": 51843,
+    "imageId": "yukaiya_ih-25-02-040set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-02-060set",
+   "code": "ih-25-02-060set",
+   "name": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+   "price": 2640,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-060set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-060set",
+   "yahooId": "yukaiya_ih-25-02-060set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-25-02-060set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-02-060set.jpg",
+    "sha": "c8934049f2feca69eafbe93ea9767b276adb6058",
+    "size": 51895,
+    "imageId": "yukaiya_ih-25-02-060set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-02-120set",
+   "code": "ih-25-02-120set",
+   "name": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+   "price": 3480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-120set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-120set",
+   "yahooId": "yukaiya_ih-25-02-120set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-25-02-120set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-02-120set.jpg",
+    "sha": "007204ace4e577d8bf675742fcb2c8c36a210cb9",
+    "size": 51994,
+    "imageId": "yukaiya_ih-25-02-120set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-02-180set",
+   "code": "ih-25-02-180set",
+   "name": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+   "price": 4400,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-180set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-180set",
+   "yahooId": "yukaiya_ih-25-02-180set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-25-02-180set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-02-180set.jpg",
+    "sha": "f108647534e98bf75c3cadea70901016831c6ce2",
+    "size": 52047,
+    "imageId": "yukaiya_ih-25-02-180set"
+   }
+  },
+  {
    "imageId": "yukaiya_ih-25-03-group-1set",
    "code": "ih-25-03-group-1set",
    "name": "【複数購入でお買い得！】IHマット IHカバー IHクッキングヒーター IHシリコンマット 厚手 焦げ防止 保護マット 耐熱 滑り止め 汚れ防止 シリコン",
@@ -3029,7 +3114,7 @@
    "imageId": "yukaiya_si-22-07",
    "code": "si-22-07",
    "name": "爪切り ニッパー 高級 ケース付き つめきり 飛び散らない ゾンデ 飛び散り防止 手足用 ケース付き 贈り物 ギフト PKT3-2F",
-   "price": 1000,
+   "price": 1280,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-07.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-07",
    "yahooId": "yukaiya_si-22-07",
@@ -3096,8 +3181,8 @@
   {
    "imageId": "yukaiya_si-22-11-00set",
    "code": "si-22-11-00set",
-   "name": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 眼鏡 スポーツ ズレ防止 子供 3サイズ×2 PKT1-4F",
-   "price": 780,
+   "name": "メガネストッパー メガネ 滑り止め 眼鏡ストッパー シリコン クッション 耳 耳あて 眼鏡 スポーツ ズレ防止 落下 ずり落ち 擦れ 防止 めがね固定 サングラス",
+   "price": 1000,
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-11-00set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-11-00set",
    "yahooId": "yukaiya_si-22-11-00set",
@@ -3482,6 +3567,91 @@
     "sha": "bbe4120adb75809b6f40bcbd1f531611815f5bbb",
     "size": 68045,
     "imageId": "yukaiya_si-25-01-300set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-03-3set",
+   "code": "si-25-03-3set",
+   "name": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+   "price": 680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-3set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-3set",
+   "yahooId": "yukaiya_si-25-03-3set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-03-3set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-03-3set.jpg",
+    "sha": "83c517472c6b894120c7ddb7b36bd0e153a16452",
+    "size": 64246,
+    "imageId": "yukaiya_si-25-03-3set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-03-3set-h",
+   "code": "si-25-03-3set-h",
+   "name": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+   "price": 1480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-3set-h.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-3set-h",
+   "yahooId": "yukaiya_si-25-03-3set-h",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-03-3set-h",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-03-3set-h.jpg",
+    "sha": "62545977030b83d04c5466ba8d3f5f12bb3425a0",
+    "size": 64883,
+    "imageId": "yukaiya_si-25-03-3set-h"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-03-6set",
+   "code": "si-25-03-6set",
+   "name": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-6set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-6set",
+   "yahooId": "yukaiya_si-25-03-6set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-03-6set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-03-6set.jpg",
+    "sha": "a57347c1399b874c9e441b3b5c5a348dc59809d4",
+    "size": 64239,
+    "imageId": "yukaiya_si-25-03-6set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-03-6set-h",
+   "code": "si-25-03-6set-h",
+   "name": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+   "price": 1800,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-6set-h.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-6set-h",
+   "yahooId": "yukaiya_si-25-03-6set-h",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-03-6set-h",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-03-6set-h.jpg",
+    "sha": "879e41eb5d57490962043e954f7e03ef40ea74c4",
+    "size": 64875,
+    "imageId": "yukaiya_si-25-03-6set-h"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-25-04-set",
+   "code": "si-25-04-set",
+   "name": "メガネストッパー メガネ 滑り止め 眼鏡ストッパー シリコン クッション 耳 耳あて 眼鏡 スポーツ ズレ防止 落下 ずり落ち 擦れ 防止 めがね固定 サングラス",
+   "price": 1500,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-04-set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-04-set",
+   "yahooId": "yukaiya_si-25-04-set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-25-04-set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-25-04-set.jpg",
+    "sha": "34a6efc8f07437514b4078de5da22e86cac16936",
+    "size": 46979,
+    "imageId": "yukaiya_si-25-04-set"
    }
   },
   {
