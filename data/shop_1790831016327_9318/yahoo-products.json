@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-17T04:47:16.333Z",
+ "fetchedAt": "2026-11-18T04:52:36.515Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 328,
- "count": 328,
+ "totalAvailable": 336,
+ "count": 336,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 10,
-  "reused": 318,
+  "downloaded": 8,
+  "reused": 328,
   "failed": 0
  },
  "items": [
@@ -194,7 +194,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/bg-06-kakon-10set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-06-kakon-10set",
    "yahooId": "yukaiya_bg-06-kakon-10set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_bg-06-kakon-10set",
     "path": "data/shop_1790831016327_9318/yahoo-top/bg-06-kakon-10set.jpg",
@@ -2499,6 +2499,57 @@
    }
   },
   {
+   "imageId": "yukaiya_ih-25-01-set1",
+   "code": "ih-25-01-set1",
+   "name": "しわ伸ばしテープ 首 眉間 おでこ シワ取り しわ 取り テープ シート 目尻 ほうれい線 シワ 伸ばし パッチ シール 額 目元 スキンケア フェイスパッチ",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set1.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set1",
+   "yahooId": "yukaiya_ih-25-01-set1",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_ih-25-01-set1",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-01-set1.jpg",
+    "sha": "89edd2524b6623fc4cae44a684c874285ac56d33",
+    "size": 45107,
+    "imageId": "yukaiya_ih-25-01-set1"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-01-set2",
+   "code": "ih-25-01-set2",
+   "name": "しわ伸ばしテープ 首 眉間 おでこ シワ取り しわ 取り テープ シート 目尻 ほうれい線 シワ 伸ばし パッチ シール 額 目元 スキンケア フェイスパッチ",
+   "price": 1680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set2.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set2",
+   "yahooId": "yukaiya_ih-25-01-set2",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_ih-25-01-set2",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-01-set2.jpg",
+    "sha": "42e30c333f95995d2a72df304eb156d79cdbe50d",
+    "size": 45394,
+    "imageId": "yukaiya_ih-25-01-set2"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-25-01-set3",
+   "code": "ih-25-01-set3",
+   "name": "しわ伸ばしテープ 首 眉間 おでこ シワ取り しわ 取り テープ シート 目尻 ほうれい線 シワ 伸ばし パッチ シール 額 目元 スキンケア フェイスパッチ",
+   "price": 2980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set3.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set3",
+   "yahooId": "yukaiya_ih-25-01-set3",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_ih-25-01-set3",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-01-set3.jpg",
+    "sha": "dd7f095aeeaeaeb8a389c0078a7691ff85b9e086",
+    "size": 45353,
+    "imageId": "yukaiya_ih-25-01-set3"
+   }
+  },
+  {
    "imageId": "yukaiya_ih-25-02-020set",
    "code": "ih-25-02-020set",
    "name": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
@@ -3329,6 +3380,74 @@
     "sha": "88b0439aea290d8eee9d3162837a333bf6ffc69b",
     "size": 25253,
     "imageId": "yukaiya_si-23-10"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-11-cut-case1",
+   "code": "si-23-11-cut-case1",
+   "name": "鼻毛 はさみ 鼻毛処理 鼻毛切りハサミ 鼻毛ハサミ 高級 カッター カーブ 鼻毛カッター 女性",
+   "price": 1100,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-11-cut-case1.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-11-cut-case1",
+   "yahooId": "yukaiya_si-23-11-cut-case1",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-11-cut-case1",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-11-cut-case1.jpg",
+    "sha": "81c45a73dc37a554b7e9a5b660f073339db19609",
+    "size": 37208,
+    "imageId": "yukaiya_si-23-11-cut-case1"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-11-cut-case1-push1",
+   "code": "si-23-11-cut-case1-push1",
+   "name": "鼻毛 はさみ 鼻毛処理 鼻毛切りハサミ 鼻毛ハサミ 高級 カッター カーブ 鼻毛カッター 女性",
+   "price": 1800,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-11-cut-case1-push1.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-11-cut-case1-push1",
+   "yahooId": "yukaiya_si-23-11-cut-case1-push1",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-11-cut-case1-push1",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-11-cut-case1-push1.jpg",
+    "sha": "51a223118e3cd528f7c6eca674a2614376375d3a",
+    "size": 37527,
+    "imageId": "yukaiya_si-23-11-cut-case1-push1"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-11-cut1-push1",
+   "code": "si-23-11-cut1-push1",
+   "name": "鼻毛 はさみ 鼻毛処理 鼻毛切りハサミ 鼻毛ハサミ 高級 カッター カーブ 鼻毛カッター 女性",
+   "price": 1700,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-11-cut1-push1.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-11-cut1-push1",
+   "yahooId": "yukaiya_si-23-11-cut1-push1",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-11-cut1-push1",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-11-cut1-push1.jpg",
+    "sha": "94ac411a85d53db68952e4ce6a9edb4d4db0c898",
+    "size": 37194,
+    "imageId": "yukaiya_si-23-11-cut1-push1"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-11-push1",
+   "code": "si-23-11-push1",
+   "name": "鼻毛 はさみ 鼻毛処理 鼻毛切りハサミ 鼻毛ハサミ 高級 カッター カーブ 鼻毛カッター 女性",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-11-push1.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-11-push1",
+   "yahooId": "yukaiya_si-23-11-push1",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-11-push1",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-11-push1.jpg",
+    "sha": "010de2630d55bae21b32a5cf969cc59b23f0af8d",
+    "size": 37313,
+    "imageId": "yukaiya_si-23-11-push1"
    }
   },
   {
@@ -5199,6 +5318,23 @@
     "sha": "d173a12d120703ea1433da726caee8f3db016b49",
     "size": 50746,
     "imageId": "yukaiya_yoga-23-03-00set"
+   }
+  },
+  {
+   "imageId": "yukaiya_yoga-24-01-band1",
+   "code": "yoga-24-01-band1",
+   "name": "ゴムバンド ストレッチバンド レジスタンスバンド ピラティスバンド トレーニングバンド ゴム ヒップバンド エクササイズバンド フィットネスバンド",
+   "price": 1480,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-24-01-band1.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-24-01-band1",
+   "yahooId": "yukaiya_yoga-24-01-band1",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_yoga-24-01-band1",
+    "path": "data/shop_1790831016327_9318/yahoo-top/yoga-24-01-band1.jpg",
+    "sha": "c6dee7f7b4325f41074a07fc490d392c661f4e10",
+    "size": 64605,
+    "imageId": "yukaiya_yoga-24-01-band1"
    }
   },
   {
