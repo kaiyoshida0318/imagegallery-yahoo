@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-18T04:52:36.515Z",
+ "fetchedAt": "2026-11-18T07:46:36.070Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 336,
- "count": 336,
+ "totalAvailable": 339,
+ "count": 338,
  "skipped": 0,
  "truncated": false,
  "requests": 9,
  "topImages": {
-  "downloaded": 8,
-  "reused": 328,
+  "downloaded": 2,
+  "reused": 336,
   "failed": 0
  },
  "items": [
@@ -269,6 +269,40 @@
     "sha": "8f9751906e7ec9016fb373a03a87b31a573b60f8",
     "size": 41955,
     "imageId": "yukaiya_bg-10-usbc-osu-20set"
+   }
+  },
+  {
+   "imageId": "yukaiya_bi-25-01-2set",
+   "code": "bi-25-01-2set",
+   "name": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+   "price": 1180,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-2set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-2set",
+   "yahooId": "yukaiya_bi-25-01-2set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_bi-25-01-2set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bi-25-01-2set.jpg",
+    "sha": "db25f9f683e54fa970cca39e4bcac7eff5b59e9f",
+    "size": 56782,
+    "imageId": "yukaiya_bi-25-01-2set"
+   }
+  },
+  {
+   "imageId": "yukaiya_bi-25-01-2set-tape",
+   "code": "bi-25-01-2set-tape",
+   "name": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+   "price": 1980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-2set-tape.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-2set-tape",
+   "yahooId": "yukaiya_bi-25-01-2set-tape",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_bi-25-01-2set-tape",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bi-25-01-2set-tape.jpg",
+    "sha": "047e62ebf9488740c2eee4fd2180f54ef4f415ef",
+    "size": 4116,
+    "imageId": "yukaiya_bi-25-01-2set-tape"
    }
   },
   {
@@ -2506,7 +2540,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set1.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set1",
    "yahooId": "yukaiya_ih-25-01-set1",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_ih-25-01-set1",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-01-set1.jpg",
@@ -2523,7 +2557,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set2.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set2",
    "yahooId": "yukaiya_ih-25-01-set2",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_ih-25-01-set2",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-01-set2.jpg",
@@ -2540,7 +2574,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set3.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set3",
    "yahooId": "yukaiya_ih-25-01-set3",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_ih-25-01-set3",
     "path": "data/shop_1790831016327_9318/yahoo-top/ih-25-01-set3.jpg",
@@ -3084,7 +3118,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-04a-set1.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-04a-set1",
    "yahooId": "yukaiya_si-22-04a-set1",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_si-22-04a-set1",
     "path": "data/shop_1790831016327_9318/yahoo-top/si-22-04a-set1.jpg",
