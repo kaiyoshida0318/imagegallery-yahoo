@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-18T07:46:36.070Z",
+ "fetchedAt": "2026-11-20T06:09:55.110Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 339,
- "count": 338,
+ "totalAvailable": 353,
+ "count": 353,
  "skipped": 0,
  "truncated": false,
- "requests": 9,
+ "requests": 10,
  "topImages": {
-  "downloaded": 2,
-  "reused": 336,
+  "downloaded": 15,
+  "reused": 338,
   "failed": 0
  },
  "items": [
@@ -279,7 +279,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-2set.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-2set",
    "yahooId": "yukaiya_bi-25-01-2set",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_bi-25-01-2set",
     "path": "data/shop_1790831016327_9318/yahoo-top/bi-25-01-2set.jpg",
@@ -296,13 +296,47 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-2set-tape.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-2set-tape",
    "yahooId": "yukaiya_bi-25-01-2set-tape",
-   "inStock": false,
+   "inStock": true,
    "top": {
     "key": "yukaiya_bi-25-01-2set-tape",
     "path": "data/shop_1790831016327_9318/yahoo-top/bi-25-01-2set-tape.jpg",
     "sha": "047e62ebf9488740c2eee4fd2180f54ef4f415ef",
     "size": 4116,
     "imageId": "yukaiya_bi-25-01-2set-tape"
+   }
+  },
+  {
+   "imageId": "yukaiya_bi-25-01-4set",
+   "code": "bi-25-01-4set",
+   "name": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+   "price": 2280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-4set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-4set",
+   "yahooId": "yukaiya_bi-25-01-4set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_bi-25-01-4set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bi-25-01-4set.jpg",
+    "sha": "43569430e99512d6ba5f816312d8ce8202fb191f",
+    "size": 56722,
+    "imageId": "yukaiya_bi-25-01-4set"
+   }
+  },
+  {
+   "imageId": "yukaiya_bi-25-01-4set-tape",
+   "code": "bi-25-01-4set-tape",
+   "name": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+   "price": 3080,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-4set-tape.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-4set-tape",
+   "yahooId": "yukaiya_bi-25-01-4set-tape",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_bi-25-01-4set-tape",
+    "path": "data/shop_1790831016327_9318/yahoo-top/bi-25-01-4set-tape.jpg",
+    "sha": "4b7a1be40c2ee9bfbc824bced14df75b902ee1a3",
+    "size": 57763,
+    "imageId": "yukaiya_bi-25-01-4set-tape"
    }
   },
   {
@@ -2312,6 +2346,108 @@
    }
   },
   {
+   "imageId": "yukaiya_ih-22-04-set1-2cm-2cm",
+   "code": "ih-22-04-set1-2cm-2cm",
+   "name": "強力両面テープ 魔法のテープ ナノテープ 魔法テープ 両面テープ 浮かせる収納 超強力 はがせる 固定テープ 防災グッズ",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-04-set1-2cm-2cm.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-04-set1-2cm-2cm",
+   "yahooId": "yukaiya_ih-22-04-set1-2cm-2cm",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-04-set1-2cm-2cm",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-04-set1-2cm-2cm.jpg",
+    "sha": "33fc8dbec6d656721f5d632ec8d0015070e078fb",
+    "size": 68862,
+    "imageId": "yukaiya_ih-22-04-set1-2cm-2cm"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-04-set1-2cm-3cm",
+   "code": "ih-22-04-set1-2cm-3cm",
+   "name": "強力両面テープ 魔法のテープ ナノテープ 魔法テープ 両面テープ 浮かせる収納 超強力 はがせる 固定テープ 防災グッズ",
+   "price": 1180,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-04-set1-2cm-3cm.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-04-set1-2cm-3cm",
+   "yahooId": "yukaiya_ih-22-04-set1-2cm-3cm",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-04-set1-2cm-3cm",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-04-set1-2cm-3cm.jpg",
+    "sha": "33fc8dbec6d656721f5d632ec8d0015070e078fb",
+    "size": 68862,
+    "imageId": "yukaiya_ih-22-04-set1-2cm-3cm"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-04-set1-2cm-5cm",
+   "code": "ih-22-04-set1-2cm-5cm",
+   "name": "強力両面テープ 魔法のテープ ナノテープ 魔法テープ 両面テープ 浮かせる収納 超強力 はがせる 固定テープ 防災グッズ",
+   "price": 1580,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-04-set1-2cm-5cm.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-04-set1-2cm-5cm",
+   "yahooId": "yukaiya_ih-22-04-set1-2cm-5cm",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-04-set1-2cm-5cm",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-04-set1-2cm-5cm.jpg",
+    "sha": "33fc8dbec6d656721f5d632ec8d0015070e078fb",
+    "size": 68862,
+    "imageId": "yukaiya_ih-22-04-set1-2cm-5cm"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-04-set1-3cm-3cm",
+   "code": "ih-22-04-set1-3cm-3cm",
+   "name": "強力両面テープ 魔法のテープ ナノテープ 魔法テープ 両面テープ 浮かせる収納 超強力 はがせる 固定テープ 防災グッズ",
+   "price": 1280,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-04-set1-3cm-3cm.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-04-set1-3cm-3cm",
+   "yahooId": "yukaiya_ih-22-04-set1-3cm-3cm",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-04-set1-3cm-3cm",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-04-set1-3cm-3cm.jpg",
+    "sha": "33fc8dbec6d656721f5d632ec8d0015070e078fb",
+    "size": 68862,
+    "imageId": "yukaiya_ih-22-04-set1-3cm-3cm"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-04-set1-3cm-5cm",
+   "code": "ih-22-04-set1-3cm-5cm",
+   "name": "強力両面テープ 魔法のテープ ナノテープ 魔法テープ 両面テープ 浮かせる収納 超強力 はがせる 固定テープ 防災グッズ",
+   "price": 1680,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-04-set1-3cm-5cm.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-04-set1-3cm-5cm",
+   "yahooId": "yukaiya_ih-22-04-set1-3cm-5cm",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-04-set1-3cm-5cm",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-04-set1-3cm-5cm.jpg",
+    "sha": "33fc8dbec6d656721f5d632ec8d0015070e078fb",
+    "size": 68862,
+    "imageId": "yukaiya_ih-22-04-set1-3cm-5cm"
+   }
+  },
+  {
+   "imageId": "yukaiya_ih-22-04-set1-5cm-5cm",
+   "code": "ih-22-04-set1-5cm-5cm",
+   "name": "強力両面テープ 魔法のテープ ナノテープ 魔法テープ 両面テープ 浮かせる収納 超強力 はがせる 固定テープ 防災グッズ",
+   "price": 1880,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ih-22-04-set1-5cm-5cm.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-22-04-set1-5cm-5cm",
+   "yahooId": "yukaiya_ih-22-04-set1-5cm-5cm",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ih-22-04-set1-5cm-5cm",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ih-22-04-set1-5cm-5cm.jpg",
+    "sha": "33fc8dbec6d656721f5d632ec8d0015070e078fb",
+    "size": 68862,
+    "imageId": "yukaiya_ih-22-04-set1-5cm-5cm"
+   }
+  },
+  {
    "imageId": "yukaiya_ih-22-05",
    "code": "ih-22-05",
    "name": "ピンセット 精密ピンセット 万能ピンセット 高品質 ESDコート 極細 精密機器用 工業用 デザインワーク用 シール貼り PKT3-2F",
@@ -3516,6 +3652,125 @@
     "sha": "684333417687541cf18cf18d0e81447b4f9477d4",
     "size": 46797,
     "imageId": "yukaiya_si-23-12"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-13a-01-hane",
+   "code": "si-23-13a-01-hane",
+   "name": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+   "price": 1698,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-01-hane.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-01-hane",
+   "yahooId": "yukaiya_si-23-13a-01-hane",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-13a-01-hane",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-13a-01-hane.jpg",
+    "sha": "69100416e0902ff507fcd5ef1761d76a5898a18e",
+    "size": 37004,
+    "imageId": "yukaiya_si-23-13a-01-hane"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-13a-01-hane-st",
+   "code": "si-23-13a-01-hane-st",
+   "name": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+   "price": 2980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-01-hane-st.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-01-hane-st",
+   "yahooId": "yukaiya_si-23-13a-01-hane-st",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-13a-01-hane-st",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-13a-01-hane-st.jpg",
+    "sha": "4671dbfa613305a85a7b92fb4d5096fa349de811",
+    "size": 38677,
+    "imageId": "yukaiya_si-23-13a-01-hane-st"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-13a-02-heart",
+   "code": "si-23-13a-02-heart",
+   "name": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+   "price": 1780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-02-heart.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-02-heart",
+   "yahooId": "yukaiya_si-23-13a-02-heart",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-13a-02-heart",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-13a-02-heart.jpg",
+    "sha": "8f9768357f2d3a81cd3c5c2405ebafa718a9424e",
+    "size": 36832,
+    "imageId": "yukaiya_si-23-13a-02-heart"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-13a-02-heart-st",
+   "code": "si-23-13a-02-heart-st",
+   "name": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+   "price": 2980,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-02-heart-st.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-02-heart-st",
+   "yahooId": "yukaiya_si-23-13a-02-heart-st",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-13a-02-heart-st",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-13a-02-heart-st.jpg",
+    "sha": "4671dbfa613305a85a7b92fb4d5096fa349de811",
+    "size": 38677,
+    "imageId": "yukaiya_si-23-13a-02-heart-st"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-13a-03-noko",
+   "code": "si-23-13a-03-noko",
+   "name": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+   "price": 1880,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-03-noko.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-03-noko",
+   "yahooId": "yukaiya_si-23-13a-03-noko",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-13a-03-noko",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-13a-03-noko.jpg",
+    "sha": "76314e46ef874969aa347f8e5bfe0f94af78a538",
+    "size": 37488,
+    "imageId": "yukaiya_si-23-13a-03-noko"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-13a-03-noko-st",
+   "code": "si-23-13a-03-noko-st",
+   "name": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+   "price": 3080,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-03-noko-st.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-03-noko-st",
+   "yahooId": "yukaiya_si-23-13a-03-noko-st",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-13a-03-noko-st",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-13a-03-noko-st.jpg",
+    "sha": "33f10828e0ffcb6b7a325a136be42bcee72c9bf3",
+    "size": 39014,
+    "imageId": "yukaiya_si-23-13a-03-noko-st"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-13a-04-st",
+   "code": "si-23-13a-04-st",
+   "name": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+   "price": 1880,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-04-st.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-04-st",
+   "yahooId": "yukaiya_si-23-13a-04-st",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-13a-04-st",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-13a-04-st.jpg",
+    "sha": "bbd45215e1b0926a7eece9129dc011cce9a2176a",
+    "size": 37538,
+    "imageId": "yukaiya_si-23-13a-04-st"
    }
   },
   {
