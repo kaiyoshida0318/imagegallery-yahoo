@@ -2,17 +2,17 @@
  "version": 1,
  "shopId": "shop_1790831016327_9318",
  "sellerId": "yukaiya",
- "fetchedAt": "2026-11-20T06:09:55.110Z",
+ "fetchedAt": "2026-11-24T06:17:02.888Z",
  "api": "ShoppingWebService V3 itemSearch",
  "method": "seller_id のみ",
- "totalAvailable": 353,
- "count": 353,
+ "totalAvailable": 360,
+ "count": 360,
  "skipped": 0,
  "truncated": false,
  "requests": 10,
  "topImages": {
-  "downloaded": 15,
-  "reused": 338,
+  "downloaded": 7,
+  "reused": 353,
   "failed": 0
  },
  "items": [
@@ -1537,7 +1537,7 @@
    "url": "https://store.shopping.yahoo.co.jp/yukaiya/fas-16-01-green.html",
    "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_fas-16-01-green",
    "yahooId": "yukaiya_fas-16-01-green",
-   "inStock": true,
+   "inStock": false,
    "top": {
     "key": "yukaiya_fas-16-01-green",
     "path": "data/shop_1790831016327_9318/yahoo-top/fas-16-01-green.jpg",
@@ -2856,6 +2856,40 @@
    }
   },
   {
+   "imageId": "yukaiya_mus-25-01",
+   "code": "mus-25-01",
+   "name": "カポタスト カポ ワンタッチ ギター アコースティックギター 初心者 ピック ウクレレ エレキギター クラシックギター アコギ エレキ",
+   "price": 1080,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/mus-25-01.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_mus-25-01",
+   "yahooId": "yukaiya_mus-25-01",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_mus-25-01",
+    "path": "data/shop_1790831016327_9318/yahoo-top/mus-25-01.jpg",
+    "sha": "dcea8c7d58300e7bb6419922957da411e92c22d8",
+    "size": 49886,
+    "imageId": "yukaiya_mus-25-01"
+   }
+  },
+  {
+   "imageId": "yukaiya_mus-25-01-set",
+   "code": "mus-25-01-set",
+   "name": "カポタスト カポ ワンタッチ ギター アコースティックギター 初心者 ピック ウクレレ エレキギター クラシックギター アコギ エレキ",
+   "price": 1380,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/mus-25-01-set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_mus-25-01-set",
+   "yahooId": "yukaiya_mus-25-01-set",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_mus-25-01-set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/mus-25-01-set.jpg",
+    "sha": "a4b0d4c9147b7e578217b8696f6105a6c34dabf2",
+    "size": 48584,
+    "imageId": "yukaiya_mus-25-01-set"
+   }
+  },
+  {
    "imageId": "yukaiya_neck-long",
    "code": "neck-long",
    "name": "ロングネックレス ロング ネックレス レディース 結婚式 30代 40代 50代 ナチュラル カジュアル シンプル PKT2-4F",
@@ -3465,6 +3499,23 @@
     "sha": "2b548eb4e7d0f42714475cc03e32c577496267a9",
     "size": 38421,
     "imageId": "yukaiya_si-23-03"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-23-03-hue",
+   "code": "si-23-03-hue",
+   "name": "電子 ホイッスル 大音量 笛 防災熊よけグッズ 体育 サッカー バスケットボール 水泳 スポーツグラウンド 体育用品 警笛 機器用具 備品 PKT3-2F",
+   "price": 2100,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-03-hue.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-03-hue",
+   "yahooId": "yukaiya_si-23-03-hue",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_si-23-03-hue",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-23-03-hue.jpg",
+    "sha": "0fb9deb2147ff1bb9d26bede76d349ea900cda70",
+    "size": 66023,
+    "imageId": "yukaiya_si-23-03-hue"
    }
   },
   {
@@ -4386,6 +4437,40 @@
    }
   },
   {
+   "imageId": "yukaiya_si-26-05-1set",
+   "code": "si-26-05-1set",
+   "name": "エイムリング スティック 保護リング シリコンリング プロコン PS5 PS4 Switch Proコン エイム コントローラー 保護 スティックカバー FPS エイムリング",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-05-1set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-05-1set",
+   "yahooId": "yukaiya_si-26-05-1set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-26-05-1set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-05-1set.jpg",
+    "sha": "bcfa00cc6dfc09d8e70912a245aa659c9c5ffbc0",
+    "size": 80783,
+    "imageId": "yukaiya_si-26-05-1set"
+   }
+  },
+  {
+   "imageId": "yukaiya_si-26-05-2set",
+   "code": "si-26-05-2set",
+   "name": "エイムリング スティック 保護リング シリコンリング プロコン PS5 PS4 Switch Proコン エイム コントローラー 保護 スティックカバー FPS エイムリング",
+   "price": 1000,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-05-2set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-05-2set",
+   "yahooId": "yukaiya_si-26-05-2set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_si-26-05-2set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/si-26-05-2set.jpg",
+    "sha": "06393edff2776f38dac288425a289f2e1d37fed4",
+    "size": 80922,
+    "imageId": "yukaiya_si-26-05-2set"
+   }
+  },
+  {
    "imageId": "yukaiya_si-26-07-04set",
    "code": "si-26-07-04set",
    "name": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
@@ -4553,6 +4638,40 @@
     "sha": "ca40c134f6a1008029ec661a250f0f46fb62f258",
     "size": 56859,
     "imageId": "yukaiya_ss-22-01-set"
+   }
+  },
+  {
+   "imageId": "yukaiya_ss-22-03",
+   "code": "ss-22-03",
+   "name": "シューズストラップ シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
+   "price": 780,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-03.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-03",
+   "yahooId": "yukaiya_ss-22-03",
+   "inStock": true,
+   "top": {
+    "key": "yukaiya_ss-22-03",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ss-22-03.jpg",
+    "sha": "38831b4aa1ff16fd2c0adbdb3310a5e71c0013b2",
+    "size": 56863,
+    "imageId": "yukaiya_ss-22-03"
+   }
+  },
+  {
+   "imageId": "yukaiya_ss-22-03-8set",
+   "code": "ss-22-03-8set",
+   "name": "シューズストラップ シューズバンド 靴 バンド 滑り止め 脱げ 防止 シューズベルト パンプスストラップ パンプスベルト サンダル レディース ダンス",
+   "price": 1580,
+   "url": "https://store.shopping.yahoo.co.jp/yukaiya/ss-22-03-8set.html",
+   "image": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ss-22-03-8set",
+   "yahooId": "yukaiya_ss-22-03-8set",
+   "inStock": false,
+   "top": {
+    "key": "yukaiya_ss-22-03-8set",
+    "path": "data/shop_1790831016327_9318/yahoo-top/ss-22-03-8set.jpg",
+    "sha": "a5db33e00656fc7e394d952c4ee7097e807f3102",
+    "size": 59970,
+    "imageId": "yukaiya_ss-22-03-8set"
    }
   },
   {
