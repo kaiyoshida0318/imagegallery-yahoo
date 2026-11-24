@@ -17514,7 +17514,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-24T06:20:08.322Z",
-      "yahooTopSha": "047e62ebf9488740c2eee4fd2180f54ef4f415ef"
+      "yahooTopSha": "047e62ebf9488740c2eee4fd2180f54ef4f415ef",
+      "multi": true
     },
     {
       "id": "prod_1795501208323_o91hri",
