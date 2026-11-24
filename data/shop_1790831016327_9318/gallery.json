@@ -17545,7 +17545,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-24T06:20:08.322Z",
-      "yahooTopSha": "43569430e99512d6ba5f816312d8ce8202fb191f"
+      "yahooTopSha": "43569430e99512d6ba5f816312d8ce8202fb191f",
+      "multi": true
     },
     {
       "id": "prod_1795501208323_bf1tp2",
@@ -17575,7 +17576,8 @@
       ],
       "status": "active",
       "syncedAt": "2026-11-24T06:20:08.322Z",
-      "yahooTopSha": "4b7a1be40c2ee9bfbc824bced14df75b902ee1a3"
+      "yahooTopSha": "4b7a1be40c2ee9bfbc824bced14df75b902ee1a3",
+      "multi": true
     },
     {
       "id": "prod_1795501208323_du41hj",
