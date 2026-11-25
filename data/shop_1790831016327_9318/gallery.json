@@ -5553,21 +5553,7 @@
       "itemName": "メモ スタンド クリップ 12個セット カードスタンド メモスタンド カード立て メモクリップスタンド 卓上 かわいい PKT3-3F",
       "itemPrice": 780,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-01-00set",
-      "images": [
-        {
-          "id": "img_ytop_1790840364689_9srp17",
-          "filename": "si-23-01-00set.jpg",
-          "originalName": "000_yahoo_top.jpg",
-          "path": "data/shop_1790831016327_9318/yahoo-top/si-23-01-00set.jpg",
-          "sha": "94ba5b49e0cbd06e0786f93784076b7c84d3d4a7",
-          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-23-01-00set.jpg?v=94ba5b49",
-          "size": 61275,
-          "uploadedAt": "2026-10-01T07:39:24.689Z",
-          "note": "",
-          "tags": [],
-          "yahooTop": true
-        }
-      ],
+      "images": [],
       "status": "active",
       "syncedAt": "2026-10-01T07:39:24.688Z",
       "yahooTopSha": "94ba5b49e0cbd06e0786f93784076b7c84d3d4a7"
