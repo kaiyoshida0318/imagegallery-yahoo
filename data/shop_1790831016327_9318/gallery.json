@@ -2039,7 +2039,7 @@
       "itemManageNumber": "eq-22-04-clear-mat",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/eq-22-04-clear-mat.html",
-      "itemName": "耐震マット 耐震ジェル 薄い 家具 冷蔵庫 耐震 マット ジェル テレビ 大型 防災士監修 震度7対応 耐震ゲル PKT1-2F",
+      "itemName": "【現役防災士監修】耐震マット 耐震ジェル A4 地震対策 防災グッズ 耐震ゲル 家具転倒防止 滑り止め 透明 テレビ 冷蔵庫 水洗い可能 高強度ジェル",
       "itemPrice": 2480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_eq-22-04-clear-mat",
       "images": [
@@ -2185,7 +2185,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "c1eb0a2647ca6e7945c227cbc95a2404cc85f1bd",
       "addedAt": "2026-10-01T07:39:24.688Z"
     },
@@ -5322,7 +5322,7 @@
       "itemManageNumber": "si-22-10",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-10.html",
-      "itemName": "メガネ 鼻パッド 鼻あて パッド シリコン 眼鏡 跡がつかない ズレ防止 ずり落ち防止 滑り止め 鼻あて ノーズパッド 鼻パット メガネ 透明 痛み防止",
+      "itemName": "メガネ 鼻パッド 鼻あてパッド シリコン 眼鏡 ノーズパッド 鼻パット ずり落ち防止 ズレ防止 滑り止め 跡がつかない サングラス 透明 クッション",
       "itemPrice": 1080,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-10",
       "images": [
@@ -5510,7 +5510,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "ad32fa9d4293c33a7b21069b83090716bcfe3826",
       "addedAt": "2026-10-01T07:39:24.688Z"
     },
@@ -5520,7 +5520,7 @@
       "itemManageNumber": "si-22-11-00set",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-11-00set.html",
-      "itemName": "メガネストッパー メガネ 滑り止め 眼鏡ストッパー シリコン クッション 耳 耳あて 眼鏡 スポーツ ズレ防止 落下 ずり落ち 擦れ 防止 めがね固定 サングラス",
+      "itemName": "メガネストッパー メガネ 滑り止め 眼鏡ストッパー シリコン クッション 耳あて 眼鏡 ズレ防止 ずり落ち防止 落下防止 スポーツ サングラス 子供",
       "itemPrice": 1000,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-11-00set",
       "images": [
@@ -5539,7 +5539,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "a8bb000d8fd72d0702bdcc1c635b679cd5705edb",
       "neglected": true,
       "addedAt": "2026-10-01T07:39:24.688Z"
@@ -5554,6 +5554,20 @@
       "itemPrice": 780,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-01-00set",
       "images": [
+        {
+          "id": "img_ytop_1795745579445_b16gr6",
+          "filename": "si-23-01-00set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/si-23-01-00set.jpg",
+          "sha": "dd66889917018dd87c7ac1d368bfaa753f4285d0",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-23-01-00set.jpg?v=dd668899",
+          "size": 43909,
+          "uploadedAt": "2026-11-27T02:12:59.445Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        },
         {
           "id": "img_1795584822811_gy7kjk",
           "filename": "1795584820994_qod8ju_b-01.jpg",
@@ -5694,8 +5708,9 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
-      "yahooTopSha": "94ba5b49e0cbd06e0786f93784076b7c84d3d4a7"
+      "syncedAt": "2026-11-27T02:12:59.444Z",
+      "yahooTopSha": "dd66889917018dd87c7ac1d368bfaa753f4285d0",
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_mzq0cj",
@@ -5906,7 +5921,7 @@
       "itemManageNumber": "si-23-11a",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-11a.html",
-      "itemName": "鼻毛 はさみ カーブ 鼻毛切りハサミ 鼻毛処理 鼻毛カッター 女性用 PKT3-2F",
+      "itemName": "鼻毛 はさみ 鼻毛処理 鼻毛切りハサミ 鼻毛ハサミ 高級 カッター カーブ 鼻毛カッター 女性",
       "itemPrice": 1000,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-11a",
       "images": [
@@ -5925,9 +5940,10 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-10-01T07:39:24.688Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "391fe93053f7faa9b6bd2318ae9216cf943224d4",
-      "ignored": true
+      "ignored": true,
+      "addedAt": "2026-10-01T07:39:24.688Z"
     },
     {
       "id": "prod_1790839116298_vmay8g",
@@ -15474,7 +15490,7 @@
       "addedAt": "2026-11-12T07:20:36.524Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/baby-23-01-miton-5set.html",
-      "itemName": "ベビーミトン ミトン ベビー ひっかき防止 手袋 5色セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
+      "itemName": "ベビーミトン ミトン ベビー ひっかき防止 手袋 5双セット 左右兼用 新生児 赤ちゃん 出産祝 かきむしり防止 メッシュ コットン 綿 紐付き",
       "itemPrice": 1480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_baby-23-01-miton-5set",
       "images": [
@@ -15494,7 +15510,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "ba747fc9a5882785096a2fe1aab6032f2cbce2f9",
       "multi": true
     },
@@ -15505,7 +15521,7 @@
       "addedAt": "2026-11-12T07:20:36.524Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bg-02-con-hook-15set.html",
-      "itemName": "コンセントカバー コンセントガード 赤ちゃん フック付き ペット 2口 コンセントキャップ 20個 子供 犬 猫 コンセント プラグ 隠し いたずら防止 ほこり防止",
+      "itemName": "コンセントカバー コンセントガード 赤ちゃん コンセントキャップ 15個 フック付き 2口 子供 ペット 感電防止 いたずら防止 ほこり防止",
       "itemPrice": 780,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-02-con-hook-15set",
       "images": [
@@ -15622,7 +15638,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "23a7bd4bec0ac3669cde5ea8a544411aaef8158c"
     },
     {
@@ -15632,7 +15648,7 @@
       "addedAt": "2026-11-12T07:20:36.524Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bg-02-con-hook-30set.html",
-      "itemName": "コンセントカバー コンセントガード 赤ちゃん フック付き ペット 2口 コンセントキャップ 20個 子供 犬 猫 コンセント プラグ 隠し いたずら防止 ほこり防止",
+      "itemName": "コンセントカバー コンセントガード 赤ちゃん コンセントキャップ 30個 フック付き 2口 子供 ペット 感電防止 いたずら防止 ほこり防止",
       "itemPrice": 1280,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bg-02-con-hook-30set",
       "images": [
@@ -15652,7 +15668,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "52a4223786d2be71a470b35c402d0a3097cae270",
       "multi": true
     },
@@ -15927,7 +15943,7 @@
       "addedAt": "2026-11-12T07:20:36.524Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-04set.html",
-      "itemName": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+      "itemName": "バンドクリップ 移動ポケット 名札 クリップ 白 吊下げ ポケットバッグ 外付けポケット ポケットポーチ IDカードホルダー ネームホルダー",
       "itemPrice": 480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-04set",
       "images": [
@@ -16060,7 +16076,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "7b42ff563f20a13573ec09c9ed8b1f79e28ff76d"
     },
     {
@@ -16070,7 +16086,7 @@
       "addedAt": "2026-11-12T07:20:36.524Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-10set.html",
-      "itemName": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+      "itemName": "バンドクリップ 移動ポケット 名札 クリップ 白 吊下げ ポケットバッグ 外付けポケット ポケットポーチ IDカードホルダー ネームホルダー",
       "itemPrice": 880,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-10set",
       "images": [
@@ -16090,7 +16106,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "0f0d5715e78a432da665b09959e856f01a840b42",
       "multi": true
     },
@@ -16101,7 +16117,7 @@
       "addedAt": "2026-11-12T07:20:36.524Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-26-07-20set.html",
-      "itemName": "バンドクリップ 移動ポケット 吊下げ 名札 クリップ 白 ポケットバッグ 外付けポケット ポケットポーチ マルチポッケ ID カードホルダー ポシェット",
+      "itemName": "バンドクリップ 移動ポケット 名札 クリップ 白 吊下げ ポケットバッグ 外付けポケット ポケットポーチ IDカードホルダー ネームホルダー",
       "itemPrice": 1580,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-26-07-20set",
       "images": [
@@ -16121,7 +16137,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-12T07:20:36.524Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "8935e1e517d122964f6d264dc135e8aa3c9e8f5b",
       "multi": true
     },
@@ -16132,7 +16148,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-020set.html",
-      "itemName": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+      "itemName": "【複数購入で最大半額】脇汗パッド 汗取りパッド 汗脇パッド 汗取りシート 大判 使い捨て 汗ジミ防止 わき汗対策 吸水速乾 レディース メンズ 大容量",
       "itemPrice": 980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-020set",
       "images": [
@@ -16285,7 +16301,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "9d927c78ecac816015f556f48b84a4fc732c9bac"
     },
     {
@@ -16295,7 +16311,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-040set.html",
-      "itemName": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+      "itemName": "【複数購入で最大半額】脇汗パッド 汗取りパッド 汗脇パッド 汗取りシート 大判 使い捨て 汗ジミ防止 わき汗対策 吸水速乾 レディース メンズ 大容量",
       "itemPrice": 1860,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-040set",
       "images": [
@@ -16315,7 +16331,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "3d932b2d7468f7312fbd050a396dc3aeb94014ba",
       "multi": true
     },
@@ -16326,7 +16342,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-060set.html",
-      "itemName": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+      "itemName": "【複数購入で最大半額】脇汗パッド 汗取りパッド 汗脇パッド 汗取りシート 大判 使い捨て 汗ジミ防止 わき汗対策 吸水速乾 レディース メンズ 大容量",
       "itemPrice": 2640,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-060set",
       "images": [
@@ -16346,7 +16362,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "c8934049f2feca69eafbe93ea9767b276adb6058",
       "multi": true
     },
@@ -16357,7 +16373,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-120set.html",
-      "itemName": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+      "itemName": "【複数購入で最大半額】脇汗パッド 汗取りパッド 汗脇パッド 汗取りシート 大判 使い捨て 汗ジミ防止 わき汗対策 吸水速乾 レディース メンズ 大容量",
       "itemPrice": 3480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-120set",
       "images": [
@@ -16377,7 +16393,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "007204ace4e577d8bf675742fcb2c8c36a210cb9",
       "multi": true
     },
@@ -16388,7 +16404,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-02-180set.html",
-      "itemName": "脇汗パッド 汗取りパッド 汗脇パッド レディース メンズ 大判 白 使い捨て 汗ジミ防止 吸水速乾 汗取りシート わき汗対策 男女兼用 大容量",
+      "itemName": "【複数購入で最大半額】脇汗パッド 汗取りパッド 汗脇パッド 汗取りシート 大判 使い捨て 汗ジミ防止 わき汗対策 吸水速乾 レディース メンズ 大容量",
       "itemPrice": 4400,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-02-180set",
       "images": [
@@ -16408,7 +16424,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "f108647534e98bf75c3cadea70901016831c6ce2",
       "multi": true
     },
@@ -16419,7 +16435,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-22-10-set.html",
-      "itemName": "メガネ 鼻パッド 鼻あて パッド シリコン 眼鏡 跡がつかない ズレ防止 ずり落ち防止 滑り止め 鼻あて ノーズパッド 鼻パット メガネ 透明 痛み防止",
+      "itemName": "メガネ 鼻パッド 鼻あてパッド シリコン 眼鏡 ノーズパッド 鼻パット ずり落ち防止 ズレ防止 滑り止め 跡がつかない サングラス 透明 クッション",
       "itemPrice": 1580,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-22-10-set",
       "images": [
@@ -16596,7 +16612,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "ad32fa9d4293c33a7b21069b83090716bcfe3826"
     },
     {
@@ -16606,7 +16622,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-3set.html",
-      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー シリコン 眼鏡 ずり落ち防止 ズレ落ち防止 落下防止 耳あて サングラス スポーツ 子供",
       "itemPrice": 680,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-3set",
       "images": [
@@ -16711,7 +16727,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "83c517472c6b894120c7ddb7b36bd0e153a16452"
     },
     {
@@ -16721,7 +16737,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-3set-h.html",
-      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー シリコン 眼鏡 ずり落ち防止 ズレ落ち防止 落下防止 耳あて サングラス スポーツ 子供",
       "itemPrice": 1480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-3set-h",
       "images": [
@@ -16741,7 +16757,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "62545977030b83d04c5466ba8d3f5f12bb3425a0",
       "multi": true
     },
@@ -16752,7 +16768,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-6set.html",
-      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー シリコン 眼鏡 ずり落ち防止 ズレ落ち防止 落下防止 耳あて サングラス スポーツ 子供",
       "itemPrice": 1000,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-6set",
       "images": [
@@ -16772,7 +16788,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "a57347c1399b874c9e441b3b5c5a348dc59809d4",
       "multi": true
     },
@@ -16783,7 +16799,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-03-6set-h.html",
-      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー 落下 防止 眼鏡 ズレ落ち ずり落ち 防止 めがね固定 擦れ防止 耳 耳あて シリコン クッション サングラス",
+      "itemName": "メガネ 滑り止め メガネストッパー 眼鏡ストッパー シリコン 眼鏡 ずり落ち防止 ズレ落ち防止 落下防止 耳あて サングラス スポーツ 子供",
       "itemPrice": 1800,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-03-6set-h",
       "images": [
@@ -16803,7 +16819,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "879e41eb5d57490962043e954f7e03ef40ea74c4",
       "multi": true
     },
@@ -16814,7 +16830,7 @@
       "addedAt": "2026-11-17T04:48:20.160Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-25-04-set.html",
-      "itemName": "メガネストッパー メガネ 滑り止め 眼鏡ストッパー シリコン クッション 耳 耳あて 眼鏡 スポーツ ズレ防止 落下 ずり落ち 擦れ 防止 めがね固定 サングラス",
+      "itemName": "メガネストッパー メガネ 滑り止め 眼鏡ストッパー シリコン クッション 耳あて 眼鏡 ズレ防止 ずり落ち防止 落下防止 スポーツ サングラス 子供",
       "itemPrice": 1500,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-25-04-set",
       "images": [
@@ -16967,7 +16983,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-17T04:48:20.160Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "34a6efc8f07437514b4078de5da22e86cac16936"
     },
     {
@@ -16977,7 +16993,7 @@
       "addedAt": "2026-11-18T04:53:54.460Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set1.html",
-      "itemName": "しわ伸ばしテープ 首 眉間 おでこ シワ取り しわ 取り テープ シート 目尻 ほうれい線 シワ 伸ばし パッチ シール 額 目元 スキンケア フェイスパッチ",
+      "itemName": "しわ伸ばしテープ シワ取り しわ 取り テープ シート 眉間 おでこ 首 目尻 ほうれい線 額 目元 フェイスパッチ シール シリコン 透明タイプ 水洗い可",
       "itemPrice": 1000,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set1",
       "images": [
@@ -17131,7 +17147,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-18T04:53:54.460Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "89edd2524b6623fc4cae44a684c874285ac56d33"
     },
     {
@@ -17141,7 +17157,7 @@
       "addedAt": "2026-11-18T04:53:54.460Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set2.html",
-      "itemName": "しわ伸ばしテープ 首 眉間 おでこ シワ取り しわ 取り テープ シート 目尻 ほうれい線 シワ 伸ばし パッチ シール 額 目元 スキンケア フェイスパッチ",
+      "itemName": "しわ伸ばしテープ シワ取り しわ 取り テープ シート 眉間 おでこ 首 目尻 ほうれい線 額 目元 フェイスパッチ シール シリコン 透明タイプ 水洗い可",
       "itemPrice": 1680,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set2",
       "images": [
@@ -17161,7 +17177,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-18T04:53:54.460Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "42e30c333f95995d2a72df304eb156d79cdbe50d",
       "multi": true
     },
@@ -17172,7 +17188,7 @@
       "addedAt": "2026-11-18T04:53:54.460Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/ih-25-01-set3.html",
-      "itemName": "しわ伸ばしテープ 首 眉間 おでこ シワ取り しわ 取り テープ シート 目尻 ほうれい線 シワ 伸ばし パッチ シール 額 目元 スキンケア フェイスパッチ",
+      "itemName": "しわ伸ばしテープ シワ取り しわ 取り テープ シート 眉間 おでこ 首 目尻 ほうれい線 額 目元 フェイスパッチ シール シリコン 透明タイプ 水洗い可",
       "itemPrice": 2980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_ih-25-01-set3",
       "images": [
@@ -17192,7 +17208,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-18T04:53:54.460Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "dd7f095aeeaeaeb8a389c0078a7691ff85b9e086",
       "multi": true
     },
@@ -17423,7 +17439,7 @@
       "addedAt": "2026-11-18T04:53:54.460Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/yoga-24-01-band1.html",
-      "itemName": "ゴムバンド ストレッチバンド レジスタンスバンド ピラティスバンド トレーニングバンド ゴム ヒップバンド エクササイズバンド フィットネスバンド",
+      "itemName": "ゴムバンド ストレッチバンド レジスタンスバンド トレーニングバンド ピラティスバンド エクササイズバンド ヒップバンド 筋トレ ヨガ 美尻",
       "itemPrice": 1480,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_yoga-24-01-band1",
       "images": [
@@ -17577,7 +17593,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-18T04:53:54.460Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "c6dee7f7b4325f41074a07fc490d392c661f4e10"
     },
     {
@@ -17587,7 +17603,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-2set.html",
-      "itemName": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+      "itemName": "防犯グッズ 窓 ロック 窓ストッパー 網戸ロック 補助錠 2個セット サッシロック 網戸ストッパー 空き巣対策 子供 転落防止 猫 脱走防止",
       "itemPrice": 1180,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-2set",
       "images": [
@@ -17715,7 +17731,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "db25f9f683e54fa970cca39e4bcac7eff5b59e9f"
     },
     {
@@ -17725,7 +17741,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-2set-tape.html",
-      "itemName": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+      "itemName": "防犯グッズ 窓 ロック 窓ストッパー 網戸ロック 補助錠 2個セット サッシロック 網戸ストッパー 空き巣対策 子供 転落防止 猫 脱走防止",
       "itemPrice": 1980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-2set-tape",
       "images": [
@@ -17745,7 +17761,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "047e62ebf9488740c2eee4fd2180f54ef4f415ef",
       "multi": true
     },
@@ -17756,7 +17772,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-4set.html",
-      "itemName": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+      "itemName": "防犯グッズ 窓 ロック 窓ストッパー 網戸ロック 補助錠 4個セット サッシロック 網戸ストッパー 空き巣対策 子供 転落防止 猫 脱走防止",
       "itemPrice": 2280,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-4set",
       "images": [
@@ -17776,7 +17792,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "43569430e99512d6ba5f816312d8ce8202fb191f",
       "multi": true
     },
@@ -17787,7 +17803,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/bi-25-01-4set-tape.html",
-      "itemName": "窓 ロック 窓ストッパー 防犯 ストッパー 網戸ロック 補助錠 2個セット 空き巣対策 上枠 下枠兼用 サッシロック 子供 転落防止 ペット 猫 脱走防止",
+      "itemName": "防犯グッズ 窓 ロック 窓ストッパー 網戸ロック 補助錠 4個セット サッシロック 網戸ストッパー 空き巣対策 子供 転落防止 猫 脱走防止",
       "itemPrice": 3080,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_bi-25-01-4set-tape",
       "images": [
@@ -17807,7 +17823,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "4b7a1be40c2ee9bfbc824bced14df75b902ee1a3",
       "multi": true
     },
@@ -18359,7 +18375,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-01-hane.html",
-      "itemName": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+      "itemName": "かっさプレート かっさ テラヘルツ のこぎり ボディ用 美顔器 カッサ カッサプレート 頭皮マッサージ リンパマッサージ ツボ押し 突起 美顔 美肌",
       "itemPrice": 1698,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-01-hane",
       "images": [
@@ -18547,7 +18563,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "69100416e0902ff507fcd5ef1761d76a5898a18e"
     },
     {
@@ -18557,7 +18573,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-01-hane-st.html",
-      "itemName": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+      "itemName": "かっさプレート かっさ テラヘルツ のこぎり ボディ用 美顔器 カッサ カッサプレート 頭皮マッサージ リンパマッサージ ツボ押し 突起 美顔 美肌",
       "itemPrice": 2980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-01-hane-st",
       "images": [
@@ -18577,7 +18593,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "4671dbfa613305a85a7b92fb4d5096fa349de811",
       "multi": true
     },
@@ -18588,7 +18604,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-02-heart.html",
-      "itemName": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+      "itemName": "かっさプレート かっさ テラヘルツ のこぎり ボディ用 美顔器 カッサ カッサプレート 頭皮マッサージ リンパマッサージ ツボ押し 突起 美顔 美肌",
       "itemPrice": 1780,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-02-heart",
       "images": [
@@ -18608,7 +18624,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "8f9768357f2d3a81cd3c5c2405ebafa718a9424e",
       "multi": true
     },
@@ -18619,7 +18635,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-02-heart-st.html",
-      "itemName": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+      "itemName": "かっさプレート かっさ テラヘルツ のこぎり ボディ用 美顔器 カッサ カッサプレート 頭皮マッサージ リンパマッサージ ツボ押し 突起 美顔 美肌",
       "itemPrice": 2980,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-02-heart-st",
       "images": [
@@ -18639,7 +18655,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "4671dbfa613305a85a7b92fb4d5096fa349de811",
       "multi": true
     },
@@ -18650,7 +18666,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-03-noko.html",
-      "itemName": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+      "itemName": "かっさプレート かっさ テラヘルツ のこぎり ボディ用 美顔器 カッサ カッサプレート 頭皮マッサージ リンパマッサージ ツボ押し 突起 美顔 美肌",
       "itemPrice": 1880,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-03-noko",
       "images": [
@@ -18670,7 +18686,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "76314e46ef874969aa347f8e5bfe0f94af78a538",
       "multi": true
     },
@@ -18681,7 +18697,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-03-noko-st.html",
-      "itemName": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+      "itemName": "かっさプレート かっさ テラヘルツ のこぎり ボディ用 美顔器 カッサ カッサプレート 頭皮マッサージ リンパマッサージ ツボ押し 突起 美顔 美肌",
       "itemPrice": 3080,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-03-noko-st",
       "images": [
@@ -18701,7 +18717,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "33f10828e0ffcb6b7a325a136be42bcee72c9bf3",
       "multi": true
     },
@@ -18712,7 +18728,7 @@
       "addedAt": "2026-11-24T06:20:08.322Z",
       "itemNumber": "",
       "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-13a-04-st.html",
-      "itemName": "かっさプレート かっさ 美顔器 テラヘルツ のこぎり ボディ用 美顔 美容 美肌 頭皮マッサージ リンパマッサージ カッサ カッサプレート 突起 ツボ押し つぼ押し",
+      "itemName": "かっさプレート かっさ テラヘルツ のこぎり ボディ用 美顔器 カッサ カッサプレート 頭皮マッサージ リンパマッサージ ツボ押し 突起 美顔 美肌",
       "itemPrice": 1880,
       "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-13a-04-st",
       "images": [
@@ -18732,7 +18748,7 @@
         }
       ],
       "status": "active",
-      "syncedAt": "2026-11-24T06:20:08.322Z",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
       "yahooTopSha": "bbd45215e1b0926a7eece9129dc011cce9a2176a",
       "multi": true
     },
@@ -19073,6 +19089,156 @@
       "syncedAt": "2026-11-24T06:20:08.322Z",
       "yahooTopSha": "a5db33e00656fc7e394d952c4ee7097e807f3102",
       "multi": true
+    },
+    {
+      "id": "prod_1795745579445_4f5qe7",
+      "itemCode": "yukaiya_foot-23-04-1set",
+      "itemManageNumber": "foot-23-04-1set",
+      "addedAt": "2026-11-27T02:12:59.444Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/foot-23-04-1set.html",
+      "itemName": "靴ずれ防止テープ 透明 足裏 かかと 靴擦れ 防止 予防 かかと 踵 テープ クッション 防水 伸縮性抜群 柔軟性 足指 手 膝 肘 保護",
+      "itemPrice": 780,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_foot-23-04-1set",
+      "images": [
+        {
+          "id": "img_ytop_1795745579445_vq0u8c",
+          "filename": "foot-23-04-1set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/foot-23-04-1set.jpg",
+          "sha": "b92a4b0f79ff62e6d60557f93a77273bf1c97081",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/foot-23-04-1set.jpg?v=b92a4b0f",
+          "size": 42233,
+          "uploadedAt": "2026-11-27T02:12:59.445Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
+      "yahooTopSha": "b92a4b0f79ff62e6d60557f93a77273bf1c97081"
+    },
+    {
+      "id": "prod_1795745579445_i3c97d",
+      "itemCode": "yukaiya_foot-23-04-2set",
+      "itemManageNumber": "foot-23-04-2set",
+      "addedAt": "2026-11-27T02:12:59.444Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/foot-23-04-2set.html",
+      "itemName": "靴ずれ防止テープ 透明 足裏 かかと 靴擦れ 防止 予防 かかと 踵 テープ クッション 防水 伸縮性抜群 柔軟性 足指 手 膝 肘 保護",
+      "itemPrice": 1280,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_foot-23-04-2set",
+      "images": [
+        {
+          "id": "img_ytop_1795745579445_3d7jfi",
+          "filename": "foot-23-04-2set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/foot-23-04-2set.jpg",
+          "sha": "4d7b20be04967dc2d5ce724b9cfe11f85c67a13d",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/foot-23-04-2set.jpg?v=4d7b20be",
+          "size": 42822,
+          "uploadedAt": "2026-11-27T02:12:59.445Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
+      "yahooTopSha": "4d7b20be04967dc2d5ce724b9cfe11f85c67a13d"
+    },
+    {
+      "id": "prod_1795745579445_64dkky",
+      "itemCode": "yukaiya_foot-23-04-3set",
+      "itemManageNumber": "foot-23-04-3set",
+      "addedAt": "2026-11-27T02:12:59.444Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/foot-23-04-3set.html",
+      "itemName": "靴ずれ防止テープ 透明 足裏 かかと 靴擦れ 防止 予防 かかと 踵 テープ クッション 防水 伸縮性抜群 柔軟性 足指 手 膝 肘 保護",
+      "itemPrice": 1670,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_foot-23-04-3set",
+      "images": [
+        {
+          "id": "img_ytop_1795745579445_c76fla",
+          "filename": "foot-23-04-3set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/foot-23-04-3set.jpg",
+          "sha": "3abe84a6a831d9fe8a1dc00520e9f9d798442566",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/foot-23-04-3set.jpg?v=3abe84a6",
+          "size": 42849,
+          "uploadedAt": "2026-11-27T02:12:59.445Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
+      "yahooTopSha": "3abe84a6a831d9fe8a1dc00520e9f9d798442566"
+    },
+    {
+      "id": "prod_1795745579445_ey0mto",
+      "itemCode": "yukaiya_foot-23-04-4set",
+      "itemManageNumber": "foot-23-04-4set",
+      "addedAt": "2026-11-27T02:12:59.444Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/foot-23-04-4set.html",
+      "itemName": "靴ずれ防止テープ 透明 足裏 かかと 靴擦れ 防止 予防 かかと 踵 テープ クッション 防水 伸縮性抜群 柔軟性 足指 手 膝 肘 保護",
+      "itemPrice": 2060,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_foot-23-04-4set",
+      "images": [
+        {
+          "id": "img_ytop_1795745579445_8diy7g",
+          "filename": "foot-23-04-4set.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/foot-23-04-4set.jpg",
+          "sha": "96f98d981c3f6e91d55730fc761193378cada249",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/foot-23-04-4set.jpg?v=96f98d98",
+          "size": 42737,
+          "uploadedAt": "2026-11-27T02:12:59.445Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
+      "yahooTopSha": "96f98d981c3f6e91d55730fc761193378cada249"
+    },
+    {
+      "id": "prod_1795745579445_vnc293",
+      "itemCode": "yukaiya_si-23-09-hue",
+      "itemManageNumber": "si-23-09-hue",
+      "addedAt": "2026-11-27T02:12:59.444Z",
+      "itemNumber": "",
+      "itemUrl": "https://store.shopping.yahoo.co.jp/yukaiya/si-23-09-hue.html",
+      "itemName": "電子 ホイッスル 大音量 笛 防災熊よけグッズ 体育 サッカー バスケットボール 水泳 スポーツグラウンド 体育用品 警笛 機器用具 備品 PKT3-2F",
+      "itemPrice": 2100,
+      "thumbUrl": "https://item-shopping.c.yimg.jp/i/g/yukaiya_si-23-09-hue",
+      "images": [
+        {
+          "id": "img_ytop_1795745579445_cod21j",
+          "filename": "si-23-09-hue.jpg",
+          "originalName": "000_yahoo_top.jpg",
+          "path": "data/shop_1790831016327_9318/yahoo-top/si-23-09-hue.jpg",
+          "sha": "882de5dc50cabc31c23cefa35792a37d1cf1bf1e",
+          "url": "https://raw.githubusercontent.com/kaiyoshida0318/imagegallery-yahoo/main/data/shop_1790831016327_9318/yahoo-top/si-23-09-hue.jpg?v=882de5dc",
+          "size": 66430,
+          "uploadedAt": "2026-11-27T02:12:59.445Z",
+          "note": "",
+          "tags": [],
+          "tagId": "",
+          "yahooTop": true
+        }
+      ],
+      "status": "active",
+      "syncedAt": "2026-11-27T02:12:59.444Z",
+      "yahooTopSha": "882de5dc50cabc31c23cefa35792a37d1cf1bf1e"
     }
   ],
   "materials": [],
